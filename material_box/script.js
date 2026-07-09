@@ -1,6 +1,8 @@
 ﻿const materials = window.MATERIALS_DATA || [];
 const categorySystem = window.MATERIAL_CATEGORIES || [];
-const imageManifest = window.MATERIAL_IMAGE_MANIFEST || {};
+const materialImageMap = window.MATERIAL_IMAGE_MAP || {};
+const legacyImageManifest = window.MATERIAL_IMAGE_MANIFEST || {};
+mergeMaterialImages();
 
 const quickTags = ["木材", "塑料", "金属", "陶瓷", "建筑", "纺织", "电子", "医用", "储能", "天然材料"];
 const hotApplications = ["航空航天", "汽车轻量化", "电子封装", "医疗植入", "锂电池", "光伏能源", "建筑工程", "室内装饰", "纺织", "3D打印"];
@@ -20,6 +22,35 @@ const state = {
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const hasItems = (value) => Array.isArray(value) && value.length > 0;
+
+
+function normalizeImageItem(item, material, type, index) {
+  return {
+    src: item?.src || `assets/images/materials/${material.id}/${type}_${String(index + 1).padStart(2, "0")}.jpg`,
+    alt: item?.alt || `${material.name_cn}${type === "macro" ? "\u5b8f\u89c2\u56fe" : "\u5fae\u89c2\u56fe"}`,
+    source: item?.source || "",
+    author: item?.author || "",
+    license: item?.license || "",
+    licenseUrl: item?.licenseUrl || "",
+    sourceUrl: item?.sourceUrl || "",
+    caption: item?.caption || item?.alt || `${material.name_cn}${type === "macro" ? "\u5b8f\u89c2\u56fe" : "\u5fae\u89c2\u56fe"}`
+  };
+}
+
+function mergeMaterialImages() {
+  if (!Array.isArray(window.MATERIALS_DATA)) return;
+  window.MATERIALS_DATA.forEach((material) => {
+    const mapped = materialImageMap[material.id];
+    const legacy = legacyImageManifest[material.id];
+    const current = material.images || {};
+    const source = mapped || current || legacy || {};
+    material.images = {
+      macro: (source.macro || []).map((item, index) => normalizeImageItem(item, material, "macro", index)),
+      micro: (source.micro || []).map((item, index) => normalizeImageItem(item, material, "micro", index))
+    };
+  });
+}
+
 
 function readStorageArray(key) {
   try {
@@ -129,14 +160,31 @@ function toast(message, tone = "default") {
 }
 
 function getImageSet(material, useDefault = true) {
-  const own = material.images || {};
-  const manifest = imageManifest[material.id] || {};
-  const macro = hasItems(own.macro) ? own.macro : hasItems(manifest.macro) ? manifest.macro : [];
-  const micro = hasItems(own.micro) ? own.micro : hasItems(manifest.micro) ? manifest.micro : [];
+  const images = material.images || {};
+  const macro = hasItems(images.macro) ? images.macro : [];
+  const micro = hasItems(images.micro) ? images.micro : [];
   if (!useDefault) return { macro, micro };
   return {
-    macro: hasItems(macro) ? macro : [{ src: `assets/materials/${material.id}/macro.jpg`, alt: `${material.name_cn}宏观照片`, caption: `${material.name_cn}的外观、纹理、产品形态或断面形貌` }],
-    micro: hasItems(micro) ? micro : [{ src: `assets/materials/${material.id}/micro.jpg`, alt: `${material.name_cn}微观结构照片`, caption: `${material.name_cn}的显微组织、晶粒、纤维、孔隙或断口形貌` }]
+    macro: hasItems(macro) ? macro : [{
+      src: `assets/images/materials/${material.id}/macro_01.jpg`,
+      alt: `${material.name_cn}\u5b8f\u89c2\u56fe`,
+      caption: `${material.name_cn}\u7684\u5916\u89c2\u3001\u7eb9\u7406\u3001\u4ea7\u54c1\u5f62\u6001\u6216\u65ad\u9762\u5f62\u8c8c`,
+      source: "",
+      author: "",
+      license: "",
+      licenseUrl: "",
+      sourceUrl: ""
+    }],
+    micro: hasItems(micro) ? micro : [{
+      src: `assets/images/materials/${material.id}/micro_01.jpg`,
+      alt: `${material.name_cn}\u5fae\u89c2\u56fe`,
+      caption: `${material.name_cn}\u7684\u663e\u5fae\u7ec4\u7ec7\u3001\u6676\u7c92\u3001\u7ea4\u7ef4\u3001\u5b54\u9699\u3001\u7ec6\u80de\u7ed3\u6784\u6216\u65ad\u53e3\u5f62\u8c8c`,
+      source: "",
+      author: "",
+      license: "",
+      licenseUrl: "",
+      sourceUrl: ""
+    }]
   };
 }
 
@@ -348,13 +396,26 @@ function renderSearchSuggestions() {
   });
 }
 
-function imageCard(title, image, fallbackText) {
-  return `<article class="image-card"><div class="image-frame"><img src="${image.src}" alt="${image.alt}" loading="lazy" onerror="this.closest('.image-card').classList.add('image-missing')" /><div class="image-fallback">${fallbackText}<br><small>${image.src}</small></div></div><strong>${title}</strong><p>${image.caption}</p></article>`;
+function imageMeta(image) {
+  const source = image.sourceUrl ? `<a href="${image.sourceUrl}" target="_blank" rel="noopener">${image.source || "\u539f\u56fe\u94fe\u63a5"}</a>` : (image.source || "\u6765\u6e90\u5f85\u8865\u5145");
+  const license = image.licenseUrl ? `<a href="${image.licenseUrl}" target="_blank" rel="noopener">${image.license || "\u8bb8\u53ef\u8bc1"}</a>` : (image.license || "\u8bb8\u53ef\u8bc1\u5f85\u8865\u5145");
+  return `<div class="image-meta"><span>\u6765\u6e90\uff1a${source}</span><span>\u4f5c\u8005\uff1a${image.author || "\u5f85\u8865\u5145"}</span><span>\u8bb8\u53ef\uff1a${license}</span></div>`;
+}
+
+function imageCard(image, fallbackText) {
+  return `<article class="image-card"><button class="image-frame" type="button" data-preview-image="${image.src}" data-preview-alt="${image.alt}" data-preview-caption="${image.caption || image.alt}" aria-label="\u653e\u5927\u9884\u89c8${image.alt}"><img src="${image.src}" alt="${image.alt}" loading="lazy" onerror="this.closest('.image-card').classList.add('image-missing')" /><div class="image-fallback">${fallbackText}<br><small>${image.src}</small></div></button><p class="image-caption">${image.caption || image.alt}</p>${imageMeta(image)}</article>`;
+}
+
+function imagePanel(type, images, fallbackText) {
+  const cards = hasItems(images)
+    ? images.map((image) => imageCard(image, fallbackText)).join("")
+    : `<article class="image-card image-missing"><div class="image-frame"><div class="image-fallback">${fallbackText}<br><small>\u540e\u7eed\u53ef\u8865\u5145\u56fe\u7247</small></div></div></article>`;
+  return `<div class="image-tab-panel" data-image-panel="${type}">${cards}</div>`;
 }
 
 function materialImages(material) {
-  const images = getImageSet(material, true);
-  return `<section class="material-images"><h3>材料图像</h3><div class="image-grid">${imageCard("宏观照片", images.macro[0], "暂无宏观照片，后续可补充图片")}${imageCard("微观照片", images.micro[0], "暂无微观照片，后续可补充图片")}</div><p class="image-rule">批量放图规则：assets/materials/${material.id}/macro.jpg、micro.jpg、structure.jpg</p></section>`;
+  const images = getImageSet(material, false);
+  return `<section class="material-images"><div class="material-images-head"><h3>\u6750\u6599\u56fe\u50cf</h3><div class="image-tabs" role="tablist" aria-label="\u6750\u6599\u56fe\u50cf\u7c7b\u578b"><button class="image-tab active" type="button" data-image-tab="macro">\u5b8f\u89c2\u56fe</button><button class="image-tab" type="button" data-image-tab="micro">\u5fae\u89c2\u56fe</button></div></div><div class="image-tab-content">${imagePanel("macro", images.macro, "\u6682\u65e0\u5b8f\u89c2\u56fe")}${imagePanel("micro", images.micro, "\u6682\u65e0\u5fae\u89c2\u56fe")}</div><p class="image-rule">\u6279\u91cf\u653e\u56fe\u89c4\u5219\uff1aassets/images/materials/${material.id}/macro_01.jpg\u3001micro_01.jpg\uff1b\u5143\u6570\u636e\u89c1 metadata.json\u3002</p></section>`;
 }
 
 function detailGroup(title, rows) {
@@ -366,6 +427,42 @@ function detailGroup(title, rows) {
 
 function recommendationCard(material, reason) {
   return `<button class="recommend-card" type="button" data-material-id="${material.id}">${thumbnailMarkup(material)}<strong>${material.name_cn}${material.abbreviation ? ` · ${material.abbreviation}` : ""}</strong><span class="detail-muted">${reason}</span></button>`;
+}
+
+
+function bindImageTabs(scope) {
+  scope.querySelectorAll(".image-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const type = tab.dataset.imageTab;
+      scope.querySelectorAll(".image-tab").forEach((item) => item.classList.toggle("active", item === tab));
+      scope.querySelectorAll(".image-tab-panel").forEach((panel) => panel.classList.toggle("active", panel.dataset.imagePanel === type));
+    });
+  });
+  const firstPanel = scope.querySelector('.image-tab-panel[data-image-panel="macro"]');
+  if (firstPanel) firstPanel.classList.add("active");
+}
+
+function bindImagePreview(scope) {
+  scope.querySelectorAll("[data-preview-image]").forEach((button) => {
+    button.addEventListener("click", () => openImagePreview(button.dataset.previewImage, button.dataset.previewAlt, button.dataset.previewCaption));
+  });
+}
+
+function openImagePreview(src, alt, caption) {
+  let preview = document.querySelector("#image-preview");
+  if (!preview) {
+    preview = document.createElement("div");
+    preview.id = "image-preview";
+    preview.className = "image-preview hidden";
+    preview.innerHTML = `<div class="image-preview-backdrop" data-close-preview></div><figure class="image-preview-dialog"><button type="button" class="image-preview-close" data-close-preview aria-label="\u5173\u95ed\u56fe\u7247\u9884\u89c8">\u5173\u95ed</button><img alt="" /><figcaption></figcaption></figure>`;
+    document.body.appendChild(preview);
+    preview.querySelectorAll("[data-close-preview]").forEach((item) => item.addEventListener("click", () => preview.classList.add("hidden")));
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") preview.classList.add("hidden"); });
+  }
+  preview.querySelector("img").src = src;
+  preview.querySelector("img").alt = alt || "\u6750\u6599\u56fe\u7247\u9884\u89c8";
+  preview.querySelector("figcaption").textContent = caption || alt || "\u6750\u6599\u56fe\u7247\u9884\u89c8";
+  preview.classList.remove("hidden");
 }
 
 function showDetail(id) {
@@ -391,8 +488,8 @@ function showDetail(id) {
       </div>
     </div>
     <p class="detail-intro">${material.description}</p>
-    <div class="property-strip">${material.key_properties.map((property) => `<button class="property-pill" type="button">${property}</button>`).join("")}</div>
     ${materialImages(material)}
+    <div class="property-strip">${material.key_properties.map((property) => `<button class="property-pill" type="button">${property}</button>`).join("")}</div>
     <div class="detail-grid grouped-detail-grid">
       ${detailGroup("基本信息", [["中文名", material.name_cn], ["英文名", material.name_en], ["缩写", material.abbreviation || "无"], ["学习层级", material.difficulty_level]])}
       ${detailGroup("结构与组成", [["组成/结构", material.composition_or_structure], ["补充说明", material.notes]])}
@@ -409,6 +506,8 @@ function showDetail(id) {
     scrollToExplore();
   }));
   detail.querySelectorAll(".recommend-card").forEach((button) => button.addEventListener("click", () => showDetail(button.dataset.materialId)));
+  bindImageTabs(detail);
+  bindImagePreview(detail);
   $("#detail-close").addEventListener("click", () => { detail.classList.add("hidden"); scrollToExplore(); });
   $("#detail-favorite").addEventListener("click", () => toggleFavorite(material.id, true));
   $("#detail-compare").addEventListener("click", () => addToCompare(material.id, true));

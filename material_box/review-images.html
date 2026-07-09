@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaterialBox 图片审核</title>
+    <style>
+      body { margin: 0; padding: 24px; background: #f7fafc; color: #24303f; font-family: "Inter", "HarmonyOS Sans SC", "MiSans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.7; }
+      header { max-width: 1180px; margin: 0 auto 20px; }
+      h1 { margin: 0 0 8px; }
+      .hint { color: #6f7a88; }
+      .grid { display: grid; gap: 16px; max-width: 1180px; margin: 0 auto; }
+      .material { background: #fff; border: 1px solid #dbe8e6; border-radius: 16px; padding: 16px; }
+      .images { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+      figure { border: 1px solid #e1efed; border-radius: 14px; margin: 0; overflow: hidden; background: #fbfefd; }
+      img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: #eaf7f6; }
+      figcaption { padding: 10px; font-size: 0.86rem; color: #6f7a88; }
+      a { color: #168578; }
+      code { background: #eaf7f6; border-radius: 6px; padding: 2px 5px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>MaterialBox 图片审核</h1>
+      <p class="hint">运行 <code>python tools/fetch_material_images.py</code> 后会生成 <code>review-images.json</code>。本页用于人工检查候选图是否适合材料条目。</p>
+      <p class="hint">如果直接双击页面导致浏览器拦截 JSON 读取，可手动打开 <code>review-images.json</code> 查看，或用任意静态服务器打开本页。</p>
+    </header>
+    <main id="app" class="grid"></main>
+    <script>
+      async function loadReview() {
+        const app = document.querySelector('#app');
+        try {
+          const response = await fetch('review-images.json');
+          const data = await response.json();
+          if (!data.length) {
+            app.innerHTML = '<section class="material"><h2>暂无候选图片</h2><p class="hint">请先运行 tools/fetch_material_images.py。</p></section>';
+            return;
+          }
+          app.innerHTML = data.map(item => `
+            <section class="material">
+              <h2>${item.name || item.materialId}</h2>
+              <p class="hint">材料 ID：<code>${item.materialId}</code></p>
+              <div class="images">
+                ${(item.images || []).map(image => `
+                  <figure>
+                    <img src="${image.file}" alt="${image.alt || item.name}" loading="lazy" />
+                    <figcaption>
+                      <strong>${image.title || image.file}</strong><br />
+                      来源：${image.source || '未知'}<br />
+                      作者：${image.author || '未知'}<br />
+                      许可：${image.license || '未知'}<br />
+                      <a href="${image.sourceUrl}" target="_blank" rel="noopener">查看来源页</a>
+                    </figcaption>
+                  </figure>
+                `).join('')}
+              </div>
+            </section>
+          `).join('');
+        } catch (error) {
+          app.innerHTML = '<section class="material"><h2>无法读取 review-images.json</h2><p class="hint">这通常是 file:// 读取限制。请打开 review-images.json，或通过本地静态服务器查看本页。</p></section>';
+        }
+      }
+      loadReview();
+    </script>
+  </body>
+</html>
