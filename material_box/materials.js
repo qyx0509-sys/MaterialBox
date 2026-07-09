@@ -1,6 +1,6 @@
 // MaterialBox material taxonomy and data.
-// Main source of truth: edit this file, then regenerate materials.json from window.MATERIALS_DATA.
-// The page reads materials.js directly so local file:// usage does not depend on fetch().
+// Current page reads materials.js directly via window.MATERIALS_DATA.
+// materials.json keeps the same field structure for future API migration; do not fetch both at runtime.
 
 window.MATERIAL_CATEGORIES = [
   {
@@ -492,20 +492,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/steel/macro.jpg",
-          "alt": "钢材板材、型材或断口的宏观形态宏观照片",
-          "caption": "钢材板材、型材或断口的宏观形态"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/steel/micro.jpg",
-          "alt": "钢的铁素体、珠光体或马氏体显微组织微观结构照片",
-          "caption": "钢的铁素体、珠光体或马氏体显微组织"
-        }
-      ]
+      "macro": "assets/materials/steel/macro.jpg",
+      "micro": "assets/materials/steel/micro.jpg",
+      "structure": ""
+    },
+    "density": "7.85 g/cm³",
+    "melting_point": "约1450-1520℃",
+    "service_temperature": "约400-600℃",
+    "tensile_strength": "400-1000 MPa",
+    "elastic_modulus": "约200 GPa",
+    "thermal_conductivity": "约45-60 W/(m·K)",
+    "electrical_resistivity": "约1.0×10^-7 Ω·m",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "7.85 g/cm³",
+      "melting_point": "约1450-1520℃",
+      "service_temperature": "约400-600℃",
+      "tensile_strength": "400-1000 MPa",
+      "elastic_modulus": "约200 GPa",
+      "thermal_conductivity": "约45-60 W/(m·K)",
+      "electrical_resistivity": "约1.0×10^-7 Ω·m",
+      "cost_level": "低"
     }
   },
   {
@@ -573,8 +580,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -644,8 +670,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -714,8 +759,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -784,8 +848,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -861,20 +944,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/aluminum_alloy/macro.jpg",
-          "alt": "铝合金型材、板材和加工表面宏观照片",
-          "caption": "铝合金型材、板材和加工表面"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/aluminum_alloy/micro.jpg",
-          "alt": "铝合金晶粒和第二相颗粒显微组织微观结构照片",
-          "caption": "铝合金晶粒和第二相颗粒显微组织"
-        }
-      ]
+      "macro": "assets/materials/aluminum_alloy/macro.jpg",
+      "micro": "assets/materials/aluminum_alloy/micro.jpg",
+      "structure": ""
+    },
+    "density": "约2.70 g/cm³",
+    "melting_point": "约580-660℃",
+    "service_temperature": "约120-200℃",
+    "tensile_strength": "150-500 MPa",
+    "elastic_modulus": "约70 GPa",
+    "thermal_conductivity": "约120-180 W/(m·K)",
+    "electrical_resistivity": "约2.8×10^-8 Ω·m",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "约2.70 g/cm³",
+      "melting_point": "约580-660℃",
+      "service_temperature": "约120-200℃",
+      "tensile_strength": "150-500 MPa",
+      "elastic_modulus": "约70 GPa",
+      "thermal_conductivity": "约120-180 W/(m·K)",
+      "electrical_resistivity": "约2.8×10^-8 Ω·m",
+      "cost_level": "中"
     }
   },
   {
@@ -944,8 +1034,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -1016,20 +1125,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/titanium_alloy/macro.jpg",
-          "alt": "钛合金宏观照片",
-          "caption": "钛合金锻件、打印件或植入件外观"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/titanium_alloy/micro.jpg",
-          "alt": "钛合金显微组织照片",
-          "caption": "钛合金 α/β 相组织与晶粒结构"
-        }
-      ]
+      "macro": "assets/materials/titanium_alloy/macro.jpg",
+      "micro": "assets/materials/titanium_alloy/micro.jpg",
+      "structure": ""
+    },
+    "density": "约4.43-4.50 g/cm³",
+    "melting_point": "约1600-1660℃",
+    "service_temperature": "约350-600℃",
+    "tensile_strength": "900-1200 MPa",
+    "elastic_modulus": "约110 GPa",
+    "thermal_conductivity": "约6-8 W/(m·K)",
+    "electrical_resistivity": "约1.7×10^-6 Ω·m",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "约4.43-4.50 g/cm³",
+      "melting_point": "约1600-1660℃",
+      "service_temperature": "约350-600℃",
+      "tensile_strength": "900-1200 MPa",
+      "elastic_modulus": "约110 GPa",
+      "thermal_conductivity": "约6-8 W/(m·K)",
+      "electrical_resistivity": "约1.7×10^-6 Ω·m",
+      "cost_level": "高"
     }
   },
   {
@@ -1099,8 +1215,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -1170,8 +1305,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -1242,8 +1396,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "约8.2-8.9 g/cm³",
+    "melting_point": "约1300-1400℃",
+    "service_temperature": "约700-1100℃",
+    "tensile_strength": "900-1400 MPa",
+    "elastic_modulus": "约200-220 GPa",
+    "thermal_conductivity": "约10-20 W/(m·K)",
+    "electrical_resistivity": "约1.0×10^-6 Ω·m",
+    "cost_level": "很高",
+    "engineering_properties": {
+      "density": "约8.2-8.9 g/cm³",
+      "melting_point": "约1300-1400℃",
+      "service_temperature": "约700-1100℃",
+      "tensile_strength": "900-1400 MPa",
+      "elastic_modulus": "约200-220 GPa",
+      "thermal_conductivity": "约10-20 W/(m·K)",
+      "electrical_resistivity": "约1.0×10^-6 Ω·m",
+      "cost_level": "很高"
     }
   },
   {
@@ -1313,8 +1486,27 @@ window.MATERIALS_DATA = [
       "metal"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -1387,8 +1579,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "约0.91-0.96 g/cm³",
+    "melting_point": "约105-135℃",
+    "service_temperature": "约-50-80℃",
+    "tensile_strength": "10-40 MPa",
+    "elastic_modulus": "约0.2-1.5 GPa",
+    "thermal_conductivity": "约0.3-0.5 W/(m·K)",
+    "electrical_resistivity": "约10^15 Ω·cm",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "约0.91-0.96 g/cm³",
+      "melting_point": "约105-135℃",
+      "service_temperature": "约-50-80℃",
+      "tensile_strength": "10-40 MPa",
+      "elastic_modulus": "约0.2-1.5 GPa",
+      "thermal_conductivity": "约0.3-0.5 W/(m·K)",
+      "electrical_resistivity": "约10^15 Ω·cm",
+      "cost_level": "低"
     }
   },
   {
@@ -1461,8 +1672,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "约0.90 g/cm³",
+    "melting_point": "约160-170℃",
+    "service_temperature": "约0-100℃",
+    "tensile_strength": "25-40 MPa",
+    "elastic_modulus": "约1.2-1.8 GPa",
+    "thermal_conductivity": "约0.1-0.22 W/(m·K)",
+    "electrical_resistivity": "约10^16 Ω·cm",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "约0.90 g/cm³",
+      "melting_point": "约160-170℃",
+      "service_temperature": "约0-100℃",
+      "tensile_strength": "25-40 MPa",
+      "elastic_modulus": "约1.2-1.8 GPa",
+      "thermal_conductivity": "约0.1-0.22 W/(m·K)",
+      "electrical_resistivity": "约10^16 Ω·cm",
+      "cost_level": "低"
     }
   },
   {
@@ -1535,8 +1765,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -1608,8 +1857,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -1682,8 +1950,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -1758,8 +2045,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "约1.12-1.15 g/cm³",
+    "melting_point": "约220-260℃",
+    "service_temperature": "约-40-120℃",
+    "tensile_strength": "50-90 MPa",
+    "elastic_modulus": "约2-3 GPa",
+    "thermal_conductivity": "约0.25 W/(m·K)",
+    "electrical_resistivity": "约10^12-10^14 Ω·cm",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "约1.12-1.15 g/cm³",
+      "melting_point": "约220-260℃",
+      "service_temperature": "约-40-120℃",
+      "tensile_strength": "50-90 MPa",
+      "elastic_modulus": "约2-3 GPa",
+      "thermal_conductivity": "约0.25 W/(m·K)",
+      "electrical_resistivity": "约10^12-10^14 Ω·cm",
+      "cost_level": "中"
     }
   },
   {
@@ -1830,8 +2136,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "约1.20 g/cm³",
+    "melting_point": "无明确熔点，Tg约147℃",
+    "service_temperature": "约-40-120℃",
+    "tensile_strength": "55-75 MPa",
+    "elastic_modulus": "约2.2-2.4 GPa",
+    "thermal_conductivity": "约0.2 W/(m·K)",
+    "electrical_resistivity": "约10^16 Ω·cm",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "约1.20 g/cm³",
+      "melting_point": "无明确熔点，Tg约147℃",
+      "service_temperature": "约-40-120℃",
+      "tensile_strength": "55-75 MPa",
+      "elastic_modulus": "约2.2-2.4 GPa",
+      "thermal_conductivity": "约0.2 W/(m·K)",
+      "electrical_resistivity": "约10^16 Ω·cm",
+      "cost_level": "中"
     }
   },
   {
@@ -1901,8 +2226,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -1973,8 +2317,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -2044,8 +2407,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -2124,20 +2506,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/peek/macro.jpg",
-          "alt": "PEEK棒材、板材或注塑件外观宏观照片",
-          "caption": "PEEK棒材、板材或注塑件外观"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/peek/micro.jpg",
-          "alt": "PEEK半结晶结构和断口形貌微观结构照片",
-          "caption": "PEEK半结晶结构和断口形貌"
-        }
-      ]
+      "macro": "assets/materials/peek/macro.jpg",
+      "micro": "assets/materials/peek/micro.jpg",
+      "structure": ""
+    },
+    "density": "1.30 g/cm³",
+    "melting_point": "343℃",
+    "service_temperature": "约250℃",
+    "tensile_strength": "90-100 MPa",
+    "elastic_modulus": "3.6-4.0 GPa",
+    "thermal_conductivity": "约0.25 W/(m·K)",
+    "electrical_resistivity": "约10^16 Ω·cm",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "1.30 g/cm³",
+      "melting_point": "343℃",
+      "service_temperature": "约250℃",
+      "tensile_strength": "90-100 MPa",
+      "elastic_modulus": "3.6-4.0 GPa",
+      "thermal_conductivity": "约0.25 W/(m·K)",
+      "electrical_resistivity": "约10^16 Ω·cm",
+      "cost_level": "高"
     }
   },
   {
@@ -2208,8 +2597,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "约1.4 g/cm³",
+    "melting_point": "多为不熔或高Tg体系",
+    "service_temperature": "约250-300℃",
+    "tensile_strength": "80-150 MPa",
+    "elastic_modulus": "约2.5-4 GPa",
+    "thermal_conductivity": "约0.1-0.3 W/(m·K)",
+    "electrical_resistivity": "约10^16 Ω·cm",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "约1.4 g/cm³",
+      "melting_point": "多为不熔或高Tg体系",
+      "service_temperature": "约250-300℃",
+      "tensile_strength": "80-150 MPa",
+      "elastic_modulus": "约2.5-4 GPa",
+      "thermal_conductivity": "约0.1-0.3 W/(m·K)",
+      "electrical_resistivity": "约10^16 Ω·cm",
+      "cost_level": "高"
     }
   },
   {
@@ -2279,8 +2687,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "高"
     }
   },
   {
@@ -2351,8 +2778,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "高"
     }
   },
   {
@@ -2422,8 +2868,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "高"
     }
   },
   {
@@ -2494,8 +2959,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -2566,8 +3050,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -2638,8 +3141,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -2710,8 +3232,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -2782,8 +3323,27 @@ window.MATERIALS_DATA = [
       "polymer"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常0.9-1.5 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温至中温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "较高",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常0.9-1.5 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温至中温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "较高",
+      "cost_level": "中"
     }
   },
   {
@@ -2855,20 +3415,27 @@ window.MATERIALS_DATA = [
       "氧化铝"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/alumina_ceramic/macro.jpg",
-          "alt": "氧化铝陶瓷基板、结构件或抛光表面宏观照片",
-          "caption": "氧化铝陶瓷基板、结构件或抛光表面"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/alumina_ceramic/micro.jpg",
-          "alt": "氧化铝陶瓷晶粒、晶界和孔隙结构微观结构照片",
-          "caption": "氧化铝陶瓷晶粒、晶界和孔隙结构"
-        }
-      ]
+      "macro": "assets/materials/alumina_ceramic/macro.jpg",
+      "micro": "assets/materials/alumina_ceramic/micro.jpg",
+      "structure": ""
+    },
+    "density": "约3.7-3.9 g/cm³",
+    "melting_point": "约2050℃",
+    "service_temperature": "约1000-1600℃",
+    "tensile_strength": "抗弯约300-400 MPa",
+    "elastic_modulus": "约300-380 GPa",
+    "thermal_conductivity": "约20-30 W/(m·K)",
+    "electrical_resistivity": "约10^14 Ω·cm",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "约3.7-3.9 g/cm³",
+      "melting_point": "约2050℃",
+      "service_temperature": "约1000-1600℃",
+      "tensile_strength": "抗弯约300-400 MPa",
+      "elastic_modulus": "约300-380 GPa",
+      "thermal_conductivity": "约20-30 W/(m·K)",
+      "electrical_resistivity": "约10^14 Ω·cm",
+      "cost_level": "中"
     }
   },
   {
@@ -2935,8 +3502,27 @@ window.MATERIALS_DATA = [
     "notes": "相变增韧是氧化锆区别于普通陶瓷的重要机制。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "约5.7-6.1 g/cm³",
+    "melting_point": "约2700℃",
+    "service_temperature": "约800-1200℃",
+    "tensile_strength": "抗弯约800-1200 MPa",
+    "elastic_modulus": "约200 GPa",
+    "thermal_conductivity": "约2-3 W/(m·K)",
+    "electrical_resistivity": "较高",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "约5.7-6.1 g/cm³",
+      "melting_point": "约2700℃",
+      "service_temperature": "约800-1200℃",
+      "tensile_strength": "抗弯约800-1200 MPa",
+      "elastic_modulus": "约200 GPa",
+      "thermal_conductivity": "约2-3 W/(m·K)",
+      "electrical_resistivity": "较高",
+      "cost_level": "高"
     }
   },
   {
@@ -3003,8 +3589,27 @@ window.MATERIALS_DATA = [
     "notes": "SiC同时也是重要的宽禁带半导体材料。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "约3.1-3.2 g/cm³",
+    "melting_point": "约2700℃以上升华/分解",
+    "service_temperature": "约1400-1650℃",
+    "tensile_strength": "抗弯约350-550 MPa",
+    "elastic_modulus": "约400 GPa",
+    "thermal_conductivity": "约80-200 W/(m·K)",
+    "electrical_resistivity": "依纯度变化",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "约3.1-3.2 g/cm³",
+      "melting_point": "约2700℃以上升华/分解",
+      "service_temperature": "约1400-1650℃",
+      "tensile_strength": "抗弯约350-550 MPa",
+      "elastic_modulus": "约400 GPa",
+      "thermal_conductivity": "约80-200 W/(m·K)",
+      "electrical_resistivity": "依纯度变化",
+      "cost_level": "高"
     }
   },
   {
@@ -3070,8 +3675,27 @@ window.MATERIALS_DATA = [
     "notes": "氮化硅轴承适合高速、绝缘和低密度场景。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -3137,8 +3761,27 @@ window.MATERIALS_DATA = [
     "notes": "石英玻璃与普通钠钙玻璃在热膨胀和纯度上差异很大。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -3204,8 +3847,27 @@ window.MATERIALS_DATA = [
     "notes": "硼硅玻璃常见于实验室耐热器皿。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -3271,8 +3933,27 @@ window.MATERIALS_DATA = [
     "notes": "钢化前必须完成切割、开孔和磨边。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -3338,8 +4019,27 @@ window.MATERIALS_DATA = [
     "notes": "水灰比和养护条件显著影响强度发展。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -3406,8 +4106,27 @@ window.MATERIALS_DATA = [
     "notes": "钢筋混凝土利用钢材抗拉和混凝土抗压的互补性。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -3474,8 +4193,27 @@ window.MATERIALS_DATA = [
     "notes": "酸性、碱性和中性耐火材料适用炉渣环境不同。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "通常较高",
+    "melting_point": "通常较高",
+    "service_temperature": "中高温",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "通常较高",
+      "melting_point": "通常较高",
+      "service_temperature": "中高温",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "中"
     }
   },
   {
@@ -3548,20 +4286,27 @@ window.MATERIALS_DATA = [
       "碳纤维板"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/carbon_fiber_epoxy/macro.jpg",
-          "alt": "碳纤维/环氧复合材料编织纹理和层合板外观宏观照片",
-          "caption": "碳纤维/环氧复合材料编织纹理和层合板外观"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/carbon_fiber_epoxy/micro.jpg",
-          "alt": "碳纤维束、树脂基体和界面结构微观结构照片",
-          "caption": "碳纤维束、树脂基体和界面结构"
-        }
-      ]
+      "macro": "assets/materials/carbon_fiber_epoxy/macro.jpg",
+      "micro": "assets/materials/carbon_fiber_epoxy/micro.jpg",
+      "structure": ""
+    },
+    "density": "约1.5-1.7 g/cm³",
+    "melting_point": "热固性基体无明确熔点",
+    "service_temperature": "约120-180℃",
+    "tensile_strength": "600-1500 MPa",
+    "elastic_modulus": "70-150 GPa",
+    "thermal_conductivity": "各向异性",
+    "electrical_resistivity": "各向异性",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "约1.5-1.7 g/cm³",
+      "melting_point": "热固性基体无明确熔点",
+      "service_temperature": "约120-180℃",
+      "tensile_strength": "600-1500 MPa",
+      "elastic_modulus": "70-150 GPa",
+      "thermal_conductivity": "各向异性",
+      "electrical_resistivity": "各向异性",
+      "cost_level": "高"
     }
   },
   {
@@ -3633,8 +4378,27 @@ window.MATERIALS_DATA = [
       "玻纤复合材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "依增强体和基体而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "各向异性",
+    "elastic_modulus": "各向异性",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "依增强体和基体而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "各向异性",
+      "elastic_modulus": "各向异性",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "高"
     }
   },
   {
@@ -3701,8 +4465,27 @@ window.MATERIALS_DATA = [
     "notes": "Kevlar是芳纶纤维的典型代表。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "依增强体和基体而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "各向异性",
+    "elastic_modulus": "各向异性",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "依增强体和基体而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "各向异性",
+      "elastic_modulus": "各向异性",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "高"
     }
   },
   {
@@ -3769,8 +4552,27 @@ window.MATERIALS_DATA = [
     "notes": "颗粒体积分数会显著影响加工性和韧性。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "依增强体和基体而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "各向异性",
+    "elastic_modulus": "各向异性",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "依增强体和基体而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "各向异性",
+      "elastic_modulus": "各向异性",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "高"
     }
   },
   {
@@ -3837,8 +4639,27 @@ window.MATERIALS_DATA = [
     "notes": "界面设计是陶瓷基复合材料获得韧性的关键。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "依增强体和基体而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "各向异性",
+    "elastic_modulus": "各向异性",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "依增强体和基体而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "各向异性",
+      "elastic_modulus": "各向异性",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "高"
     }
   },
   {
@@ -3905,8 +4726,27 @@ window.MATERIALS_DATA = [
     "notes": "抗氧化涂层决定其在空气高温中的服役能力。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "依增强体和基体而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "各向异性",
+    "elastic_modulus": "各向异性",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "依增强体和基体而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "各向异性",
+      "elastic_modulus": "各向异性",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "高"
     }
   },
   {
@@ -3973,8 +4813,27 @@ window.MATERIALS_DATA = [
     "notes": "蜂窝芯可使用铝、芳纶纸或热塑性材料。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "依增强体和基体而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "各向异性",
+    "elastic_modulus": "各向异性",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "高",
+    "engineering_properties": {
+      "density": "依增强体和基体而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "各向异性",
+      "elastic_modulus": "各向异性",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "高"
     }
   },
   {
@@ -4041,8 +4900,27 @@ window.MATERIALS_DATA = [
     "notes": "硅工艺平台是理解现代电子工业的核心。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "2.33 g/cm³",
+    "melting_point": "1414℃",
+    "service_temperature": "半导体器件依封装和工况而定",
+    "tensile_strength": "脆性材料，抗弯约100-200 MPa",
+    "elastic_modulus": "约130-185 GPa",
+    "thermal_conductivity": "约150 W/(m·K)",
+    "electrical_resistivity": "依掺杂约10^-3-10^5 Ω·cm",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "2.33 g/cm³",
+      "melting_point": "1414℃",
+      "service_temperature": "半导体器件依封装和工况而定",
+      "tensile_strength": "脆性材料，抗弯约100-200 MPa",
+      "elastic_modulus": "约130-185 GPa",
+      "thermal_conductivity": "约150 W/(m·K)",
+      "electrical_resistivity": "依掺杂约10^-3-10^5 Ω·cm",
+      "cost_level": "中"
     }
   },
   {
@@ -4109,8 +4987,27 @@ window.MATERIALS_DATA = [
     "notes": "GaAs常用于高频通信和空间太阳能电池。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4178,8 +5075,27 @@ window.MATERIALS_DATA = [
     "notes": "GaN器件在高频高效率电源中增长很快。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4246,8 +5162,27 @@ window.MATERIALS_DATA = [
     "notes": "SiC功率器件能提升逆变器和充电系统效率。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4314,8 +5249,27 @@ window.MATERIALS_DATA = [
     "notes": "软磁铁氧体和永磁铁氧体用途不同。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4382,8 +5336,27 @@ window.MATERIALS_DATA = [
     "notes": "重稀土扩散可提高高温矫顽力。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4450,8 +5423,27 @@ window.MATERIALS_DATA = [
     "notes": "柔性电子推动ITO替代材料研究。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4518,8 +5510,27 @@ window.MATERIALS_DATA = [
     "notes": "OLED器件性能来自多层材料协同。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4586,8 +5597,27 @@ window.MATERIALS_DATA = [
     "notes": "NiTi形状记忆合金在支架和正畸丝中应用成熟。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4654,8 +5684,27 @@ window.MATERIALS_DATA = [
     "notes": "无铅压电陶瓷是重要研究方向。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4723,8 +5772,27 @@ window.MATERIALS_DATA = [
     "notes": "LFP凭借安全和成本优势在储能场景占比高。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "约3.6 g/cm³",
+    "melting_point": "暂无数据",
+    "service_temperature": "电池体系约-20-60℃",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "约1-5 W/(m·K)",
+    "electrical_resistivity": "较高，需导电剂改性",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "约3.6 g/cm³",
+      "melting_point": "暂无数据",
+      "service_temperature": "电池体系约-20-60℃",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "约1-5 W/(m·K)",
+      "electrical_resistivity": "较高，需导电剂改性",
+      "cost_level": "中"
     }
   },
   {
@@ -4791,8 +5859,27 @@ window.MATERIALS_DATA = [
     "notes": "高镍三元提高容量但对热稳定和界面控制要求更高。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4860,8 +5947,27 @@ window.MATERIALS_DATA = [
     "notes": "SEI膜稳定性对石墨负极寿命很关键。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4928,8 +6034,27 @@ window.MATERIALS_DATA = [
     "notes": "粘结剂和电解液添加剂对硅碳负极循环很重要。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -4996,8 +6121,27 @@ window.MATERIALS_DATA = [
     "notes": "添加剂通过形成稳定SEI/CEI提升循环寿命。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5064,8 +6208,27 @@ window.MATERIALS_DATA = [
     "notes": "陶瓷涂覆可提升隔膜热稳定性和润湿性。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5132,8 +6295,27 @@ window.MATERIALS_DATA = [
     "notes": "钙钛矿/晶硅叠层电池是重要产业化方向。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "依配方而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "光伏器件通常需低温稳定封装",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "较低",
+    "electrical_resistivity": "半导体，依组成而定",
+    "cost_level": "中",
+    "engineering_properties": {
+      "density": "依配方而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "光伏器件通常需低温稳定封装",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "较低",
+      "electrical_resistivity": "半导体，依组成而定",
+      "cost_level": "中"
     }
   },
   {
@@ -5201,8 +6383,27 @@ window.MATERIALS_DATA = [
     "notes": "PERC、TOPCon和HJT是常见晶硅电池技术路线。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5269,8 +6470,27 @@ window.MATERIALS_DATA = [
     "notes": "电解液离子尺寸与孔径匹配影响电容性能。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5337,8 +6557,27 @@ window.MATERIALS_DATA = [
     "notes": "多孔钛结构有利于骨长入和弹性模量匹配。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5405,8 +6644,27 @@ window.MATERIALS_DATA = [
     "notes": "钴铬钼合金在金属关节摩擦副中较常见。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5473,8 +6731,27 @@ window.MATERIALS_DATA = [
     "notes": "PEEK表面惰性较强，常需涂层或多孔化改善骨结合。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5541,8 +6818,27 @@ window.MATERIALS_DATA = [
     "notes": "PLA在体内降解产物为乳酸，但力学保持时间有限。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5609,8 +6905,27 @@ window.MATERIALS_DATA = [
     "notes": "HA常作为金属植入物表面涂层改善骨结合。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5677,8 +6992,27 @@ window.MATERIALS_DATA = [
     "notes": "45S5生物玻璃是经典组成。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5745,8 +7079,27 @@ window.MATERIALS_DATA = [
     "notes": "表面涂层和合金设计是控制降解速率的核心。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5817,20 +7170,27 @@ window.MATERIALS_DATA = [
       "二维碳材料"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/graphene/macro.jpg",
-          "alt": "石墨烯粉体、薄膜或分散液外观宏观照片",
-          "caption": "石墨烯粉体、薄膜或分散液外观"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/graphene/micro.jpg",
-          "alt": "石墨烯片层、褶皱和堆叠结构微观结构照片",
-          "caption": "石墨烯片层、褶皱和堆叠结构"
-        }
-      ]
+      "macro": "assets/materials/graphene/macro.jpg",
+      "micro": "assets/materials/graphene/micro.jpg",
+      "structure": ""
+    },
+    "density": "单层材料，表观密度随形态变化",
+    "melting_point": "理论热稳定性极高",
+    "service_temperature": "依基体和环境而定",
+    "tensile_strength": "理论约130 GPa",
+    "elastic_modulus": "理论约1 TPa",
+    "thermal_conductivity": "理论约3000-5000 W/(m·K)",
+    "electrical_resistivity": "极低，取决于缺陷与形态",
+    "cost_level": "很高",
+    "engineering_properties": {
+      "density": "单层材料，表观密度随形态变化",
+      "melting_point": "理论热稳定性极高",
+      "service_temperature": "依基体和环境而定",
+      "tensile_strength": "理论约130 GPa",
+      "elastic_modulus": "理论约1 TPa",
+      "thermal_conductivity": "理论约3000-5000 W/(m·K)",
+      "electrical_resistivity": "极低，取决于缺陷与形态",
+      "cost_level": "很高"
     }
   },
   {
@@ -5897,8 +7257,27 @@ window.MATERIALS_DATA = [
     "notes": "表面功能化可改善CNT与聚合物基体界面结合。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -5965,8 +7344,27 @@ window.MATERIALS_DATA = [
     "notes": "粒径、形貌和表面配体决定纳米银性能。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -6033,8 +7431,27 @@ window.MATERIALS_DATA = [
     "notes": "晶型和粒径决定其光催化与屏蔽能力。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -6101,8 +7518,27 @@ window.MATERIALS_DATA = [
     "notes": "纳米填料分散状态往往比添加量更关键。",
     "aliases": [],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
+    },
+    "density": "暂无数据",
+    "melting_point": "暂无数据",
+    "service_temperature": "暂无数据",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "暂无数据",
+    "engineering_properties": {
+      "density": "暂无数据",
+      "melting_point": "暂无数据",
+      "service_temperature": "暂无数据",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "暂无数据"
     }
   },
   {
@@ -6120,20 +7556,9 @@ window.MATERIALS_DATA = [
       "天然材料"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/wood/macro.jpg",
-          "alt": "木材的宏观纹理与年轮结构宏观照片",
-          "caption": "木材的宏观纹理与年轮结构"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/wood/micro.jpg",
-          "alt": "木材细胞壁、导管和纤维组织的显微结构微观结构照片",
-          "caption": "木材细胞壁、导管和纤维组织的显微结构"
-        }
-      ]
+      "macro": "assets/materials/wood/macro.jpg",
+      "micro": "assets/materials/wood/micro.jpg",
+      "structure": ""
     },
     "id": "wood",
     "name_cn": "木材",
@@ -6209,7 +7634,25 @@ window.MATERIALS_DATA = [
       "可再生"
     ],
     "difficulty_level": "基础",
-    "notes": "搜索“木头”“wood”“timber”“原木”“板材”都会匹配到木材。"
+    "notes": "搜索“木头”“wood”“timber”“原木”“板材”都会匹配到木材。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -6221,20 +7664,9 @@ window.MATERIALS_DATA = [
       "天然材料"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/bamboo/macro.jpg",
-          "alt": "竹材的表面纹理和竹节形态宏观照片",
-          "caption": "竹材的表面纹理和竹节形态"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/bamboo/micro.jpg",
-          "alt": "竹材维管束和薄壁组织的显微结构微观结构照片",
-          "caption": "竹材维管束和薄壁组织的显微结构"
-        }
-      ]
+      "macro": "assets/materials/bamboo/macro.jpg",
+      "micro": "assets/materials/bamboo/micro.jpg",
+      "structure": ""
     },
     "id": "bamboo",
     "name_cn": "竹材",
@@ -6304,7 +7736,25 @@ window.MATERIALS_DATA = [
       "可再生"
     ],
     "difficulty_level": "基础",
-    "notes": "工程竹材常通过胶合和热压形成稳定板材。"
+    "notes": "工程竹材常通过胶合和热压形成稳定板材。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -6316,20 +7766,9 @@ window.MATERIALS_DATA = [
       "天然材料"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/paper/macro.jpg",
-          "alt": "纸张表面纤维交织形态宏观照片",
-          "caption": "纸张表面纤维交织形态"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/paper/micro.jpg",
-          "alt": "纸纤维网络和孔隙结构的显微图微观结构照片",
-          "caption": "纸纤维网络和孔隙结构的显微图"
-        }
-      ]
+      "macro": "assets/materials/paper/macro.jpg",
+      "micro": "assets/materials/paper/micro.jpg",
+      "structure": ""
     },
     "id": "paper",
     "name_cn": "纸张",
@@ -6398,7 +7837,25 @@ window.MATERIALS_DATA = [
       "日用品"
     ],
     "difficulty_level": "基础",
-    "notes": "纸张性能可通过纤维种类、施胶和涂布明显改变。"
+    "notes": "纸张性能可通过纤维种类、施胶和涂布明显改变。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -6411,8 +7868,9 @@ window.MATERIALS_DATA = [
       "天然材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "cotton_fiber",
     "name_cn": "棉纤维",
@@ -6479,7 +7937,25 @@ window.MATERIALS_DATA = [
       "吸湿"
     ],
     "difficulty_level": "基础",
-    "notes": "棉纤维常与涤纶混纺以改善抗皱和耐磨。"
+    "notes": "棉纤维常与涤纶混纺以改善抗皱和耐磨。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -6493,8 +7969,9 @@ window.MATERIALS_DATA = [
       "天然材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "hemp_fiber",
     "name_cn": "麻纤维",
@@ -6561,7 +8038,25 @@ window.MATERIALS_DATA = [
       "日用品"
     ],
     "difficulty_level": "基础",
-    "notes": "麻纤维需要脱胶和柔软整理来改善手感。"
+    "notes": "麻纤维需要脱胶和柔软整理来改善手感。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -6573,8 +8068,9 @@ window.MATERIALS_DATA = [
       "天然材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "wool",
     "name_cn": "羊毛",
@@ -6641,7 +8137,25 @@ window.MATERIALS_DATA = [
       "日用品"
     ],
     "difficulty_level": "基础",
-    "notes": "防缩整理可减少羊毛毡缩。"
+    "notes": "防缩整理可减少羊毛毡缩。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -6652,8 +8166,9 @@ window.MATERIALS_DATA = [
       "天然材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "leather",
     "name_cn": "皮革",
@@ -6720,7 +8235,25 @@ window.MATERIALS_DATA = [
       "装饰"
     ],
     "difficulty_level": "基础",
-    "notes": "合成革属于高分子涂层或复合材料体系，不等同于天然皮革。"
+    "notes": "合成革属于高分子涂层或复合材料体系，不等同于天然皮革。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -6734,20 +8267,9 @@ window.MATERIALS_DATA = [
       "天然材料"
     ],
     "images": {
-      "macro": [
-        {
-          "src": "assets/materials/natural_stone/macro.jpg",
-          "alt": "天然石材的纹理、色带和抛光表面宏观照片",
-          "caption": "天然石材的纹理、色带和抛光表面"
-        }
-      ],
-      "micro": [
-        {
-          "src": "assets/materials/natural_stone/micro.jpg",
-          "alt": "石材矿物颗粒、晶界和孔隙结构微观结构照片",
-          "caption": "石材矿物颗粒、晶界和孔隙结构"
-        }
-      ]
+      "macro": "assets/materials/natural_stone/macro.jpg",
+      "micro": "assets/materials/natural_stone/micro.jpg",
+      "structure": ""
     },
     "id": "natural_stone",
     "name_cn": "天然石材",
@@ -6814,7 +8336,25 @@ window.MATERIALS_DATA = [
       "装饰"
     ],
     "difficulty_level": "基础",
-    "notes": "石材选用需区分花岗岩、大理石、砂岩等岩性。"
+    "notes": "石材选用需区分花岗岩、大理石、砂岩等岩性。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -6826,8 +8366,9 @@ window.MATERIALS_DATA = [
       "天然材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "clay",
     "name_cn": "陶土",
@@ -6894,7 +8435,25 @@ window.MATERIALS_DATA = [
       "建筑"
     ],
     "difficulty_level": "基础",
-    "notes": "陶土是理解传统陶瓷和砖瓦材料的入口。"
+    "notes": "陶土是理解传统陶瓷和砖瓦材料的入口。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -6905,8 +8464,9 @@ window.MATERIALS_DATA = [
       "建筑材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "plywood",
     "name_cn": "胶合板",
@@ -6973,7 +8533,25 @@ window.MATERIALS_DATA = [
       "板材"
     ],
     "difficulty_level": "基础",
-    "notes": "胶合板常按用途分为结构板、家具板和装饰板。"
+    "notes": "胶合板常按用途分为结构板、家具板和装饰板。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "MDF",
@@ -6985,8 +8563,9 @@ window.MATERIALS_DATA = [
       "建筑材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "mdf",
     "name_cn": "中密度纤维板",
@@ -7054,7 +8633,25 @@ window.MATERIALS_DATA = [
       "MDF"
     ],
     "difficulty_level": "基础",
-    "notes": "MDF适合表面造型和贴面，不适合长期潮湿环境。"
+    "notes": "MDF适合表面造型和贴面，不适合长期潮湿环境。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -7065,8 +8662,9 @@ window.MATERIALS_DATA = [
       "建筑材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "brick",
     "name_cn": "砖",
@@ -7131,7 +8729,25 @@ window.MATERIALS_DATA = [
       "传统材料"
     ],
     "difficulty_level": "基础",
-    "notes": "现代建筑中砖常与保温、结构和装饰体系配合使用。"
+    "notes": "现代建筑中砖常与保温、结构和装饰体系配合使用。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -7142,8 +8758,9 @@ window.MATERIALS_DATA = [
       "建筑材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "gypsum_board",
     "name_cn": "石膏板",
@@ -7209,7 +8826,25 @@ window.MATERIALS_DATA = [
       "板材"
     ],
     "difficulty_level": "基础",
-    "notes": "厨卫等潮湿区域应选择耐水石膏板或其他防潮板材。"
+    "notes": "厨卫等潮湿区域应选择耐水石膏板或其他防潮板材。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -7220,8 +8855,9 @@ window.MATERIALS_DATA = [
       "建筑材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "asphalt",
     "name_cn": "沥青",
@@ -7285,7 +8921,25 @@ window.MATERIALS_DATA = [
       "有机材料"
     ],
     "difficulty_level": "基础",
-    "notes": "SBS改性沥青可改善弹性和低温性能。"
+    "notes": "SBS改性沥青可改善弹性和低温性能。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -7296,8 +8950,9 @@ window.MATERIALS_DATA = [
       "建筑材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "waterproof_membrane",
     "name_cn": "防水卷材",
@@ -7359,7 +9014,25 @@ window.MATERIALS_DATA = [
       "装饰辅材"
     ],
     "difficulty_level": "基础",
-    "notes": "防水卷材性能不仅取决于材料，也取决于节点和搭接施工质量。"
+    "notes": "防水卷材性能不仅取决于材料，也取决于节点和搭接施工质量。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "",
@@ -7371,8 +9044,9 @@ window.MATERIALS_DATA = [
       "建筑材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "coating_paint",
     "name_cn": "涂料",
@@ -7438,7 +9112,25 @@ window.MATERIALS_DATA = [
       "涂层"
     ],
     "difficulty_level": "基础",
-    "notes": "水性涂料正在逐步替代高VOC溶剂型体系。"
+    "notes": "水性涂料正在逐步替代高VOC溶剂型体系。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "PET Fiber",
@@ -7450,8 +9142,9 @@ window.MATERIALS_DATA = [
       "纺织材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "polyester_fiber",
     "name_cn": "涤纶",
@@ -7520,7 +9213,25 @@ window.MATERIALS_DATA = [
       "合成纤维"
     ],
     "difficulty_level": "基础",
-    "notes": "涤棉混纺兼顾棉的舒适和涤纶的抗皱耐磨。"
+    "notes": "涤棉混纺兼顾棉的舒适和涤纶的抗皱耐磨。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   },
   {
     "abbreviation": "PA Fiber",
@@ -7532,8 +9243,9 @@ window.MATERIALS_DATA = [
       "纺织材料"
     ],
     "images": {
-      "macro": [],
-      "micro": []
+      "macro": "",
+      "micro": "",
+      "structure": ""
     },
     "id": "nylon_fiber",
     "name_cn": "尼龙纤维",
@@ -7598,6 +9310,24 @@ window.MATERIALS_DATA = [
       "耐磨"
     ],
     "difficulty_level": "基础",
-    "notes": "尼龙纤维和工程塑料PA同属聚酰胺体系，但形态和应用不同。"
+    "notes": "尼龙纤维和工程塑料PA同属聚酰胺体系，但形态和应用不同。",
+    "density": "依来源和孔隙率而定",
+    "melting_point": "暂无数据",
+    "service_temperature": "常温使用",
+    "tensile_strength": "暂无数据",
+    "elastic_modulus": "暂无数据",
+    "thermal_conductivity": "暂无数据",
+    "electrical_resistivity": "暂无数据",
+    "cost_level": "低",
+    "engineering_properties": {
+      "density": "依来源和孔隙率而定",
+      "melting_point": "暂无数据",
+      "service_temperature": "常温使用",
+      "tensile_strength": "暂无数据",
+      "elastic_modulus": "暂无数据",
+      "thermal_conductivity": "暂无数据",
+      "electrical_resistivity": "暂无数据",
+      "cost_level": "低"
+    }
   }
 ];

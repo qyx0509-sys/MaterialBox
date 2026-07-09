@@ -18,7 +18,7 @@
           <a href="#explore">检索筛选</a>
           <a href="#recommended">推荐材料</a>
           <button id="nav-favorites" class="nav-action" type="button">我的收藏 <span id="favorite-count">0</span></button>
-          <button id="nav-compare" class="nav-action" type="button">材料对比 <span id="compare-count">0</span></button>
+          <button id="nav-compare" class="nav-action" type="button">材料对比 <span class="compare-count-label">已选对比：<span id="compare-count">0</span> / 3</span></button>
         </div>
       </nav>
 
@@ -40,6 +40,7 @@
           </div>
           <div id="search-suggestions" class="search-suggestions hidden"></div>
           <div id="quick-tags" class="quick-tags" aria-label="快捷搜索标签"></div>
+          <div id="hot-searches" class="hot-searches" aria-label="热门搜索"></div>
         </div>
         <aside class="hero-panel" aria-label="材料库状态面板">
           <div class="status-card">
@@ -54,7 +55,7 @@
             </button>
             <button id="hero-compare" class="mini-metrics accent" type="button">
               <span>对比篮</span>
-              <strong><span id="hero-compare-count">0</span> / 4</strong>
+              <strong><span id="hero-compare-count">0</span> / 3</strong>
             </button>
           </div>
         </aside>
@@ -100,7 +101,7 @@
         <div id="active-filters" class="active-filters"></div>
 
         <div class="explorer-layout">
-          <aside class="filters-panel" aria-label="材料筛选">
+          <aside id="filters-panel" class="filters-panel collapsed" aria-label="材料筛选">
             <div class="filter-block">
               <label for="category-filter">一级分类</label>
               <select id="category-filter"></select>
@@ -117,15 +118,35 @@
               <label for="application-filter">应用场景</label>
               <select id="application-filter"></select>
             </div>
-            <div class="filter-block">
+            <div class="filter-block processing-block">
               <label for="processing-filter">加工方法</label>
               <select id="processing-filter"></select>
+            </div>
+            <div class="filter-extra" id="filter-extra">
+              <div class="filter-block">
+                <label for="cost-filter">成本等级</label>
+                <select id="cost-filter"></select>
+              </div>
+              <div class="filter-block">
+                <label for="temperature-filter">使用温度</label>
+                <select id="temperature-filter"></select>
+              </div>
+            </div>
+            <div class="filter-toggle-row">
+              <button id="filter-toggle" class="ghost-button filter-toggle" type="button" aria-expanded="false" aria-controls="filter-extra">展开更多筛选条件 ↓</button>
             </div>
           </aside>
 
           <div class="results-area">
-            <div id="material-list" class="material-grid"></div>
+            <div class="results-toolbar">
+              <span id="results-display-summary"></span>
+            </div>
+            <div id="material-list" class="material-grid results-grid"></div>
             <div id="empty-state" class="empty-state hidden"></div>
+            <div id="results-toggle-row" class="results-toggle-row hidden">
+              <span id="results-toggle-summary"></span>
+              <button id="results-toggle" class="ghost-button results-toggle" type="button">展开更多材料 ↓</button>
+            </div>
           </div>
         </div>
       </section>
@@ -166,7 +187,7 @@
           <article><strong>查材料</strong><span>通过中文名、英文名、缩写、同义词和分类路径快速定位材料。</span></article>
           <article><strong>看用途</strong><span>从航空航天、储能、医疗、建筑、纺织、电子等场景反查材料。</span></article>
           <article><strong>按性能筛选</strong><span>围绕耐高温、轻量化、导电、绝缘、耐磨等标签建立认知。</span></article>
-          <article><strong>材料对比</strong><span>把最多 4 个材料加入对比篮，横向比较性能、加工和用途。</span></article>
+          <article><strong>材料对比</strong><span>把最多 3 个材料加入对比篮，横向比较性能、加工和用途。</span></article>
           <article><strong>学习资料库</strong><span>统一字段便于持续添加材料、图片、案例、实验数据和课程笔记。</span></article>
         </div>
       </section>
@@ -202,6 +223,10 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
+
 
 
 
