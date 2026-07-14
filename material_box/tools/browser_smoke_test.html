@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MaterialBox browser smoke test</title>
+    <style>
+      body { font-family: sans-serif; margin: 16px; }
+      iframe { border: 1px solid #ccc; display: block; height: 900px; width: 1400px; }
+      pre { white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <h1>MaterialBox browser smoke test</h1>
+    <pre id="smoke-results">RUNNING</pre>
+    <iframe id="site" src="../index.html"></iframe>
+    <script>
+      const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+      const results = [];
+      function check(name, condition, detail = "") {
+        results.push({ name, ok: Boolean(condition), detail });
+      }
+      async function run() {
+        const frame = document.querySelector("#site");
+        await new Promise((resolve) => frame.addEventListener("load", resolve, { once: true }));
+        const win = frame.contentWindow;
+        const doc = frame.contentDocument;
+        for (let i = 0; i < 40 && !doc.querySelector("#material-list .material-card"); i += 1) await wait(200);
+        const total = Number(doc.querySelector("#result-summary")?.textContent.match(/匹配\s+(\d+)/)?.[1] || 0);
+
+        const validDataSource = win.location.protocol === "file:"
+          ? ["json", "javascript-mirror"].includes(win.MATERIALBOX_DATA_SOURCE)
+          : win.MATERIALBOX_DATA_SOURCE === "json";
+        check("data-source", validDataSource, `${win.location.protocol} ${win.MATERIALBOX_DATA_SOURCE}`);
+        check("data-total", total >= 250 && doc.querySelector("#result-summary")?.textContent.includes(`${total} / ${total}`), doc.querySelector("#result-summary")?.textContent);
+        check("nine-categories", doc.querySelectorAll("#category-grid .category-card").length === 9);
+        check("desktop-three-rows", doc.querySelectorAll("#material-list .material-card").length === 9, String(doc.querySelectorAll("#material-list .material-card").length));
+
+        doc.querySelector("#category-grid .category-card")?.click();
+        await wait(100);
+        check("taxonomy-open", !doc.querySelector("#taxonomy-browser")?.classList.contains("hidden"));
+        check("taxonomy-has-nodes", doc.querySelectorAll("#taxonomy-tree .taxonomy-node").length > 3);
+
+        const search = doc.querySelector("#search-input");
+        search.value = "45钢";
+        search.dispatchEvent(new Event("input", { bubbles: true }));
+        await wait(350);
+        const resultNames = [...doc.querySelectorAll("#material-list h3")].map((item) => item.textContent);
+        check("search-grade", resultNames.some((name) => name.includes("45钢")), resultNames.join(", "));
+        doc.querySelector("#material-list [data-action='detail']")?.click();
+        await wait(120);
+        check("detail-open", !doc.querySelector("#material-detail")?.classList.contains("hidden"));
+        check("detail-full-path", doc.querySelector("#material-detail .breadcrumb")?.textContent.includes("中碳钢"));
+        doc.querySelector("#material-detail [data-image-tab='micro']")?.click();
+        check("image-tab", doc.querySelector("#material-detail [data-image-panel='micro']")?.classList.contains("active"));
+        doc.querySelector("#detail-favorite")?.click();
+        check("favorite", doc.querySelector("#favorite-count")?.textContent === "1");
+        doc.querySelector("#detail-close")?.click();
+
+        search.value = "淬火钢";
+        search.dispatchEvent(new Event("input", { bubbles: true }));
+        await wait(350);
+        check("quench-intent", !doc.querySelector("#search-context-note")?.classList.contains("hidden"), doc.querySelector("#search-context-note")?.textContent);
+
+        doc.querySelector("#clear-filters")?.click();
+        await wait(100);
+        check("collapsed-after-clear", doc.querySelectorAll("#material-list .material-card").length === 9);
+        doc.querySelector("#results-toggle")?.click();
+        await wait(300);
+        check("expand-all", doc.querySelectorAll("#material-list .material-card").length === total, String(doc.querySelectorAll("#material-list .material-card").length));
+        doc.querySelector("#results-toggle")?.click();
+        await wait(150);
+        check("collapse-again", doc.querySelectorAll("#material-list .material-card").length === 9);
+
+        [...doc.querySelectorAll("#material-list [data-action='compare']")].slice(0, 3).forEach((button) => button.click());
+        doc.querySelector("#nav-compare")?.click();
+        await wait(100);
+        check("compare-three", doc.querySelectorAll("#compare-content .compare-material-head").length === 3);
+        check("compare-modes", doc.querySelectorAll("#compare-content [data-compare-mode]").length === 2);
+        doc.querySelector("#compare-content [data-compare-mode='common']")?.click();
+        check("compare-common", doc.querySelector("#compare-content [data-compare-mode='common']")?.classList.contains("active"));
+        doc.querySelector("[data-close-compare]")?.click();
+
+        doc.querySelector("#filter-toggle")?.scrollIntoView({ block: "center" });
+        await wait(120);
+        doc.querySelector("#filter-toggle")?.click();
+        const costCombo = doc.querySelector("#cost-filter")?._filterCombobox;
+        doc.documentElement.style.scrollBehavior = "auto";
+        if (costCombo) win.scrollTo(0, win.scrollY + costCombo.input.getBoundingClientRect().top - 240);
+        await wait(120);
+        costCombo?.input.dispatchEvent(new FocusEvent("focus"));
+        await wait(80);
+        const costRect = costCombo?.input.getBoundingClientRect();
+        check("filter-portal", costCombo?.options.classList.contains("open") && costCombo.options.querySelectorAll(".filter-option").length > 3, `panel=${doc.querySelector("#filters-panel")?.className}; root=${costCombo?.root.className}; options=${costCombo?.options.className}; count=${costCombo?.options.querySelectorAll(".filter-option").length}; rect=${costRect?.top}/${costRect?.bottom}; viewport=${win.innerHeight}`);
+
+        frame.style.width = "390px";
+        win.dispatchEvent(new Event("resize"));
+        await wait(350);
+        check("mobile-three-rows", doc.querySelectorAll("#material-list .material-card").length === 3, String(doc.querySelectorAll("#material-list .material-card").length));
+        check("mobile-no-overflow", doc.documentElement.scrollWidth <= doc.documentElement.clientWidth + 2, `${doc.documentElement.scrollWidth}/${doc.documentElement.clientWidth}`);
+
+        const failed = results.filter((item) => !item.ok);
+        document.querySelector("#smoke-results").textContent = `${failed.length ? "FAIL" : "PASS"}\n${results.map((item) => `${item.ok ? "PASS" : "FAIL"} ${item.name}${item.detail ? `: ${item.detail}` : ""}`).join("\n")}`;
+        document.body.dataset.smokeStatus = failed.length ? "fail" : "pass";
+      }
+      run().catch((error) => {
+        document.querySelector("#smoke-results").textContent = `ERROR\n${error.stack || error}`;
+        document.body.dataset.smokeStatus = "error";
+      });
+    </script>
+  </body>
+</html>

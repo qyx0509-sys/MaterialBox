@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
     <title>材料盒 MaterialBox</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -71,16 +72,26 @@
         <div class="section-heading">
           <p class="eyebrow">Classification</p>
           <h2>材料分类入口</h2>
-          <p>按照一级分类、二级分类和典型材料建立材料学知识框架。</p>
+          <p>按九类基础材料建立可变深度分类树，并区分家族、子体系、具体材料、牌号与产品形态。</p>
         </div>
         <div id="category-grid" class="category-grid"></div>
+        <section id="taxonomy-browser" class="taxonomy-browser hidden" aria-label="材料分类树">
+          <div class="taxonomy-browser-head">
+            <div>
+              <span class="taxonomy-caption">当前分类路径</span>
+              <strong id="taxonomy-current-path">全部材料</strong>
+            </div>
+            <button id="taxonomy-close" class="ghost-button" type="button">收起分类树</button>
+          </div>
+          <div id="taxonomy-tree" class="taxonomy-tree" role="tree" aria-label="基础材料分类树"></div>
+        </section>
       </section>
 
       <section class="section applications-section">
         <div class="section-heading">
           <p class="eyebrow">Applications</p>
-          <h2>热门用途入口</h2>
-          <p>从工程场景反查材料，适合课程学习、项目选材和资料检索。</p>
+          <h2>应用专题</h2>
+          <p>专题通过材料 ID 关联跨分类条目，同一材料可以同时属于多个工程场景。</p>
         </div>
         <div id="application-grid" class="application-grid"></div>
       </section>
@@ -124,12 +135,36 @@
             </div>
             <div class="filter-extra" id="filter-extra">
               <div class="filter-block">
+                <label for="family-filter">材料家族</label>
+                <select id="family-filter"></select>
+              </div>
+              <div class="filter-block">
+                <label for="entity-filter">实体类型</label>
+                <select id="entity-filter"></select>
+              </div>
+              <div class="filter-block">
+                <label for="collection-filter">应用专题</label>
+                <select id="collection-filter"></select>
+              </div>
+              <div class="filter-block">
+                <label for="form-filter">产品形态</label>
+                <select id="form-filter"></select>
+              </div>
+              <div class="filter-block">
+                <label for="state-filter">热处理/材料状态</label>
+                <select id="state-filter"></select>
+              </div>
+              <div class="filter-block">
                 <label for="cost-filter">成本等级</label>
                 <select id="cost-filter"></select>
               </div>
               <div class="filter-block">
                 <label for="temperature-filter">使用温度</label>
                 <select id="temperature-filter"></select>
+              </div>
+              <div class="filter-block">
+                <label for="quality-filter">数据完整度</label>
+                <select id="quality-filter"></select>
               </div>
             </div>
             <div class="filter-toggle-row">
@@ -141,6 +176,7 @@
             <div class="results-toolbar">
               <span id="results-display-summary"></span>
             </div>
+            <div id="search-context-note" class="search-context-note hidden"></div>
             <div id="material-list" class="material-grid results-grid"></div>
             <div id="empty-state" class="empty-state hidden"></div>
             <div id="results-toggle-row" class="results-toggle-row hidden">
@@ -216,10 +252,14 @@
 
     <footer class="site-footer">
       <p>MaterialBox 是一个前端静态材料知识库示例，可继续扩展为课程资料库、工程选材工具或材料百科站点。</p>
+      <a class="footer-attribution-link" href="attribution.html">图片来源与授权</a>
     </footer>
 
     <script src="materials.js"></script>
+    <script src="collections.js"></script>
+    <script src="taxonomy.js"></script>
     <script src="material-images.js"></script>
+    <script src="material-images.generated.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

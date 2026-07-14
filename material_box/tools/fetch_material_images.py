@@ -68,10 +68,13 @@ def download_file(url: str, target: Path, retries: int = 3, delay: float = 1.0) 
     return False
 
 
-def material_keywords(material: dict[str, Any]) -> list[str]:
+def material_keywords(material: dict[str, Any], by_id: dict[str, dict[str, Any]]) -> list[str]:
     base = material.get("name_en") or material.get("name_cn") or material["id"]
     abbr = material.get("abbreviation") or ""
-    category = material.get("category_2") or material.get("category_1") or ""
+    path = material.get("taxonomy_path") or []
+    category = " ".join(path[-3:]) or material.get("category_2") or material.get("category_1") or ""
+    parent = by_id.get(material.get("parent_id", ""), {})
+    parent_name = parent.get("name_en") or parent.get("name_cn") or ""
     raw = [
         f"{base} material sample",
         f"{base} material texture",
@@ -79,6 +82,8 @@ def material_keywords(material: dict[str, Any]) -> list[str]:
         f"{base} pellets",
         f"{base} ceramic",
         f"{base} {category}",
+        f"{base} {parent_name} material",
+        f"{material.get('name_cn', '')} {parent.get('name_cn', '')} 材料",
     ]
     if abbr:
         raw.extend([f"{abbr} material", f"{abbr} sample"])
@@ -146,7 +151,7 @@ def load_existing_metadata(path: Path) -> list[dict[str, Any]]:
         return []
 
 
-def process_material(material: dict[str, Any], max_images: int, delay: float, force: bool) -> dict[str, Any]:
+def process_material(material: dict[str, Any], by_id: dict[str, dict[str, Any]], max_images: int, delay: float, force: bool) -> dict[str, Any]:
     material_id = material["id"]
     target_dir = ASSET_ROOT / material_id
     target_dir.mkdir(parents=True, exist_ok=True)
@@ -155,7 +160,7 @@ def process_material(material: dict[str, Any], max_images: int, delay: float, fo
     existing_urls = {item.get("downloadUrl") for item in metadata}
 
     print(f"Searching {material_id} - {material.get('name_cn', '')}")
-    for keyword in material_keywords(material):
+    for keyword in material_keywords(material, by_id):
         if len(metadata) >= max_images:
             break
         print(f"  query: {keyword}")
@@ -178,6 +183,9 @@ def process_material(material: dict[str, Any], max_images: int, delay: float, fo
             record = {
                 "materialId": material_id,
                 "materialName": material.get("name_cn", ""),
+                "entityType": material.get("entity_type", "material"),
+                "parentId": material.get("parent_id", ""),
+                "taxonomyPath": material.get("taxonomy_path", []),
                 "type": "macro",
                 "file": str(target.relative_to(ROOT)).replace("\\", "/"),
                 "alt": f"{material.get('name_cn', material_id)}候选宏观图",
@@ -195,7 +203,13 @@ def process_material(material: dict[str, Any], max_images: int, delay: float, fo
             existing_urls.add(candidate["downloadUrl"])
             print(f"  saved: {record['file']}")
     metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
-    return {"materialId": material_id, "name": material.get("name_cn", ""), "images": metadata}
+    return {
+        "materialId": material_id,
+        "name": material.get("name_cn", ""),
+        "entityType": material.get("entity_type", "material"),
+        "taxonomyPath": material.get("taxonomy_path", []),
+        "images": metadata,
+    }
 
 
 def main() -> None:
@@ -209,13 +223,14 @@ def main() -> None:
     args = parser.parse_args()
 
     materials = json.loads(Path(args.materials).read_text(encoding="utf-8"))
+    by_id = {item["id"]: item for item in materials}
     if args.material:
         wanted = set(args.material)
         materials = [item for item in materials if item.get("id") in wanted]
     if args.limit_materials:
         materials = materials[: args.limit_materials]
 
-    review = [process_material(item, args.max_images, args.delay, args.force) for item in materials]
+    review = [process_material(item, by_id, args.max_images, args.delay, args.force) for item in materials]
     REVIEW_JSON.write_text(json.dumps(review, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Review file written: {REVIEW_JSON.relative_to(ROOT)}")
 

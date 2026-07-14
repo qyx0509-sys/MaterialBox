@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>图片来源与授权 | MaterialBox</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .attribution-page { margin: 0 auto; max-width: 1180px; padding: 32px 20px 64px; }
+      .attribution-head { align-items: start; display: flex; gap: 20px; justify-content: space-between; margin-bottom: 24px; }
+      .attribution-head h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); margin: 0 0 8px; }
+      .attribution-head p { color: var(--muted); line-height: 1.65; margin: 0; }
+      .attribution-table-wrap { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow-x: auto; }
+      .attribution-table { border-collapse: collapse; min-width: 920px; width: 100%; }
+      .attribution-table th, .attribution-table td { border-bottom: 1px solid var(--line); line-height: 1.55; padding: 12px 14px; text-align: left; vertical-align: top; }
+      .attribution-table th { background: #f2f9f8; color: var(--primary-dark); font-size: .78rem; }
+      .attribution-table td { color: var(--text); font-size: .82rem; }
+      .attribution-table small { color: var(--muted); display: block; margin-top: 4px; }
+      .attribution-table a { color: var(--primary-dark); font-weight: 750; }
+      .attribution-empty { background: #fff; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); padding: 28px; text-align: center; }
+      @media (max-width: 720px) { .attribution-head { flex-direction: column; } }
+    </style>
+  </head>
+  <body>
+    <main class="attribution-page">
+      <header class="attribution-head">
+        <div>
+          <p class="eyebrow">Image attribution</p>
+          <h1>图片来源与授权</h1>
+          <p>此清单由本地图片 metadata.json 自动生成。来源信息不完整的图片会明确标记，便于后续补录。</p>
+        </div>
+        <a class="ghost-button" href="index.html">返回材料盒</a>
+      </header>
+      <div id="attribution-content"></div>
+    </main>
+    <script src="materials.js"></script>
+    <script src="image-attribution.js"></script>
+    <script>
+      (() => {
+        const labels = { macro: "宏观图", micro: "微观图", structure: "结构图" };
+        const rows = Array.isArray(window.MATERIAL_IMAGE_ATTRIBUTIONS) ? window.MATERIAL_IMAGE_ATTRIBUTIONS : [];
+        const target = document.querySelector("#attribution-content");
+        if (!rows.length) {
+          target.innerHTML = '<div class="attribution-empty">当前还没有已登记的材料图片。</div>';
+          return;
+        }
+        const table = document.createElement("div");
+        table.className = "attribution-table-wrap";
+        table.innerHTML = '<table class="attribution-table"><thead><tr><th>材料</th><th>类型与说明</th><th>作者</th><th>来源</th><th>许可证</th><th>文件</th></tr></thead><tbody></tbody></table>';
+        const tbody = table.querySelector("tbody");
+        rows.forEach((item) => {
+          const tr = document.createElement("tr");
+          const cells = [
+            item.materialName || item.materialId,
+            `${labels[item.type] || item.type || "材料图"}\n${item.caption || item.alt || "暂无说明"}`,
+            item.author || "来源信息待补充",
+            item.source || "来源信息待补充",
+            item.license || "来源信息待补充",
+            item.src || "暂无数据"
+          ];
+          cells.forEach((value, index) => {
+            const td = document.createElement("td");
+            if (index === 3 && item.sourceUrl) {
+              const link = document.createElement("a"); link.href = item.sourceUrl; link.target = "_blank"; link.rel = "noreferrer"; link.textContent = value; td.appendChild(link);
+            } else if (index === 4 && item.licenseUrl) {
+              const link = document.createElement("a"); link.href = item.licenseUrl; link.target = "_blank"; link.rel = "noreferrer"; link.textContent = value; td.appendChild(link);
+            } else {
+              value.split("\n").forEach((line, lineIndex) => { const node = document.createElement(lineIndex ? "small" : "span"); node.textContent = line; td.appendChild(node); });
+            }
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        target.appendChild(table);
+      })();
+    </script>
+  </body>
+</html>

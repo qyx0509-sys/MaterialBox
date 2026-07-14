@@ -1,11 +1,44 @@
-﻿# MaterialBox material images
+# MaterialBox 手动图片放置说明
 
-Batch image convention used by `material-images.js` and `tools/fetch_material_images.py`:
+本目录是 MaterialBox 唯一正式的材料图片目录。网页会按照材料 `id` 和固定文件名自动寻找图片，不需要修改 `materials.js` 或 `materials.json`。
 
-- Macro images: `assets/images/materials/{material_id}/macro_01.jpg`, `macro_02.jpg`, ...
-- Micro images: `assets/images/materials/{material_id}/micro_01.jpg`, `micro_02.jpg`, ...
-- Per-material metadata: `assets/images/materials/{material_id}/metadata.json`
+## 最简单的使用方法
 
-The fetch script downloads candidate macro images from Wikimedia Commons and writes metadata for manual review. Images are not assumed correct until reviewed.
+1. 打开同目录下的 `材料ID对照表.csv`，找到材料中文名对应的 `material_id`。
+2. 进入同名文件夹，例如木材对应 `wood`。
+3. 将图片改成下面的固定文件名后放入文件夹。
+4. 刷新网页；若浏览器仍显示旧内容，使用 `Ctrl + F5` 强制刷新。
 
-The detail page handles missing files gracefully: if a listed image does not exist, the card shows a placeholder instead of a broken image.
+## 固定文件名
+
+- 宏观外观、纹理或产品照片：`macro_01.jpg`
+- 微观组织、晶粒、纤维或细胞结构：`micro_01.jpg`
+- 分子、晶体或结构示意图：`structure_01.jpg`
+- 旧项目中的 `structure.png` 仍可继续使用，但新图片统一推荐 `structure_01.jpg`
+
+示例，木材的图片位置：
+
+```text
+assets/images/materials/wood/
+├── macro_01.jpg
+├── micro_01.jpg
+└── structure_01.jpg
+```
+
+网页找不到某张图片时会显示“暂无宏观图 / 暂无微观图 / 暂无结构图”，不会显示破图。
+
+## 图片建议
+
+- 宏观图建议使用横图，推荐 1600×1000 或接近 16:10。
+- 微观图和结构图应保留比例尺、放大倍数、晶向或图例，避免裁掉关键信息。
+- JPG 建议质量 80%～90%，单张尽量不超过 1.5 MB。
+- 不要使用中文文件名、空格或随意改变扩展名；`macro_01.png` 不会代替 `macro_01.jpg`。
+- 使用网络图片前确认授权，并保存作者、许可证和原图页面信息。
+
+## 显示图片来源信息
+
+只放图片即可正常显示。若还要在详情页显示来源、作者和许可证，请在项目根目录的 `material-images.js` 中为对应 `material_id` 增加元数据。文件内已经提供可复制的示例。
+
+## 当前规则边界
+
+网页当前每种类型展示第一张主图。若以后需要同一材料的多图画廊，可继续使用 `macro_02.jpg`、`micro_02.jpg` 等命名，并在 `material-images.js` 中登记。

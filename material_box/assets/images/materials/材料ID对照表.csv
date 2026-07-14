@@ -1,0 +1,460 @@
+﻿material_id,中文名,英文名,实体类型,父级ID,分类路径
+steel,钢,Steel,family,ferrous_metals,金属与合金 > 黑色金属 > 钢
+cast_iron,铸铁,Cast Iron,family,ferrous_metals,金属与合金 > 黑色金属 > 铸铁
+stainless_steel,不锈钢,Stainless Steel,subfamily,steel,金属与合金 > 黑色金属 > 钢 > 不锈钢
+tool_steel,工具钢,Tool Steel,subfamily,steel,金属与合金 > 黑色金属 > 钢 > 工具钢
+high_speed_steel,高速钢,High Speed Steel,subfamily,tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 高速工具钢
+aluminum_alloy,铝合金,Aluminum Alloy,family,nonferrous_metals,金属与合金 > 有色金属 > 铝及铝合金
+magnesium_alloy,镁合金,Magnesium Alloy,family,nonferrous_metals,金属与合金 > 有色金属 > 镁及镁合金
+titanium_alloy,钛合金,Titanium Alloy,family,nonferrous_metals,金属与合金 > 有色金属 > 钛及钛合金
+copper_alloy,铜合金,Copper Alloy,family,nonferrous_metals,金属与合金 > 有色金属 > 铜及铜合金
+nickel_alloy,镍合金,Nickel Alloy,family,nonferrous_metals,金属与合金 > 有色金属 > 镍及镍合金
+nickel_superalloy,镍基高温合金,Nickel-based Superalloy,subfamily,superalloys,金属与合金 > 高温合金 > 镍基高温合金
+cobalt_superalloy,钴基高温合金,Cobalt-based Superalloy,subfamily,superalloys,金属与合金 > 高温合金 > 钴基高温合金
+polyethylene,聚乙烯,Polyethylene,family,polyolefins,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚乙烯
+polypropylene,聚丙烯,Polypropylene,family,polyolefins,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚丙烯
+polyvinyl_chloride,聚氯乙烯,Polyvinyl Chloride,material,,高分子材料 > 热塑性塑料 > 含氯聚合物 > 聚氯乙烯
+polystyrene,聚苯乙烯,Polystyrene,family,styrenic_polymers,高分子材料 > 热塑性塑料 > 苯乙烯类聚合物 > 聚苯乙烯
+abs,丙烯腈-丁二烯-苯乙烯,Acrylonitrile Butadiene Styrene,material,styrenic_polymers,高分子材料 > 热塑性塑料 > 苯乙烯类聚合物 > ABS
+polyamide,聚酰胺,Polyamide,family,engineering_thermoplastics,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺
+polycarbonate,聚碳酸酯,Polycarbonate,family,engineering_thermoplastics,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚碳酸酯
+pom,聚甲醛,Polyoxymethylene,family,engineering_thermoplastics,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚甲醛
+pet,聚对苯二甲酸乙二醇酯,Polyethylene Terephthalate,family,thermoplastic_polyesters,高分子材料 > 热塑性塑料 > 热塑性聚酯 > PET
+pbt,聚对苯二甲酸丁二醇酯,Polybutylene Terephthalate,family,thermoplastic_polyesters,高分子材料 > 热塑性塑料 > 热塑性聚酯 > PBT
+peek,聚醚醚酮,Polyether ether ketone,family,high_performance_polymers,高分子材料 > 高性能聚合物 > 聚芳醚酮 > PEEK
+polyimide,聚酰亚胺,Polyimide,family,high_performance_polymers,高分子材料 > 高性能聚合物 > 聚酰亚胺 > PI
+pps,聚苯硫醚,Polyphenylene Sulfide,family,high_performance_polymers,高分子材料 > 高性能聚合物 > 聚芳硫醚 > PPS
+ptfe,聚四氟乙烯,Polytetrafluoroethylene,family,fluoropolymers,高分子材料 > 热塑性塑料 > 含氟聚合物 > PTFE
+lcp,液晶聚合物,Liquid Crystal Polymer,family,high_performance_polymers,高分子材料 > 高性能聚合物 > 液晶聚合物 > LCP
+natural_rubber,天然橡胶,Natural Rubber,material,elastomers,高分子材料 > 弹性体 > 通用橡胶 > 天然橡胶
+silicone_rubber,硅橡胶,Silicone Rubber,material,elastomers,高分子材料 > 弹性体 > 特种橡胶 > 硅橡胶
+fluororubber,氟橡胶,Fluoroelastomer,material,elastomers,高分子材料 > 弹性体 > 特种橡胶 > 氟橡胶
+epoxy_resin,环氧树脂,Epoxy Resin,family,thermosetting_resins,高分子材料 > 热固性树脂 > 环氧树脂
+polyurethane,聚氨酯,Polyurethane,material,thermosetting_resins,高分子材料 > 热固性树脂 > 聚氨酯树脂
+alumina_ceramic,氧化铝陶瓷,Alumina Ceramic,material,oxide_ceramics,无机非金属材料 > 氧化物陶瓷 > 氧化铝陶瓷
+zirconia_ceramic,氧化锆陶瓷,Zirconia Ceramic,material,oxide_ceramics,无机非金属材料 > 氧化物陶瓷 > 氧化锆陶瓷
+sic_ceramic,碳化硅陶瓷,Silicon Carbide Ceramic,material,nonoxide_ceramics,无机非金属材料 > 非氧化物陶瓷 > 碳化物陶瓷 > 碳化硅陶瓷
+silicon_nitride_ceramic,氮化硅陶瓷,Silicon Nitride Ceramic,material,nonoxide_ceramics,无机非金属材料 > 非氧化物陶瓷 > 氮化物陶瓷 > 氮化硅陶瓷
+quartz_glass,石英玻璃,Quartz Glass,material,glass_materials,无机非金属材料 > 玻璃 > 特种玻璃 > 石英玻璃
+borosilicate_glass,硼硅玻璃,Borosilicate Glass,material,glass_materials,无机非金属材料 > 玻璃 > 特种玻璃 > 硼硅玻璃
+tempered_glass,钢化玻璃,Tempered Glass,material,glass_materials,无机非金属材料 > 玻璃 > 安全玻璃 > 钢化玻璃
+portland_cement,硅酸盐水泥,Portland Cement,material,,建筑胶凝与土木材料 > 水泥 > 硅酸盐水泥
+concrete,混凝土,Concrete,material,portland_cement,建筑胶凝与土木材料 > 混凝土 > 普通混凝土
+refractory,耐火材料,Refractory,family,,无机非金属材料 > 耐火材料
+carbon_fiber_epoxy,碳纤维/环氧复合材料,Carbon Fiber/Epoxy Composite,material,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 连续纤维增强复合材料 > 碳纤维/环氧复合材料
+glass_fiber_composite,玻璃纤维复合材料,Glass Fiber Composite,material,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 玻璃纤维复合材料
+aramid_fiber_composite,芳纶纤维复合材料,Aramid Fiber Composite,material,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 芳纶纤维复合材料
+aluminum_mmc,铝基复合材料,Aluminum Matrix Composite,material,metal_matrix_composites,复合材料 > 金属基复合材料 > 铝基复合材料
+sic_cmc,碳化硅纤维增强陶瓷基复合材料,SiC Fiber Reinforced Ceramic Matrix Composite,material,ceramic_matrix_composites,复合材料 > 陶瓷基复合材料 > SiC/SiC
+carbon_carbon,碳/碳复合材料,Carbon/Carbon Composite,material,,复合材料 > 碳基复合材料 > 碳/碳复合材料
+honeycomb_sandwich,蜂窝夹层板,Honeycomb Sandwich Panel,material,,复合材料 > 夹层结构材料 > 蜂窝夹层板
+silicon,硅,Silicon,material,,半导体与电子材料 > 元素半导体 > 硅
+gallium_arsenide,砷化镓,Gallium Arsenide,material,,半导体与电子材料 > 化合物半导体 > 砷化镓
+gallium_nitride,氮化镓,Gallium Nitride,material,,半导体与电子材料 > 宽禁带半导体 > 氮化镓
+silicon_carbide_semiconductor,碳化硅,Silicon Carbide,material,,半导体与电子材料 > 宽禁带半导体 > 碳化硅半导体
+ferrite,铁氧体,Ferrite,material,,半导体与电子材料 > 磁性材料 > 铁氧体
+ndfeb,钕铁硼,Neodymium Iron Boron Magnet,material,,半导体与电子材料 > 磁性材料 > 永磁材料 > 钕铁硼
+ito,氧化铟锡,Indium Tin Oxide,material,,半导体与电子材料 > 透明导电材料 > ITO
+oled_material,OLED材料,OLED Materials,material,,半导体与电子材料 > 发光与光电材料 > OLED材料
+shape_memory_alloy,形状记忆合金,Shape Memory Alloy,material,intermetallics,金属与合金 > 金属间化合物 > 形状记忆合金
+piezo_ceramic,压电陶瓷,Piezoelectric Ceramic,material,,半导体与电子材料 > 压电与铁电材料 > 压电陶瓷
+lifepo4,磷酸铁锂,Lithium Iron Phosphate,material,,无机非金属材料 > 功能陶瓷 > 电化学储能材料 > 磷酸铁锂
+ncm,三元正极材料,Nickel Cobalt Manganese Cathode,material,,无机非金属材料 > 功能陶瓷 > 电化学储能材料 > 三元正极材料
+graphite_anode,石墨负极,Graphite Anode,material,graphite,碳材料 > 石墨 > 电池级石墨 > 石墨负极
+silicon_carbon_anode,硅碳负极,Silicon-Carbon Anode,material,,复合材料 > 碳基复合材料 > 硅碳复合负极
+battery_electrolyte,锂电池电解液,Lithium Battery Electrolyte,material,,高分子材料 > 电解质与功能液体 > 锂电池电解液
+battery_separator,锂电池隔膜,Battery Separator,material,,高分子材料 > 功能膜 > 锂电池隔膜
+perovskite_solar,钙钛矿光伏材料,Perovskite Solar Material,material,,半导体与电子材料 > 发光与光电材料 > 光伏材料 > 钙钛矿光伏材料
+crystalline_silicon_pv,晶硅,Crystalline Silicon,material,silicon,半导体与电子材料 > 元素半导体 > 硅 > 晶硅光伏材料
+activated_carbon,活性炭,Activated Carbon,material,,碳材料 > 活性炭
+medical_titanium_alloy,医用钛合金,Medical Titanium Alloy,variant,titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > 医用钛合金
+cobalt_chromium_alloy,钴铬合金,Cobalt Chromium Alloy,material,nonferrous_metals,金属与合金 > 有色金属 > 钴及钴合金 > 钴铬合金
+medical_peek,医用PEEK,Medical PEEK,variant,peek,高分子材料 > 高性能聚合物 > 聚芳醚酮 > PEEK > 医用级PEEK
+pla,聚乳酸,Polylactic Acid,material,biodegradable_polymers,高分子材料 > 生物可降解聚合物 > 脂肪族聚酯 > PLA
+hydroxyapatite,羟基磷灰石,Hydroxyapatite,material,,无机非金属材料 > 生物陶瓷 > 羟基磷灰石
+bioglass,生物玻璃,Bioglass,material,glass_materials,无机非金属材料 > 玻璃 > 生物活性玻璃
+biodegradable_magnesium_alloy,可降解镁合金,Biodegradable Magnesium Alloy,variant,magnesium_alloy,金属与合金 > 有色金属 > 镁及镁合金 > 可降解医用镁合金
+graphene,石墨烯,Graphene,material,,碳材料 > 石墨烯
+carbon_nanotube,碳纳米管,Carbon Nanotube,material,,碳材料 > 碳纳米管
+nano_silver,纳米银,Nano Silver,material,precious_metals,金属与合金 > 贵金属 > 银 > 纳米银
+nano_titanium_dioxide,纳米二氧化钛,Nano Titanium Dioxide,material,oxide_ceramics,无机非金属材料 > 氧化物陶瓷 > 氧化钛 > 纳米二氧化钛
+polymer_nanocomposite,聚合物纳米复合材料,Polymer Nanocomposite,material,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 聚合物纳米复合材料
+wood,木材,Wood / Timber,family,,天然与生物基材料 > 植物来源材料 > 木材
+bamboo,竹材,Bamboo,material,,天然与生物基材料 > 植物来源材料 > 竹材与藤材 > 竹材
+paper,纸张,Paper,family,,天然与生物基材料 > 纸基材料 > 纸张
+cotton_fiber,棉纤维,Cotton Fiber,material,,纤维与纺织材料 > 天然植物纤维 > 棉纤维
+hemp_fiber,麻纤维,Hemp / Linen Fiber,material,,纤维与纺织材料 > 天然植物纤维 > 麻纤维
+wool,羊毛,Wool,material,,纤维与纺织材料 > 天然动物纤维 > 羊毛
+leather,皮革,Leather,material,,天然与生物基材料 > 动物来源材料 > 皮革
+natural_stone,天然石材,Natural Stone,material,,天然与生物基材料 > 天然矿物材料 > 天然石材
+clay,陶土,Clay,material,,无机非金属材料 > 传统陶瓷 > 陶土
+plywood,胶合板,Plywood,form,wood,建筑胶凝与土木材料 > 建筑板材 > 工程木制品 > 胶合板
+mdf,中密度纤维板,Medium Density Fiberboard,form,wood,建筑胶凝与土木材料 > 建筑板材 > 工程木制品 > 中密度纤维板
+brick,砖,Brick,material,,建筑胶凝与土木材料 > 砖瓦 > 砖
+gypsum_board,石膏板,Gypsum Board,material,,建筑胶凝与土木材料 > 石膏材料 > 石膏板
+asphalt,沥青,Asphalt / Bitumen,material,,建筑胶凝与土木材料 > 沥青材料 > 道路沥青
+waterproof_membrane,防水卷材,Waterproof Membrane,material,,建筑胶凝与土木材料 > 防水材料 > 防水卷材
+coating_paint,涂料,Coating / Paint,material,,建筑胶凝与土木材料 > 装饰材料 > 建筑涂料
+polyester_fiber,涤纶,Polyester Fiber,form,pet,纤维与纺织材料 > 合成纤维 > 聚酯纤维 > 涤纶纤维
+nylon_fiber,尼龙纤维,Nylon Fiber,form,polyamide,纤维与纺织材料 > 合成纤维 > 聚酰胺纤维 > 尼龙纤维
+structural_composites,结构复合材料,Structural composites,family,,复合材料 > 结构复合材料
+functionally_graded_material,功能梯度材料,Functionally graded material,material,structural_composites,复合材料 > 结构复合材料 > 功能梯度材料
+foam_sandwich_panel,泡沫夹层板,Foam-core sandwich panel,form,structural_composites,复合材料 > 结构复合材料 > 泡沫夹层板
+hybrid_fiber_laminate,混杂纤维层合板,Hybrid-fibre laminate,material,structural_composites,复合材料 > 结构复合材料 > 混杂纤维层合板
+fiber_metal_laminate,纤维金属层板,Fibre metal laminate,material,structural_composites,复合材料 > 结构复合材料 > 纤维金属层板
+aramid_honeycomb_panel,芳纶蜂窝夹层板,Aramid honeycomb sandwich panel,form,structural_composites,复合材料 > 结构复合材料 > 芳纶蜂窝夹层板
+aluminum_honeycomb_panel,铝蜂窝夹层板,Aluminium honeycomb sandwich panel,form,structural_composites,复合材料 > 结构复合材料 > 铝蜂窝夹层板
+polymer_matrix_composites,聚合物基复合材料,Polymer matrix composites,family,,复合材料 > 聚合物基复合材料
+bmc,BMC,Bulk moulding compound,form,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > BMC
+smc,SMC,Sheet moulding compound,form,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > SMC
+natural_fiber_composite,天然纤维复合材料,Natural-fibre composite,material,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 天然纤维复合材料
+basalt_fiber_composite,玄武岩纤维复合材料,Basalt-fibre composite,material,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 玄武岩纤维复合材料
+glass_epoxy_composite,玻璃纤维/环氧复合材料,Glass-fibre/epoxy composite,material,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 玻璃纤维/环氧复合材料
+glass_polyester_composite,玻璃纤维/聚酯复合材料,Glass-fibre/polyester composite,material,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 玻璃纤维/聚酯复合材料
+short_glass_fiber_plastic,短玻纤增强塑料,Short-glass-fibre-reinforced plastic,variant,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 短玻纤增强塑料
+cf_peek_composite,碳纤维/PEEK复合材料,Carbon-fibre/PEEK composite,variant,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 碳纤维/PEEK复合材料
+continuous_fiber_thermoplastic,连续纤维增强热塑性复合材料,Continuous-fibre thermoplastic composite,material,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 连续纤维增强热塑性复合材料
+long_glass_fiber_plastic,长玻纤增强塑料,Long-glass-fibre-reinforced plastic,variant,polymer_matrix_composites,复合材料 > 聚合物基复合材料 > 长玻纤增强塑料
+metal_matrix_composites,金属基复合材料,Metal matrix composites,family,,复合材料 > 金属基复合材料
+al_alumina_mmc,Al/Al₂O₃,Aluminium/alumina composite,material,metal_matrix_composites,复合材料 > 金属基复合材料 > Al/Al₂O₃
+al_sic_mmc,Al/SiC,Aluminium/silicon-carbide composite,material,metal_matrix_composites,复合材料 > 金属基复合材料 > Al/SiC
+cnt_aluminum_composite,碳纳米管增强铝基复合材料,CNT-reinforced aluminium composite,material,metal_matrix_composites,复合材料 > 金属基复合材料 > 碳纳米管增强铝基复合材料
+titanium_mmc,钛基复合材料,Titanium matrix composite,material,metal_matrix_composites,复合材料 > 金属基复合材料 > 钛基复合材料
+copper_mmc,铜基复合材料,Copper matrix composite,material,metal_matrix_composites,复合材料 > 金属基复合材料 > 铜基复合材料
+magnesium_mmc,镁基复合材料,Magnesium matrix composite,material,metal_matrix_composites,复合材料 > 金属基复合材料 > 镁基复合材料
+ceramic_matrix_composites,陶瓷基复合材料,Ceramic matrix composites,family,,复合材料 > 陶瓷基复合材料
+c_sic,C/SiC,Carbon-fibre/silicon-carbide composite,material,ceramic_matrix_composites,复合材料 > 陶瓷基复合材料 > C/SiC
+oxide_oxide_cmc,Oxide/Oxide,Oxide-fibre/oxide-matrix composite,material,ceramic_matrix_composites,复合材料 > 陶瓷基复合材料 > Oxide/Oxide
+sic_alumina_composite,SiC颗粒增强氧化铝,SiC-particle-reinforced alumina,material,ceramic_matrix_composites,复合材料 > 陶瓷基复合材料 > SiC颗粒增强氧化铝
+zta,氧化锆增韧氧化铝,Zirconia-toughened alumina,material,ceramic_matrix_composites,复合材料 > 陶瓷基复合材料 > 氧化锆增韧氧化铝
+carbon_fiber_cmc,碳纤维增强陶瓷基复合材料,Carbon-fibre-reinforced ceramic matrix composite,material,ceramic_matrix_composites,复合材料 > 陶瓷基复合材料 > 碳纤维增强陶瓷基复合材料
+engineered_wood,工程木制品,Engineered wood products,subfamily,wood,天然与生物基材料 > 植物来源材料 > 木材 > 工程木制品
+particleboard,刨花板,Particleboard,form,engineered_wood,天然与生物基材料 > 植物来源材料 > 木材 > 工程木制品 > 刨花板
+lvl,单板层积材,Laminated veneer lumber,form,engineered_wood,天然与生物基材料 > 植物来源材料 > 木材 > 工程木制品 > 单板层积材
+osb,定向刨花板,Oriented strand board,form,engineered_wood,天然与生物基材料 > 植物来源材料 > 木材 > 工程木制品 > 定向刨花板
+blockboard,木工板,Blockboard,form,engineered_wood,天然与生物基材料 > 植物来源材料 > 木材 > 工程木制品 > 木工板
+clt,正交胶合木,Cross-laminated timber,form,engineered_wood,天然与生物基材料 > 植物来源材料 > 木材 > 工程木制品 > 正交胶合木
+laminated_bamboo,竹集成材,Laminated bamboo lumber,form,engineered_wood,天然与生物基材料 > 植物来源材料 > 木材 > 工程木制品 > 竹集成材
+glulam,胶合木,Glue-laminated timber,form,engineered_wood,天然与生物基材料 > 植物来源材料 > 木材 > 工程木制品 > 胶合木
+reconstituted_bamboo,重组竹,Reconstituted bamboo,form,engineered_wood,天然与生物基材料 > 植物来源材料 > 木材 > 工程木制品 > 重组竹
+hdf,高密度纤维板,High-density fibreboard,form,engineered_wood,天然与生物基材料 > 植物来源材料 > 木材 > 工程木制品 > 高密度纤维板
+modified_wood,改性木材,Modified wood,subfamily,wood,天然与生物基材料 > 植物来源材料 > 木材 > 改性木材
+acetylated_wood,乙酰化木材,Acetylated wood,variant,modified_wood,天然与生物基材料 > 植物来源材料 > 木材 > 改性木材 > 乙酰化木材
+densified_wood,压缩木,Densified wood,variant,modified_wood,天然与生物基材料 > 植物来源材料 > 木材 > 改性木材 > 压缩木
+wood_plastic_composite,木塑复合材料,Wood-plastic composite,variant,modified_wood,天然与生物基材料 > 植物来源材料 > 木材 > 改性木材 > 木塑复合材料
+resin_impregnated_wood,树脂浸渍木材,Resin-impregnated wood,variant,modified_wood,天然与生物基材料 > 植物来源材料 > 木材 > 改性木材 > 树脂浸渍木材
+thermally_modified_wood,热处理木,Thermally modified wood,variant,modified_wood,天然与生物基材料 > 植物来源材料 > 木材 > 改性木材 > 热处理木
+preservative_treated_wood,防腐木,Preservative-treated wood,variant,modified_wood,天然与生物基材料 > 植物来源材料 > 木材 > 改性木材 > 防腐木
+fire_retardant_wood,阻燃木,Fire-retardant wood,variant,modified_wood,天然与生物基材料 > 植物来源材料 > 木材 > 改性木材 > 阻燃木
+softwood,针叶材,Softwood,subfamily,wood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材
+spruce_wood,云杉,Spruce wood,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 云杉
+fir_wood,冷杉,Fir wood,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 冷杉
+chinese_fir,杉木,Chinese fir,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 杉木
+cypress_wood,柏木,Cypress wood,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 柏木
+mongolian_pine,樟子松,Mongolian pine,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 樟子松
+korean_pine,红松,Korean pine,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 红松
+douglas_fir,花旗松,Douglas fir,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 花旗松
+larch_wood,落叶松,Larch wood,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 落叶松
+radiata_pine,辐射松,Radiata pine,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 辐射松
+cedar_wood,雪松,Cedar wood,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 雪松
+masson_pine,马尾松,Masson pine,material,softwood,天然与生物基材料 > 植物来源材料 > 木材 > 针叶材 > 马尾松
+hardwood,阔叶材,Hardwood,subfamily,wood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材
+poplar_wood,杨木,Poplar wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 杨木
+maple_wood,枫木,Maple wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 枫木
+teak_wood,柚木,Teak wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 柚木
+walnut_wood,核桃木,Walnut wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 核桃木
+mahogany_wood,桃花心木,Mahogany,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 桃花心木
+eucalyptus_wood,桉木,Eucalyptus wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 桉木
+birch_wood,桦木,Birch wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 桦木
+basswood,椴木,Basswood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 椴木
+elm_wood,榆木,Elm wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 榆木
+beech_wood,榉木,Beech wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 榉木
+camphor_wood,樟木,Camphor wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 樟木
+oak_wood,橡木,Oak wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 橡木
+rubberwood,橡胶木,Rubberwood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 橡胶木
+ash_wood,水曲柳,Manchurian ash wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 水曲柳
+paulownia_wood,泡桐,Paulownia wood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 泡桐
+rosewood,紫檀,Rosewood,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 紫檀
+ebony_wood,黑檀,Ebony,material,hardwood,天然与生物基材料 > 植物来源材料 > 木材 > 阔叶材 > 黑檀
+oxide_ceramics,氧化物陶瓷,Oxide ceramics,family,,无机非金属材料 > 氧化物陶瓷
+cordierite_ceramic,堇青石陶瓷,Cordierite ceramic,material,oxide_ceramics,无机非金属材料 > 氧化物陶瓷 > 堇青石陶瓷
+titania_ceramic,氧化钛陶瓷,Titania ceramic,material,oxide_ceramics,无机非金属材料 > 氧化物陶瓷 > 氧化钛陶瓷
+ceria_ceramic,氧化铈陶瓷,Ceria ceramic,material,oxide_ceramics,无机非金属材料 > 氧化物陶瓷 > 氧化铈陶瓷
+beryllia_ceramic,氧化铍陶瓷,Beryllia ceramic,material,oxide_ceramics,无机非金属材料 > 氧化物陶瓷 > 氧化铍陶瓷
+zinc_oxide_ceramic,氧化锌陶瓷,Zinc oxide ceramic,material,oxide_ceramics,无机非金属材料 > 氧化物陶瓷 > 氧化锌陶瓷
+magnesia_ceramic,氧化镁陶瓷,Magnesia ceramic,material,oxide_ceramics,无机非金属材料 > 氧化物陶瓷 > 氧化镁陶瓷
+mullite_ceramic,莫来石陶瓷,Mullite ceramic,material,oxide_ceramics,无机非金属材料 > 氧化物陶瓷 > 莫来石陶瓷
+glass_materials,玻璃,Glass materials,family,,无机非金属材料 > 玻璃
+insulating_glass,中空玻璃,Insulating glass,material,glass_materials,无机非金属材料 > 玻璃 > 中空玻璃
+low_e_glass,低辐射玻璃,Low-emissivity glass,material,glass_materials,无机非金属材料 > 玻璃 > 低辐射玻璃
+optical_glass,光学玻璃,Optical glass,material,glass_materials,无机非金属材料 > 玻璃 > 光学玻璃
+laminated_glass,夹层玻璃,Laminated glass,material,glass_materials,无机非金属材料 > 玻璃 > 夹层玻璃
+glass_ceramic,微晶玻璃,Glass-ceramic,material,glass_materials,无机非金属材料 > 玻璃 > 微晶玻璃
+soda_lime_glass,钠钙玻璃,Soda-lime glass,material,glass_materials,无机非金属材料 > 玻璃 > 钠钙玻璃
+lead_glass,铅玻璃,Lead glass,material,glass_materials,无机非金属材料 > 玻璃 > 铅玻璃
+aluminosilicate_glass,铝硅酸盐玻璃,Aluminosilicate glass,material,glass_materials,无机非金属材料 > 玻璃 > 铝硅酸盐玻璃
+gunning_refractory,喷补料,Gunning refractory,material,refractory_materials,无机非金属材料 > 耐火材料 > 喷补料
+silica_brick,硅砖,Silica refractory brick,material,refractory_materials,无机非金属材料 > 耐火材料 > 硅砖
+carbon_brick,碳砖,Carbon brick,material,refractory_materials,无机非金属材料 > 耐火材料 > 碳砖
+refractory_castable,耐火浇注料,Refractory castable,material,refractory_materials,无机非金属材料 > 耐火材料 > 耐火浇注料
+refractory_fiber,耐火纤维,Refractory fibre,material,refractory_materials,无机非金属材料 > 耐火材料 > 耐火纤维
+magnesia_brick,镁砖,Magnesia brick,material,refractory_materials,无机非金属材料 > 耐火材料 > 镁砖
+magnesia_carbon_brick,镁碳砖,Magnesia-carbon brick,material,refractory_materials,无机非金属材料 > 耐火材料 > 镁碳砖
+high_alumina_brick,高铝砖,High-alumina brick,material,refractory_materials,无机非金属材料 > 耐火材料 > 高铝砖
+fireclay_brick,黏土砖,Fireclay brick,material,refractory_materials,无机非金属材料 > 耐火材料 > 黏土砖
+refractory_materials,耐火材料体系,Refractory materials,family,,无机非金属材料 > 耐火材料体系
+nonoxide_ceramics,非氧化物陶瓷,Non-oxide ceramics,family,,无机非金属材料 > 非氧化物陶瓷
+titanium_diboride,二硼化钛,Titanium diboride,material,nonoxide_ceramics,无机非金属材料 > 非氧化物陶瓷 > 二硼化钛
+zirconium_diboride,二硼化锆,Zirconium diboride,material,nonoxide_ceramics,无机非金属材料 > 非氧化物陶瓷 > 二硼化锆
+boron_nitride_ceramic,氮化硼陶瓷,Boron nitride ceramic,material,nonoxide_ceramics,无机非金属材料 > 非氧化物陶瓷 > 氮化硼陶瓷
+titanium_nitride_ceramic,氮化钛陶瓷,Titanium nitride ceramic,material,nonoxide_ceramics,无机非金属材料 > 非氧化物陶瓷 > 氮化钛陶瓷
+aluminum_nitride_ceramic,氮化铝陶瓷,Aluminium nitride ceramic,material,nonoxide_ceramics,无机非金属材料 > 非氧化物陶瓷 > 氮化铝陶瓷
+boron_carbide_ceramic,碳化硼陶瓷,Boron carbide ceramic,material,nonoxide_ceramics,无机非金属材料 > 非氧化物陶瓷 > 碳化硼陶瓷
+titanium_carbide_ceramic,碳化钛陶瓷,Titanium carbide ceramic,material,nonoxide_ceramics,无机非金属材料 > 非氧化物陶瓷 > 碳化钛陶瓷
+tungsten_carbide,碳化钨,Tungsten carbide,material,nonoxide_ceramics,无机非金属材料 > 非氧化物陶瓷 > 碳化钨
+fullerene,富勒烯,Fullerene,material,,碳材料 > 富勒烯
+carbon_black,炭黑,Carbon black,material,,碳材料 > 炭黑
+glassy_carbon,玻璃碳,Glassy carbon,material,,碳材料 > 玻璃碳
+graphite,石墨,Graphite,material,,碳材料 > 石墨
+carbon_aerogel,碳气凝胶,Carbon aerogel,material,,碳材料 > 碳气凝胶
+carbon_fiber,碳纤维,Carbon fibre,material,,碳材料 > 碳纤维
+diamond,金刚石,Diamond,material,,碳材料 > 金刚石
+nonferrous_metals,有色金属,Non-ferrous metals,family,,金属与合金 > 有色金属
+alpha_beta_titanium_alloy,α+β型钛合金,Alpha-beta titanium alloy,subfamily,titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > α+β型钛合金
+ti_tc11,TC11,TC11 titanium alloy,grade,alpha_beta_titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > α+β型钛合金 > TC11
+ti_tc4,TC4 / Ti-6Al-4V,Ti-6Al-4V titanium alloy,grade,alpha_beta_titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > α+β型钛合金 > TC4 / Ti-6Al-4V
+ti_6al_4v_eli,Ti-6Al-4V ELI,Extra-low-interstitial Ti-6Al-4V,grade,alpha_beta_titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > α+β型钛合金 > Ti-6Al-4V ELI
+alpha_titanium_alloy,α型钛合金,Alpha titanium alloy,subfamily,titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > α型钛合金
+beta_titanium_alloy,β型钛合金,Beta titanium alloy,subfamily,titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > β型钛合金
+ti_tb6,TB6,TB6 beta titanium alloy,grade,beta_titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > β型钛合金 > TB6
+commercially_pure_titanium,工业纯钛,Commercially pure titanium,subfamily,titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > 工业纯钛
+ti_ta1,TA1,TA1 commercially pure titanium,grade,commercially_pure_titanium,金属与合金 > 有色金属 > 钛及钛合金 > 工业纯钛 > TA1
+ti_ta2,TA2,TA2 commercially pure titanium,grade,commercially_pure_titanium,金属与合金 > 有色金属 > 钛及钛合金 > 工业纯钛 > TA2
+near_alpha_titanium_alloy,近α型钛合金,Near-alpha titanium alloy,subfamily,titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > 近α型钛合金
+ti_ta15,TA15,TA15 titanium alloy,grade,near_alpha_titanium_alloy,金属与合金 > 有色金属 > 钛及钛合金 > 近α型钛合金 > TA15
+oxygen_free_copper,无氧铜,Oxygen-free copper,subfamily,copper_alloy,金属与合金 > 有色金属 > 铜及铜合金 > 无氧铜
+cu_tu1,TU1,TU1 oxygen-free copper,grade,oxygen_free_copper,金属与合金 > 有色金属 > 铜及铜合金 > 无氧铜 > TU1
+cupronickel,白铜,Cupronickel,subfamily,copper_alloy,金属与合金 > 有色金属 > 铜及铜合金 > 白铜
+cu_b30,B30,B30 cupronickel,grade,cupronickel,金属与合金 > 有色金属 > 铜及铜合金 > 白铜 > B30
+phosphor_bronze,磷青铜,Phosphor bronze,subfamily,copper_alloy,金属与合金 > 有色金属 > 铜及铜合金 > 磷青铜
+cu_qsn6_5_0_1,QSn6.5-0.1,QSn6.5-0.1 phosphor bronze,grade,phosphor_bronze,金属与合金 > 有色金属 > 铜及铜合金 > 磷青铜 > QSn6.5-0.1
+pure_copper,纯铜,Pure copper,subfamily,copper_alloy,金属与合金 > 有色金属 > 铜及铜合金 > 纯铜
+cu_t2,T2,T2 copper,grade,pure_copper,金属与合金 > 有色金属 > 铜及铜合金 > 纯铜 > T2
+beryllium_copper,铍铜,Beryllium copper,subfamily,copper_alloy,金属与合金 > 有色金属 > 铜及铜合金 > 铍铜
+cu_qbe2,QBe2,QBe2 beryllium copper,grade,beryllium_copper,金属与合金 > 有色金属 > 铜及铜合金 > 铍铜 > QBe2
+aluminum_bronze,铝青铜,Aluminium bronze,subfamily,copper_alloy,金属与合金 > 有色金属 > 铜及铜合金 > 铝青铜
+cu_qal9_4,QAl9-4,QAl9-4 aluminium bronze,grade,aluminum_bronze,金属与合金 > 有色金属 > 铜及铜合金 > 铝青铜 > QAl9-4
+chromium_zirconium_copper,铬锆铜,Chromium zirconium copper,subfamily,copper_alloy,金属与合金 > 有色金属 > 铜及铜合金 > 铬锆铜
+cu_cucrzr,CuCrZr,CuCrZr alloy,grade,chromium_zirconium_copper,金属与合金 > 有色金属 > 铜及铜合金 > 铬锆铜 > CuCrZr
+tin_bronze,锡青铜,Tin bronze,subfamily,copper_alloy,金属与合金 > 有色金属 > 铜及铜合金 > 锡青铜
+brass,黄铜,Brass,subfamily,copper_alloy,金属与合金 > 有色金属 > 铜及铜合金 > 黄铜
+cu_h62,H62,H62 brass,grade,brass,金属与合金 > 有色金属 > 铜及铜合金 > 黄铜 > H62
+cu_h68,H68,H68 brass,grade,brass,金属与合金 > 有色金属 > 铜及铜合金 > 黄铜 > H68
+al_1xxx,1xxx系纯铝,1xxx series aluminium,subfamily,aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 1xxx系纯铝
+al_1050,1050,AA 1050 aluminium,grade,al_1xxx,金属与合金 > 有色金属 > 铝及铝合金 > 1xxx系纯铝 > 1050
+al_1060,1060,AA 1060 aluminium,grade,al_1xxx,金属与合金 > 有色金属 > 铝及铝合金 > 1xxx系纯铝 > 1060
+al_2xxx,2xxx系铝铜合金,2xxx Al-Cu alloys,subfamily,aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 2xxx系铝铜合金
+al_2024,2024,AA 2024 aluminium alloy,grade,al_2xxx,金属与合金 > 有色金属 > 铝及铝合金 > 2xxx系铝铜合金 > 2024
+al_3xxx,3xxx系铝锰合金,3xxx Al-Mn alloys,subfamily,aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 3xxx系铝锰合金
+al_3003,3003,AA 3003 aluminium alloy,grade,al_3xxx,金属与合金 > 有色金属 > 铝及铝合金 > 3xxx系铝锰合金 > 3003
+al_4xxx,4xxx系铝硅合金,4xxx Al-Si alloys,subfamily,aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 4xxx系铝硅合金
+al_5xxx,5xxx系铝镁合金,5xxx Al-Mg alloys,subfamily,aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 5xxx系铝镁合金
+al_5052,5052,AA 5052 aluminium alloy,grade,al_5xxx,金属与合金 > 有色金属 > 铝及铝合金 > 5xxx系铝镁合金 > 5052
+al_5083,5083,AA 5083 aluminium alloy,grade,al_5xxx,金属与合金 > 有色金属 > 铝及铝合金 > 5xxx系铝镁合金 > 5083
+al_6xxx,6xxx系铝镁硅合金,6xxx Al-Mg-Si alloys,subfamily,aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 6xxx系铝镁硅合金
+al_6061,6061,AA 6061 aluminium alloy,grade,al_6xxx,金属与合金 > 有色金属 > 铝及铝合金 > 6xxx系铝镁硅合金 > 6061
+al_6063,6063,AA 6063 aluminium alloy,grade,al_6xxx,金属与合金 > 有色金属 > 铝及铝合金 > 6xxx系铝镁硅合金 > 6063
+al_7xxx,7xxx系铝锌镁合金,7xxx Al-Zn-Mg alloys,subfamily,aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 7xxx系铝锌镁合金
+al_7075,7075,AA 7075 aluminium alloy,grade,al_7xxx,金属与合金 > 有色金属 > 铝及铝合金 > 7xxx系铝锌镁合金 > 7075
+pure_aluminum,纯铝,Pure aluminium,subfamily,aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 纯铝
+cast_aluminum_alloy,铸造铝合金,Cast aluminium alloys,subfamily,aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 铸造铝合金
+al_adc12,ADC12,ADC12 die-casting aluminium alloy,grade,cast_aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 铸造铝合金 > ADC12
+al_zl101,ZL101,ZL101 cast aluminium alloy,grade,cast_aluminum_alloy,金属与合金 > 有色金属 > 铝及铝合金 > 铸造铝合金 > ZL101
+mg_al_mn,Mg-Al-Mn系,Mg-Al-Mn magnesium alloys,subfamily,magnesium_alloy,金属与合金 > 有色金属 > 镁及镁合金 > Mg-Al-Mn系
+mg_am60,AM60,AM60 magnesium alloy,grade,mg_al_mn,金属与合金 > 有色金属 > 镁及镁合金 > Mg-Al-Mn系 > AM60
+mg_al_zn,Mg-Al-Zn系,Mg-Al-Zn magnesium alloys,subfamily,magnesium_alloy,金属与合金 > 有色金属 > 镁及镁合金 > Mg-Al-Zn系
+mg_az31,AZ31,AZ31 magnesium alloy,grade,mg_al_zn,金属与合金 > 有色金属 > 镁及镁合金 > Mg-Al-Zn系 > AZ31
+mg_az91,AZ91,AZ91 magnesium alloy,grade,mg_al_zn,金属与合金 > 有色金属 > 镁及镁合金 > Mg-Al-Zn系 > AZ91
+mg_zn_zr,Mg-Zn-Zr系,Mg-Zn-Zr magnesium alloys,subfamily,magnesium_alloy,金属与合金 > 有色金属 > 镁及镁合金 > Mg-Zn-Zr系
+mg_zk60,ZK60,ZK60 magnesium alloy,grade,mg_zn_zr,金属与合金 > 有色金属 > 镁及镁合金 > Mg-Zn-Zr系 > ZK60
+rare_earth_magnesium,稀土镁合金,Rare-earth magnesium alloys,subfamily,magnesium_alloy,金属与合金 > 有色金属 > 镁及镁合金 > 稀土镁合金
+mg_we43,WE43,WE43 magnesium alloy,grade,rare_earth_magnesium,金属与合金 > 有色金属 > 镁及镁合金 > 稀土镁合金 > WE43
+commercial_nickel,工业纯镍,Commercially pure nickel,subfamily,nickel_alloy,金属与合金 > 有色金属 > 镍及镍合金 > 工业纯镍
+ni_200,Ni 200,Nickel 200,grade,commercial_nickel,金属与合金 > 有色金属 > 镍及镍合金 > 工业纯镍 > Ni 200
+nickel_copper_alloy,镍铜合金,Nickel-copper alloy,subfamily,nickel_alloy,金属与合金 > 有色金属 > 镍及镍合金 > 镍铜合金
+monel_400,Monel 400,Monel 400 nickel-copper alloy,grade,nickel_copper_alloy,金属与合金 > 有色金属 > 镍及镍合金 > 镍铜合金 > Monel 400
+nickel_chromium_alloy,镍铬合金,Nickel-chromium alloy,subfamily,nickel_alloy,金属与合金 > 有色金属 > 镍及镍合金 > 镍铬合金
+inconel_600,Inconel 600,Inconel 600,grade,nickel_chromium_alloy,金属与合金 > 有色金属 > 镍及镍合金 > 镍铬合金 > Inconel 600
+nickel_chromium_molybdenum,镍铬钼耐蚀合金,Ni-Cr-Mo corrosion-resistant alloy,subfamily,nickel_alloy,金属与合金 > 有色金属 > 镍及镍合金 > 镍铬钼耐蚀合金
+hastelloy_c276,Hastelloy C-276,Hastelloy C-276,grade,nickel_chromium_molybdenum,金属与合金 > 有色金属 > 镍及镍合金 > 镍铬钼耐蚀合金 > Hastelloy C-276
+inconel_625,Inconel 625,Inconel 625,grade,nickel_chromium_molybdenum,金属与合金 > 有色金属 > 镍及镍合金 > 镍铬钼耐蚀合金 > Inconel 625
+precious_metals,贵金属,Precious metals,family,,金属与合金 > 贵金属
+intermetallics,金属间化合物,Intermetallic compounds,family,,金属与合金 > 金属间化合物
+refractory_metals,难熔金属,Refractory metals,family,,金属与合金 > 难熔金属
+superalloys,高温合金,Superalloys,family,,金属与合金 > 高温合金
+single_crystal_superalloy,单晶高温合金,Single-crystal superalloy,subfamily,nickel_superalloy,金属与合金 > 高温合金 > 镍基高温合金 > 单晶高温合金
+wrought_superalloy,变形高温合金,Wrought superalloy,subfamily,nickel_superalloy,金属与合金 > 高温合金 > 镍基高温合金 > 变形高温合金
+gh4169,GH4169,GH4169 superalloy,grade,wrought_superalloy,金属与合金 > 高温合金 > 镍基高温合金 > 变形高温合金 > GH4169
+inconel_718,Inconel 718,Inconel 718,grade,wrought_superalloy,金属与合金 > 高温合金 > 镍基高温合金 > 变形高温合金 > Inconel 718
+powder_superalloy,粉末高温合金,Powder metallurgy superalloy,subfamily,nickel_superalloy,金属与合金 > 高温合金 > 镍基高温合金 > 粉末高温合金
+cast_superalloy,铸造高温合金,Cast superalloy,subfamily,nickel_superalloy,金属与合金 > 高温合金 > 镍基高温合金 > 铸造高温合金
+k418,K418,K418 cast superalloy,grade,cast_superalloy,金属与合金 > 高温合金 > 镍基高温合金 > 铸造高温合金 > K418
+ferrous_metals,黑色金属,Ferrous metals,family,,金属与合金 > 黑色金属
+duplex_stainless_steel,双相不锈钢,Duplex stainless steel,subfamily,stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 双相不锈钢
+ss_2205,2205,2205 duplex stainless steel,grade,duplex_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 双相不锈钢 > 2205
+austenitic_stainless_steel,奥氏体不锈钢,Austenitic stainless steel,subfamily,stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 奥氏体不锈钢
+ss_304,304,AISI 304 stainless steel,grade,austenitic_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 奥氏体不锈钢 > 304
+ss_304l,304L,AISI 304L stainless steel,grade,austenitic_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 奥氏体不锈钢 > 304L
+ss_310s,310S,AISI 310S stainless steel,grade,austenitic_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 奥氏体不锈钢 > 310S
+ss_316,316,AISI 316 stainless steel,grade,austenitic_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 奥氏体不锈钢 > 316
+ss_316l,316L,AISI 316L stainless steel,grade,austenitic_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 奥氏体不锈钢 > 316L
+ph_stainless_steel,沉淀硬化不锈钢,Precipitation-hardening stainless steel,subfamily,stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 沉淀硬化不锈钢
+ss_17_4ph,17-4PH,17-4 PH stainless steel,grade,ph_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 沉淀硬化不锈钢 > 17-4PH
+ferritic_stainless_steel,铁素体不锈钢,Ferritic stainless steel,subfamily,stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 铁素体不锈钢
+ss_430,430,AISI 430 stainless steel,grade,ferritic_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 铁素体不锈钢 > 430
+martensitic_stainless_steel,马氏体不锈钢,Martensitic stainless steel,subfamily,stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 马氏体不锈钢
+ss_410,410,AISI 410 stainless steel,grade,martensitic_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 马氏体不锈钢 > 410
+ss_420,420,AISI 420 stainless steel,grade,martensitic_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 马氏体不锈钢 > 420
+ss_440c,440C,AISI 440C stainless steel,grade,martensitic_stainless_steel,金属与合金 > 黑色金属 > 钢 > 不锈钢 > 马氏体不锈钢 > 440C
+low_alloy_steel,低合金钢,Low-alloy steel,subfamily,steel,金属与合金 > 黑色金属 > 钢 > 低合金钢
+cold_work_tool_steel,冷作模具钢,Cold-work tool steel,subfamily,tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 冷作模具钢
+steel_cr12,Cr12,Cr12 tool steel,grade,cold_work_tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 冷作模具钢 > Cr12
+steel_cr12mov,Cr12MoV,Cr12MoV tool steel,grade,cold_work_tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 冷作模具钢 > Cr12MoV
+steel_d2,D2,AISI D2 tool steel,grade,cold_work_tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 冷作模具钢 > D2
+plastic_mold_steel,塑料模具钢,Plastic mould steel,subfamily,tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 塑料模具钢
+steel_p20,P20,AISI P20 mould steel,grade,plastic_mold_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 塑料模具钢 > P20
+hot_work_tool_steel,热作模具钢,Hot-work tool steel,subfamily,tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 热作模具钢
+steel_h13,H13,AISI H13 tool steel,grade,hot_work_tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 热作模具钢 > H13
+carbon_tool_steel,碳素工具钢,Carbon tool steel,subfamily,tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 碳素工具钢
+steel_t10,T10,T10 carbon tool steel,grade,carbon_tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 碳素工具钢 > T10
+steel_t12,T12,T12 carbon tool steel,grade,carbon_tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 碳素工具钢 > T12
+steel_t8,T8,T8 carbon tool steel,grade,carbon_tool_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 碳素工具钢 > T8
+steel_m2,M2,AISI M2 high-speed steel,grade,high_speed_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 高速工具钢 > M2
+steel_w18cr4v,W18Cr4V,W18Cr4V high-speed steel,grade,high_speed_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 高速工具钢 > W18Cr4V
+steel_w6mo5cr4v2,W6Mo5Cr4V2,W6Mo5Cr4V2 high-speed steel,grade,high_speed_steel,金属与合金 > 黑色金属 > 钢 > 工具钢 > 高速工具钢 > W6Mo5Cr4V2
+machine_steel,机械制造用钢,Machine-building steel,subfamily,steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢
+spring_steel,弹簧钢,Spring steel,subfamily,machine_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 弹簧钢
+steel_60si2mn,60Si2Mn,60Si2Mn spring steel,grade,spring_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 弹簧钢 > 60Si2Mn
+steel_65mn,65Mn,65Mn spring steel,grade,spring_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 弹簧钢 > 65Mn
+carburizing_steel,渗碳钢,Carburizing steel,subfamily,machine_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 渗碳钢
+steel_20cr,20Cr,20Cr alloy steel,grade,carburizing_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 渗碳钢 > 20Cr
+steel_20crmnti,20CrMnTi,20CrMnTi gear steel,grade,carburizing_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 渗碳钢 > 20CrMnTi
+quenched_tempered_steel,调质钢,Quenched and tempered steel,subfamily,machine_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 调质钢
+steel_35crmo,35CrMo,35CrMo alloy steel,grade,quenched_tempered_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 调质钢 > 35CrMo
+steel_40cr,40Cr,40Cr alloy steel,grade,quenched_tempered_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 调质钢 > 40Cr
+steel_42crmo,42CrMo,42CrMo alloy steel,grade,quenched_tempered_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 调质钢 > 42CrMo
+bearing_steel,轴承钢,Bearing steel,subfamily,machine_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 轴承钢
+steel_gcr15,GCr15,GCr15 bearing steel,grade,bearing_steel,金属与合金 > 黑色金属 > 钢 > 机械制造用钢 > 轴承钢 > GCr15
+electrical_steel,电工钢,Electrical steel,subfamily,steel,金属与合金 > 黑色金属 > 钢 > 电工钢
+structural_steel,结构钢,Structural steel,subfamily,steel,金属与合金 > 黑色金属 > 钢 > 结构钢
+hsla_steel,低合金高强度结构钢,High-strength low-alloy steel,subfamily,structural_steel,金属与合金 > 黑色金属 > 钢 > 结构钢 > 低合金高强度结构钢
+carbon_structural_steel,普通碳素结构钢,Carbon structural steel,subfamily,structural_steel,金属与合金 > 黑色金属 > 钢 > 结构钢 > 普通碳素结构钢
+q235,Q235,Q235 structural steel,grade,carbon_structural_steel,金属与合金 > 黑色金属 > 钢 > 结构钢 > 普通碳素结构钢 > Q235
+q275,Q275,Q275 structural steel,grade,carbon_structural_steel,金属与合金 > 黑色金属 > 钢 > 结构钢 > 普通碳素结构钢 > Q275
+unalloyed_steel,非合金钢,Non-alloy steel,subfamily,steel,金属与合金 > 黑色金属 > 钢 > 非合金钢
+medium_carbon_steel,中碳钢,Medium-carbon steel,subfamily,unalloyed_steel,金属与合金 > 黑色金属 > 钢 > 非合金钢 > 中碳钢
+steel_35,35钢,Grade 35 carbon steel,grade,medium_carbon_steel,金属与合金 > 黑色金属 > 钢 > 非合金钢 > 中碳钢 > 35钢
+steel_45,45钢,Grade 45 carbon steel,grade,medium_carbon_steel,金属与合金 > 黑色金属 > 钢 > 非合金钢 > 中碳钢 > 45钢
+steel_50,50钢,Grade 50 carbon steel,grade,medium_carbon_steel,金属与合金 > 黑色金属 > 钢 > 非合金钢 > 中碳钢 > 50钢
+low_carbon_steel,低碳钢,Low-carbon steel,subfamily,unalloyed_steel,金属与合金 > 黑色金属 > 钢 > 非合金钢 > 低碳钢
+steel_20,20钢,Grade 20 carbon steel,grade,low_carbon_steel,金属与合金 > 黑色金属 > 钢 > 非合金钢 > 低碳钢 > 20钢
+high_carbon_steel,高碳钢,High-carbon steel,subfamily,unalloyed_steel,金属与合金 > 黑色金属 > 钢 > 非合金钢 > 高碳钢
+steel_65,65钢,Grade 65 carbon steel,grade,high_carbon_steel,金属与合金 > 黑色金属 > 钢 > 非合金钢 > 高碳钢 > 65钢
+steel_70,70钢,Grade 70 carbon steel,grade,high_carbon_steel,金属与合金 > 黑色金属 > 钢 > 非合金钢 > 高碳钢 > 70钢
+chilled_cast_iron,冷硬铸铁,Chilled cast iron,subfamily,cast_iron,金属与合金 > 黑色金属 > 铸铁 > 冷硬铸铁
+malleable_cast_iron,可锻铸铁,Malleable cast iron,subfamily,cast_iron,金属与合金 > 黑色金属 > 铸铁 > 可锻铸铁
+cast_kth350_10,KTH350-10,KTH350-10 malleable cast iron,grade,malleable_cast_iron,金属与合金 > 黑色金属 > 铸铁 > 可锻铸铁 > KTH350-10
+austenitic_cast_iron,奥氏体铸铁,Austenitic cast iron,subfamily,cast_iron,金属与合金 > 黑色金属 > 铸铁 > 奥氏体铸铁
+gray_cast_iron,灰铸铁,Grey cast iron,subfamily,cast_iron,金属与合金 > 黑色金属 > 铸铁 > 灰铸铁
+cast_ht200,HT200,HT200 grey cast iron,grade,gray_cast_iron,金属与合金 > 黑色金属 > 铸铁 > 灰铸铁 > HT200
+cast_ht250,HT250,HT250 grey cast iron,grade,gray_cast_iron,金属与合金 > 黑色金属 > 铸铁 > 灰铸铁 > HT250
+ductile_cast_iron,球墨铸铁,Ductile iron,subfamily,cast_iron,金属与合金 > 黑色金属 > 铸铁 > 球墨铸铁
+cast_qt400_18,QT400-18,QT400-18 ductile iron,grade,ductile_cast_iron,金属与合金 > 黑色金属 > 铸铁 > 球墨铸铁 > QT400-18
+cast_qt500_7,QT500-7,QT500-7 ductile iron,grade,ductile_cast_iron,金属与合金 > 黑色金属 > 铸铁 > 球墨铸铁 > QT500-7
+cast_qt600_3,QT600-3,QT600-3 ductile iron,grade,ductile_cast_iron,金属与合金 > 黑色金属 > 铸铁 > 球墨铸铁 > QT600-3
+white_cast_iron,白口铸铁,White cast iron,subfamily,cast_iron,金属与合金 > 黑色金属 > 铸铁 > 白口铸铁
+heat_resistant_cast_iron,耐热铸铁,Heat-resistant cast iron,subfamily,cast_iron,金属与合金 > 黑色金属 > 铸铁 > 耐热铸铁
+compacted_graphite_iron,蠕墨铸铁,Compacted graphite iron,subfamily,cast_iron,金属与合金 > 黑色金属 > 铸铁 > 蠕墨铸铁
+cast_rut420,RuT420,RuT420 compacted graphite iron,grade,compacted_graphite_iron,金属与合金 > 黑色金属 > 铸铁 > 蠕墨铸铁 > RuT420
+high_chromium_cast_iron,高铬耐磨铸铁,High-chromium wear-resistant cast iron,subfamily,cast_iron,金属与合金 > 黑色金属 > 铸铁 > 高铬耐磨铸铁
+tpe_s,TPE-S,Styrenic thermoplastic elastomer,material,elastomers,高分子材料 > 弹性体 > TPE-S
+tpo,TPO,Thermoplastic polyolefin,material,elastomers,高分子材料 > 弹性体 > TPO
+tpu,TPU,Thermoplastic polyurethane elastomer,material,elastomers,高分子材料 > 弹性体 > TPU
+tpv,TPV,Thermoplastic vulcanizate,material,elastomers,高分子材料 > 弹性体 > TPV
+iir,丁基橡胶,Butyl rubber,material,elastomers,高分子材料 > 弹性体 > 丁基橡胶
+nbr,丁腈橡胶,Nitrile rubber,material,elastomers,高分子材料 > 弹性体 > 丁腈橡胶
+sbr,丁苯橡胶,Styrene-butadiene rubber,material,elastomers,高分子材料 > 弹性体 > 丁苯橡胶
+epdm,三元乙丙橡胶,EPDM rubber,material,elastomers,高分子材料 > 弹性体 > 三元乙丙橡胶
+hnbr,氢化丁腈橡胶,Hydrogenated nitrile rubber,material,elastomers,高分子材料 > 弹性体 > 氢化丁腈橡胶
+cr_rubber,氯丁橡胶,Chloroprene rubber,material,elastomers,高分子材料 > 弹性体 > 氯丁橡胶
+br,顺丁橡胶,Polybutadiene rubber,material,elastomers,高分子材料 > 弹性体 > 顺丁橡胶
+unsaturated_polyester_resin,不饱和聚酯树脂,Unsaturated polyester resin,material,thermosetting_resins,高分子材料 > 热固性树脂 > 不饱和聚酯树脂
+vinyl_ester_resin,乙烯基酯树脂,Vinyl ester resin,material,thermosetting_resins,高分子材料 > 热固性树脂 > 乙烯基酯树脂
+bisphenol_a_epoxy,双酚A型环氧树脂,Bisphenol-A epoxy resin,variant,epoxy_resin,高分子材料 > 热固性树脂 > 双酚A型环氧树脂
+bismaleimide_resin,双马来酰亚胺树脂,Bismaleimide resin,material,thermosetting_resins,高分子材料 > 热固性树脂 > 双马来酰亚胺树脂
+silicone_resin,有机硅树脂,Silicone resin,material,thermosetting_resins,高分子材料 > 热固性树脂 > 有机硅树脂
+cyanate_ester_resin,氰酸酯树脂,Cyanate ester resin,material,thermosetting_resins,高分子材料 > 热固性树脂 > 氰酸酯树脂
+phenolic_resin,酚醛树脂,Phenolic resin,material,thermosetting_resins,高分子材料 > 热固性树脂 > 酚醛树脂
+novolac_epoxy,酚醛环氧树脂,Novolac epoxy resin,variant,epoxy_resin,高分子材料 > 热固性树脂 > 酚醛环氧树脂
+ectfe,ECTFE,Ethylene chlorotrifluoroethylene,material,fluoropolymers,高分子材料 > 热塑性塑料 > 含氟聚合物 > ECTFE
+etfe,ETFE,Ethylene tetrafluoroethylene,material,fluoropolymers,高分子材料 > 热塑性塑料 > 含氟聚合物 > ETFE
+fep,FEP,Fluorinated ethylene propylene,material,fluoropolymers,高分子材料 > 热塑性塑料 > 含氟聚合物 > FEP
+pfa,PFA,Perfluoroalkoxy alkane,material,fluoropolymers,高分子材料 > 热塑性塑料 > 含氟聚合物 > PFA
+pvdf,PVDF,Polyvinylidene fluoride,material,fluoropolymers,高分子材料 > 热塑性塑料 > 含氟聚合物 > PVDF
+mxd6,MXD6,Polyamide MXD6,material,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > MXD6
+pa11,PA11,Polyamide 11,material,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > PA11
+pa12,PA12,Polyamide 12,material,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > PA12
+pa46,PA46,Polyamide 46,material,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > PA46
+pa6,PA6,Polyamide 6,material,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > PA6
+pa610,PA610,Polyamide 610,material,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > PA610
+pa612,PA612,Polyamide 612,material,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > PA612
+pa66,PA66,Polyamide 66,material,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > PA66
+pa6t,PA6T,Polyamide 6T,material,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > PA6T
+pa9t,PA9T,Polyamide 9T,material,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > PA9T
+gf_pa6,玻纤增强PA6,Glass-fibre-reinforced PA6,variant,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > 玻纤增强PA6
+gf_pa66,玻纤增强PA66,Glass-fibre-reinforced PA66,variant,polyamide,高分子材料 > 热塑性塑料 > 工程热塑性塑料 > 聚酰胺 > 玻纤增强PA66
+pct,PCT,Polycyclohexylenedimethylene terephthalate,material,thermoplastic_polyesters,高分子材料 > 热塑性塑料 > 热塑性聚酯 > PCT
+pen,PEN,Polyethylene naphthalate,material,thermoplastic_polyesters,高分子材料 > 热塑性塑料 > 热塑性聚酯 > PEN
+petg,PETG,Glycol-modified PET,variant,pet,高分子材料 > 热塑性塑料 > 热塑性聚酯 > PETG
+pp_homopolymer,均聚PP,Polypropylene homopolymer,variant,polypropylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚丙烯 > 均聚PP
+pp_block_copolymer,嵌段共聚PP,Impact copolymer polypropylene,variant,polypropylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚丙烯 > 嵌段共聚PP
+pp_random_copolymer,无规共聚PP,Random copolymer polypropylene,variant,polypropylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚丙烯 > 无规共聚PP
+gf_pp,玻纤增强PP,Glass-fibre-reinforced polypropylene,variant,polypropylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚丙烯 > 玻纤增强PP
+lgf_pp,长玻纤增强PP,Long-glass-fibre-reinforced polypropylene,variant,polypropylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚丙烯 > 长玻纤增强PP
+hdpe,HDPE,High-density polyethylene,variant,polyethylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚乙烯 > HDPE
+ldpe,LDPE,Low-density polyethylene,variant,polyethylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚乙烯 > LDPE
+lldpe,LLDPE,Linear low-density polyethylene,variant,polyethylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚乙烯 > LLDPE
+mdpe,MDPE,Medium-density polyethylene,variant,polyethylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚乙烯 > MDPE
+uhmwpe,UHMWPE,Ultra-high-molecular-weight polyethylene,variant,polyethylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚乙烯 > UHMWPE
+xlpe,XLPE,Cross-linked polyethylene,variant,polyethylene,高分子材料 > 热塑性塑料 > 聚烯烃 > 聚乙烯 > XLPE
+asa,ASA,Acrylonitrile styrene acrylate,material,styrenic_polymers,高分子材料 > 热塑性塑料 > 苯乙烯类聚合物 > ASA
+san,SAN,Styrene-acrylonitrile copolymer,material,styrenic_polymers,高分子材料 > 热塑性塑料 > 苯乙烯类聚合物 > SAN
+eps,EPS,Expanded polystyrene,form,polystyrene,高分子材料 > 热塑性塑料 > 苯乙烯类聚合物 > 聚苯乙烯 > EPS
+gpps,GPPS,General-purpose polystyrene,variant,polystyrene,高分子材料 > 热塑性塑料 > 苯乙烯类聚合物 > 聚苯乙烯 > GPPS
+hips,HIPS,High-impact polystyrene,variant,polystyrene,高分子材料 > 热塑性塑料 > 苯乙烯类聚合物 > 聚苯乙烯 > HIPS
+xps,XPS,Extruded polystyrene foam,form,polystyrene,高分子材料 > 热塑性塑料 > 苯乙烯类聚合物 > 聚苯乙烯 > XPS
+pbat,PBAT,Polybutylene adipate terephthalate,material,biodegradable_polymers,高分子材料 > 生物可降解聚合物 > PBAT
+pbs,PBS,Polybutylene succinate,material,biodegradable_polymers,高分子材料 > 生物可降解聚合物 > PBS
+pcl,PCL,Polycaprolactone,material,biodegradable_polymers,高分子材料 > 生物可降解聚合物 > PCL
+pga,PGA,Polyglycolic acid,material,biodegradable_polymers,高分子材料 > 生物可降解聚合物 > PGA
+pha,PHA,Polyhydroxyalkanoate,material,biodegradable_polymers,高分子材料 > 生物可降解聚合物 > PHA
+phb,PHB,Polyhydroxybutyrate,material,biodegradable_polymers,高分子材料 > 生物可降解聚合物 > PHB
+plga,PLGA,Poly(lactic-co-glycolic acid),material,biodegradable_polymers,高分子材料 > 生物可降解聚合物 > PLGA
+starch_plastic,淀粉基塑料,Starch-based plastic,material,biodegradable_polymers,高分子材料 > 生物可降解聚合物 > 淀粉基塑料
+cellulose_material,纤维素材料,Cellulose material,material,biodegradable_polymers,高分子材料 > 生物可降解聚合物 > 纤维素材料
+pei,PEI,Polyetherimide,material,high_performance_polymers,高分子材料 > 高性能聚合物 > PEI
+pekk,PEKK,Polyetherketoneketone,material,high_performance_polymers,高分子材料 > 高性能聚合物 > PEKK
+pes,PES,Polyethersulfone,material,high_performance_polymers,高分子材料 > 高性能聚合物 > PES
+ppsu,PPSU,Polyphenylsulfone,material,high_performance_polymers,高分子材料 > 高性能聚合物 > PPSU
+psu,PSU,Polysulfone,material,high_performance_polymers,高分子材料 > 高性能聚合物 > PSU
+cf_peek,碳纤增强PEEK,Carbon-fibre-reinforced PEEK,variant,peek,高分子材料 > 高性能聚合物 > 聚芳醚酮 > PEEK > 碳纤增强PEEK
+elastomers,弹性体,Elastomers,family,,高分子材料 > 弹性体
+thermosetting_resins,热固性树脂,Thermosetting resins,family,,高分子材料 > 热固性树脂
+fluoropolymers,含氟聚合物,Fluoropolymers,family,,高分子材料 > 热塑性塑料 > 含氟聚合物
+engineering_thermoplastics,工程热塑性塑料,Engineering thermoplastics,family,,高分子材料 > 热塑性塑料 > 工程热塑性塑料
+thermoplastic_polyesters,热塑性聚酯,Thermoplastic polyesters,family,,高分子材料 > 热塑性塑料 > 热塑性聚酯
+polyolefins,聚烯烃,Polyolefins,family,,高分子材料 > 热塑性塑料 > 聚烯烃
+styrenic_polymers,苯乙烯类聚合物,Styrenic polymers,family,,高分子材料 > 热塑性塑料 > 苯乙烯类聚合物
+biodegradable_polymers,生物可降解聚合物,Biodegradable polymers,family,,高分子材料 > 生物可降解聚合物
+high_performance_polymers,高性能聚合物,High-performance polymers,family,,高分子材料 > 高性能聚合物
+hydroxyapatite_peek,羟基磷灰石/PEEK复合材料,Hydroxyapatite/PEEK composite,variant,peek,高分子材料 > 高性能聚合物 > 聚芳醚酮 > PEEK > 羟基磷灰石/PEEK复合材料

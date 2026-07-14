@@ -39,7 +39,8 @@
           app.innerHTML = data.map(item => `
             <section class="material">
               <h2>${item.name || item.materialId}</h2>
-              <p class="hint">材料 ID：<code>${item.materialId}</code></p>
+              <p class="hint">材料 ID：<code>${item.materialId}</code> · 实体类型：${item.entityType || 'material'}</p>
+              <p class="hint">分类路径：${(item.taxonomyPath || []).join(' / ') || '待补充'}</p>
               <div class="images">
                 ${(item.images || []).map(image => `
                   <figure>

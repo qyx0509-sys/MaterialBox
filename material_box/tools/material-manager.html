@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>MaterialBox 本地材料管理器</title>
+    <style>
+      :root {
+        --bg: #f4f8f8;
+        --panel: #ffffff;
+        --soft: #eef8f6;
+        --soft-blue: #eef4fb;
+        --text: #1f2937;
+        --muted: #667085;
+        --line: #dbe7e6;
+        --primary: #168d81;
+        --primary-dark: #0f655e;
+        --blue: #3d78be;
+        --danger: #b54747;
+        --warning: #8b6508;
+        --shadow: 0 8px 24px rgba(31, 41, 55, .06);
+      }
+      * { box-sizing: border-box; }
+      html { color-scheme: light; }
+      body { background: var(--bg); color: var(--text); font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif; margin: 0; }
+      body.busy { cursor: wait; }
+      button, input, select, textarea { font: inherit; }
+      button, a { -webkit-tap-highlight-color: transparent; }
+      button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid rgba(22, 141, 129, .2); outline-offset: 2px; }
+      .topbar { align-items: center; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); display: flex; gap: 18px; justify-content: space-between; padding: 12px 20px; position: sticky; top: 0; z-index: 50; }
+      .brand { display: grid; gap: 2px; min-width: 0; }
+      .brand strong { color: var(--primary-dark); font-size: 1.05rem; }
+      .brand span { color: var(--muted); font-size: .76rem; }
+      .top-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+      .button { align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 7px; color: var(--text); cursor: pointer; display: inline-flex; font-weight: 750; gap: 6px; justify-content: center; min-height: 38px; padding: 8px 12px; text-decoration: none; }
+      .button:hover { background: #f7fbfb; border-color: #bcd8d5; color: var(--primary-dark); }
+      .button.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+      .button.primary:hover { background: var(--primary-dark); }
+      .button.danger { color: var(--danger); }
+      .button.small { min-height: 32px; padding: 5px 9px; }
+      .manager-shell { display: grid; gap: 16px; grid-template-columns: 340px minmax(0, 1fr); margin: 0 auto; max-width: 1600px; padding: 16px; }
+      .sidebar, .editor-panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); min-width: 0; }
+      .sidebar { align-self: start; max-height: calc(100vh - 86px); overflow: hidden; position: sticky; top: 70px; }
+      .sidebar-head { border-bottom: 1px solid var(--line); display: grid; gap: 12px; padding: 14px; }
+      .stats { display: grid; gap: 7px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stat { background: var(--soft); border-radius: 7px; display: grid; gap: 2px; padding: 8px 10px; }
+      .stat:nth-child(2n) { background: var(--soft-blue); }
+      .stat strong { font-size: 1rem; }
+      .stat span { color: var(--muted); font-size: .7rem; }
+      .filters { display: grid; gap: 8px; grid-template-columns: 1fr 1fr; }
+      .filters .wide { grid-column: 1 / -1; }
+      input, select, textarea { background: #fff; border: 1px solid #cfdcdb; border-radius: 7px; color: var(--text); min-width: 0; padding: 9px 10px; width: 100%; }
+      textarea { line-height: 1.55; min-height: 88px; resize: vertical; }
+      input:focus, select:focus, textarea:focus { border-color: var(--primary); outline: 3px solid rgba(22, 141, 129, .1); }
+      .material-list { max-height: calc(100vh - 348px); overflow-y: auto; padding: 6px; }
+      .material-list-empty { color: var(--muted); font-size: .84rem; padding: 24px 12px; text-align: center; }
+      .material-row { background: transparent; border: 0; border-radius: 7px; cursor: pointer; display: grid; gap: 4px; padding: 9px 10px; text-align: left; width: 100%; }
+      .material-row:hover { background: #f4f9f8; }
+      .material-row.active { background: #e8f5f3; box-shadow: inset 3px 0 var(--primary); }
+      .material-row strong { font-size: .86rem; overflow-wrap: anywhere; }
+      .material-row small { color: var(--muted); font-size: .68rem; overflow-wrap: anywhere; }
+      .row-meta { align-items: center; display: flex; flex-wrap: wrap; gap: 5px; }
+      .badge { background: #f2f5f5; border-radius: 4px; color: var(--muted); font-size: .64rem; font-weight: 750; padding: 2px 5px; }
+      .badge.ok { background: #e5f5ee; color: #176b51; }
+      .badge.warn { background: #fff4d9; color: var(--warning); }
+      .editor-panel { min-height: calc(100vh - 104px); }
+      .empty-editor { align-content: center; color: var(--muted); display: grid; justify-items: center; min-height: 500px; padding: 30px; text-align: center; }
+      .empty-editor strong { color: var(--text); font-size: 1.05rem; margin-bottom: 6px; }
+      .editor { display: none; }
+      .editor.active { display: block; }
+      .editor-head { align-items: start; background: #fbfdfd; border-bottom: 1px solid var(--line); display: flex; gap: 16px; justify-content: space-between; padding: 16px 18px; position: sticky; top: 70px; z-index: 20; }
+      .editor-title { display: grid; gap: 3px; min-width: 0; }
+      .editor-title h1 { font-size: 1.25rem; margin: 0; overflow-wrap: anywhere; }
+      .editor-title span { color: var(--muted); font-size: .76rem; overflow-wrap: anywhere; }
+      .dirty-indicator { color: var(--warning); display: none; font-size: .75rem; font-weight: 750; }
+      .dirty-indicator.visible { display: inline; }
+      .editor-body { display: grid; gap: 14px; padding: 16px; }
+      .form-section { border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+      .form-section > h2 { background: #f5faf9; border-bottom: 1px solid var(--line); color: var(--primary-dark); font-size: .9rem; margin: 0; padding: 10px 13px; }
+      .form-grid { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 13px; }
+      .form-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .field { display: grid; gap: 5px; min-width: 0; }
+      .field.wide { grid-column: 1 / -1; }
+      .field label { color: #41545a; font-size: .74rem; font-weight: 800; }
+      .field small { color: var(--muted); font-size: .66rem; line-height: 1.45; }
+      .readonly { background: #f4f6f6; color: var(--muted); }
+      .source-list { display: grid; gap: 10px; padding: 13px; }
+      .source-row { background: #fafcfc; border: 1px solid var(--line); border-radius: 8px; display: grid; gap: 9px; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 11px; }
+      .source-row .wide { grid-column: 1 / -1; }
+      .source-actions { display: flex; grid-column: 1 / -1; justify-content: flex-end; }
+      .section-actions { border-top: 1px solid var(--line); padding: 10px 13px; }
+      .image-groups { display: grid; gap: 14px; padding: 13px; }
+      .image-group { display: grid; gap: 9px; }
+      .image-group-head { align-items: end; display: flex; gap: 10px; justify-content: space-between; }
+      .image-group-head strong { color: var(--primary-dark); font-size: .82rem; }
+      .image-group-head span { color: var(--muted); font-size: .68rem; }
+      .image-slots { display: grid; gap: 10px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .image-slot { border: 1px solid var(--line); border-radius: 8px; display: grid; gap: 9px; min-width: 0; padding: 9px; }
+      .image-drop { aspect-ratio: 4 / 3; background: #f3f8f7; border: 1px dashed #b9d0ce; border-radius: 7px; cursor: pointer; display: grid; overflow: hidden; place-items: center; position: relative; }
+      .image-drop.dragging { background: #e2f3f0; border-color: var(--primary); }
+      .image-drop img { height: 100%; object-fit: contain; width: 100%; }
+      .image-drop .placeholder { color: var(--muted); display: grid; font-size: .72rem; gap: 5px; justify-items: center; padding: 12px; text-align: center; }
+      .image-drop .placeholder strong { color: var(--primary-dark); font-size: .78rem; }
+      .image-file { display: none; }
+      .slot-head { align-items: center; display: flex; gap: 8px; justify-content: space-between; }
+      .slot-head strong { font-size: .75rem; }
+      .slot-status { color: var(--muted); font-size: .65rem; }
+      .slot-status.changed { color: var(--warning); font-weight: 800; }
+      .image-meta-fields { display: grid; gap: 7px; }
+      .image-meta-fields input, .image-meta-fields select { font-size: .72rem; padding: 7px 8px; }
+      .slot-actions { display: grid; gap: 7px; grid-template-columns: 1fr 1fr; }
+      .save-bar { align-items: center; background: rgba(255,255,255,.96); border-top: 1px solid var(--line); bottom: 0; display: flex; gap: 12px; justify-content: flex-end; padding: 12px 16px; position: sticky; z-index: 20; }
+      .save-message { color: var(--muted); font-size: .76rem; margin-right: auto; overflow-wrap: anywhere; }
+      .toast { background: #1f2937; border-radius: 7px; bottom: 20px; color: #fff; max-width: min(420px, calc(100vw - 32px)); padding: 11px 14px; position: fixed; right: 20px; z-index: 100; }
+      .toast.error { background: #8f3636; }
+      .hidden { display: none !important; }
+      @media (max-width: 1100px) {
+        .manager-shell { grid-template-columns: 290px minmax(0, 1fr); }
+        .form-grid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .image-slots { grid-template-columns: 1fr; }
+        .image-slot { grid-template-columns: 180px minmax(0, 1fr); }
+        .slot-head, .slot-actions { grid-column: 1 / -1; }
+      }
+      @media (max-width: 760px) {
+        .topbar { align-items: stretch; flex-direction: column; position: static; }
+        .top-actions { justify-content: flex-start; }
+        .manager-shell { display: block; padding: 10px; }
+        .sidebar { max-height: none; position: static; }
+        .material-list { max-height: 330px; }
+        .editor-panel { margin-top: 10px; min-height: 400px; }
+        .editor-head { position: static; }
+        .form-grid, .form-grid.three, .source-row { grid-template-columns: 1fr; }
+        .field.wide, .source-row .wide, .source-actions { grid-column: auto; }
+        .image-slot { grid-template-columns: 1fr; }
+        .slot-head, .slot-actions { grid-column: auto; }
+        .save-bar { align-items: stretch; flex-direction: column; }
+        .save-message { margin: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><strong>MaterialBox 本地材料管理器</strong><span>仅运行在 127.0.0.1，保存时自动同步主网站</span></div>
+      <nav class="top-actions">
+        <a class="button" href="/project/index.html" target="_blank" rel="noreferrer">打开主网站</a>
+        <a class="button" href="/project/attribution.html" target="_blank" rel="noreferrer">图片来源</a>
+        <button class="button danger" id="restore-latest" type="button">恢复最近备份</button>
+        <button class="button primary" id="top-save" type="button" disabled>保存材料</button>
+      </nav>
+    </header>
+
+    <main class="manager-shell">
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <div class="stats" id="stats"></div>
+          <div class="filters">
+            <input class="wide" id="list-search" type="search" placeholder="搜索中文名、英文名、缩写或 id" />
+            <select id="category-1"><option value="">全部一级分类</option></select>
+            <select id="category-2"><option value="">全部二级分类</option></select>
+            <select id="problem-filter">
+              <option value="">全部维护状态</option>
+              <option value="missing_macro">缺宏观图</option>
+              <option value="missing_micro">缺微观图</option>
+              <option value="missing_structure">缺结构图</option>
+              <option value="missing_engineering">缺工程参数</option>
+            </select>
+            <select id="status-filter">
+              <option value="">全部数据状态</option>
+              <option value="待补充">待补充</option>
+              <option value="待核验">待核验</option>
+              <option value="已核验">已核验</option>
+            </select>
+          </div>
+        </div>
+        <div class="material-list" id="material-list"></div>
+      </aside>
+
+      <section class="editor-panel">
+        <div class="empty-editor" id="empty-editor"><strong>选择一个材料开始维护</strong><span>左侧可按缺图、参数完整度和审核状态筛选。</span></div>
+        <form class="editor" id="editor" novalidate>
+          <header class="editor-head">
+            <div class="editor-title"><h1 id="editor-name">材料名称</h1><span id="editor-path"></span><span class="dirty-indicator" id="dirty-indicator">有未保存修改</span></div>
+            <span class="badge" id="editor-status">待补充</span>
+          </header>
+          <div class="editor-body">
+            <section class="form-section">
+              <h2>基本信息</h2>
+              <div class="form-grid three">
+                <div class="field"><label>材料 id（只读）</label><input class="readonly" data-field="id" readonly /></div>
+                <div class="field"><label>中文名</label><input data-field="name_cn" /></div>
+                <div class="field"><label>英文名</label><input data-field="name_en" /></div>
+                <div class="field"><label>简称 / 缩写</label><input data-field="abbreviation" /></div>
+                <div class="field"><label>学习层级</label><input data-field="difficulty_level" /></div>
+                <div class="field"><label>数据状态</label><select data-field="data_status"><option>待补充</option><option>待核验</option><option>已核验</option></select></div>
+                <div class="field"><label>更新日期</label><input data-field="updated_at" type="date" /><small>留空时保存为今天</small></div>
+                <div class="field wide"><label>材料简介</label><textarea data-field="description"></textarea></div>
+                <div class="field wide"><label>组成 / 结构</label><textarea data-field="composition_or_structure"></textarea></div>
+                <div class="field wide"><label>补充说明</label><textarea data-field="notes"></textarea></div>
+              </div>
+            </section>
+
+            <section class="form-section">
+              <h2>性能、应用与关联（一行一项）</h2>
+              <div class="form-grid three" id="array-fields"></div>
+            </section>
+
+            <section class="form-section">
+              <h2>工程参数</h2>
+              <div class="form-grid three" id="engineering-fields"></div>
+            </section>
+
+            <section class="form-section">
+              <h2>性能评分（完整填写六项后主网站才显示雷达图）</h2>
+              <div class="form-grid three" id="score-fields"></div>
+            </section>
+
+            <section class="form-section">
+              <h2>数据参考来源</h2>
+              <div class="source-list" id="source-list"></div>
+              <div class="section-actions"><button class="button small" id="add-source" type="button">添加来源</button></div>
+            </section>
+
+            <section class="form-section">
+              <h2>材料图片</h2>
+              <div class="image-groups" id="image-groups"></div>
+            </section>
+          </div>
+          <footer class="save-bar"><span class="save-message" id="save-message">保存前会自动创建时间戳备份。</span><button class="button" id="reload-material" type="button">放弃本次修改</button><button class="button primary" type="submit">保存材料并同步</button></footer>
+        </form>
+      </section>
+    </main>
+    <div id="toast" class="toast hidden" role="status"></div>
+
+    <script>
+      const ADMIN_HEADERS = { "X-MaterialBox-Admin": "1" };
+      const ARRAY_FIELDS = {
+        aliases: "同义词 / 别名", key_properties: "关键性能", mechanical_properties: "力学性能",
+        thermal_properties: "热性能", electrical_properties: "电性能", advantages: "优点",
+        limitations: "局限性", applications: "应用", processing_methods: "加工方法",
+        typical_products: "典型产品", related_materials: "相关材料", tags: "标签"
+      };
+      const ENGINEERING_FIELDS = {
+        density: "密度", melting_point: "熔点", service_temperature: "使用温度",
+        tensile_strength: "抗拉强度", elastic_modulus: "弹性模量", thermal_conductivity: "导热率",
+        electrical_resistivity: "电阻率", hardness: "硬度", hardness_condition: "硬度条件",
+        corrosion_resistance: "耐腐蚀性", cost_level: "成本等级"
+      };
+      const SCORE_FIELDS = { strength: "强度", heat: "耐温", corrosion: "耐腐蚀", processability: "加工性", cost: "成本友好度", lightweight: "轻量化" };
+      const IMAGE_TYPES = { macro: "宏观图", micro: "微观图", structure: "结构示意图" };
+      const IMAGE_META_FIELDS = { caption: "图片说明", alt: "替代文本", source: "来源", author: "作者", license: "许可证", licenseUrl: "许可证链接", sourceUrl: "来源页面", accessed_at: "访问日期" };
+      const state = { catalog: [], stats: {}, currentId: "", current: null, imageSlots: {}, dirty: false };
+      const $ = (selector, scope = document) => scope.querySelector(selector);
+      const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+
+      function escapeText(value) { return String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]); }
+      function lines(value) { return Array.isArray(value) ? value.join("\n") : ""; }
+      function splitLines(value) { return [...new Set(String(value || "").split(/\r?\n/).map((item) => item.trim()).filter(Boolean))]; }
+      function showToast(message, error = false) { const toast = $("#toast"); toast.textContent = message; toast.className = `toast${error ? " error" : ""}`; clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.add("hidden"), 4200); }
+      function setBusy(value) { document.body.classList.toggle("busy", value); $$("button").forEach((button) => { if (!button.dataset.keepEnabled) button.disabled = value || (button.id === "top-save" && !state.currentId); }); }
+      function markDirty() { if (!state.currentId) return; state.dirty = true; $("#dirty-indicator").classList.add("visible"); }
+
+      async function api(path, options = {}) {
+        const request = { cache: "no-store", ...options, headers: { ...(options.method === "POST" ? ADMIN_HEADERS : {}), ...(options.headers || {}) } };
+        const response = await fetch(path, request);
+        const payload = await response.json().catch(() => ({ error: `HTTP ${response.status}` }));
+        if (!response.ok || payload.ok === false) throw new Error(payload.error || `请求失败：HTTP ${response.status}`);
+        return payload;
+      }
+
+      function renderStats() {
+        const values = [["材料总数", state.stats.total || 0], ["已配图", state.stats.configured_images || 0], ["存在缺图", state.stats.missing_images || 0], ["参数完整度", `${state.stats.parameter_completeness || 0}%`]];
+        $("#stats").innerHTML = values.map(([label, value]) => `<div class="stat"><strong>${value}</strong><span>${label}</span></div>`).join("");
+      }
+
+      function populateCategoryFilters() {
+        const first = $("#category-1");
+        const selected = first.value;
+        const categories = [...new Set(state.catalog.map((item) => item.category_1).filter(Boolean))].sort((a,b) => a.localeCompare(b, "zh-CN"));
+        first.innerHTML = '<option value="">全部一级分类</option>' + categories.map((value) => `<option${value === selected ? " selected" : ""}>${escapeText(value)}</option>`).join("");
+        updateCategory2();
+      }
+
+      function updateCategory2() {
+        const first = $("#category-1").value;
+        const second = $("#category-2");
+        const selected = second.value;
+        const values = [...new Set(state.catalog.filter((item) => !first || item.category_1 === first).map((item) => item.category_2).filter(Boolean))].sort((a,b) => a.localeCompare(b, "zh-CN"));
+        second.innerHTML = '<option value="">全部二级分类</option>' + values.map((value) => `<option${value === selected ? " selected" : ""}>${escapeText(value)}</option>`).join("");
+      }
+
+      function filteredCatalog() {
+        const query = $("#list-search").value.trim().toLowerCase();
+        const category1 = $("#category-1").value;
+        const category2 = $("#category-2").value;
+        const issue = $("#problem-filter").value;
+        const status = $("#status-filter").value;
+        return state.catalog.filter((item) => {
+          const text = `${item.name_cn} ${item.name_en} ${item.abbreviation} ${item.id}`.toLowerCase();
+          if (query && !text.includes(query)) return false;
+          if (category1 && item.category_1 !== category1) return false;
+          if (category2 && item.category_2 !== category2) return false;
+          if (status && item.data_status !== status) return false;
+          if (issue === "missing_macro" && item.images.macro) return false;
+          if (issue === "missing_micro" && item.images.micro) return false;
+          if (issue === "missing_structure" && item.images.structure) return false;
+          if (issue === "missing_engineering" && item.engineering_filled === item.engineering_total) return false;
+          return true;
+        });
+      }
+
+      function renderMaterialList() {
+        const items = filteredCatalog();
+        const target = $("#material-list");
+        if (!items.length) { target.innerHTML = '<div class="material-list-empty">没有符合条件的材料。</div>'; return; }
+        target.innerHTML = items.map((item) => {
+          const imageCount = Object.values(item.images).filter(Boolean).length;
+          return `<button class="material-row${item.id === state.currentId ? " active" : ""}" type="button" data-material-id="${escapeText(item.id)}"><strong>${escapeText(item.name_cn)}${item.abbreviation ? ` / ${escapeText(item.abbreviation)}` : ""}</strong><small>${escapeText(item.name_en || item.id)}</small><div class="row-meta"><span class="badge ${imageCount === 3 ? "ok" : "warn"}">图片 ${imageCount}/3</span><span class="badge ${item.engineering_filled === item.engineering_total ? "ok" : "warn"}">参数 ${item.engineering_filled}/${item.engineering_total}</span><span class="badge">${escapeText(item.data_status)}</span></div></button>`;
+        }).join("");
+        $$('[data-material-id]', target).forEach((button) => button.addEventListener("click", () => selectMaterial(button.dataset.materialId)));
+      }
+
+      async function loadCatalog() {
+        const payload = await api("/api/materials");
+        state.catalog = payload.items;
+        state.stats = payload.stats;
+        renderStats(); populateCategoryFilters(); renderMaterialList();
+      }
+
+      function renderFieldTemplates() {
+        $("#array-fields").innerHTML = Object.entries(ARRAY_FIELDS).map(([key, label]) => `<div class="field"><label>${label}</label><textarea data-array="${key}" placeholder="一行一个内容"></textarea></div>`).join("");
+        $("#engineering-fields").innerHTML = Object.entries(ENGINEERING_FIELDS).map(([key, label]) => `<div class="field"><label>${label}</label><input data-engineering="${key}" placeholder="暂无数据" /></div>`).join("");
+        $("#score-fields").innerHTML = Object.entries(SCORE_FIELDS).map(([key, label]) => `<div class="field"><label>${label}</label><input data-score="${key}" type="number" min="1" max="5" step="1" placeholder="1 - 5" /></div>`).join("");
+      }
+
+      function renderSources(sources = []) {
+        const target = $("#source-list");
+        const rows = sources.length ? sources : [];
+        target.innerHTML = rows.map((source, index) => `<article class="source-row" data-source-index="${index}"><div class="field"><label>标题</label><input data-source="title" value="${escapeText(source.title || "")}" /></div><div class="field"><label>发布机构</label><input data-source="publisher" value="${escapeText(source.publisher || "")}" /></div><div class="field wide"><label>网址</label><input data-source="url" type="url" value="${escapeText(source.url || "")}" /></div><div class="field"><label>访问日期</label><input data-source="accessed_at" type="date" value="${escapeText(source.accessed_at || "")}" /></div><div class="field"><label>备注</label><input data-source="note" value="${escapeText(source.note || "")}" /></div><div class="source-actions"><button class="button small danger" type="button" data-remove-source="${index}">删除来源</button></div></article>`).join("");
+        if (!rows.length) target.innerHTML = '<div class="material-list-empty">参考来源待补充。</div>';
+        $$('[data-remove-source]', target).forEach((button) => button.addEventListener("click", () => { const values = collectSources(); values.splice(Number(button.dataset.removeSource), 1); renderSources(values); markDirty(); }));
+        $$('input', target).forEach((input) => input.addEventListener("input", markDirty));
+      }
+
+      function collectSources() {
+        return $$('.source-row', $("#source-list")).map((row) => Object.fromEntries($$('[data-source]', row).map((input) => [input.dataset.source, input.value.trim()]))).filter((item) => Object.values(item).some(Boolean));
+      }
+
+      function blankSlot(type, slot) { return { type, slot, action: "keep", dataUrl: "", url: "", src: "", metadata: Object.fromEntries(Object.keys(IMAGE_META_FIELDS).map((key) => [key, ""])) }; }
+
+      function initializeImageSlots(images) {
+        state.imageSlots = {};
+        Object.keys(IMAGE_TYPES).forEach((type) => {
+          state.imageSlots[type] = [1,2,3].map((slot) => {
+            const existing = (images[type] || []).find((item) => Number(item.slot) === slot);
+            if (!existing) return blankSlot(type, slot);
+            return { ...blankSlot(type, slot), src: existing.src || "", url: existing.url || "", metadata: Object.fromEntries(Object.keys(IMAGE_META_FIELDS).map((key) => [key, existing[key] || ""])) };
+          });
+        });
+      }
+
+      function imageSlotMarkup(slot) {
+        const preview = slot.dataUrl || slot.url;
+        const deleted = slot.action === "delete";
+        const status = slot.action === "replace" ? "待保存新图" : deleted ? "待删除" : slot.src ? "已保存" : "空槽位";
+        const metadata = slot.metadata;
+        return `<article class="image-slot" data-image-type="${slot.type}" data-image-slot="${slot.slot}"><div class="slot-head"><strong>第 ${slot.slot} 张</strong><span class="slot-status${slot.action !== "keep" ? " changed" : ""}">${status}</span></div><label class="image-drop" tabindex="0">${preview && !deleted ? `<img src="${escapeText(preview)}" alt="图片预览" />` : `<span class="placeholder"><strong>选择或拖入图片</strong><span>JPG / PNG / WebP，最大 10 MB</span></span>`}<input class="image-file" type="file" accept="image/jpeg,image/png,image/webp" /></label><div class="image-meta-fields"><select data-image-preset><option value="">来源快捷设置</option><option value="owned">用户自有图片</option></select>${Object.entries(IMAGE_META_FIELDS).map(([key, label]) => `<input data-image-meta="${key}" ${key.endsWith("Url") ? 'type="url"' : key === "accessed_at" ? 'type="date"' : ""} placeholder="${label}" value="${escapeText(metadata[key] || "")}" />`).join("")}</div><div class="slot-actions"><button class="button small" type="button" data-replace-image>选择图片</button><button class="button small danger" type="button" data-delete-image>${slot.src || slot.dataUrl ? "删除图片" : "清空"}</button></div></article>`;
+      }
+
+      function renderImages() {
+        $("#image-groups").innerHTML = Object.entries(IMAGE_TYPES).map(([type, label]) => `<section class="image-group"><div class="image-group-head"><strong>${label}</strong><span>最多 3 张，保存时统一转为 WebP</span></div><div class="image-slots">${state.imageSlots[type].map(imageSlotMarkup).join("")}</div></section>`).join("");
+        $$('.image-slot').forEach(bindImageSlot);
+      }
+
+      function imageSlotState(element) { return state.imageSlots[element.dataset.imageType][Number(element.dataset.imageSlot) - 1]; }
+      function bindImageSlot(element) {
+        const drop = $('.image-drop', element); const fileInput = $('.image-file', element); const slot = imageSlotState(element);
+        $('[data-replace-image]', element).addEventListener('click', () => fileInput.click());
+        drop.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); fileInput.click(); } });
+        fileInput.addEventListener('change', () => { if (fileInput.files[0]) readImageFile(fileInput.files[0], slot); });
+        ['dragenter','dragover'].forEach((name) => drop.addEventListener(name, (event) => { event.preventDefault(); drop.classList.add('dragging'); }));
+        ['dragleave','drop'].forEach((name) => drop.addEventListener(name, (event) => { event.preventDefault(); drop.classList.remove('dragging'); }));
+        drop.addEventListener('drop', (event) => { const file = event.dataTransfer.files[0]; if (file) readImageFile(file, slot); });
+        $('[data-delete-image]', element).addEventListener('click', () => { slot.action = slot.src ? 'delete' : 'keep'; slot.dataUrl = ''; if (!slot.src) slot.metadata = blankSlot(slot.type, slot.slot).metadata; renderImages(); markDirty(); });
+        $('[data-image-preset]', element).addEventListener('change', (event) => { if (event.target.value === 'owned') { slot.metadata.source = '用户自有图片'; slot.metadata.license = 'All rights reserved'; slot.metadata.accessed_at = new Date().toISOString().slice(0,10); renderImages(); markDirty(); } });
+        $$('[data-image-meta]', element).forEach((input) => input.addEventListener('input', () => { slot.metadata[input.dataset.imageMeta] = input.value.trim(); markDirty(); }));
+      }
+
+      function readImageFile(file, slot) {
+        if (!['image/jpeg','image/png','image/webp'].includes(file.type)) { showToast('仅支持 JPG、PNG 和 WebP 图片。', true); return; }
+        if (file.size > 10 * 1024 * 1024) { showToast('单张图片不得超过 10 MB。', true); return; }
+        const reader = new FileReader();
+        reader.onload = () => { slot.dataUrl = reader.result; slot.action = 'replace'; if (!slot.metadata.alt) slot.metadata.alt = `${state.current.material.name_cn}${IMAGE_TYPES[slot.type]}`; if (!slot.metadata.caption) slot.metadata.caption = slot.metadata.alt; renderImages(); markDirty(); };
+        reader.onerror = () => showToast('读取图片失败。', true);
+        reader.readAsDataURL(file);
+      }
+
+      function fillEditor(payload) {
+        state.current = payload; state.currentId = payload.material.id; state.dirty = false;
+        $("#empty-editor").classList.add("hidden"); $("#editor").classList.add("active"); $("#top-save").disabled = false;
+        $("#editor-name").textContent = payload.material.name_cn; $("#editor-path").textContent = (payload.material.taxonomy_path || []).join(" / ");
+        $("#editor-status").textContent = payload.material.data_status || "待补充"; $("#dirty-indicator").classList.remove("visible");
+        $$('[data-field]').forEach((input) => { input.value = payload.material[input.dataset.field] || ""; });
+        $$('[data-array]').forEach((input) => { input.value = lines(payload.material[input.dataset.array]); });
+        const engineering = payload.material.engineering_properties || {};
+        $$('[data-engineering]').forEach((input) => { input.value = engineering[input.dataset.engineering] || payload.material[input.dataset.engineering] || "暂无数据"; });
+        const scores = payload.material.performance_scores || {};
+        $$('[data-score]').forEach((input) => { input.value = scores[input.dataset.score] ?? ""; });
+        renderSources(payload.material.data_sources || []); initializeImageSlots(payload.images || {}); renderImages();
+        $$('#editor input, #editor textarea, #editor select').forEach((input) => { if (!input.matches('[data-image-meta], [data-image-preset], .image-file')) input.addEventListener('input', markDirty); });
+        renderMaterialList();
+      }
+
+      async function selectMaterial(id, force = false) {
+        if (!force && state.dirty && !window.confirm('当前材料有未保存修改，确定要放弃吗？')) return;
+        setBusy(true);
+        try { fillEditor(await api(`/api/material/${encodeURIComponent(id)}`)); }
+        catch (error) { showToast(error.message, true); }
+        finally { setBusy(false); }
+      }
+
+      function collectPayload() {
+        const material = { id: state.currentId };
+        $$('[data-field]').forEach((input) => { material[input.dataset.field] = input.value.trim(); });
+        $$('[data-array]').forEach((input) => { material[input.dataset.array] = splitLines(input.value); });
+        material.engineering_properties = Object.fromEntries($$('[data-engineering]').map((input) => [input.dataset.engineering, input.value.trim() || '暂无数据']));
+        material.performance_scores = Object.fromEntries($$('[data-score]').filter((input) => input.value !== '').map((input) => [input.dataset.score, Number(input.value)]));
+        material.data_sources = collectSources();
+        const images = Object.fromEntries(Object.entries(state.imageSlots).map(([type, slots]) => [type, slots.map((slot) => ({ slot: slot.slot, action: slot.action, dataUrl: slot.dataUrl, metadata: slot.metadata }))]));
+        return { material, images };
+      }
+
+      async function saveCurrent() {
+        if (!state.currentId) return;
+        setBusy(true); $("#save-message").textContent = '正在备份、保存和生成静态文件...';
+        try {
+          const result = await api(`/api/material/${encodeURIComponent(state.currentId)}/save`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(collectPayload()) });
+          state.dirty = false; $("#dirty-indicator").classList.remove('visible'); $("#save-message").textContent = `保存成功。备份：${result.backup}`; showToast(result.message);
+          await loadCatalog(); await selectMaterial(state.currentId, true);
+        } catch (error) { $("#save-message").textContent = error.message; showToast(error.message, true); }
+        finally { setBusy(false); }
+      }
+
+      async function restoreLatest() {
+        const confirmed = window.confirm('将恢复材料管理器最近一次保存前的备份，并覆盖当前相关文件。确定继续吗？');
+        if (!confirmed) return;
+        setBusy(true);
+        try { const result = await api('/api/restore-latest', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ confirmation: 'RESTORE' }) }); showToast(result.message); state.currentId = ''; state.current = null; state.dirty = false; $("#editor").classList.remove('active'); $("#empty-editor").classList.remove('hidden'); await loadCatalog(); }
+        catch (error) { showToast(error.message, true); }
+        finally { setBusy(false); }
+      }
+
+      function bindEvents() {
+        ['list-search','category-2','problem-filter','status-filter'].forEach((id) => $("#" + id).addEventListener(id === 'list-search' ? 'input' : 'change', renderMaterialList));
+        $("#category-1").addEventListener('change', () => { updateCategory2(); renderMaterialList(); });
+        $("#editor").addEventListener('submit', (event) => { event.preventDefault(); saveCurrent(); });
+        $("#top-save").addEventListener('click', saveCurrent);
+        $("#reload-material").addEventListener('click', () => selectMaterial(state.currentId, true));
+        $("#add-source").addEventListener('click', () => { renderSources([...collectSources(), { title:'', publisher:'', url:'', accessed_at:'', note:'' }]); markDirty(); });
+        $("#restore-latest").addEventListener('click', restoreLatest);
+        window.addEventListener('beforeunload', (event) => { if (state.dirty) { event.preventDefault(); event.returnValue = ''; } });
+      }
+
+      async function init() {
+        renderFieldTemplates(); bindEvents(); setBusy(true);
+        try { await loadCatalog(); }
+        catch (error) { showToast(`无法读取材料库：${error.message}`, true); }
+        finally { setBusy(false); }
+      }
+      init();
+    </script>
+  </body>
+</html>

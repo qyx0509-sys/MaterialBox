@@ -1,0 +1,21 @@
+{
+  "materialId": "steel",
+  "images": {
+    "macro": [
+      {
+        "src": "assets/images/materials/steel/macro_01.webp",
+        "alt": "钢宏观外观图片",
+        "caption": "Alloy and metal samples - Beryllium-Copper, Inconel, Steel, Titanium, Aluminum, Magnesium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alloy_and_metal_samples_-_Beryllium-Copper,_Inconel,_Steel,_Titanium,_Aluminum,_Magnesium.jpg",
+        "accessed_at": "2026-07-10",
+        "origin": "reviewed"
+      }
+    ],
+    "micro": [],
+    "structure": []
+  }
+}
