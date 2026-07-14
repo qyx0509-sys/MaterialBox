@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaterialBox 宏观图片审核</title>
+    <style>
+      :root {
+        --bg: #f6faf9;
+        --surface: #ffffff;
+        --text: #21313f;
+        --muted: #687785;
+        --line: #dce9e6;
+        --primary: #168578;
+        --primary-soft: #e8f6f3;
+        --danger: #b64747;
+        --shadow: 0 10px 28px rgba(33, 49, 63, 0.08);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: radial-gradient(circle at 10% 0%, #e7f7f3 0, transparent 30rem), var(--bg);
+        color: var(--text);
+        font-family: "Inter", "HarmonyOS Sans SC", "MiSans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+        line-height: 1.65;
+      }
+      button, input { font: inherit; }
+      button { cursor: pointer; }
+      a { color: var(--primary); }
+      code { background: var(--primary-soft); border-radius: 6px; padding: 2px 6px; }
+      .page-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(220, 233, 230, 0.9);
+        background: rgba(246, 250, 249, 0.94);
+        backdrop-filter: blur(14px);
+      }
+      .header-inner, .grid { max-width: 1220px; margin: 0 auto; }
+      .header-inner { padding: 18px 24px; }
+      .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+      h1 { margin: 0 0 6px; font-size: clamp(1.55rem, 3vw, 2.3rem); }
+      h2 { margin: 0; }
+      .hint, .meta, .empty-text { color: var(--muted); }
+      .hint { margin: 5px 0; }
+      .toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+      .button {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--text);
+        font-weight: 700;
+        padding: 9px 15px;
+      }
+      .button:hover { border-color: var(--primary); color: var(--primary); }
+      .button.primary { background: var(--primary); border-color: var(--primary); color: white; }
+      .button.danger { color: var(--danger); }
+      .summary { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; color: var(--muted); font-size: 0.92rem; }
+      .grid { display: grid; gap: 18px; padding: 22px 24px 60px; }
+      .material {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+      .material-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+      .material.selected { border-color: rgba(22, 133, 120, 0.55); }
+      .material.no-result { opacity: 0.78; }
+      .images { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+      .candidate {
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        border: 2px solid transparent;
+        border-radius: 15px;
+        background: #fbfefd;
+        box-shadow: inset 0 0 0 1px var(--line);
+        transition: border-color .18s ease, transform .18s ease;
+      }
+      .candidate:hover { transform: translateY(-2px); }
+      .candidate.is-selected { border-color: var(--primary); }
+      .candidate img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        background: var(--primary-soft);
+      }
+      .candidate-body { padding: 12px; }
+      .candidate-title { display: block; margin-bottom: 7px; line-height: 1.35; }
+      .candidate-meta { color: var(--muted); font-size: 0.82rem; }
+      .candidate-meta span { display: block; }
+      .select-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+        border-top: 1px solid var(--line);
+        padding-top: 10px;
+        color: var(--primary);
+        font-weight: 800;
+      }
+      .select-row input { width: 18px; height: 18px; accent-color: var(--primary); }
+      .reject-row { margin-top: 12px; }
+      .reject-row label { display: inline-flex; align-items: center; gap: 7px; color: var(--muted); }
+      .reject-row input { accent-color: var(--danger); }
+      .badge { display: inline-flex; border-radius: 999px; background: var(--primary-soft); color: var(--primary); padding: 3px 9px; font-size: .78rem; font-weight: 800; }
+      .empty-card { padding: 34px; text-align: center; }
+      .hidden { display: none !important; }
+      @media (max-width: 720px) {
+        .header-top, .material-head { flex-direction: column; }
+        .header-inner, .grid { padding-left: 14px; padding-right: 14px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="header-inner">
+        <div class="header-top">
+          <div>
+            <h1>MaterialBox 宏观图片审核</h1>
+            <p class="hint">每种材料选择 1 张最能代表材料外观、形态或纹理的图片。选择会自动保存在浏览器本地。</p>
+            <p class="hint">完成后点击“导出选择结果”，再运行 <code>python tools/fetch_material_images.py apply</code>。</p>
+          </div>
+          <span class="badge">人工审核必需</span>
+        </div>
+        <div class="toolbar">
+          <button id="select-first" class="button" type="button">为未选择材料采用第 1 张</button>
+          <button id="clear-selections" class="button danger" type="button">清空选择</button>
+          <button id="export-selections" class="button primary" type="button">导出 review-selections.json</button>
+        </div>
+        <div id="summary" class="summary"></div>
+      </div>
+    </header>
+
+    <main id="app" class="grid"></main>
+
+    <script>
+      const STORAGE_KEY = "materialbox:image-review-selections:v1";
+      let reviewData = [];
+      let selections = readSelections();
+
+      function readSelections() {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); }
+        catch { return {}; }
+      }
+
+      function saveSelections() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(selections));
+        updateSummary();
+      }
+
+      function escapeHtml(value) {
+        return String(value ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function safeLink(url, label) {
+        if (!url) return escapeHtml(label || "暂无");
+        const escaped = escapeHtml(url);
+        return `<a href="${escaped}" target="_blank" rel="noopener noreferrer">${escapeHtml(label || "查看来源页")}</a>`;
+      }
+
+      function selectedFile(materialId) {
+        return selections[materialId]?.selectedFile || "";
+      }
+
+      function rejected(materialId) {
+        return Boolean(selections[materialId]?.rejected);
+      }
+
+      function choose(materialId, file) {
+        selections[materialId] = { materialId, selectedFile: file, rejected: false };
+        saveSelections();
+        render();
+      }
+
+      function reject(materialId, checked) {
+        selections[materialId] = { materialId, selectedFile: "", rejected: checked };
+        if (!checked) delete selections[materialId];
+        saveSelections();
+        render();
+      }
+
+      function updateSummary() {
+        const withImages = reviewData.filter(item => (item.images || []).length > 0).length;
+        const selected = reviewData.filter(item => selectedFile(item.materialId)).length;
+        const rejectedCount = reviewData.filter(item => rejected(item.materialId)).length;
+        document.querySelector("#summary").innerHTML = `
+          <span>材料：<strong>${reviewData.length}</strong></span>
+          <span>有候选图：<strong>${withImages}</strong></span>
+          <span>已选择：<strong>${selected}</strong></span>
+          <span>暂不采用：<strong>${rejectedCount}</strong></span>
+        `;
+      }
+
+      function candidateCard(item, image, index) {
+        const chosen = selectedFile(item.materialId) === image.file;
+        return `
+          <figure class="candidate ${chosen ? "is-selected" : ""}">
+            <a href="${escapeHtml(image.file)}" target="_blank" rel="noopener">
+              <img src="${escapeHtml(image.file)}" alt="${escapeHtml(image.alt || item.name)}" loading="lazy" />
+            </a>
+            <figcaption class="candidate-body">
+              <strong class="candidate-title">${escapeHtml(image.title || image.file)}</strong>
+              <div class="candidate-meta">
+                <span>候选排名：${index + 1}　相关度：${escapeHtml(image.score)}</span>
+                <span>尺寸：${escapeHtml(image.width)} × ${escapeHtml(image.height)}</span>
+                <span>来源：${safeLink(image.sourceUrl, image.source || "Wikimedia Commons")}</span>
+                <span>作者：${escapeHtml(image.author || "未标明")}</span>
+                <span>许可：${safeLink(image.licenseUrl, image.license || "未标明")}</span>
+                <span>检索词：${escapeHtml(image.query || "")}</span>
+              </div>
+              <label class="select-row">
+                <input type="radio" name="select-${escapeHtml(item.materialId)}" value="${escapeHtml(image.file)}" ${chosen ? "checked" : ""} />
+                采用这张图片
+              </label>
+            </figcaption>
+          </figure>
+        `;
+      }
+
+      function materialCard(item) {
+        const images = item.images || [];
+        const isSelected = Boolean(selectedFile(item.materialId));
+        return `
+          <section class="material ${isSelected ? "selected" : ""} ${images.length ? "" : "no-result"}" data-material-id="${escapeHtml(item.materialId)}">
+            <div class="material-head">
+              <div>
+                <h2>${escapeHtml(item.name || item.materialId)}</h2>
+                <div class="meta">${escapeHtml(item.nameEn || "")} · ${escapeHtml(item.category || "")} / ${escapeHtml(item.subcategory || "")}</div>
+                <div class="meta">材料 ID：<code>${escapeHtml(item.materialId)}</code></div>
+              </div>
+              <span class="badge">${images.length} 张候选</span>
+            </div>
+            ${images.length
+              ? `<div class="images">${images.map((image, index) => candidateCard(item, image, index)).join("")}</div>`
+              : `<div class="empty-card"><strong>没有找到合适候选图</strong><p class="empty-text">可调整搜索词后单独重新获取该材料。</p></div>`}
+            <div class="reject-row">
+              <label><input type="checkbox" data-reject ${rejected(item.materialId) ? "checked" : ""} /> 暂不采用任何候选图</label>
+            </div>
+          </section>
+        `;
+      }
+
+      function bindEvents() {
+        document.querySelectorAll('input[type="radio"]').forEach(input => {
+          input.addEventListener("change", event => {
+            const section = event.target.closest("[data-material-id]");
+            choose(section.dataset.materialId, event.target.value);
+          });
+        });
+        document.querySelectorAll("[data-reject]").forEach(input => {
+          input.addEventListener("change", event => {
+            const section = event.target.closest("[data-material-id]");
+            reject(section.dataset.materialId, event.target.checked);
+          });
+        });
+      }
+
+      function render() {
+        const app = document.querySelector("#app");
+        if (!reviewData.length) {
+          app.innerHTML = '<section class="material empty-card"><h2>暂无候选图片</h2><p class="empty-text">请先运行图片获取脚本。</p></section>';
+          updateSummary();
+          return;
+        }
+        app.innerHTML = reviewData.map(materialCard).join("");
+        bindEvents();
+        updateSummary();
+      }
+
+      function exportSelections() {
+        const output = reviewData
+          .map(item => ({
+            materialId: item.materialId,
+            selectedFile: selectedFile(item.materialId),
+            rejected: rejected(item.materialId)
+          }))
+          .filter(item => item.selectedFile || item.rejected);
+        const blob = new Blob([JSON.stringify(output, null, 2)], { type: "application/json;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "review-selections.json";
+        link.click();
+        URL.revokeObjectURL(url);
+      }
+
+      document.querySelector("#select-first").addEventListener("click", () => {
+        reviewData.forEach(item => {
+          if (!selectedFile(item.materialId) && !rejected(item.materialId) && item.images?.[0]) {
+            selections[item.materialId] = { materialId: item.materialId, selectedFile: item.images[0].file, rejected: false };
+          }
+        });
+        saveSelections();
+        render();
+      });
+
+      document.querySelector("#clear-selections").addEventListener("click", () => {
+        selections = {};
+        saveSelections();
+        render();
+      });
+
+      document.querySelector("#export-selections").addEventListener("click", exportSelections);
+
+      async function loadReview() {
+        const app = document.querySelector("#app");
+        try {
+          const response = await fetch("review-images.json", { cache: "no-store" });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          reviewData = await response.json();
+          if (!Array.isArray(reviewData)) throw new Error("审核数据格式错误");
+          render();
+        } catch (error) {
+          app.innerHTML = `
+            <section class="material empty-card">
+              <h2>无法读取 review-images.json</h2>
+              <p class="empty-text">请不要直接双击本页。运行 <code>tools\\03_打开审核页.bat</code>，或在项目目录执行 <code>python -m http.server 8000</code>。</p>
+            </section>`;
+        }
+      }
+
+      loadReview();
+    </script>
+  </body>
+</html>

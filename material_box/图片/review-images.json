@@ -1,0 +1,1560 @@
+[
+  {
+    "materialId": "steel",
+    "name": "钢",
+    "nameEn": "Steel",
+    "category": "金属材料",
+    "subcategory": "黑色金属材料",
+    "queries": [
+      "Steel material sample",
+      "Steel alloy plate bar sheet",
+      "钢 material sample"
+    ],
+    "images": [
+      {
+        "id": "steel-macro-01",
+        "file": "assets/images/materials/steel/candidates/macro_candidate_01.jpg",
+        "alt": "钢宏观图片候选 1",
+        "title": "Alloy and metal samples - Beryllium-Copper, Inconel, Steel, Titanium, Aluminum, Magnesium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alloy_and_metal_samples_-_Beryllium-Copper,_Inconel,_Steel,_Titanium,_Aluminum,_Magnesium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Alloy_and_metal_samples_-_Beryllium-Copper%2C_Inconel%2C_Steel%2C_Titanium%2C_Aluminum%2C_Magnesium.jpg",
+        "query": "Steel material sample",
+        "score": 7.85,
+        "width": 1280,
+        "height": 960,
+        "sha256": "77ab55d5c86c2da429fac45c163d8279ca6c20b6be545d89ddc3f2950656708a",
+        "approved": false
+      },
+      {
+        "id": "steel-macro-02",
+        "file": "assets/images/materials/steel/candidates/macro_candidate_02.jpg",
+        "alt": "钢宏观图片候选 2",
+        "title": "Microstructure steel annealed nut.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Dvortygirl",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Microstructure_steel_annealed_nut.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Microstructure_steel_annealed_nut.jpg",
+        "query": "Steel material sample",
+        "score": 4.85,
+        "width": 952,
+        "height": 1600,
+        "sha256": "c2a36b6077aeddfa6abbc2e927bd32240cef19cda785142753c9bf3fb3ffb1eb",
+        "approved": false
+      },
+      {
+        "id": "steel-macro-03",
+        "file": "assets/images/materials/steel/candidates/macro_candidate_03.jpg",
+        "alt": "钢宏观图片候选 3",
+        "title": "Two sample steel plates riveted together, Merseyside Maritime Museum (1).JPG",
+        "source": "Wikimedia Commons",
+        "author": "Rept0n1x",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Two_sample_steel_plates_riveted_together,_Merseyside_Maritime_Museum_(1).JPG",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Two_sample_steel_plates_riveted_together%2C_Merseyside_Maritime_Museum_%281%29.JPG",
+        "query": "Steel material sample",
+        "score": 4.85,
+        "width": 1200,
+        "height": 1600,
+        "sha256": "db82f715e0d5de08bb8e22e48095065e5fa4ab09513129e428fc298f61982b53",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "cast_iron",
+    "name": "铸铁",
+    "nameEn": "Cast Iron",
+    "category": "金属材料",
+    "subcategory": "黑色金属材料",
+    "queries": [
+      "Cast Iron material sample",
+      "Cast Iron alloy plate bar sheet",
+      "铸铁 material sample"
+    ],
+    "images": [
+      {
+        "id": "cast_iron-macro-01",
+        "file": "assets/images/materials/cast_iron/candidates/macro_candidate_01.jpg",
+        "alt": "铸铁宏观图片候选 1",
+        "title": "Medieval sheet mount and cast pendant loop (FindID 1007492).jpg",
+        "source": "Wikimedia Commons",
+        "author": "The Portable Antiquities Scheme, Edward Caswell, 2020-07-14 15:59:15",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Medieval_sheet_mount_and_cast_pendant_loop_(FindID_1007492).jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Medieval_sheet_mount_and_cast_pendant_loop_%28FindID_1007492%29.jpg",
+        "query": "Cast Iron alloy plate bar sheet",
+        "score": 7.5,
+        "width": 1242,
+        "height": 1479,
+        "sha256": "5b858ba53538d88956d3ba896a2cee0dd9bc4157a45c6d9ee67b660967dc7e0c",
+        "approved": false
+      },
+      {
+        "id": "cast_iron-macro-02",
+        "file": "assets/images/materials/cast_iron/candidates/macro_candidate_02.jpg",
+        "alt": "铸铁宏观图片候选 2",
+        "title": "A cast copper alloy Roman brooch (FindID 472439).jpg",
+        "source": "Wikimedia Commons",
+        "author": "Kent County Council, Karen Dunford, 2011-11-16 16:56:15",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_cast_copper_alloy_Roman_brooch_(FindID_472439).jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/A_cast_copper_alloy_Roman_brooch_%28FindID_472439%29.jpg",
+        "query": "Cast Iron alloy plate bar sheet",
+        "score": 4.25,
+        "width": 1600,
+        "height": 1407,
+        "sha256": "3d1495b2c27b75594fb6ad6171d2d03a8f0d8cfea204d296edca8c74547c0835",
+        "approved": false
+      },
+      {
+        "id": "cast_iron-macro-03",
+        "file": "assets/images/materials/cast_iron/candidates/macro_candidate_03.jpg",
+        "alt": "铸铁宏观图片候选 3",
+        "title": "Cast iron tensile test.JPG",
+        "source": "Wikimedia Commons",
+        "author": "Sigmund",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cast_iron_tensile_test.JPG",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Cast_iron_tensile_test.JPG",
+        "query": "Cast Iron material sample",
+        "score": 3.7,
+        "width": 861,
+        "height": 1200,
+        "sha256": "28b2a7487396519a5dd84774118c1bb99004b0cad230990cb1f8aa65c8052f7f",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "stainless_steel",
+    "name": "不锈钢",
+    "nameEn": "Stainless Steel",
+    "category": "金属材料",
+    "subcategory": "黑色金属材料",
+    "queries": [
+      "Stainless Steel material sample",
+      "Stainless Steel alloy plate bar sheet",
+      "不锈钢 material sample"
+    ],
+    "images": [
+      {
+        "id": "stainless_steel-macro-01",
+        "file": "assets/images/materials/stainless_steel/candidates/macro_candidate_01.jpg",
+        "alt": "不锈钢宏观图片候选 1",
+        "title": "Iss071e522120 (8-21-2024) ---A view the Metal 3D printer that manufactures experimental samples printed with stainless steel aboard the International Space Station's Columbus laboratory module.jpg",
+        "source": "Wikimedia Commons",
+        "author": "NASA Johnson Space Center",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iss071e522120_(8-21-2024)_---A_view_the_Metal_3D_printer_that_manufactures_experimental_samples_printed_with_stainless_steel_aboard_the_International_Space_Station%27s_Columbus_laboratory_module.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Iss071e522120_%288-21-2024%29_---A_view_the_Metal_3D_printer_that_manufactures_experimental_samples_printed_with_stainless_steel_aboard_the_International_Space_Station%27s_Columbus_laboratory_module.jpg",
+        "query": "Stainless Steel material sample",
+        "score": 11.2,
+        "width": 1600,
+        "height": 1067,
+        "sha256": "632fb5bb2f1f3d1f247b00c8c6659e3b1a6129eeee519dc31a90a0356fa0a625",
+        "approved": false
+      },
+      {
+        "id": "stainless_steel-macro-02",
+        "file": "assets/images/materials/stainless_steel/candidates/macro_candidate_02.jpg",
+        "alt": "不锈钢宏观图片候选 2",
+        "title": "Ansys sample Print Screen 316 Stainless Steel Properties.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Xyz00030280",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ansys_sample_Print_Screen_316_Stainless_Steel_Properties.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Ansys_sample_Print_Screen_316_Stainless_Steel_Properties.jpg",
+        "query": "Stainless Steel material sample",
+        "score": 8.2,
+        "width": 1600,
+        "height": 752,
+        "sha256": "00002c092fb98249b3a892b5aed43706e85612c73a25a3904a18d02c76ee7bc9",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "tool_steel",
+    "name": "工具钢",
+    "nameEn": "Tool Steel",
+    "category": "金属材料",
+    "subcategory": "黑色金属材料",
+    "queries": [
+      "Tool Steel material sample",
+      "Tool Steel alloy plate bar sheet",
+      "工具钢 material sample"
+    ],
+    "images": [
+      {
+        "id": "tool_steel-macro-01",
+        "file": "assets/images/materials/tool_steel/candidates/macro_candidate_01.jpg",
+        "alt": "工具钢宏观图片候选 1",
+        "title": "L-R, front to back - Inconel nickel-copper; Beryllium-copper (no-spark tools); steel; magnesium; aluminum; titanium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:L-R,_front_to_back_-_Inconel_nickel-copper;_Beryllium-copper_(no-spark_tools);_steel;_magnesium;_aluminum;_titanium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/L-R%2C_front_to_back_-_Inconel_nickel-copper%3B_Beryllium-copper_%28no-spark_tools%29%3B_steel%3B_magnesium%3B_aluminum%3B_titanium.jpg",
+        "query": "Tool Steel material sample",
+        "score": 9.45,
+        "width": 1280,
+        "height": 960,
+        "sha256": "858fb6db67e81748182497c229cf461fee66cb220045e6953cd390db5f109c7e",
+        "approved": false
+      },
+      {
+        "id": "tool_steel-macro-02",
+        "file": "assets/images/materials/tool_steel/candidates/macro_candidate_02.jpg",
+        "alt": "工具钢宏观图片候选 2",
+        "title": "Alloy and metal samples - Beryllium-Copper, Inconel, Steel, Titanium, Aluminum, Magnesium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alloy_and_metal_samples_-_Beryllium-Copper,_Inconel,_Steel,_Titanium,_Aluminum,_Magnesium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Alloy_and_metal_samples_-_Beryllium-Copper%2C_Inconel%2C_Steel%2C_Titanium%2C_Aluminum%2C_Magnesium.jpg",
+        "query": "Tool Steel material sample",
+        "score": 4.95,
+        "width": 1280,
+        "height": 960,
+        "sha256": "77ab55d5c86c2da429fac45c163d8279ca6c20b6be545d89ddc3f2950656708a",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "high_speed_steel",
+    "name": "高速钢",
+    "nameEn": "High Speed Steel",
+    "category": "金属材料",
+    "subcategory": "黑色金属材料",
+    "queries": [
+      "High Speed Steel material sample",
+      "High Speed Steel alloy plate bar sheet",
+      "High Speed Steel HSS material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "aluminum_alloy",
+    "name": "铝合金",
+    "nameEn": "Aluminum Alloy",
+    "category": "金属材料",
+    "subcategory": "有色金属材料",
+    "queries": [
+      "Aluminum Alloy material sample",
+      "Aluminum Alloy alloy plate bar sheet",
+      "铝合金 material sample"
+    ],
+    "images": [
+      {
+        "id": "aluminum_alloy-macro-01",
+        "file": "assets/images/materials/aluminum_alloy/candidates/macro_candidate_01.jpg",
+        "alt": "铝合金宏观图片候选 1",
+        "title": "Alloy and metal samples - Beryllium-Copper, Inconel, Steel, Titanium, Aluminum, Magnesium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alloy_and_metal_samples_-_Beryllium-Copper,_Inconel,_Steel,_Titanium,_Aluminum,_Magnesium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Alloy_and_metal_samples_-_Beryllium-Copper%2C_Inconel%2C_Steel%2C_Titanium%2C_Aluminum%2C_Magnesium.jpg",
+        "query": "Aluminum Alloy material sample",
+        "score": 6.7,
+        "width": 1280,
+        "height": 960,
+        "sha256": "77ab55d5c86c2da429fac45c163d8279ca6c20b6be545d89ddc3f2950656708a",
+        "approved": false
+      },
+      {
+        "id": "aluminum_alloy-macro-02",
+        "file": "assets/images/materials/aluminum_alloy/candidates/macro_candidate_02.jpg",
+        "alt": "铝合金宏观图片候选 2",
+        "title": "L-R, front to back - Inconel nickel-copper; Beryllium-copper (no-spark tools); steel; magnesium; aluminum; titanium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:L-R,_front_to_back_-_Inconel_nickel-copper;_Beryllium-copper_(no-spark_tools);_steel;_magnesium;_aluminum;_titanium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/L-R%2C_front_to_back_-_Inconel_nickel-copper%3B_Beryllium-copper_%28no-spark_tools%29%3B_steel%3B_magnesium%3B_aluminum%3B_titanium.jpg",
+        "query": "Aluminum Alloy material sample",
+        "score": 6.1,
+        "width": 1280,
+        "height": 960,
+        "sha256": "858fb6db67e81748182497c229cf461fee66cb220045e6953cd390db5f109c7e",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "magnesium_alloy",
+    "name": "镁合金",
+    "nameEn": "Magnesium Alloy",
+    "category": "金属材料",
+    "subcategory": "有色金属材料",
+    "queries": [
+      "Magnesium Alloy material sample",
+      "Magnesium Alloy alloy plate bar sheet",
+      "镁合金 material sample"
+    ],
+    "images": [
+      {
+        "id": "magnesium_alloy-macro-01",
+        "file": "assets/images/materials/magnesium_alloy/candidates/macro_candidate_01.jpg",
+        "alt": "镁合金宏观图片候选 1",
+        "title": "Alloy and metal samples - Beryllium-Copper, Inconel, Steel, Titanium, Aluminum, Magnesium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alloy_and_metal_samples_-_Beryllium-Copper,_Inconel,_Steel,_Titanium,_Aluminum,_Magnesium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Alloy_and_metal_samples_-_Beryllium-Copper%2C_Inconel%2C_Steel%2C_Titanium%2C_Aluminum%2C_Magnesium.jpg",
+        "query": "Magnesium Alloy material sample",
+        "score": 6.7,
+        "width": 1280,
+        "height": 960,
+        "sha256": "77ab55d5c86c2da429fac45c163d8279ca6c20b6be545d89ddc3f2950656708a",
+        "approved": false
+      },
+      {
+        "id": "magnesium_alloy-macro-02",
+        "file": "assets/images/materials/magnesium_alloy/candidates/macro_candidate_02.jpg",
+        "alt": "镁合金宏观图片候选 2",
+        "title": "L-R, front to back - Inconel nickel-copper; Beryllium-copper (no-spark tools); steel; magnesium; aluminum; titanium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:L-R,_front_to_back_-_Inconel_nickel-copper;_Beryllium-copper_(no-spark_tools);_steel;_magnesium;_aluminum;_titanium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/L-R%2C_front_to_back_-_Inconel_nickel-copper%3B_Beryllium-copper_%28no-spark_tools%29%3B_steel%3B_magnesium%3B_aluminum%3B_titanium.jpg",
+        "query": "Magnesium Alloy material sample",
+        "score": 6.1,
+        "width": 1280,
+        "height": 960,
+        "sha256": "858fb6db67e81748182497c229cf461fee66cb220045e6953cd390db5f109c7e",
+        "approved": false
+      },
+      {
+        "id": "magnesium_alloy-macro-03",
+        "file": "assets/images/materials/magnesium_alloy/candidates/macro_candidate_03.jpg",
+        "alt": "镁合金宏观图片候选 3",
+        "title": "Al tensile test.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Sigmund",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al_tensile_test.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Al_tensile_test.jpg",
+        "query": "Magnesium Alloy material sample",
+        "score": -4.3,
+        "width": 720,
+        "height": 899,
+        "sha256": "4d89705b38bbe7fbd4fb6489c2f00ad1488ac2c3f4f9589cfb48ccead65f20c3",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "titanium_alloy",
+    "name": "钛合金",
+    "nameEn": "Titanium Alloy",
+    "category": "金属材料",
+    "subcategory": "有色金属材料",
+    "queries": [
+      "Titanium Alloy material sample",
+      "Titanium Alloy alloy plate bar sheet",
+      "钛合金 material sample"
+    ],
+    "images": [
+      {
+        "id": "titanium_alloy-macro-01",
+        "file": "assets/images/materials/titanium_alloy/candidates/macro_candidate_01.jpg",
+        "alt": "钛合金宏观图片候选 1",
+        "title": "Electrostatic Levitation of a Titanium-Zirconium-Nickel Alloy.jpg",
+        "source": "Wikimedia Commons",
+        "author": "NASA/MSFC/Emmett Given",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Electrostatic_Levitation_of_a_Titanium-Zirconium-Nickel_Alloy.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Electrostatic_Levitation_of_a_Titanium-Zirconium-Nickel_Alloy.jpg",
+        "query": "Titanium Alloy material sample",
+        "score": 9.45,
+        "width": 1042,
+        "height": 1600,
+        "sha256": "c0e4becdf9dc28ac7031a993793a6337d2f42186434973ee9bd3a3ead1da5a13",
+        "approved": false
+      },
+      {
+        "id": "titanium_alloy-macro-02",
+        "file": "assets/images/materials/titanium_alloy/candidates/macro_candidate_02.jpg",
+        "alt": "钛合金宏观图片候选 2",
+        "title": "Alloy and metal samples - Beryllium-Copper, Inconel, Steel, Titanium, Aluminum, Magnesium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alloy_and_metal_samples_-_Beryllium-Copper,_Inconel,_Steel,_Titanium,_Aluminum,_Magnesium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Alloy_and_metal_samples_-_Beryllium-Copper%2C_Inconel%2C_Steel%2C_Titanium%2C_Aluminum%2C_Magnesium.jpg",
+        "query": "Titanium Alloy material sample",
+        "score": 6.7,
+        "width": 1280,
+        "height": 960,
+        "sha256": "77ab55d5c86c2da429fac45c163d8279ca6c20b6be545d89ddc3f2950656708a",
+        "approved": false
+      },
+      {
+        "id": "titanium_alloy-macro-03",
+        "file": "assets/images/materials/titanium_alloy/candidates/macro_candidate_03.jpg",
+        "alt": "钛合金宏观图片候选 3",
+        "title": "L-R, front to back - Inconel nickel-copper; Beryllium-copper (no-spark tools); steel; magnesium; aluminum; titanium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:L-R,_front_to_back_-_Inconel_nickel-copper;_Beryllium-copper_(no-spark_tools);_steel;_magnesium;_aluminum;_titanium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/L-R%2C_front_to_back_-_Inconel_nickel-copper%3B_Beryllium-copper_%28no-spark_tools%29%3B_steel%3B_magnesium%3B_aluminum%3B_titanium.jpg",
+        "query": "Titanium Alloy material sample",
+        "score": 6.1,
+        "width": 1280,
+        "height": 960,
+        "sha256": "858fb6db67e81748182497c229cf461fee66cb220045e6953cd390db5f109c7e",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "copper_alloy",
+    "name": "铜合金",
+    "nameEn": "Copper Alloy",
+    "category": "金属材料",
+    "subcategory": "有色金属材料",
+    "queries": [
+      "Copper Alloy material sample",
+      "Copper Alloy alloy plate bar sheet",
+      "铜合金 material sample"
+    ],
+    "images": [
+      {
+        "id": "copper_alloy-macro-01",
+        "file": "assets/images/materials/copper_alloy/candidates/macro_candidate_01.jpg",
+        "alt": "铜合金宏观图片候选 1",
+        "title": "Copper-alloy Buckle Plate (FindID 479781).jpg",
+        "source": "Wikimedia Commons",
+        "author": "Cambridgeshire County Council, Helen Fowler, 2012-01-27 16:53:52",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Copper-alloy_Buckle_Plate_(FindID_479781).jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Copper-alloy_Buckle_Plate_%28FindID_479781%29.jpg",
+        "query": "Copper Alloy alloy plate bar sheet",
+        "score": 10.5,
+        "width": 1320,
+        "height": 1600,
+        "sha256": "1f8c893c98c6dcf05ed6adf640d3565ac980b177857d83ff9d62ee4158879abd",
+        "approved": false
+      },
+      {
+        "id": "copper_alloy-macro-02",
+        "file": "assets/images/materials/copper_alloy/candidates/macro_candidate_02.jpg",
+        "alt": "铜合金宏观图片候选 2",
+        "title": "Medieval copper alloy buckle plate, gilded, engraved lines. (FindID 128399).jpg",
+        "source": "Wikimedia Commons",
+        "author": "Norfolk County Council, Erica Darch, 2005-08-11 14:49:31",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Medieval_copper_alloy_buckle_plate,_gilded,_engraved_lines._(FindID_128399).jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Medieval_copper_alloy_buckle_plate%2C_gilded%2C_engraved_lines._%28FindID_128399%29.jpg",
+        "query": "Copper Alloy alloy plate bar sheet",
+        "score": 10.5,
+        "width": 1165,
+        "height": 692,
+        "sha256": "87860e54a6bb8774a1e0d50bb379d5030648071763d04ef42899445c14e72abd",
+        "approved": false
+      },
+      {
+        "id": "copper_alloy-macro-03",
+        "file": "assets/images/materials/copper_alloy/candidates/macro_candidate_03.jpg",
+        "alt": "铜合金宏观图片候选 3",
+        "title": "Copper-alloy buckle with zoomorphic enamelled buckle plate (FindID 398773).jpg",
+        "source": "Wikimedia Commons",
+        "author": "Cambridgeshire County Council, Helen Fowler, 2010-10-27 14:46:04",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Copper-alloy_buckle_with_zoomorphic_enamelled_buckle_plate_(FindID_398773).jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Copper-alloy_buckle_with_zoomorphic_enamelled_buckle_plate_%28FindID_398773%29.jpg",
+        "query": "Copper Alloy alloy plate bar sheet",
+        "score": 10.5,
+        "width": 966,
+        "height": 1600,
+        "sha256": "11f0e5894e14c1db4b60fc105f88eac4fc31833b8c79d117843e979ad616f263",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "nickel_alloy",
+    "name": "镍合金",
+    "nameEn": "Nickel Alloy",
+    "category": "金属材料",
+    "subcategory": "有色金属材料",
+    "queries": [
+      "Nickel Alloy material sample",
+      "Nickel Alloy alloy plate bar sheet",
+      "镍合金 material sample"
+    ],
+    "images": [
+      {
+        "id": "nickel_alloy-macro-01",
+        "file": "assets/images/materials/nickel_alloy/candidates/macro_candidate_01.jpg",
+        "alt": "镍合金宏观图片候选 1",
+        "title": "Electrostatic Levitation of a Titanium-Zirconium-Nickel Alloy.jpg",
+        "source": "Wikimedia Commons",
+        "author": "NASA/MSFC/Emmett Given",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Electrostatic_Levitation_of_a_Titanium-Zirconium-Nickel_Alloy.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Electrostatic_Levitation_of_a_Titanium-Zirconium-Nickel_Alloy.jpg",
+        "query": "Nickel Alloy material sample",
+        "score": 9.45,
+        "width": 1042,
+        "height": 1600,
+        "sha256": "c0e4becdf9dc28ac7031a993793a6337d2f42186434973ee9bd3a3ead1da5a13",
+        "approved": false
+      },
+      {
+        "id": "nickel_alloy-macro-02",
+        "file": "assets/images/materials/nickel_alloy/candidates/macro_candidate_02.jpg",
+        "alt": "镍合金宏观图片候选 2",
+        "title": "L-R, front to back - Inconel nickel-copper; Beryllium-copper (no-spark tools); steel; magnesium; aluminum; titanium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:L-R,_front_to_back_-_Inconel_nickel-copper;_Beryllium-copper_(no-spark_tools);_steel;_magnesium;_aluminum;_titanium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/L-R%2C_front_to_back_-_Inconel_nickel-copper%3B_Beryllium-copper_%28no-spark_tools%29%3B_steel%3B_magnesium%3B_aluminum%3B_titanium.jpg",
+        "query": "Nickel Alloy material sample",
+        "score": 6.1,
+        "width": 1280,
+        "height": 960,
+        "sha256": "858fb6db67e81748182497c229cf461fee66cb220045e6953cd390db5f109c7e",
+        "approved": false
+      },
+      {
+        "id": "nickel_alloy-macro-03",
+        "file": "assets/images/materials/nickel_alloy/candidates/macro_candidate_03.jpg",
+        "alt": "镍合金宏观图片候选 3",
+        "title": "Alloy and metal samples - Beryllium-Copper, Inconel, Steel, Titanium, Aluminum, Magnesium.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Bill Abbott",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alloy_and_metal_samples_-_Beryllium-Copper,_Inconel,_Steel,_Titanium,_Aluminum,_Magnesium.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Alloy_and_metal_samples_-_Beryllium-Copper%2C_Inconel%2C_Steel%2C_Titanium%2C_Aluminum%2C_Magnesium.jpg",
+        "query": "Nickel Alloy material sample",
+        "score": 4.95,
+        "width": 1280,
+        "height": 960,
+        "sha256": "77ab55d5c86c2da429fac45c163d8279ca6c20b6be545d89ddc3f2950656708a",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "nickel_superalloy",
+    "name": "镍基高温合金",
+    "nameEn": "Nickel-based Superalloy",
+    "category": "金属材料",
+    "subcategory": "高温合金",
+    "queries": [
+      "Nickel-based Superalloy material sample",
+      "Nickel-based Superalloy alloy plate bar sheet",
+      "镍基高温合金 material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "cobalt_superalloy",
+    "name": "钴基高温合金",
+    "nameEn": "Cobalt-based Superalloy",
+    "category": "金属材料",
+    "subcategory": "高温合金",
+    "queries": [
+      "Cobalt-based Superalloy material sample",
+      "Cobalt-based Superalloy alloy plate bar sheet",
+      "钴基高温合金 material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "polyethylene",
+    "name": "聚乙烯",
+    "nameEn": "Polyethylene",
+    "category": "高分子材料",
+    "subcategory": "通用塑料",
+    "queries": [
+      "Polyethylene resin pellets",
+      "Polyethylene plastic granules",
+      "Polyethylene polymer pellets material sample"
+    ],
+    "images": [
+      {
+        "id": "polyethylene-macro-01",
+        "file": "assets/images/materials/polyethylene/candidates/macro_candidate_01.jpg",
+        "alt": "聚乙烯宏观图片候选 1",
+        "title": "LLDPE.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Cjp24",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:LLDPE.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/LLDPE.jpg",
+        "query": "Polyethylene plastic granules",
+        "score": 3.55,
+        "width": 638,
+        "height": 596,
+        "sha256": "36e784eae38284e7cea863431b22dcf75257756b1e97eb235cbaccf33441feae",
+        "approved": false
+      },
+      {
+        "id": "polyethylene-macro-02",
+        "file": "assets/images/materials/polyethylene/candidates/macro_candidate_02.jpg",
+        "alt": "聚乙烯宏观图片候选 2",
+        "title": "PE-LD Granulat.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Sönke Kraft aka Arnulf zu Linden",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PE-LD_Granulat.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/PE-LD_Granulat.jpg",
+        "query": "Polyethylene plastic granules",
+        "score": 1.95,
+        "width": 572,
+        "height": 572,
+        "sha256": "21d722c557e772194f95cefe008e9b4e3263710670aaa8ee4375de65831e7d08",
+        "approved": false
+      },
+      {
+        "id": "polyethylene-macro-03",
+        "file": "assets/images/materials/polyethylene/candidates/macro_candidate_03.jpg",
+        "alt": "聚乙烯宏观图片候选 3",
+        "title": "PE and PP objects.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Cjp24",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PE_and_PP_objects.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/PE_and_PP_objects.jpg",
+        "query": "Polyethylene plastic granules",
+        "score": 1.95,
+        "width": 1240,
+        "height": 1244,
+        "sha256": "98dfa93254a8ac222a9c97a60b2a827e883ed17921e15c84649ae4a03e1812db",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "polypropylene",
+    "name": "聚丙烯",
+    "nameEn": "Polypropylene",
+    "category": "高分子材料",
+    "subcategory": "通用塑料",
+    "queries": [
+      "Polypropylene resin pellets",
+      "Polypropylene plastic granules",
+      "Polypropylene polymer pellets material sample"
+    ],
+    "images": [
+      {
+        "id": "polypropylene-macro-01",
+        "file": "assets/images/materials/polypropylene/candidates/macro_candidate_01.jpg",
+        "alt": "聚丙烯宏观图片候选 1",
+        "title": "Bags of plastic granules.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Cjp24",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bags_of_plastic_granules.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Bags_of_plastic_granules.jpg",
+        "query": "Polypropylene plastic granules",
+        "score": 2.3,
+        "width": 1600,
+        "height": 992,
+        "sha256": "b25d5be7b98149da1b78bed05b0e0e9d727f252d43812265c1fcea5b87ea9590",
+        "approved": false
+      },
+      {
+        "id": "polypropylene-macro-02",
+        "file": "assets/images/materials/polypropylene/candidates/macro_candidate_02.jpg",
+        "alt": "聚丙烯宏观图片候选 2",
+        "title": "LyondellBasell-Moplen.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Cjp24",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:LyondellBasell-Moplen.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/LyondellBasell-Moplen.jpg",
+        "query": "Polypropylene plastic granules",
+        "score": 2.3,
+        "width": 677,
+        "height": 987,
+        "sha256": "be419d083ba8f9d054ffc05adc62dea60dc30ba4d95c3ba64c529f948293b1b4",
+        "approved": false
+      },
+      {
+        "id": "polypropylene-macro-03",
+        "file": "assets/images/materials/polypropylene/candidates/macro_candidate_03.jpg",
+        "alt": "聚丙烯宏观图片候选 3",
+        "title": "Escorez packaged in bags.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Cjp24",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Escorez_packaged_in_bags.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Escorez_packaged_in_bags.jpg",
+        "query": "Polypropylene plastic granules",
+        "score": 0.7,
+        "width": 1011,
+        "height": 590,
+        "sha256": "f3c376f98f498db2932c5c856e573811ff79bb202cd55ab20914812b380b9b8d",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "polyvinyl_chloride",
+    "name": "聚氯乙烯",
+    "nameEn": "Polyvinyl Chloride",
+    "category": "高分子材料",
+    "subcategory": "通用塑料",
+    "queries": [
+      "Polyvinyl Chloride resin pellets",
+      "Polyvinyl Chloride plastic granules",
+      "Polyvinyl Chloride polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "polystyrene",
+    "name": "聚苯乙烯",
+    "nameEn": "Polystyrene",
+    "category": "高分子材料",
+    "subcategory": "通用塑料",
+    "queries": [
+      "Polystyrene resin pellets",
+      "Polystyrene plastic granules",
+      "Polystyrene polymer pellets material sample"
+    ],
+    "images": [
+      {
+        "id": "polystyrene-macro-01",
+        "file": "assets/images/materials/polystyrene/candidates/macro_candidate_01.jpg",
+        "alt": "聚苯乙烯宏观图片候选 1",
+        "title": "Expanded Polystyrene (EPS) foam pellets.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Swoolverton",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Expanded_Polystyrene_(EPS)_foam_pellets.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Expanded_Polystyrene_%28EPS%29_foam_pellets.jpg",
+        "query": "Polystyrene plastic granules",
+        "score": 5.2,
+        "width": 1600,
+        "height": 1067,
+        "sha256": "9151ea9954a058e1f03b4abdbd2fdd57471249378ed09f57b0e6e523822d9871",
+        "approved": false
+      },
+      {
+        "id": "polystyrene-macro-02",
+        "file": "assets/images/materials/polystyrene/candidates/macro_candidate_02.jpg",
+        "alt": "聚苯乙烯宏观图片候选 2",
+        "title": "Styron (Dow Polystyrene) - DPLA - 648a2cd69107879d8c651555a0a31798.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Dow Chemical Company",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Styron_(Dow_Polystyrene)_-_DPLA_-_648a2cd69107879d8c651555a0a31798.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Styron_%28Dow_Polystyrene%29_-_DPLA_-_648a2cd69107879d8c651555a0a31798.jpg",
+        "query": "Polystyrene plastic granules",
+        "score": 4.05,
+        "width": 1269,
+        "height": 1600,
+        "sha256": "b158e6bacaff9bfd2bcf311f8aa2e5a758ec225043a917d6609f52464cf322e1",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "abs",
+    "name": "丙烯腈-丁二烯-苯乙烯",
+    "nameEn": "Acrylonitrile Butadiene Styrene",
+    "category": "高分子材料",
+    "subcategory": "通用塑料",
+    "queries": [
+      "Acrylonitrile Butadiene Styrene resin pellets",
+      "Acrylonitrile Butadiene Styrene plastic granules",
+      "Acrylonitrile Butadiene Styrene polymer pellets material sample"
+    ],
+    "images": [
+      {
+        "id": "abs-macro-01",
+        "file": "assets/images/materials/abs/candidates/macro_candidate_01.jpg",
+        "alt": "丙烯腈-丁二烯-苯乙烯宏观图片候选 1",
+        "title": "Grãos de plástico ABS (ABS plastic grains).jpg",
+        "source": "Wikimedia Commons",
+        "author": "ABS_grains.jpg : Ollixtc Righello.jpg : Luigi Chiesa derivative work: SaraCSF ( talk )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gr%C3%A3os_de_pl%C3%A1stico_ABS_(ABS_plastic_grains).jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Gr%C3%A3os_de_pl%C3%A1stico_ABS_%28ABS_plastic_grains%29.jpg",
+        "query": "Acrylonitrile Butadiene Styrene plastic granules",
+        "score": 8.15,
+        "width": 675,
+        "height": 600,
+        "sha256": "1251dc1d24baf78a1dbc5043c4e390d6dffe3e7987c99d7a49c23ce87d17fcea",
+        "approved": false
+      },
+      {
+        "id": "abs-macro-02",
+        "file": "assets/images/materials/abs/candidates/macro_candidate_02.jpg",
+        "alt": "丙烯腈-丁二烯-苯乙烯宏观图片候选 2",
+        "title": "ABS granule.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Jacorna",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ABS_granule.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/ABS_granule.jpg",
+        "query": "Acrylonitrile Butadiene Styrene plastic granules",
+        "score": 8.15,
+        "width": 1600,
+        "height": 1200,
+        "sha256": "e4d029fed76ae0f34f792b4367f20899069983ff4aa9dc0a0db66e8a60439438",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "polyamide",
+    "name": "聚酰胺",
+    "nameEn": "Polyamide",
+    "category": "高分子材料",
+    "subcategory": "工程塑料",
+    "queries": [
+      "Polyamide engineering plastic pellets",
+      "Polyamide plastic rod sheet",
+      "Polyamide polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "polycarbonate",
+    "name": "聚碳酸酯",
+    "nameEn": "Polycarbonate",
+    "category": "高分子材料",
+    "subcategory": "工程塑料",
+    "queries": [
+      "Polycarbonate engineering plastic pellets",
+      "Polycarbonate plastic rod sheet",
+      "Polycarbonate polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "pom",
+    "name": "聚甲醛",
+    "nameEn": "Polyoxymethylene",
+    "category": "高分子材料",
+    "subcategory": "工程塑料",
+    "queries": [
+      "Polyoxymethylene engineering plastic pellets",
+      "Polyoxymethylene plastic rod sheet",
+      "Polyoxymethylene polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "pet",
+    "name": "聚对苯二甲酸乙二醇酯",
+    "nameEn": "Polyethylene Terephthalate",
+    "category": "高分子材料",
+    "subcategory": "工程塑料",
+    "queries": [
+      "Polyethylene Terephthalate engineering plastic pellets",
+      "Polyethylene Terephthalate plastic rod sheet",
+      "Polyethylene Terephthalate polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "pbt",
+    "name": "聚对苯二甲酸丁二醇酯",
+    "nameEn": "Polybutylene Terephthalate",
+    "category": "高分子材料",
+    "subcategory": "工程塑料",
+    "queries": [
+      "Polybutylene Terephthalate engineering plastic pellets",
+      "Polybutylene Terephthalate plastic rod sheet",
+      "Polybutylene Terephthalate polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "peek",
+    "name": "聚醚醚酮",
+    "nameEn": "Polyether ether ketone",
+    "category": "高分子材料",
+    "subcategory": "特种工程塑料",
+    "queries": [
+      "Polyether ether ketone polymer pellets",
+      "Polyether ether ketone machined plastic stock",
+      "Polyether ether ketone polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "polyimide",
+    "name": "聚酰亚胺",
+    "nameEn": "Polyimide",
+    "category": "高分子材料",
+    "subcategory": "特种工程塑料",
+    "queries": [
+      "Polyimide polymer pellets",
+      "Polyimide machined plastic stock",
+      "Polyimide polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "pps",
+    "name": "聚苯硫醚",
+    "nameEn": "Polyphenylene Sulfide",
+    "category": "高分子材料",
+    "subcategory": "特种工程塑料",
+    "queries": [
+      "Polyphenylene Sulfide polymer pellets",
+      "Polyphenylene Sulfide machined plastic stock",
+      "Polyphenylene Sulfide polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "ptfe",
+    "name": "聚四氟乙烯",
+    "nameEn": "Polytetrafluoroethylene",
+    "category": "高分子材料",
+    "subcategory": "特种工程塑料",
+    "queries": [
+      "Polytetrafluoroethylene polymer pellets",
+      "Polytetrafluoroethylene machined plastic stock",
+      "Polytetrafluoroethylene polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "lcp",
+    "name": "液晶聚合物",
+    "nameEn": "Liquid Crystal Polymer",
+    "category": "高分子材料",
+    "subcategory": "特种工程塑料",
+    "queries": [
+      "Liquid Crystal Polymer polymer pellets",
+      "Liquid Crystal Polymer machined plastic stock",
+      "Liquid Crystal Polymer polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "natural_rubber",
+    "name": "天然橡胶",
+    "nameEn": "Natural Rubber",
+    "category": "高分子材料",
+    "subcategory": "橡胶",
+    "queries": [
+      "Natural Rubber rubber sheet material",
+      "Natural Rubber rubber sample",
+      "Natural Rubber polymer pellets material sample"
+    ],
+    "images": [
+      {
+        "id": "natural_rubber-macro-01",
+        "file": "assets/images/materials/natural_rubber/candidates/macro_candidate_01.jpg",
+        "alt": "天然橡胶宏观图片候选 1",
+        "title": "Natural rubber drying 1.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Slashme",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Natural_rubber_drying_1.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/Natural_rubber_drying_1.jpg",
+        "query": "Natural Rubber rubber sheet material",
+        "score": 8.9,
+        "width": 1600,
+        "height": 1024,
+        "sha256": "3b78945079c3539145b11f1da0e0c92a42fb02904c6b3c4cad1bc62f86f793d0",
+        "approved": false
+      },
+      {
+        "id": "natural_rubber-macro-02",
+        "file": "assets/images/materials/natural_rubber/candidates/macro_candidate_02.jpg",
+        "alt": "天然橡胶宏观图片候选 2",
+        "title": "Natural rubber drying 2.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Slashme",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Natural_rubber_drying_2.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Natural_rubber_drying_2.jpg",
+        "query": "Natural Rubber rubber sheet material",
+        "score": 8.9,
+        "width": 1403,
+        "height": 1600,
+        "sha256": "e12b924f7066f2c089b150072c0862d7981130dc1e7270c6346fa6a5dd0c71d4",
+        "approved": false
+      },
+      {
+        "id": "natural_rubber-macro-03",
+        "file": "assets/images/materials/natural_rubber/candidates/macro_candidate_03.jpg",
+        "alt": "天然橡胶宏观图片候选 3",
+        "title": "Natural rubber.jpg",
+        "source": "Wikimedia Commons",
+        "author": "LukaszKatlewa",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Natural_rubber.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Natural_rubber.jpg",
+        "query": "Natural Rubber rubber sheet material",
+        "score": 8.9,
+        "width": 1600,
+        "height": 1200,
+        "sha256": "795245da79a691046e85397644eb9310980a853317181fdb2c1c622fe5dd03d7",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "silicone_rubber",
+    "name": "硅橡胶",
+    "nameEn": "Silicone Rubber",
+    "category": "高分子材料",
+    "subcategory": "橡胶",
+    "queries": [
+      "Silicone Rubber rubber sheet material",
+      "Silicone Rubber rubber sample",
+      "Silicone Rubber polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "fluororubber",
+    "name": "氟橡胶",
+    "nameEn": "Fluoroelastomer",
+    "category": "高分子材料",
+    "subcategory": "橡胶",
+    "queries": [
+      "Fluoroelastomer rubber sheet material",
+      "Fluoroelastomer rubber sample",
+      "Fluoroelastomer polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "epoxy_resin",
+    "name": "环氧树脂",
+    "nameEn": "Epoxy Resin",
+    "category": "高分子材料",
+    "subcategory": "树脂",
+    "queries": [
+      "Epoxy Resin resin material sample",
+      "Epoxy Resin cured resin",
+      "Epoxy Resin polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "polyurethane",
+    "name": "聚氨酯",
+    "nameEn": "Polyurethane",
+    "category": "高分子材料",
+    "subcategory": "树脂",
+    "queries": [
+      "Polyurethane resin material sample",
+      "Polyurethane cured resin",
+      "Polyurethane polymer pellets material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "alumina_ceramic",
+    "name": "氧化铝陶瓷",
+    "nameEn": "Alumina Ceramic",
+    "category": "无机非金属材料",
+    "subcategory": "陶瓷材料",
+    "queries": [
+      "Alumina Ceramic ceramic specimen",
+      "Alumina Ceramic ceramic component",
+      "Alumina Ceramic material sample"
+    ],
+    "images": [
+      {
+        "id": "alumina_ceramic-macro-01",
+        "file": "assets/images/materials/alumina_ceramic/candidates/macro_candidate_01.jpg",
+        "alt": "氧化铝陶瓷宏观图片候选 1",
+        "title": "Ceramic substrate used for repeater in coaxial transmissions.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Fil22plm",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ceramic_substrate_used_for_repeater_in_coaxial_transmissions.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Ceramic_substrate_used_for_repeater_in_coaxial_transmissions.jpg",
+        "query": "Alumina Ceramic ceramic component",
+        "score": 5.65,
+        "width": 1600,
+        "height": 1200,
+        "sha256": "9f728ea3d91aa4e95d15aeeb2262a0d9590575e3cf809ce8de260b7a633b4fc7",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "zirconia_ceramic",
+    "name": "氧化锆陶瓷",
+    "nameEn": "Zirconia Ceramic",
+    "category": "无机非金属材料",
+    "subcategory": "陶瓷材料",
+    "queries": [
+      "Zirconia Ceramic ceramic specimen",
+      "Zirconia Ceramic ceramic component",
+      "Zirconia Ceramic material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "sic_ceramic",
+    "name": "碳化硅陶瓷",
+    "nameEn": "Silicon Carbide Ceramic",
+    "category": "无机非金属材料",
+    "subcategory": "陶瓷材料",
+    "queries": [
+      "Silicon Carbide Ceramic ceramic specimen",
+      "Silicon Carbide Ceramic ceramic component",
+      "Silicon Carbide Ceramic material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "silicon_nitride_ceramic",
+    "name": "氮化硅陶瓷",
+    "nameEn": "Silicon Nitride Ceramic",
+    "category": "无机非金属材料",
+    "subcategory": "陶瓷材料",
+    "queries": [
+      "Silicon Nitride Ceramic ceramic specimen",
+      "Silicon Nitride Ceramic ceramic component",
+      "Silicon Nitride Ceramic material sample"
+    ],
+    "images": [
+      {
+        "id": "silicon_nitride_ceramic-macro-01",
+        "file": "assets/images/materials/silicon_nitride_ceramic/candidates/macro_candidate_01.jpg",
+        "alt": "氮化硅陶瓷宏观图片候选 1",
+        "title": "Silicon nitride valve.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Unknown author Unknown author",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silicon_nitride_valve.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Silicon_nitride_valve.jpg",
+        "query": "Silicon Nitride Ceramic ceramic component",
+        "score": 4.5,
+        "width": 918,
+        "height": 668,
+        "sha256": "8a885d317d5ecbbddee333d6055f62cb9f9b3bcb55f63610868aaba2d21c87ad",
+        "approved": false
+      },
+      {
+        "id": "silicon_nitride_ceramic-macro-02",
+        "file": "assets/images/materials/silicon_nitride_ceramic/candidates/macro_candidate_02.jpg",
+        "alt": "氮化硅陶瓷宏观图片候选 2",
+        "title": "Silicon nitride turborotor.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Unknown author Unknown author",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silicon_nitride_turborotor.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Silicon_nitride_turborotor.jpg",
+        "query": "Silicon Nitride Ceramic ceramic component",
+        "score": 4.5,
+        "width": 759,
+        "height": 761,
+        "sha256": "e76443e0bd1ef99d64246ee1e3eadde13f6811f3b67f3415229155923e26d881",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "quartz_glass",
+    "name": "石英玻璃",
+    "nameEn": "Quartz Glass",
+    "category": "无机非金属材料",
+    "subcategory": "玻璃材料",
+    "queries": [
+      "Quartz Glass glass material sample",
+      "Quartz Glass glass sheet",
+      "Quartz Glass material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "borosilicate_glass",
+    "name": "硼硅玻璃",
+    "nameEn": "Borosilicate Glass",
+    "category": "无机非金属材料",
+    "subcategory": "玻璃材料",
+    "queries": [
+      "Borosilicate Glass glass material sample",
+      "Borosilicate Glass glass sheet",
+      "Borosilicate Glass material sample"
+    ],
+    "images": [
+      {
+        "id": "borosilicate_glass-macro-01",
+        "file": "assets/images/materials/borosilicate_glass/candidates/macro_candidate_01.jpg",
+        "alt": "硼硅玻璃宏观图片候选 1",
+        "title": "WetPorousGlass.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Afluegel",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:WetPorousGlass.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/WetPorousGlass.jpg",
+        "query": "Borosilicate Glass glass material sample",
+        "score": 6.8,
+        "width": 1600,
+        "height": 1121,
+        "sha256": "cd33e56caf76a162e58c94f6ef3901cbd3866afbeb5f7a786a07001c78c806f2",
+        "approved": false
+      },
+      {
+        "id": "borosilicate_glass-macro-02",
+        "file": "assets/images/materials/borosilicate_glass/candidates/macro_candidate_02.jpg",
+        "alt": "硼硅玻璃宏观图片候选 2",
+        "title": "DryPorousGlass.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Afluegel",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:DryPorousGlass.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/DryPorousGlass.jpg",
+        "query": "Borosilicate Glass glass material sample",
+        "score": 6.8,
+        "width": 1600,
+        "height": 1101,
+        "sha256": "cbb29ab16ee1ee95dbca7898ee9239d15d90e972ba106a1c86a6f049f733d7a6",
+        "approved": false
+      },
+      {
+        "id": "borosilicate_glass-macro-03",
+        "file": "assets/images/materials/borosilicate_glass/candidates/macro_candidate_03.jpg",
+        "alt": "硼硅玻璃宏观图片候选 3",
+        "title": "Bromine vial in acrylic cube.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Alchemist-hp ( pse-mendelejew.de )",
+        "license": "CC BY-SA 3.0 de",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bromine_vial_in_acrylic_cube.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Bromine_vial_in_acrylic_cube.jpg",
+        "query": "Borosilicate Glass glass material sample",
+        "score": 5.05,
+        "width": 1600,
+        "height": 1584,
+        "sha256": "f8938b46f852a7c1e5eb3997a3bdafff8fe11ffbbf35c52898fcd11886d6ed71",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "tempered_glass",
+    "name": "钢化玻璃",
+    "nameEn": "Tempered Glass",
+    "category": "无机非金属材料",
+    "subcategory": "玻璃材料",
+    "queries": [
+      "Tempered Glass glass material sample",
+      "Tempered Glass glass sheet",
+      "Tempered Glass material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "portland_cement",
+    "name": "硅酸盐水泥",
+    "nameEn": "Portland Cement",
+    "category": "无机非金属材料",
+    "subcategory": "水泥与建筑材料",
+    "queries": [
+      "Portland Cement material sample",
+      "Portland Cement ceramic glass specimen",
+      "硅酸盐水泥 material sample"
+    ],
+    "images": [
+      {
+        "id": "portland_cement-macro-01",
+        "file": "assets/images/materials/portland_cement/candidates/macro_candidate_01.jpg",
+        "alt": "硅酸盐水泥宏观图片候选 1",
+        "title": "Superior cement - 1932.jpg",
+        "source": "Wikimedia Commons",
+        "author": "凰兰时罗",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Superior_cement_-_1932.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Superior_cement_-_1932.jpg",
+        "query": "Portland Cement material sample",
+        "score": 6.45,
+        "width": 877,
+        "height": 1600,
+        "sha256": "81406e0678a07a02846aa4622b26acac063b3fd314100aa5178021f17e6e4384",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "concrete",
+    "name": "混凝土",
+    "nameEn": "Concrete",
+    "category": "无机非金属材料",
+    "subcategory": "水泥与建筑材料",
+    "queries": [
+      "Concrete material sample",
+      "Concrete ceramic glass specimen",
+      "混凝土 material sample"
+    ],
+    "images": [
+      {
+        "id": "concrete-macro-01",
+        "file": "assets/images/materials/concrete/candidates/macro_candidate_01.jpg",
+        "alt": "混凝土宏观图片候选 1",
+        "title": "Concrete Compression Testing.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Xb-70 at English Wikipedia",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Concrete_Compression_Testing.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Concrete_Compression_Testing.jpg",
+        "query": "Concrete material sample",
+        "score": 4.85,
+        "width": 1320,
+        "height": 1600,
+        "sha256": "93fdcb75bfaf8f3c35e4de24d5deab1a45991d17b01fe7198954e46ff4c21b3e",
+        "approved": false
+      },
+      {
+        "id": "concrete-macro-02",
+        "file": "assets/images/materials/concrete/candidates/macro_candidate_02.jpg",
+        "alt": "混凝土宏观图片候选 2",
+        "title": "Foamed Concrete AZ (8405086019).jpg",
+        "source": "Wikimedia Commons",
+        "author": "Federal Highway Administration",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Foamed_Concrete_AZ_(8405086019).jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Foamed_Concrete_AZ_%288405086019%29.jpg",
+        "query": "Concrete material sample",
+        "score": 4.85,
+        "width": 1600,
+        "height": 1200,
+        "sha256": "c23ca570108279e78aa7d1b6f56d237a1cb8ac99d2af6d9b19dd0d0683bd5327",
+        "approved": false
+      },
+      {
+        "id": "concrete-macro-03",
+        "file": "assets/images/materials/concrete/candidates/macro_candidate_03.jpg",
+        "alt": "混凝土宏观图片候选 3",
+        "title": "Bioreceptive lightweight concrete.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Mary Mark Ockerbloom",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bioreceptive_lightweight_concrete.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bioreceptive_lightweight_concrete.jpg",
+        "query": "Concrete material sample",
+        "score": 4.85,
+        "width": 1600,
+        "height": 1024,
+        "sha256": "2dc3e36299237862f34d9c605f61d9f9a731a7ec5d4d4ee796d4b84e788f4402",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "refractory",
+    "name": "耐火材料",
+    "nameEn": "Refractory",
+    "category": "无机非金属材料",
+    "subcategory": "水泥与建筑材料",
+    "queries": [
+      "Refractory material sample",
+      "Refractory ceramic glass specimen",
+      "耐火材料 material sample"
+    ],
+    "images": [
+      {
+        "id": "refractory-macro-01",
+        "file": "assets/images/materials/refractory/candidates/macro_candidate_01.jpg",
+        "alt": "耐火材料宏观图片候选 1",
+        "title": "General Refractories Seilles (1934-1968(?)), briquette échantillon « Happy New-Year ! », produit réfractaire, MCA.4489.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Sam.Donvil",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:General_Refractories_Seilles_(1934-1968(%3F)),_briquette_%C3%A9chantillon_%C2%AB_Happy_New-Year_!_%C2%BB,_produit_r%C3%A9fractaire,_MCA.4489.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/General_Refractories_Seilles_%281934-1968%28%3F%29%29%2C_briquette_%C3%A9chantillon_%C2%AB_Happy_New-Year_%21_%C2%BB%2C_produit_r%C3%A9fractaire%2C_MCA.4489.jpg",
+        "query": "Refractory material sample",
+        "score": 3.1,
+        "width": 1600,
+        "height": 1063,
+        "sha256": "88721753a20e50eb60374a189a52778e53ef5bfa6da0f4d5882acbccd978ed1d",
+        "approved": false
+      },
+      {
+        "id": "refractory-macro-02",
+        "file": "assets/images/materials/refractory/candidates/macro_candidate_02.jpg",
+        "alt": "耐火材料宏观图片候选 2",
+        "title": "Metamaterials resonance at 100 Terahertz.jpg",
+        "source": "Wikimedia Commons",
+        "author": "Stefan Linden, et. al",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Metamaterials_resonance_at_100_Terahertz.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Metamaterials_resonance_at_100_Terahertz.jpg",
+        "query": "Refractory material sample",
+        "score": -5.9,
+        "width": 931,
+        "height": 1280,
+        "sha256": "28973e19faf85e71eb6ea7456e324516a21a77a907dc12b0ee63b4264ad70f2d",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "carbon_fiber_epoxy",
+    "name": "碳纤维/环氧复合材料",
+    "nameEn": "Carbon Fiber/Epoxy Composite",
+    "category": "复合材料",
+    "subcategory": "树脂基复合材料",
+    "queries": [
+      "Carbon Fiber/Epoxy Composite composite material sample",
+      "Carbon Fiber/Epoxy Composite composite laminate panel",
+      "Carbon Fiber/Epoxy Composite CFRP composite material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "glass_fiber_composite",
+    "name": "玻璃纤维复合材料",
+    "nameEn": "Glass Fiber Composite",
+    "category": "复合材料",
+    "subcategory": "树脂基复合材料",
+    "queries": [
+      "Glass Fiber Composite composite material sample",
+      "Glass Fiber Composite composite laminate panel",
+      "Glass Fiber Composite GFRP composite material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "aramid_fiber_composite",
+    "name": "芳纶纤维复合材料",
+    "nameEn": "Aramid Fiber Composite",
+    "category": "复合材料",
+    "subcategory": "树脂基复合材料",
+    "queries": [
+      "Aramid Fiber Composite composite material sample",
+      "Aramid Fiber Composite composite laminate panel",
+      "Aramid Fiber Composite AFRP composite material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "aluminum_mmc",
+    "name": "铝基复合材料",
+    "nameEn": "Aluminum Matrix Composite",
+    "category": "复合材料",
+    "subcategory": "金属基复合材料",
+    "queries": [
+      "Aluminum Matrix Composite composite material sample",
+      "Aluminum Matrix Composite composite laminate panel",
+      "Aluminum Matrix Composite Al-MMC composite material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "sic_cmc",
+    "name": "碳化硅纤维增强陶瓷基复合材料",
+    "nameEn": "SiC Fiber Reinforced Ceramic Matrix Composite",
+    "category": "复合材料",
+    "subcategory": "陶瓷基复合材料",
+    "queries": [
+      "SiC Fiber Reinforced Ceramic Matrix Composite composite material sample",
+      "SiC Fiber Reinforced Ceramic Matrix Composite composite laminate panel",
+      "SiC Fiber Reinforced Ceramic Matrix Composite SiC/SiC CMC composite material sample"
+    ],
+    "images": []
+  },
+  {
+    "materialId": "carbon_carbon",
+    "name": "碳/碳复合材料",
+    "nameEn": "Carbon/Carbon Composite",
+    "category": "复合材料",
+    "subcategory": "陶瓷基复合材料",
+    "queries": [
+      "Carbon/Carbon Composite composite material sample",
+      "Carbon/Carbon Composite composite laminate panel",
+      "碳/碳复合材料 composite material sample"
+    ],
+    "images": [
+      {
+        "id": "carbon_carbon-macro-01",
+        "file": "assets/images/materials/carbon_carbon/candidates/macro_candidate_01.jpg",
+        "alt": "碳/碳复合材料宏观图片候选 1",
+        "title": "Cretaceous paleogene carbon 13 and oxygen 18 1.png",
+        "source": "Wikimedia Commons",
+        "author": "Merikanto",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cretaceous_paleogene_carbon_13_and_oxygen_18_1.png",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Cretaceous_paleogene_carbon_13_and_oxygen_18_1.png",
+        "query": "Carbon/Carbon Composite composite material sample",
+        "score": 3.7,
+        "width": 1398,
+        "height": 754,
+        "sha256": "f990daff3f4268116f24532af696a9ffab4990cae76fc32961b6e39e12940cc3",
+        "approved": false
+      }
+    ]
+  },
+  {
+    "materialId": "honeycomb_sandwich",
+    "name": "蜂窝夹层板",
+    "nameEn": "Honeycomb Sandwich Panel",
+    "category": "复合材料",
+    "subcategory": "层合板与夹层材料",
+    "queries": [
+      "Honeycomb Sandwich Panel composite material sample",
+      "Honeycomb Sandwich Panel composite laminate panel",
+      "蜂窝夹层板 composite material sample"
+    ],
+    "images": []
+  }
+]

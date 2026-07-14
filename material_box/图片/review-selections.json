@@ -1,0 +1,17 @@
+[
+  {
+    "materialId": "steel",
+    "selectedFile": "assets/images/materials/steel/candidates/macro_candidate_01.jpg",
+    "rejected": false
+  },
+  {
+    "materialId": "cast_iron",
+    "selectedFile": "assets/images/materials/cast_iron/candidates/macro_candidate_03.jpg",
+    "rejected": false
+  },
+  {
+    "materialId": "stainless_steel",
+    "selectedFile": "",
+    "rejected": true
+  }
+]

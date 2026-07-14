@@ -1,0 +1,19 @@
+{
+  "materialId": "cast_iron",
+  "name": "铸铁",
+  "macro": [
+    {
+      "src": "assets/images/materials/cast_iron/macro_01.jpg",
+      "alt": "铸铁宏观外观图片",
+      "caption": "Cast iron tensile test.JPG",
+      "source": "Wikimedia Commons",
+      "author": "Sigmund",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cast_iron_tensile_test.JPG",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Cast_iron_tensile_test.JPG",
+      "retrievedAt": "2026-07-10",
+      "sha256": "28b2a7487396519a5dd84774118c1bb99004b0cad230990cb1f8aa65c8052f7f"
+    }
+  ]
+}

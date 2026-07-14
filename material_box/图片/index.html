@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>材料盒 MaterialBox</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="topbar" aria-label="主导航">
+        <a class="brand" href="#home" aria-label="返回首页">
+          <span class="brand-mark">MB</span>
+          <span>材料盒 MaterialBox</span>
+        </a>
+        <div class="nav-links">
+          <a href="#categories-section">材料分类</a>
+          <a href="#explore">检索筛选</a>
+          <a href="#recommended">推荐材料</a>
+          <button id="nav-favorites" class="nav-action" type="button">我的收藏 <span id="favorite-count">0</span></button>
+          <button id="nav-compare" class="nav-action" type="button">材料对比 <span class="compare-count-label">已选对比：<span id="compare-count">0</span> / 3</span></button>
+        </div>
+      </nav>
+
+      <section id="home" class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">材料学习 · 工程选材 · 科研入门</p>
+          <h1>材料盒 MaterialBox</h1>
+          <p class="hero-subtitle">
+            一个面向材料学习、科研入门与工程选材的材料知识库，支持按材料分类、性能、用途与行业应用快速检索。
+          </p>
+          <div class="search-shell">
+            <input
+              id="search-input"
+              type="search"
+              autocomplete="off"
+              placeholder="搜索材料名称、性能、用途、行业，例如 木头 / 玻璃钢 / PEEK / 航空材料"
+            />
+            <button id="search-button" type="button">搜索</button>
+          </div>
+          <div id="search-suggestions" class="search-suggestions hidden"></div>
+          <div id="quick-tags" class="quick-tags" aria-label="快捷搜索标签"></div>
+          <div id="hot-searches" class="hot-searches" aria-label="热门搜索"></div>
+        </div>
+        <aside class="hero-panel" aria-label="材料库状态面板">
+          <div class="status-card">
+            <span class="panel-label">Library Status</span>
+            <strong>今日材料库概览</strong>
+            <div id="hero-status-grid" class="status-grid"></div>
+          </div>
+          <div class="hero-metric-row">
+            <button id="hero-favorites" class="mini-metrics" type="button">
+              <span>我的收藏</span>
+              <strong><span id="hero-favorite-count">0</span> 个</strong>
+            </button>
+            <button id="hero-compare" class="mini-metrics accent" type="button">
+              <span>对比篮</span>
+              <strong><span id="hero-compare-count">0</span> / 3</strong>
+            </button>
+          </div>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="section stats-section" aria-label="数据概览">
+        <div id="stats-grid" class="stats-grid"></div>
+      </section>
+
+      <section id="categories-section" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Classification</p>
+          <h2>材料分类入口</h2>
+          <p>按照一级分类、二级分类和典型材料建立材料学知识框架。</p>
+        </div>
+        <div id="category-grid" class="category-grid"></div>
+      </section>
+
+      <section class="section applications-section">
+        <div class="section-heading">
+          <p class="eyebrow">Applications</p>
+          <h2>热门用途入口</h2>
+          <p>从工程场景反查材料，适合课程学习、项目选材和资料检索。</p>
+        </div>
+        <div id="application-grid" class="application-grid"></div>
+      </section>
+
+      <section id="explore" class="section explorer-section">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Explore</p>
+            <h2>材料检索与筛选</h2>
+            <p id="result-summary">正在加载材料数据...</p>
+          </div>
+          <div class="heading-actions">
+            <button id="clear-filters" class="ghost-button" type="button">清除筛选</button>
+            <button id="compare-entry" class="ghost-button" type="button">材料对比</button>
+          </div>
+        </div>
+
+        <div id="active-filters" class="active-filters"></div>
+
+        <div class="explorer-layout">
+          <aside id="filters-panel" class="filters-panel collapsed" aria-label="材料筛选">
+            <div class="filter-block">
+              <label for="category-filter">一级分类</label>
+              <select id="category-filter"></select>
+            </div>
+            <div class="filter-block">
+              <label for="subcategory-filter">二级分类</label>
+              <select id="subcategory-filter"></select>
+            </div>
+            <div class="filter-block">
+              <label for="tag-filter">性能标签</label>
+              <select id="tag-filter"></select>
+            </div>
+            <div class="filter-block">
+              <label for="application-filter">应用场景</label>
+              <select id="application-filter"></select>
+            </div>
+            <div class="filter-block processing-block">
+              <label for="processing-filter">加工方法</label>
+              <select id="processing-filter"></select>
+            </div>
+            <div class="filter-extra" id="filter-extra">
+              <div class="filter-block">
+                <label for="cost-filter">成本等级</label>
+                <select id="cost-filter"></select>
+              </div>
+              <div class="filter-block">
+                <label for="temperature-filter">使用温度</label>
+                <select id="temperature-filter"></select>
+              </div>
+            </div>
+            <div class="filter-toggle-row">
+              <button id="filter-toggle" class="ghost-button filter-toggle" type="button" aria-expanded="false" aria-controls="filter-extra">展开更多筛选条件 ↓</button>
+            </div>
+          </aside>
+
+          <div class="results-area">
+            <div class="results-toolbar">
+              <span id="results-display-summary"></span>
+            </div>
+            <div id="material-list" class="material-grid results-grid"></div>
+            <div id="empty-state" class="empty-state hidden"></div>
+            <div id="results-toggle-row" class="results-toggle-row hidden">
+              <span id="results-toggle-summary"></span>
+              <button id="results-toggle" class="ghost-button results-toggle" type="button">展开更多材料 ↓</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recommended" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Featured</p>
+          <h2>推荐材料</h2>
+          <p>优先展示学习、工程选材和生活常见场景中代表性强的材料。</p>
+        </div>
+        <div id="recommended-grid" class="material-grid compact"></div>
+      </section>
+
+      <section id="favorites-section" class="section favorites-section">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Saved</p>
+            <h2>我的收藏</h2>
+            <p id="favorites-summary">页面加载后会恢复本地收藏。</p>
+          </div>
+          <button id="clear-favorites" class="ghost-button" type="button">清空收藏</button>
+        </div>
+        <div id="favorites-list" class="material-grid compact"></div>
+        <div id="favorites-empty" class="empty-state hidden">
+          <h3>还没有收藏材料</h3>
+          <p>点击卡片右下角星标即可收藏。</p>
+        </div>
+      </section>
+
+      <section id="material-detail" class="detail-section hidden" aria-live="polite"></section>
+
+      <section class="section project-section">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>这个网站可以用来做什么</h2>
+        </div>
+        <div class="feature-grid">
+          <article><strong>查材料</strong><span>通过中文名、英文名、缩写、同义词和分类路径快速定位材料。</span></article>
+          <article><strong>看用途</strong><span>从航空航天、储能、医疗、建筑、纺织、电子等场景反查材料。</span></article>
+          <article><strong>按性能筛选</strong><span>围绕耐高温、轻量化、导电、绝缘、耐磨等标签建立认知。</span></article>
+          <article><strong>材料对比</strong><span>把最多 3 个材料加入对比篮，横向比较性能、加工和用途。</span></article>
+          <article><strong>学习资料库</strong><span>统一字段便于持续添加材料、图片、案例、实验数据和课程笔记。</span></article>
+        </div>
+      </section>
+    </main>
+
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部">↑</button>
+
+    <div id="compare-panel" class="compare-panel hidden" role="dialog" aria-modal="true" aria-labelledby="compare-title">
+      <div class="compare-backdrop" data-close-compare></div>
+      <section class="compare-drawer">
+        <div class="compare-header">
+          <div>
+            <p class="eyebrow">Compare</p>
+            <h2 id="compare-title">材料对比</h2>
+          </div>
+          <div class="compare-actions">
+            <button id="clear-compare" class="ghost-button" type="button">清空对比</button>
+            <button class="ghost-button" type="button" data-close-compare aria-label="关闭材料对比面板">关闭</button>
+          </div>
+        </div>
+        <div id="compare-content"></div>
+      </section>
+    </div>
+
+    <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <footer class="site-footer">
+      <p>MaterialBox 是一个前端静态材料知识库示例，可继续扩展为课程资料库、工程选材工具或材料百科站点。</p>
+    </footer>
+
+    <script src="materials.js"></script>
+    <script src="material-images.js"></script>
+    <script src="material-images.generated.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
