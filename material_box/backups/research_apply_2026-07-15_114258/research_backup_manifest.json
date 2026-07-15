@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-07-15T11:42:58+08:00",
+  "files": [
+    "materials.json",
+    "materials.js",
+    "material-images.generated.js",
+    "image-attribution.json",
+    "image-attribution.js",
+    "image-attribution.csv",
+    "data/research/property-candidates.json",
+    "data/research/image-candidates.json",
+    "data/research/validation-report.json"
+  ],
+  "material_ids": [
+    "alumina_ceramic",
+    "carbon_fiber_epoxy",
+    "graphene",
+    "lifepo4",
+    "polyethylene",
+    "stainless_steel",
+    "ti_tc4",
+    "titanium_alloy"
+  ],
+  "image_directory_existed": {
+    "alumina_ceramic": true,
+    "carbon_fiber_epoxy": true,
+    "graphene": true,
+    "lifepo4": true,
+    "polyethylene": true,
+    "stainless_steel": true,
+    "ti_tc4": true,
+    "titanium_alloy": true
+  }
+}

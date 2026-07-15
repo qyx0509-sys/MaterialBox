@@ -1,0 +1,31 @@
+{
+  "materialId": "lifepo4",
+  "images": {
+    "macro": [
+      {
+        "src": "assets/images/materials/lifepo4/macro_01.webp",
+        "alt": "磷酸铁锂宏观图片候选：Lithium Iron Phosphate LiFePO4 Cells 700 Ah Amp Hours 3.25 Volts - 7.jpg",
+        "caption": "Lithium Iron Phosphate (LiFePO4) battery cells are arranged in parallel for balancing before assembly in a 16 cell battery.",
+        "source": "Wikimedia Commons",
+        "author": "Yo-Co-Man",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lithium_Iron_Phosphate_LiFePO4_Cells_700_Ah_Amp_Hours_3.25_Volts_-_7.jpg",
+        "accessed_at": "2026-07-15",
+        "origin": "reviewed",
+        "research_candidate_id": "image:cc962de235a965",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Lithium_Iron_Phosphate_LiFePO4_Cells_700_Ah_Amp_Hours_3.25_Volts_-_7.jpg",
+        "sha256": "ecd79a46b948360f794f9f084a99761656807af4316dea35d4815a67c3e340be",
+        "generated_origin": "web_source",
+        "model": "",
+        "prompt": "",
+        "generated_at": "",
+        "generator_version": "",
+        "basis_sources": [],
+        "disclaimer": ""
+      }
+    ],
+    "micro": [],
+    "structure": []
+  }
+}

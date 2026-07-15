@@ -1,0 +1,34 @@
+{
+  "batch_size": 10,
+  "max_image_candidates": 5,
+  "request_delay_seconds": 1.0,
+  "request_retries": 3,
+  "allow_ai_generated_images": false,
+  "allow_download_open_access_figures": true,
+  "allowed_licenses": [
+    "Public Domain",
+    "CC0",
+    "CC BY",
+    "CC BY-SA"
+  ],
+  "source_domain_allowlist": [],
+  "source_domain_blocklist": [],
+  "minimum_confidence_for_bulk_accept": 0.85,
+  "max_generated_images_per_run": 5,
+  "image_output_format": "webp",
+  "image_quality": 85,
+  "max_image_edge": 1600,
+  "require_source_for_numeric_data": true,
+  "require_manual_review": true,
+  "openai_image_model": "gpt-image-1",
+  "recommended_material_ids": [
+    "peek",
+    "carbon_fiber_epoxy",
+    "titanium_alloy",
+    "graphene",
+    "lifepo4",
+    "alumina_ceramic",
+    "polyimide",
+    "aluminum_alloy"
+  ]
+}

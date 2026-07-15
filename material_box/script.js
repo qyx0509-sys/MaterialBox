@@ -5,6 +5,8 @@ const taxonomyApi = window.MaterialBoxTaxonomy;
 const categorySystem = window.MATERIAL_CATEGORIES || [];
 window.MATERIALBOX_DATA_SOURCE = "materials.js (generated from materials.json)";
 const materialImageMap = window.MATERIAL_IMAGE_MAP || {};
+const materialImagePolicyApi = window.MaterialBoxImagePolicy;
+const materialImageTypes = ["macro", "micro", "structure"];
 const quickTags = ["PEEK", "碳纤维", "钛合金", "石墨烯", "锂电池材料", "木材", "塑料", "金属", "陶瓷", "建筑", "纺织", "电子", "医用", "储能", "天然材料"];
 const recommendedIds = ["wood", "bamboo", "peek", "carbon_fiber_epoxy", "aluminum_alloy", "alumina_ceramic", "graphene", "natural_stone"];
 const hotSearchTerms = ["PEEK", "碳纤维", "钛合金", "石墨烯", "锂电池材料"];
@@ -624,6 +626,48 @@ function getImageSet(material, useDefault = true) {
   return { macro, micro, structure };
 }
 
+function resolvedMaterialImagePolicy(material) {
+  if (materialImagePolicyApi?.resolve) return materialImagePolicyApi.resolve(material);
+  return { required: ["macro"], recommended: [], optional: ["micro", "structure"], not_applicable: [], allow_inherited: true, reason: "" };
+}
+
+function materialImagePolicyState(material) {
+  const policy = resolvedMaterialImagePolicy(material);
+  const images = getImageSet(material, false);
+  const ownImages = materialImageTypes.filter((type) => hasItems(images[type]) && images[type].some((image) => !image.inheritedFrom));
+  const inheritedImages = materialImageTypes.filter((type) => hasItems(images[type]) && images[type].some((image) => image.inheritedFrom));
+  const availableImages = materialImageTypes.filter((type) => hasItems(images[type]));
+  const inheritedFrom = Object.fromEntries(inheritedImages.map((type) => [type, images[type].find((image) => image.inheritedFrom)?.inheritedFrom || ""]));
+  const available = new Set(availableImages);
+  return {
+    ...policy,
+    ownImages,
+    inheritedImages,
+    inheritedFrom,
+    availableImages,
+    missingRequired: policy.required.filter((type) => !available.has(type)),
+    missingRecommended: policy.recommended.filter((type) => !available.has(type))
+  };
+}
+
+function imagePolicyStatusMarkup(material, policyState = materialImagePolicyState(material)) {
+  const labels = (types) => types.map(imageTypeLabel).join("、") || "无";
+  const current = policyState.availableImages.map((type) => `${imageTypeLabel(type)}${policyState.inheritedImages.includes(type) ? "（继承）" : ""}`);
+  const inherited = policyState.inheritedImages.map((type) => {
+    const parent = materialById(policyState.inheritedFrom[type]);
+    return `${imageTypeLabel(type)}：继承自“${parent?.name_cn || policyState.inheritedFrom[type]}”`;
+  });
+  const rows = [
+    `<span><strong>当前配图</strong>${current.join("、") || "暂无图片"}</span>`,
+    ...inherited.map((value) => `<span class="inherited"><strong>继承参考</strong>${value}</span>`),
+    ...(policyState.missingRequired.length ? [`<span class="missing"><strong>必需待补</strong>${labels(policyState.missingRequired)}</span>`] : []),
+    ...(policyState.missingRecommended.length ? [`<span class="recommended"><strong>建议补充</strong>${labels(policyState.missingRecommended)}</span>`] : []),
+    ...(policyState.optional.length ? [`<span><strong>本材料不强制</strong>${labels(policyState.optional)}</span>`] : []),
+    ...(policyState.not_applicable.length ? [`<span class="muted"><strong>不适用</strong>${labels(policyState.not_applicable)}</span>`] : [])
+  ];
+  return `<div class="image-policy-status" aria-label="材料配图状态">${rows.join("")}</div>`;
+}
+
 function primaryImage(material) {
   return getImageSet(material, false).macro[0] || null;
 }
@@ -1239,7 +1283,15 @@ function imagePanel(type, images, fallbackText) {
 
 function materialImages(material) {
   const images = getImageSet(material, false);
-  return `<section class="material-images"><div class="material-images-head"><h3>材料图像</h3><div class="image-tabs" role="tablist" aria-label="材料图像类型"><button class="image-tab active" type="button" data-image-tab="macro">宏观图</button><button class="image-tab" type="button" data-image-tab="micro">微观图</button><button class="image-tab" type="button" data-image-tab="structure">结构示意图</button></div></div><div class="image-tab-content">${imagePanel("macro", images.macro, "暂无宏观图")}${imagePanel("micro", images.micro, "暂无微观图")}${imagePanel("structure", images.structure, "暂无结构图")}</div><p class="image-rule">规范目录：assets/images/materials/${material.id}/；文件名使用 macro_01.webp、micro_01.webp、structure_01.webp，并兼容 jpg、jpeg、png。</p></section>`;
+  const policyState = materialImagePolicyState(material);
+  const availableTypes = policyState.availableImages;
+  const tabs = availableTypes.length > 1
+    ? `<div class="image-tabs" role="tablist" aria-label="材料图像类型">${availableTypes.map((type, index) => `<button class="image-tab${index === 0 ? " active" : ""}" type="button" data-image-tab="${type}">${imageTypeLabel(type)}</button>`).join("")}</div>`
+    : availableTypes.length === 1 ? `<span class="image-single-type">${imageTypeLabel(availableTypes[0])}</span>` : "";
+  const content = availableTypes.length
+    ? `<div class="image-tab-content">${availableTypes.map((type) => imagePanel(type, images[type], imageTypeInfo(type).empty)).join("")}</div>`
+    : `<div class="image-empty-unified"><strong>暂无材料图片</strong><span>${policyState.missingRequired.length ? `优先补充${policyState.missingRequired.map(imageTypeLabel).join("、")}` : "可按配图建议后续补充"}</span></div>`;
+  return `<section class="material-images"><div class="material-images-head"><h3>材料图像</h3>${tabs}</div>${imagePolicyStatusMarkup(material, policyState)}${content}<p class="image-rule">${policyState.reason || `图片目录：assets/images/materials/${material.id}/`}</p></section>`;
 }
 
 function detailValueMarkup(value) {
@@ -1360,7 +1412,7 @@ function bindImageTabs(scope) {
       scope.querySelectorAll(".image-tab-panel").forEach((panel) => panel.classList.toggle("active", panel.dataset.imagePanel === type));
     });
   });
-  const firstPanel = scope.querySelector('.image-tab-panel[data-image-panel="macro"]');
+  const firstPanel = scope.querySelector(".image-tab-panel");
   if (firstPanel) firstPanel.classList.add("active");
 }
 

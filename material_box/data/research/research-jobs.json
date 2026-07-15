@@ -1,0 +1,738 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-07-15T11:54:23+08:00",
+  "jobs": [
+    {
+      "job_id": "research:steel:2026-07-15T01:13:18+08:00",
+      "material_id": "steel",
+      "material_name": "钢",
+      "entity_type": "family",
+      "priority": [
+        1,
+        9999,
+        -2,
+        0,
+        "steel"
+      ],
+      "queries": [
+        "钢",
+        "Steel",
+        "钢材",
+        "碳钢",
+        "钢铁",
+        "金属",
+        "metal",
+        "金属与合金 黑色金属 钢",
+        "Steel family",
+        "Steel Ferrous metals"
+      ],
+      "started_at": "2026-07-15T01:13:18+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "skipped": "formal_image_exists"
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 0,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T01:13:18+08:00"
+    },
+    {
+      "job_id": "research:polyethylene:2026-07-15T01:13:20+08:00",
+      "material_id": "polyethylene",
+      "material_name": "聚乙烯",
+      "entity_type": "family",
+      "priority": [
+        1,
+        9999,
+        -2,
+        0,
+        "polyethylene"
+      ],
+      "queries": [
+        "聚乙烯",
+        "Polyethylene",
+        "PE",
+        "塑料",
+        "PE塑料",
+        "聚乙烯塑料",
+        "高分子材料",
+        "polymer",
+        "高分子材料 热塑性塑料 聚烯烃 聚乙烯",
+        "Polyethylene family",
+        "Polyethylene Polyolefins"
+      ],
+      "started_at": "2026-07-15T01:13:20+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 1,
+          "added": 1
+        },
+        {
+          "type": "macro",
+          "generated": 1,
+          "added": 1
+        },
+        {
+          "type": "structure",
+          "generated": 1,
+          "added": 1,
+          "origin": "program_generated"
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 6,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T01:13:26+08:00"
+    },
+    {
+      "job_id": "research:ti_tc4:2026-07-15T01:13:28+08:00",
+      "material_id": "ti_tc4",
+      "material_name": "TC4 / Ti-6Al-4V",
+      "entity_type": "grade",
+      "priority": [
+        1,
+        9999,
+        -2,
+        3,
+        "ti_tc4"
+      ],
+      "queries": [
+        "TC4 / Ti-6Al-4V",
+        "Ti-6Al-4V titanium alloy",
+        "Ti-6Al-4V",
+        "TC4",
+        "{'system': '常用牌号', 'grade': 'TC4 / Ti-6Al-4V'}",
+        "金属与合金 有色金属 钛及钛合金 α+β型钛合金 TC4 / Ti-6Al-4V",
+        "Ti-6Al-4V titanium alloy grade",
+        "Ti-6Al-4V titanium alloy Alpha-beta titanium alloy",
+        "Ti-6Al-4V titanium alloy 退火态",
+        "Ti-6Al-4V titanium alloy 固溶时效态",
+        "Ti-6Al-4V titanium alloy 板材",
+        "Ti-6Al-4V titanium alloy 棒材",
+        "Ti-6Al-4V titanium alloy 锻件"
+      ],
+      "started_at": "2026-07-15T01:13:28+08:00",
+      "status": "partial",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 1,
+          "added": 1
+        },
+        {
+          "type": "macro",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "micro_link",
+          "generated": 1,
+          "added": 1
+        }
+      ],
+      "errors": [
+        "Ti64 20s rub krolls rod crossection.png: 图片下载失败：HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)"
+      ],
+      "api_calls": {
+        "wikimedia_searches": 7,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T01:13:48+08:00"
+    },
+    {
+      "job_id": "research:carbon_fiber_epoxy:2026-07-15T11:31:04+08:00",
+      "material_id": "carbon_fiber_epoxy",
+      "material_name": "碳纤维/环氧复合材料",
+      "entity_type": "material",
+      "priority": [
+        0,
+        1,
+        -2,
+        2,
+        "carbon_fiber_epoxy"
+      ],
+      "queries": [
+        "碳纤维/环氧复合材料",
+        "Carbon Fiber/Epoxy Composite",
+        "CFRP",
+        "carbon fiber",
+        "碳纤维",
+        "碳纤维复合材料",
+        "碳纤维板",
+        "复合材料 聚合物基复合材料 连续纤维增强复合材料 碳纤维/环氧复合材料",
+        "Carbon Fiber/Epoxy Composite material",
+        "Carbon Fiber/Epoxy Composite Polymer matrix composites"
+      ],
+      "started_at": "2026-07-15T11:31:04+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 1,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "generated": 1,
+          "added": 1
+        },
+        {
+          "type": "structure",
+          "generated": 1,
+          "added": 0,
+          "origin": "program_generated"
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 7,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:31:22+08:00"
+    },
+    {
+      "job_id": "research:stainless_steel:2026-07-15T11:35:32+08:00",
+      "material_id": "stainless_steel",
+      "material_name": "不锈钢",
+      "entity_type": "subfamily",
+      "priority": [
+        1,
+        9999,
+        -5,
+        1,
+        "stainless_steel"
+      ],
+      "queries": [
+        "不锈钢",
+        "Stainless Steel",
+        "金属",
+        "metal",
+        "金属与合金 黑色金属 钢 不锈钢",
+        "Stainless Steel subfamily",
+        "Stainless Steel Steel"
+      ],
+      "started_at": "2026-07-15T11:35:32+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 1,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "skipped": "inherits_parent",
+          "parent_id": "steel"
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 0,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:35:32+08:00"
+    },
+    {
+      "job_id": "research:battery_separator:2026-07-15T11:35:32+08:00",
+      "material_id": "battery_separator",
+      "material_name": "锂电池隔膜",
+      "entity_type": "material",
+      "priority": [
+        1,
+        9999,
+        -5,
+        2,
+        "battery_separator"
+      ],
+      "queries": [
+        "锂电池隔膜",
+        "Battery Separator",
+        "高分子材料 功能膜 锂电池隔膜",
+        "Battery Separator material"
+      ],
+      "started_at": "2026-07-15T11:35:32+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "generated": 0,
+          "added": 0
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 6,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:35:51+08:00"
+    },
+    {
+      "job_id": "research:peek:2026-07-15T11:51:56+08:00",
+      "material_id": "peek",
+      "material_name": "聚醚醚酮",
+      "entity_type": "family",
+      "priority": [
+        0,
+        0,
+        -5,
+        0,
+        "peek"
+      ],
+      "queries": [
+        "聚醚醚酮",
+        "Polyether ether ketone",
+        "PEEK",
+        "peek材料",
+        "高性能塑料",
+        "塑料",
+        "高分子材料",
+        "polymer",
+        "高分子材料 高性能聚合物 聚芳醚酮 PEEK",
+        "Polyether ether ketone family",
+        "Polyether ether ketone High-performance polymers"
+      ],
+      "started_at": "2026-07-15T11:51:56+08:00",
+      "status": "partial",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "generated": 3,
+          "added": 3
+        }
+      ],
+      "errors": [
+        "Peek.png: 图片尺寸过小：401x133"
+      ],
+      "api_calls": {
+        "wikimedia_searches": 7,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:52:18+08:00"
+    },
+    {
+      "job_id": "research:titanium_alloy:2026-07-15T11:52:18+08:00",
+      "material_id": "titanium_alloy",
+      "material_name": "钛合金",
+      "entity_type": "family",
+      "priority": [
+        0,
+        2,
+        -6,
+        0,
+        "titanium_alloy"
+      ],
+      "queries": [
+        "钛合金",
+        "Titanium Alloy",
+        "金属",
+        "metal",
+        "金属与合金 有色金属 钛及钛合金",
+        "Titanium Alloy family",
+        "Titanium Alloy Non-ferrous metals"
+      ],
+      "started_at": "2026-07-15T11:52:18+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "skipped": "formal_image_exists"
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 0,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:52:18+08:00"
+    },
+    {
+      "job_id": "research:graphene:2026-07-15T11:52:18+08:00",
+      "material_id": "graphene",
+      "material_name": "石墨烯",
+      "entity_type": "material",
+      "priority": [
+        0,
+        3,
+        -2,
+        2,
+        "graphene"
+      ],
+      "queries": [
+        "石墨烯",
+        "Graphene",
+        "石墨烯材料",
+        "二维碳材料",
+        "碳材料 石墨烯",
+        "Graphene material"
+      ],
+      "started_at": "2026-07-15T11:52:18+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "skipped": "formal_image_exists"
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 0,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:52:18+08:00"
+    },
+    {
+      "job_id": "research:lifepo4:2026-07-15T11:52:18+08:00",
+      "material_id": "lifepo4",
+      "material_name": "磷酸铁锂",
+      "entity_type": "material",
+      "priority": [
+        0,
+        4,
+        -4,
+        2,
+        "lifepo4"
+      ],
+      "queries": [
+        "磷酸铁锂",
+        "Lithium Iron Phosphate",
+        "LFP",
+        "无机非金属材料 功能陶瓷 电化学储能材料 磷酸铁锂",
+        "Lithium Iron Phosphate material"
+      ],
+      "started_at": "2026-07-15T11:52:18+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "skipped": "formal_image_exists"
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 0,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:52:18+08:00"
+    },
+    {
+      "job_id": "research:alumina_ceramic:2026-07-15T11:52:18+08:00",
+      "material_id": "alumina_ceramic",
+      "material_name": "氧化铝陶瓷",
+      "entity_type": "material",
+      "priority": [
+        0,
+        5,
+        -2,
+        2,
+        "alumina_ceramic"
+      ],
+      "queries": [
+        "氧化铝陶瓷",
+        "Alumina Ceramic",
+        "Al2O3",
+        "陶瓷",
+        "氧化铝",
+        "无机非金属材料 氧化物陶瓷 氧化铝陶瓷",
+        "Alumina Ceramic material",
+        "Alumina Ceramic Oxide ceramics"
+      ],
+      "started_at": "2026-07-15T11:52:18+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "skipped": "formal_image_exists"
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 0,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:52:18+08:00"
+    },
+    {
+      "job_id": "research:polyimide:2026-07-15T11:52:18+08:00",
+      "material_id": "polyimide",
+      "material_name": "聚酰亚胺",
+      "entity_type": "family",
+      "priority": [
+        0,
+        6,
+        -3,
+        0,
+        "polyimide"
+      ],
+      "queries": [
+        "聚酰亚胺",
+        "Polyimide",
+        "PI",
+        "塑料",
+        "高分子材料",
+        "polymer",
+        "高分子材料 高性能聚合物 聚酰亚胺 PI",
+        "Polyimide family",
+        "Polyimide High-performance polymers"
+      ],
+      "started_at": "2026-07-15T11:52:18+08:00",
+      "status": "partial",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "generated": 1,
+          "added": 1
+        }
+      ],
+      "errors": [
+        "Polyimide.png: 图片尺寸过小：97x68",
+        "Aromatic polyimide.jpg: 图片尺寸过小：708x210",
+        "POLYIMIDEFILM-PI Film.jpg: 图片尺寸过小：223x175"
+      ],
+      "api_calls": {
+        "wikimedia_searches": 6,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:52:33+08:00"
+    },
+    {
+      "job_id": "research:aluminum_alloy:2026-07-15T11:52:33+08:00",
+      "material_id": "aluminum_alloy",
+      "material_name": "铝合金",
+      "entity_type": "family",
+      "priority": [
+        0,
+        7,
+        -7,
+        0,
+        "aluminum_alloy"
+      ],
+      "queries": [
+        "铝合金",
+        "Aluminum Alloy",
+        "aluminium alloy",
+        "aluminum",
+        "铝",
+        "铝材",
+        "铝型材",
+        "金属",
+        "metal",
+        "金属与合金 有色金属 铝及铝合金",
+        "Aluminum Alloy family",
+        "Aluminum Alloy Non-ferrous metals"
+      ],
+      "started_at": "2026-07-15T11:52:33+08:00",
+      "status": "partial",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "generated": 0,
+          "added": 0
+        }
+      ],
+      "errors": [
+        "L-R, front to back - Inconel nickel-copper; Beryllium-copper (no-spark tools); steel; magnesium; aluminum; titanium.jpg: 图片下载失败：HTTP Error 429: Too Many Requests (015d12c)",
+        "High Rotation Speed Friction Stir Welding Joint of a 6061-T6 Aluminum Alloy Sheet; S1 = quadrangular prism, S2 = quadrangular frustum pyramid and S3 = frustum. Yang Zhou et al, Metals 2018, 8(12), 987, CC BY 4.0.jpg: 图片下载失败：HTTP Error 429: Too Many Requests (015d12c)",
+        "Pin Shapes for High Rotation Speed Friction Stir Welding Joint of a 6061-T6 Aluminum Alloy Sheet; S1 = quadrangular prism, S2 = quadrangular frustum pyramid and S3 = frustum. Yang Zhou et al, Metals 2018, 8(12), 987, CC BY 4.0.jpg: 图片下载失败：HTTP Error 429: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1)",
+        "Surface Structure of Aluminum Sheet EN AW-5182 with Mill-Finish-Texture.png: 图片尺寸过小：302x339",
+        "Surface Structure of Aluminum Sheet EN AW-5182 with Mill-Finish-Texture.png: 图片尺寸过小：302x339"
+      ],
+      "api_calls": {
+        "wikimedia_searches": 6,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:52:59+08:00"
+    },
+    {
+      "job_id": "research:graphite_anode:2026-07-15T11:52:59+08:00",
+      "material_id": "graphite_anode",
+      "material_name": "石墨负极",
+      "entity_type": "material",
+      "priority": [
+        1,
+        9999,
+        -5,
+        2,
+        "graphite_anode"
+      ],
+      "queries": [
+        "石墨负极",
+        "Graphite Anode",
+        "碳材料 石墨 电池级石墨 石墨负极",
+        "Graphite Anode material",
+        "Graphite Anode Graphite"
+      ],
+      "started_at": "2026-07-15T11:52:59+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "generated": 0,
+          "added": 0
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 6,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:53:16+08:00"
+    },
+    {
+      "job_id": "research:pla:2026-07-15T11:53:16+08:00",
+      "material_id": "pla",
+      "material_name": "聚乳酸",
+      "entity_type": "material",
+      "priority": [
+        1,
+        9999,
+        -5,
+        2,
+        "pla"
+      ],
+      "queries": [
+        "聚乳酸",
+        "Polylactic Acid",
+        "PLA",
+        "高分子材料 生物可降解聚合物 脂肪族聚酯 PLA",
+        "Polylactic Acid material",
+        "Polylactic Acid Biodegradable polymers"
+      ],
+      "started_at": "2026-07-15T11:53:16+08:00",
+      "status": "completed",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "generated": 2,
+          "added": 2
+        }
+      ],
+      "errors": [],
+      "api_calls": {
+        "wikimedia_searches": 7,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:53:40+08:00"
+    },
+    {
+      "job_id": "research:silicon_carbide_semiconductor:2026-07-15T11:53:40+08:00",
+      "material_id": "silicon_carbide_semiconductor",
+      "material_name": "碳化硅",
+      "entity_type": "material",
+      "priority": [
+        1,
+        9999,
+        -5,
+        2,
+        "silicon_carbide_semiconductor"
+      ],
+      "queries": [
+        "碳化硅",
+        "Silicon Carbide",
+        "SiC",
+        "半导体与电子材料 宽禁带半导体 碳化硅半导体",
+        "Silicon Carbide material"
+      ],
+      "started_at": "2026-07-15T11:53:40+08:00",
+      "status": "partial",
+      "tasks": [
+        {
+          "type": "property",
+          "generated": 0,
+          "added": 0
+        },
+        {
+          "type": "macro",
+          "generated": 5,
+          "added": 5
+        }
+      ],
+      "errors": [
+        "Silicon carbide kiln furniture.jpg: 图片下载失败：HTTP Error 429: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1)",
+        "Silicon carbide detail.jpg: 图片尺寸过小：250x223"
+      ],
+      "api_calls": {
+        "wikimedia_searches": 7,
+        "openai_images": 0
+      },
+      "finished_at": "2026-07-15T11:54:23+08:00"
+    }
+  ],
+  "estimate": {
+    "selected_materials": 10,
+    "independent_core_images": 6,
+    "inheritable_parent_images": 0,
+    "suggested_deferred": 0,
+    "estimated_wikimedia_search_requests": 39,
+    "max_image_downloads": 30,
+    "ai_images_enabled": false,
+    "ai_images_requested": false,
+    "will_generate_ai_images": false,
+    "max_generated_images_per_run": 5,
+    "may_use_paid_api": false,
+    "output_directory": "data/research/ and assets/images/materials/{id}/candidates/"
+  }
+}

@@ -1,34 +1,44 @@
 @echo off
-chcp 65001 >nul
 setlocal
-cd /d "%~dp0.."
 
+set "TOOLS_DIR=%~dp0"
+set "PROJECT_DIR=%~dp0..\"
 set "PYTHON_EXE="
-where python >nul 2>nul && set "PYTHON_EXE=python"
-if not defined PYTHON_EXE if exist "%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" set "PYTHON_EXE=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+
+if exist "%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" set "PYTHON_EXE=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+if not defined PYTHON_EXE for /f "usebackq delims=" %%P in (`py.exe -3 -c "import sys; print(sys.executable)" 2^>nul`) do if not defined PYTHON_EXE set "PYTHON_EXE=%%P"
+if not defined PYTHON_EXE for /f "usebackq delims=" %%P in (`python.exe -c "import sys; print(sys.executable)" 2^>nul`) do if not defined PYTHON_EXE set "PYTHON_EXE=%%P"
 
 if not defined PYTHON_EXE (
-  echo 未找到 Python。请先安装 Python 3.10 或更高版本。
+  echo ERROR: Python 3 was not found.
   pause
   exit /b 1
 )
 
+if /i "%~1"=="--check" (
+  "%PYTHON_EXE%" -c "from PIL import Image; print('MANAGER_DEPENDENCIES_OK')"
+  if errorlevel 1 exit /b 1
+  if not exist "%TOOLS_DIR%material_manager.py" exit /b 1
+  echo MANAGER_SCRIPT_OK: "%TOOLS_DIR%material_manager.py"
+  exit /b 0
+)
+
 "%PYTHON_EXE%" -c "from PIL import Image" >nul 2>nul
 if errorlevel 1 (
-  echo 首次使用需要安装 Pillow 图片处理组件。
-  choice /M "现在安装所需组件"
+  echo Material manager dependencies are not installed.
+  choice /C YN /N /M "Install tools\requirements-admin.txt now? [Y/N] "
   if errorlevel 2 exit /b 1
-  "%PYTHON_EXE%" -m pip install -r tools\requirements-admin.txt
+  "%PYTHON_EXE%" -m pip install -r "%TOOLS_DIR%requirements-admin.txt"
   if errorlevel 1 (
-    echo 依赖安装失败，请检查网络或按照 MATERIAL_MAINTENANCE_GUIDE.md 手动安装。
+    echo Dependency installation failed. See MATERIAL_MAINTENANCE_GUIDE.md.
     pause
     exit /b 1
   )
 )
 
-"%PYTHON_EXE%" tools\material_manager.py
+"%PYTHON_EXE%" "%TOOLS_DIR%material_manager.py"
 if errorlevel 1 (
   echo.
-  echo 管理器未能启动。请确认 8765 端口未被占用。
+  echo Manager failed to start. Check whether port 8765 is already in use.
   pause
 )

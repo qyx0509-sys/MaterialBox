@@ -1,0 +1,460 @@
+﻿material_id,name_cn,name_en,category_1,entity_type,parent_id,required_images,recommended_images,optional_images,not_applicable_images,own_images,inherited_images,missing_required,missing_recommended,policy_status,policy_reason
+steel,钢,Steel,金属与合金,family,ferrous_metals,macro,micro,structure,,macro,,,micro,必需已满足，建议补充,钢保留宏观必需、显微组织建议、结构图可选的基础策略。
+cast_iron,铸铁,Cast Iron,金属与合金,family,ferrous_metals,macro,micro,structure,,macro,,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+stainless_steel,不锈钢,Stainless Steel,金属与合金,subfamily,steel,macro,micro,structure,,macro,,,micro,必需已满足，建议补充,不锈钢家族建议补充代表性显微组织，具体牌号可继承。
+tool_steel,工具钢,Tool Steel,金属与合金,subfamily,steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+high_speed_steel,高速钢,High Speed Steel,金属与合金,subfamily,tool_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+aluminum_alloy,铝合金,Aluminum Alloy,金属与合金,family,nonferrous_metals,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+magnesium_alloy,镁合金,Magnesium Alloy,金属与合金,family,nonferrous_metals,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+titanium_alloy,钛合金,Titanium Alloy,金属与合金,family,nonferrous_metals,macro,micro,structure,,macro,,,micro,必需已满足，建议补充,钛合金家族建议展示代表性相组织，具体牌号不强制独立配置。
+copper_alloy,铜合金,Copper Alloy,金属与合金,family,nonferrous_metals,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+nickel_alloy,镍合金,Nickel Alloy,金属与合金,family,nonferrous_metals,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+nickel_superalloy,镍基高温合金,Nickel-based Superalloy,金属与合金,subfamily,superalloys,macro,micro,structure,,,,macro,micro,缺少必需图片,镍基高温合金建议展示代表性析出相或晶粒组织。
+cobalt_superalloy,钴基高温合金,Cobalt-based Superalloy,金属与合金,subfamily,superalloys,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+polyethylene,聚乙烯,Polyethylene,高分子材料,family,polyolefins,macro,structure,micro,,macro; structure,,,,已满足配图策略,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+polypropylene,聚丙烯,Polypropylene,高分子材料,family,polyolefins,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+polyvinyl_chloride,聚氯乙烯,Polyvinyl Chloride,高分子材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+polystyrene,聚苯乙烯,Polystyrene,高分子材料,family,styrenic_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+abs,丙烯腈-丁二烯-苯乙烯,Acrylonitrile Butadiene Styrene,高分子材料,material,styrenic_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+polyamide,聚酰胺,Polyamide,高分子材料,family,engineering_thermoplastics,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+polycarbonate,聚碳酸酯,Polycarbonate,高分子材料,family,engineering_thermoplastics,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pom,聚甲醛,Polyoxymethylene,高分子材料,family,engineering_thermoplastics,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pet,聚对苯二甲酸乙二醇酯,Polyethylene Terephthalate,高分子材料,family,thermoplastic_polyesters,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pbt,聚对苯二甲酸丁二醇酯,Polybutylene Terephthalate,高分子材料,family,thermoplastic_polyesters,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+peek,聚醚醚酮,Polyether ether ketone,高分子材料,family,high_performance_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+polyimide,聚酰亚胺,Polyimide,高分子材料,family,high_performance_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pps,聚苯硫醚,Polyphenylene Sulfide,高分子材料,family,high_performance_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+ptfe,聚四氟乙烯,Polytetrafluoroethylene,高分子材料,family,fluoropolymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+lcp,液晶聚合物,Liquid Crystal Polymer,高分子材料,family,high_performance_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+natural_rubber,天然橡胶,Natural Rubber,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+silicone_rubber,硅橡胶,Silicone Rubber,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+fluororubber,氟橡胶,Fluoroelastomer,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+epoxy_resin,环氧树脂,Epoxy Resin,高分子材料,family,thermosetting_resins,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+polyurethane,聚氨酯,Polyurethane,高分子材料,material,thermosetting_resins,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+alumina_ceramic,氧化铝陶瓷,Alumina Ceramic,无机非金属材料,material,oxide_ceramics,macro,micro,structure,,macro,,,micro,必需已满足，建议补充,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+zirconia_ceramic,氧化锆陶瓷,Zirconia Ceramic,无机非金属材料,material,oxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+sic_ceramic,碳化硅陶瓷,Silicon Carbide Ceramic,无机非金属材料,material,nonoxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+silicon_nitride_ceramic,氮化硅陶瓷,Silicon Nitride Ceramic,无机非金属材料,material,nonoxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+quartz_glass,石英玻璃,Quartz Glass,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+borosilicate_glass,硼硅玻璃,Borosilicate Glass,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+tempered_glass,钢化玻璃,Tempered Glass,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+portland_cement,硅酸盐水泥,Portland Cement,建筑胶凝与土木材料,material,,macro,,,micro; structure,,,macro,,缺少必需图片,建筑与土木材料以外观、构件和施工形态为主要识别信息。
+concrete,混凝土,Concrete,建筑胶凝与土木材料,material,portland_cement,macro,,,micro; structure,,,macro,,缺少必需图片,建筑与土木材料以外观、构件和施工形态为主要识别信息。
+refractory,耐火材料,Refractory,无机非金属材料,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+carbon_fiber_epoxy,碳纤维/环氧复合材料,Carbon Fiber/Epoxy Composite,复合材料,material,polymer_matrix_composites,macro,micro; structure,,,macro; structure,,,micro,必需已满足，建议补充,碳纤维、环氧基体、界面和铺层结构均具有重要教学价值。
+glass_fiber_composite,玻璃纤维复合材料,Glass Fiber Composite,复合材料,material,polymer_matrix_composites,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,玻璃纤维复合材料适合展示纤维界面与增强结构。
+aramid_fiber_composite,芳纶纤维复合材料,Aramid Fiber Composite,复合材料,material,polymer_matrix_composites,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,芳纶纤维复合材料适合展示纤维界面与层级结构。
+aluminum_mmc,铝基复合材料,Aluminum Matrix Composite,复合材料,material,metal_matrix_composites,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,铝基复合材料的增强相分布与基体结构值得重点展示。
+sic_cmc,碳化硅纤维增强陶瓷基复合材料,SiC Fiber Reinforced Ceramic Matrix Composite,复合材料,material,ceramic_matrix_composites,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,SiC纤维、陶瓷基体和界面层共同决定复合材料行为。
+carbon_carbon,碳/碳复合材料,Carbon/Carbon Composite,复合材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,碳/碳复合材料需要结合孔隙、界面和纤维架构理解性能。
+honeycomb_sandwich,蜂窝夹层板,Honeycomb Sandwich Panel,复合材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,蜂窝夹层板重点展示面板、芯层和连接关系。
+silicon,硅,Silicon,半导体与电子材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,半导体与电子材料优先展示样品形态及晶体、器件或功能结构。
+gallium_arsenide,砷化镓,Gallium Arsenide,半导体与电子材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,半导体与电子材料优先展示样品形态及晶体、器件或功能结构。
+gallium_nitride,氮化镓,Gallium Nitride,半导体与电子材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,半导体与电子材料优先展示样品形态及晶体、器件或功能结构。
+silicon_carbide_semiconductor,碳化硅,Silicon Carbide,半导体与电子材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,半导体与电子材料优先展示样品形态及晶体、器件或功能结构。
+ferrite,铁氧体,Ferrite,半导体与电子材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,铁氧体的晶粒组织与晶体结构均影响磁性能。
+ndfeb,钕铁硼,Neodymium Iron Boron Magnet,半导体与电子材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,钕铁硼的晶粒、晶界相和晶体结构均具有教学价值。
+ito,氧化铟锡,Indium Tin Oxide,半导体与电子材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,半导体与电子材料优先展示样品形态及晶体、器件或功能结构。
+oled_material,OLED材料,OLED Materials,半导体与电子材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,半导体与电子材料优先展示样品形态及晶体、器件或功能结构。
+shape_memory_alloy,形状记忆合金,Shape Memory Alloy,金属与合金,material,intermetallics,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,形状记忆效应与相变组织、结构机理密切相关。
+piezo_ceramic,压电陶瓷,Piezoelectric Ceramic,半导体与电子材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,压电陶瓷需要结合畴、晶粒与极化结构理解机电耦合。
+lifepo4,磷酸铁锂,Lithium Iron Phosphate,无机非金属材料,material,,macro,micro; structure,,,macro,,,micro; structure,必需已满足，建议补充,磷酸铁锂的颗粒形貌与橄榄石型结构均具有教学价值。
+ncm,三元正极材料,Nickel Cobalt Manganese Cathode,无机非金属材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,三元正极材料适合结合二次颗粒形貌与层状晶体结构学习。
+graphite_anode,石墨负极,Graphite Anode,碳材料,material,graphite,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,石墨负极的颗粒形貌与层状嵌锂结构均具有教学价值。
+silicon_carbon_anode,硅碳负极,Silicon-Carbon Anode,复合材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,硅碳负极的复合形貌和缓冲结构对循环性能至关重要。
+battery_electrolyte,锂电池电解液,Lithium Battery Electrolyte,高分子材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+battery_separator,锂电池隔膜,Battery Separator,高分子材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+perovskite_solar,钙钛矿光伏材料,Perovskite Solar Material,半导体与电子材料,material,,macro,structure,micro,,,,macro,structure,缺少必需图片,半导体与电子材料优先展示样品形态及晶体、器件或功能结构。
+crystalline_silicon_pv,晶硅,Crystalline Silicon,半导体与电子材料,material,silicon,macro,structure,micro,,,,macro,structure,缺少必需图片,半导体与电子材料优先展示样品形态及晶体、器件或功能结构。
+activated_carbon,活性炭,Activated Carbon,碳材料,material,,macro,micro,structure,,,,macro,micro,缺少必需图片,多数碳材料的孔隙、颗粒、层片或纤维形貌具有较高观察价值。
+medical_titanium_alloy,医用钛合金,Medical Titanium Alloy,金属与合金,variant,titanium_alloy,macro,,micro; structure,,,macro,,,已满足配图策略,金属改性或状态条目只在形貌、组织明显变化时补专属图片。
+cobalt_chromium_alloy,钴铬合金,Cobalt Chromium Alloy,金属与合金,material,nonferrous_metals,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+medical_peek,医用PEEK,Medical PEEK,高分子材料,variant,peek,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pla,聚乳酸,Polylactic Acid,高分子材料,material,biodegradable_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+hydroxyapatite,羟基磷灰石,Hydroxyapatite,无机非金属材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,羟基磷灰石的孔隙形貌与晶体结构均关系到生物学表现。
+bioglass,生物玻璃,Bioglass,无机非金属材料,material,glass_materials,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,生物玻璃适合展示表面反应形貌与玻璃网络结构。
+biodegradable_magnesium_alloy,可降解镁合金,Biodegradable Magnesium Alloy,金属与合金,variant,magnesium_alloy,macro,,micro; structure,,,,macro,,缺少必需图片,金属改性或状态条目只在形貌、组织明显变化时补专属图片。
+graphene,石墨烯,Graphene,碳材料,material,,macro,micro; structure,,,macro,,,micro; structure,必需已满足，建议补充,石墨烯需要结合片层形貌与二维蜂窝结构理解性能。
+carbon_nanotube,碳纳米管,Carbon Nanotube,碳材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,碳纳米管的管束形貌和卷曲结构均具有教学价值。
+nano_silver,纳米银,Nano Silver,金属与合金,material,precious_metals,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,纳米银需要结合颗粒形貌与纳米结构理解尺度效应。
+nano_titanium_dioxide,纳米二氧化钛,Nano Titanium Dioxide,无机非金属材料,material,oxide_ceramics,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,纳米二氧化钛需要结合粒子形貌与晶型结构理解性能。
+polymer_nanocomposite,聚合物纳米复合材料,Polymer Nanocomposite,复合材料,material,polymer_matrix_composites,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,聚合物纳米复合材料需要展示纳米填料分散与界面结构。
+wood,木材,Wood / Timber,天然与生物基材料,family,,macro,,micro,structure,,,macro,,缺少必需图片,木材家族以纹理和年轮宏观图为基础，细胞结构图可选，树种可继承家族参考图。
+bamboo,竹材,Bamboo,天然与生物基材料,material,,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+paper,纸张,Paper,天然与生物基材料,family,,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+cotton_fiber,棉纤维,Cotton Fiber,纤维与纺织材料,material,,macro,,micro; structure,,,,macro,,缺少必需图片,纤维与纺织材料以纤维束、织物和制品外观为基础，微观与结构图按需补充。
+hemp_fiber,麻纤维,Hemp / Linen Fiber,纤维与纺织材料,material,,macro,,micro; structure,,,,macro,,缺少必需图片,纤维与纺织材料以纤维束、织物和制品外观为基础，微观与结构图按需补充。
+wool,羊毛,Wool,纤维与纺织材料,material,,macro,,micro; structure,,,,macro,,缺少必需图片,纤维与纺织材料以纤维束、织物和制品外观为基础，微观与结构图按需补充。
+leather,皮革,Leather,天然与生物基材料,material,,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+natural_stone,天然石材,Natural Stone,天然与生物基材料,material,,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+clay,陶土,Clay,无机非金属材料,material,,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+plywood,胶合板,Plywood,建筑胶凝与土木材料,form,wood,macro,,,micro; structure,,,macro,,缺少必需图片,建筑与土木材料以外观、构件和施工形态为主要识别信息。
+mdf,中密度纤维板,Medium Density Fiberboard,建筑胶凝与土木材料,form,wood,macro,,,micro; structure,,,macro,,缺少必需图片,建筑与土木材料以外观、构件和施工形态为主要识别信息。
+brick,砖,Brick,建筑胶凝与土木材料,material,,macro,,,micro; structure,,,macro,,缺少必需图片,建筑与土木材料以外观、构件和施工形态为主要识别信息。
+gypsum_board,石膏板,Gypsum Board,建筑胶凝与土木材料,material,,macro,,,micro; structure,,,macro,,缺少必需图片,建筑与土木材料以外观、构件和施工形态为主要识别信息。
+asphalt,沥青,Asphalt / Bitumen,建筑胶凝与土木材料,material,,macro,,,micro; structure,,,macro,,缺少必需图片,建筑与土木材料以外观、构件和施工形态为主要识别信息。
+waterproof_membrane,防水卷材,Waterproof Membrane,建筑胶凝与土木材料,material,,macro,,,micro; structure,,,macro,,缺少必需图片,建筑与土木材料以外观、构件和施工形态为主要识别信息。
+coating_paint,涂料,Coating / Paint,建筑胶凝与土木材料,material,,macro,,,micro; structure,,,macro,,缺少必需图片,建筑与土木材料以外观、构件和施工形态为主要识别信息。
+polyester_fiber,涤纶,Polyester Fiber,纤维与纺织材料,form,pet,macro,,micro; structure,,,,macro,,缺少必需图片,纤维与纺织材料以纤维束、织物和制品外观为基础，微观与结构图按需补充。
+nylon_fiber,尼龙纤维,Nylon Fiber,纤维与纺织材料,form,polyamide,macro,,micro; structure,,,,macro,,缺少必需图片,纤维与纺织材料以纤维束、织物和制品外观为基础，微观与结构图按需补充。
+structural_composites,结构复合材料,Structural composites,复合材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+functionally_graded_material,功能梯度材料,Functionally graded material,复合材料,material,structural_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+foam_sandwich_panel,泡沫夹层板,Foam-core sandwich panel,复合材料,form,structural_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+hybrid_fiber_laminate,混杂纤维层合板,Hybrid-fibre laminate,复合材料,material,structural_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+fiber_metal_laminate,纤维金属层板,Fibre metal laminate,复合材料,material,structural_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+aramid_honeycomb_panel,芳纶蜂窝夹层板,Aramid honeycomb sandwich panel,复合材料,form,structural_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+aluminum_honeycomb_panel,铝蜂窝夹层板,Aluminium honeycomb sandwich panel,复合材料,form,structural_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+polymer_matrix_composites,聚合物基复合材料,Polymer matrix composites,复合材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+bmc,BMC,Bulk moulding compound,复合材料,form,polymer_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+smc,SMC,Sheet moulding compound,复合材料,form,polymer_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+natural_fiber_composite,天然纤维复合材料,Natural-fibre composite,复合材料,material,polymer_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+basalt_fiber_composite,玄武岩纤维复合材料,Basalt-fibre composite,复合材料,material,polymer_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+glass_epoxy_composite,玻璃纤维/环氧复合材料,Glass-fibre/epoxy composite,复合材料,material,polymer_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+glass_polyester_composite,玻璃纤维/聚酯复合材料,Glass-fibre/polyester composite,复合材料,material,polymer_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+short_glass_fiber_plastic,短玻纤增强塑料,Short-glass-fibre-reinforced plastic,复合材料,variant,polymer_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+cf_peek_composite,碳纤维/PEEK复合材料,Carbon-fibre/PEEK composite,复合材料,variant,polymer_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+continuous_fiber_thermoplastic,连续纤维增强热塑性复合材料,Continuous-fibre thermoplastic composite,复合材料,material,polymer_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+long_glass_fiber_plastic,长玻纤增强塑料,Long-glass-fibre-reinforced plastic,复合材料,variant,polymer_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+metal_matrix_composites,金属基复合材料,Metal matrix composites,复合材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+al_alumina_mmc,Al/Al₂O₃,Aluminium/alumina composite,复合材料,material,metal_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+al_sic_mmc,Al/SiC,Aluminium/silicon-carbide composite,复合材料,material,metal_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+cnt_aluminum_composite,碳纳米管增强铝基复合材料,CNT-reinforced aluminium composite,复合材料,material,metal_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+titanium_mmc,钛基复合材料,Titanium matrix composite,复合材料,material,metal_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+copper_mmc,铜基复合材料,Copper matrix composite,复合材料,material,metal_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+magnesium_mmc,镁基复合材料,Magnesium matrix composite,复合材料,material,metal_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+ceramic_matrix_composites,陶瓷基复合材料,Ceramic matrix composites,复合材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+c_sic,C/SiC,Carbon-fibre/silicon-carbide composite,复合材料,material,ceramic_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+oxide_oxide_cmc,Oxide/Oxide,Oxide-fibre/oxide-matrix composite,复合材料,material,ceramic_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+sic_alumina_composite,SiC颗粒增强氧化铝,SiC-particle-reinforced alumina,复合材料,material,ceramic_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+zta,氧化锆增韧氧化铝,Zirconia-toughened alumina,复合材料,material,ceramic_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+carbon_fiber_cmc,碳纤维增强陶瓷基复合材料,Carbon-fibre-reinforced ceramic matrix composite,复合材料,material,ceramic_matrix_composites,macro,structure,micro,,,,macro,structure,缺少必需图片,复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。
+engineered_wood,工程木制品,Engineered wood products,天然与生物基材料,subfamily,wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+particleboard,刨花板,Particleboard,天然与生物基材料,form,engineered_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+lvl,单板层积材,Laminated veneer lumber,天然与生物基材料,form,engineered_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+osb,定向刨花板,Oriented strand board,天然与生物基材料,form,engineered_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+blockboard,木工板,Blockboard,天然与生物基材料,form,engineered_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+clt,正交胶合木,Cross-laminated timber,天然与生物基材料,form,engineered_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+laminated_bamboo,竹集成材,Laminated bamboo lumber,天然与生物基材料,form,engineered_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+glulam,胶合木,Glue-laminated timber,天然与生物基材料,form,engineered_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+reconstituted_bamboo,重组竹,Reconstituted bamboo,天然与生物基材料,form,engineered_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+hdf,高密度纤维板,High-density fibreboard,天然与生物基材料,form,engineered_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+modified_wood,改性木材,Modified wood,天然与生物基材料,subfamily,wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+acetylated_wood,乙酰化木材,Acetylated wood,天然与生物基材料,variant,modified_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+densified_wood,压缩木,Densified wood,天然与生物基材料,variant,modified_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+wood_plastic_composite,木塑复合材料,Wood-plastic composite,天然与生物基材料,variant,modified_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+resin_impregnated_wood,树脂浸渍木材,Resin-impregnated wood,天然与生物基材料,variant,modified_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+thermally_modified_wood,热处理木,Thermally modified wood,天然与生物基材料,variant,modified_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+preservative_treated_wood,防腐木,Preservative-treated wood,天然与生物基材料,variant,modified_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+fire_retardant_wood,阻燃木,Fire-retardant wood,天然与生物基材料,variant,modified_wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+softwood,针叶材,Softwood,天然与生物基材料,subfamily,wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+spruce_wood,云杉,Spruce wood,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+fir_wood,冷杉,Fir wood,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+chinese_fir,杉木,Chinese fir,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+cypress_wood,柏木,Cypress wood,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+mongolian_pine,樟子松,Mongolian pine,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+korean_pine,红松,Korean pine,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+douglas_fir,花旗松,Douglas fir,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+larch_wood,落叶松,Larch wood,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+radiata_pine,辐射松,Radiata pine,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+cedar_wood,雪松,Cedar wood,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+masson_pine,马尾松,Masson pine,天然与生物基材料,material,softwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+hardwood,阔叶材,Hardwood,天然与生物基材料,subfamily,wood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+poplar_wood,杨木,Poplar wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+maple_wood,枫木,Maple wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+teak_wood,柚木,Teak wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+walnut_wood,核桃木,Walnut wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+mahogany_wood,桃花心木,Mahogany,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+eucalyptus_wood,桉木,Eucalyptus wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+birch_wood,桦木,Birch wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+basswood,椴木,Basswood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+elm_wood,榆木,Elm wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+beech_wood,榉木,Beech wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+camphor_wood,樟木,Camphor wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+oak_wood,橡木,Oak wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+rubberwood,橡胶木,Rubberwood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+ash_wood,水曲柳,Manchurian ash wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+paulownia_wood,泡桐,Paulownia wood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+rosewood,紫檀,Rosewood,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+ebony_wood,黑檀,Ebony,天然与生物基材料,material,hardwood,macro,,,micro; structure,,,macro,,缺少必需图片,天然材料以纹理、颜色、纤维或产品外观为主要学习信息。
+oxide_ceramics,氧化物陶瓷,Oxide ceramics,无机非金属材料,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+cordierite_ceramic,堇青石陶瓷,Cordierite ceramic,无机非金属材料,material,oxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+titania_ceramic,氧化钛陶瓷,Titania ceramic,无机非金属材料,material,oxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+ceria_ceramic,氧化铈陶瓷,Ceria ceramic,无机非金属材料,material,oxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+beryllia_ceramic,氧化铍陶瓷,Beryllia ceramic,无机非金属材料,material,oxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+zinc_oxide_ceramic,氧化锌陶瓷,Zinc oxide ceramic,无机非金属材料,material,oxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+magnesia_ceramic,氧化镁陶瓷,Magnesia ceramic,无机非金属材料,material,oxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+mullite_ceramic,莫来石陶瓷,Mullite ceramic,无机非金属材料,material,oxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+glass_materials,玻璃,Glass materials,无机非金属材料,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+insulating_glass,中空玻璃,Insulating glass,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+low_e_glass,低辐射玻璃,Low-emissivity glass,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+optical_glass,光学玻璃,Optical glass,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+laminated_glass,夹层玻璃,Laminated glass,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+glass_ceramic,微晶玻璃,Glass-ceramic,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+soda_lime_glass,钠钙玻璃,Soda-lime glass,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+lead_glass,铅玻璃,Lead glass,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+aluminosilicate_glass,铝硅酸盐玻璃,Aluminosilicate glass,无机非金属材料,material,glass_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+gunning_refractory,喷补料,Gunning refractory,无机非金属材料,material,refractory_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+silica_brick,硅砖,Silica refractory brick,无机非金属材料,material,refractory_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+carbon_brick,碳砖,Carbon brick,无机非金属材料,material,refractory_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+refractory_castable,耐火浇注料,Refractory castable,无机非金属材料,material,refractory_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+refractory_fiber,耐火纤维,Refractory fibre,无机非金属材料,material,refractory_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+magnesia_brick,镁砖,Magnesia brick,无机非金属材料,material,refractory_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+magnesia_carbon_brick,镁碳砖,Magnesia-carbon brick,无机非金属材料,material,refractory_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+high_alumina_brick,高铝砖,High-alumina brick,无机非金属材料,material,refractory_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+fireclay_brick,黏土砖,Fireclay brick,无机非金属材料,material,refractory_materials,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+refractory_materials,耐火材料体系,Refractory materials,无机非金属材料,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+nonoxide_ceramics,非氧化物陶瓷,Non-oxide ceramics,无机非金属材料,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+titanium_diboride,二硼化钛,Titanium diboride,无机非金属材料,material,nonoxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+zirconium_diboride,二硼化锆,Zirconium diboride,无机非金属材料,material,nonoxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+boron_nitride_ceramic,氮化硼陶瓷,Boron nitride ceramic,无机非金属材料,material,nonoxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+titanium_nitride_ceramic,氮化钛陶瓷,Titanium nitride ceramic,无机非金属材料,material,nonoxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+aluminum_nitride_ceramic,氮化铝陶瓷,Aluminium nitride ceramic,无机非金属材料,material,nonoxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+boron_carbide_ceramic,碳化硼陶瓷,Boron carbide ceramic,无机非金属材料,material,nonoxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+titanium_carbide_ceramic,碳化钛陶瓷,Titanium carbide ceramic,无机非金属材料,material,nonoxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+tungsten_carbide,碳化钨,Tungsten carbide,无机非金属材料,material,nonoxide_ceramics,macro,micro,structure,,,,macro,micro,缺少必需图片,陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。
+fullerene,富勒烯,Fullerene,碳材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,富勒烯宏观样品与笼状分子结构应结合展示。
+carbon_black,炭黑,Carbon black,碳材料,material,,macro,micro,structure,,,,macro,micro,缺少必需图片,多数碳材料的孔隙、颗粒、层片或纤维形貌具有较高观察价值。
+glassy_carbon,玻璃碳,Glassy carbon,碳材料,material,,macro,micro,structure,,,,macro,micro,缺少必需图片,多数碳材料的孔隙、颗粒、层片或纤维形貌具有较高观察价值。
+graphite,石墨,Graphite,碳材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,石墨的片层形貌与层状晶体结构均具有教学价值。
+carbon_aerogel,碳气凝胶,Carbon aerogel,碳材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,碳气凝胶的多孔网络需要结合宏观形态和微结构展示。
+carbon_fiber,碳纤维,Carbon fibre,碳材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,碳纤维适合展示纤维形态、截面组织和石墨微晶取向。
+diamond,金刚石,Diamond,碳材料,material,,macro,micro; structure,,,,,macro,micro; structure,缺少必需图片,金刚石的晶体形貌与三维共价网络结构均具有教学价值。
+nonferrous_metals,有色金属,Non-ferrous metals,金属与合金,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+alpha_beta_titanium_alloy,α+β型钛合金,Alpha-beta titanium alloy,金属与合金,subfamily,titanium_alloy,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+ti_tc11,TC11,TC11 titanium alloy,金属与合金,grade,alpha_beta_titanium_alloy,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ti_tc4,TC4 / Ti-6Al-4V,Ti-6Al-4V titanium alloy,金属与合金,grade,alpha_beta_titanium_alloy,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ti_6al_4v_eli,Ti-6Al-4V ELI,Extra-low-interstitial Ti-6Al-4V,金属与合金,grade,alpha_beta_titanium_alloy,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+alpha_titanium_alloy,α型钛合金,Alpha titanium alloy,金属与合金,subfamily,titanium_alloy,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+beta_titanium_alloy,β型钛合金,Beta titanium alloy,金属与合金,subfamily,titanium_alloy,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+ti_tb6,TB6,TB6 beta titanium alloy,金属与合金,grade,beta_titanium_alloy,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+commercially_pure_titanium,工业纯钛,Commercially pure titanium,金属与合金,subfamily,titanium_alloy,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+ti_ta1,TA1,TA1 commercially pure titanium,金属与合金,grade,commercially_pure_titanium,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ti_ta2,TA2,TA2 commercially pure titanium,金属与合金,grade,commercially_pure_titanium,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+near_alpha_titanium_alloy,近α型钛合金,Near-alpha titanium alloy,金属与合金,subfamily,titanium_alloy,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+ti_ta15,TA15,TA15 titanium alloy,金属与合金,grade,near_alpha_titanium_alloy,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+oxygen_free_copper,无氧铜,Oxygen-free copper,金属与合金,subfamily,copper_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cu_tu1,TU1,TU1 oxygen-free copper,金属与合金,grade,oxygen_free_copper,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+cupronickel,白铜,Cupronickel,金属与合金,subfamily,copper_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cu_b30,B30,B30 cupronickel,金属与合金,grade,cupronickel,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+phosphor_bronze,磷青铜,Phosphor bronze,金属与合金,subfamily,copper_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cu_qsn6_5_0_1,QSn6.5-0.1,QSn6.5-0.1 phosphor bronze,金属与合金,grade,phosphor_bronze,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+pure_copper,纯铜,Pure copper,金属与合金,subfamily,copper_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cu_t2,T2,T2 copper,金属与合金,grade,pure_copper,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+beryllium_copper,铍铜,Beryllium copper,金属与合金,subfamily,copper_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cu_qbe2,QBe2,QBe2 beryllium copper,金属与合金,grade,beryllium_copper,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+aluminum_bronze,铝青铜,Aluminium bronze,金属与合金,subfamily,copper_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cu_qal9_4,QAl9-4,QAl9-4 aluminium bronze,金属与合金,grade,aluminum_bronze,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+chromium_zirconium_copper,铬锆铜,Chromium zirconium copper,金属与合金,subfamily,copper_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cu_cucrzr,CuCrZr,CuCrZr alloy,金属与合金,grade,chromium_zirconium_copper,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+tin_bronze,锡青铜,Tin bronze,金属与合金,subfamily,copper_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+brass,黄铜,Brass,金属与合金,subfamily,copper_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cu_h62,H62,H62 brass,金属与合金,grade,brass,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+cu_h68,H68,H68 brass,金属与合金,grade,brass,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+al_1xxx,1xxx系纯铝,1xxx series aluminium,金属与合金,subfamily,aluminum_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+al_1050,1050,AA 1050 aluminium,金属与合金,grade,al_1xxx,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+al_1060,1060,AA 1060 aluminium,金属与合金,grade,al_1xxx,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+al_2xxx,2xxx系铝铜合金,2xxx Al-Cu alloys,金属与合金,subfamily,aluminum_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+al_2024,2024,AA 2024 aluminium alloy,金属与合金,grade,al_2xxx,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+al_3xxx,3xxx系铝锰合金,3xxx Al-Mn alloys,金属与合金,subfamily,aluminum_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+al_3003,3003,AA 3003 aluminium alloy,金属与合金,grade,al_3xxx,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+al_4xxx,4xxx系铝硅合金,4xxx Al-Si alloys,金属与合金,subfamily,aluminum_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+al_5xxx,5xxx系铝镁合金,5xxx Al-Mg alloys,金属与合金,subfamily,aluminum_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+al_5052,5052,AA 5052 aluminium alloy,金属与合金,grade,al_5xxx,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+al_5083,5083,AA 5083 aluminium alloy,金属与合金,grade,al_5xxx,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+al_6xxx,6xxx系铝镁硅合金,6xxx Al-Mg-Si alloys,金属与合金,subfamily,aluminum_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+al_6061,6061,AA 6061 aluminium alloy,金属与合金,grade,al_6xxx,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+al_6063,6063,AA 6063 aluminium alloy,金属与合金,grade,al_6xxx,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+al_7xxx,7xxx系铝锌镁合金,7xxx Al-Zn-Mg alloys,金属与合金,subfamily,aluminum_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+al_7075,7075,AA 7075 aluminium alloy,金属与合金,grade,al_7xxx,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+pure_aluminum,纯铝,Pure aluminium,金属与合金,subfamily,aluminum_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cast_aluminum_alloy,铸造铝合金,Cast aluminium alloys,金属与合金,subfamily,aluminum_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+al_adc12,ADC12,ADC12 die-casting aluminium alloy,金属与合金,grade,cast_aluminum_alloy,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+al_zl101,ZL101,ZL101 cast aluminium alloy,金属与合金,grade,cast_aluminum_alloy,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+mg_al_mn,Mg-Al-Mn系,Mg-Al-Mn magnesium alloys,金属与合金,subfamily,magnesium_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+mg_am60,AM60,AM60 magnesium alloy,金属与合金,grade,mg_al_mn,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+mg_al_zn,Mg-Al-Zn系,Mg-Al-Zn magnesium alloys,金属与合金,subfamily,magnesium_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+mg_az31,AZ31,AZ31 magnesium alloy,金属与合金,grade,mg_al_zn,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+mg_az91,AZ91,AZ91 magnesium alloy,金属与合金,grade,mg_al_zn,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+mg_zn_zr,Mg-Zn-Zr系,Mg-Zn-Zr magnesium alloys,金属与合金,subfamily,magnesium_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+mg_zk60,ZK60,ZK60 magnesium alloy,金属与合金,grade,mg_zn_zr,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+rare_earth_magnesium,稀土镁合金,Rare-earth magnesium alloys,金属与合金,subfamily,magnesium_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+mg_we43,WE43,WE43 magnesium alloy,金属与合金,grade,rare_earth_magnesium,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+commercial_nickel,工业纯镍,Commercially pure nickel,金属与合金,subfamily,nickel_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+ni_200,Ni 200,Nickel 200,金属与合金,grade,commercial_nickel,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+nickel_copper_alloy,镍铜合金,Nickel-copper alloy,金属与合金,subfamily,nickel_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+monel_400,Monel 400,Monel 400 nickel-copper alloy,金属与合金,grade,nickel_copper_alloy,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+nickel_chromium_alloy,镍铬合金,Nickel-chromium alloy,金属与合金,subfamily,nickel_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+inconel_600,Inconel 600,Inconel 600,金属与合金,grade,nickel_chromium_alloy,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+nickel_chromium_molybdenum,镍铬钼耐蚀合金,Ni-Cr-Mo corrosion-resistant alloy,金属与合金,subfamily,nickel_alloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+hastelloy_c276,Hastelloy C-276,Hastelloy C-276,金属与合金,grade,nickel_chromium_molybdenum,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+inconel_625,Inconel 625,Inconel 625,金属与合金,grade,nickel_chromium_molybdenum,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+precious_metals,贵金属,Precious metals,金属与合金,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+intermetallics,金属间化合物,Intermetallic compounds,金属与合金,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+refractory_metals,难熔金属,Refractory metals,金属与合金,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+superalloys,高温合金,Superalloys,金属与合金,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+single_crystal_superalloy,单晶高温合金,Single-crystal superalloy,金属与合金,subfamily,nickel_superalloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+wrought_superalloy,变形高温合金,Wrought superalloy,金属与合金,subfamily,nickel_superalloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+gh4169,GH4169,GH4169 superalloy,金属与合金,grade,wrought_superalloy,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+inconel_718,Inconel 718,Inconel 718,金属与合金,grade,wrought_superalloy,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+powder_superalloy,粉末高温合金,Powder metallurgy superalloy,金属与合金,subfamily,nickel_superalloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cast_superalloy,铸造高温合金,Cast superalloy,金属与合金,subfamily,nickel_superalloy,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+k418,K418,K418 cast superalloy,金属与合金,grade,cast_superalloy,macro,,micro; structure,,,,macro,,缺少必需图片,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ferrous_metals,黑色金属,Ferrous metals,金属与合金,family,,macro,micro,structure,,,,macro,micro,缺少必需图片,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+duplex_stainless_steel,双相不锈钢,Duplex stainless steel,金属与合金,subfamily,stainless_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+ss_2205,2205,2205 duplex stainless steel,金属与合金,grade,duplex_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+austenitic_stainless_steel,奥氏体不锈钢,Austenitic stainless steel,金属与合金,subfamily,stainless_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+ss_304,304,AISI 304 stainless steel,金属与合金,grade,austenitic_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ss_304l,304L,AISI 304L stainless steel,金属与合金,grade,austenitic_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ss_310s,310S,AISI 310S stainless steel,金属与合金,grade,austenitic_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ss_316,316,AISI 316 stainless steel,金属与合金,grade,austenitic_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ss_316l,316L,AISI 316L stainless steel,金属与合金,grade,austenitic_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ph_stainless_steel,沉淀硬化不锈钢,Precipitation-hardening stainless steel,金属与合金,subfamily,stainless_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+ss_17_4ph,17-4PH,17-4 PH stainless steel,金属与合金,grade,ph_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ferritic_stainless_steel,铁素体不锈钢,Ferritic stainless steel,金属与合金,subfamily,stainless_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+ss_430,430,AISI 430 stainless steel,金属与合金,grade,ferritic_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+martensitic_stainless_steel,马氏体不锈钢,Martensitic stainless steel,金属与合金,subfamily,stainless_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+ss_410,410,AISI 410 stainless steel,金属与合金,grade,martensitic_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ss_420,420,AISI 420 stainless steel,金属与合金,grade,martensitic_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ss_440c,440C,AISI 440C stainless steel,金属与合金,grade,martensitic_stainless_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+low_alloy_steel,低合金钢,Low-alloy steel,金属与合金,subfamily,steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cold_work_tool_steel,冷作模具钢,Cold-work tool steel,金属与合金,subfamily,tool_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_cr12,Cr12,Cr12 tool steel,金属与合金,grade,cold_work_tool_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_cr12mov,Cr12MoV,Cr12MoV tool steel,金属与合金,grade,cold_work_tool_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_d2,D2,AISI D2 tool steel,金属与合金,grade,cold_work_tool_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+plastic_mold_steel,塑料模具钢,Plastic mould steel,金属与合金,subfamily,tool_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_p20,P20,AISI P20 mould steel,金属与合金,grade,plastic_mold_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+hot_work_tool_steel,热作模具钢,Hot-work tool steel,金属与合金,subfamily,tool_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_h13,H13,AISI H13 tool steel,金属与合金,grade,hot_work_tool_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+carbon_tool_steel,碳素工具钢,Carbon tool steel,金属与合金,subfamily,tool_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_t10,T10,T10 carbon tool steel,金属与合金,grade,carbon_tool_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_t12,T12,T12 carbon tool steel,金属与合金,grade,carbon_tool_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_t8,T8,T8 carbon tool steel,金属与合金,grade,carbon_tool_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_m2,M2,AISI M2 high-speed steel,金属与合金,grade,high_speed_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_w18cr4v,W18Cr4V,W18Cr4V high-speed steel,金属与合金,grade,high_speed_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_w6mo5cr4v2,W6Mo5Cr4V2,W6Mo5Cr4V2 high-speed steel,金属与合金,grade,high_speed_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+machine_steel,机械制造用钢,Machine-building steel,金属与合金,subfamily,steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+spring_steel,弹簧钢,Spring steel,金属与合金,subfamily,machine_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_60si2mn,60Si2Mn,60Si2Mn spring steel,金属与合金,grade,spring_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_65mn,65Mn,65Mn spring steel,金属与合金,grade,spring_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+carburizing_steel,渗碳钢,Carburizing steel,金属与合金,subfamily,machine_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_20cr,20Cr,20Cr alloy steel,金属与合金,grade,carburizing_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_20crmnti,20CrMnTi,20CrMnTi gear steel,金属与合金,grade,carburizing_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+quenched_tempered_steel,调质钢,Quenched and tempered steel,金属与合金,subfamily,machine_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_35crmo,35CrMo,35CrMo alloy steel,金属与合金,grade,quenched_tempered_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_40cr,40Cr,40Cr alloy steel,金属与合金,grade,quenched_tempered_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_42crmo,42CrMo,42CrMo alloy steel,金属与合金,grade,quenched_tempered_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+bearing_steel,轴承钢,Bearing steel,金属与合金,subfamily,machine_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_gcr15,GCr15,GCr15 bearing steel,金属与合金,grade,bearing_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+electrical_steel,电工钢,Electrical steel,金属与合金,subfamily,steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+structural_steel,结构钢,Structural steel,金属与合金,subfamily,steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+hsla_steel,低合金高强度结构钢,High-strength low-alloy steel,金属与合金,subfamily,structural_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+carbon_structural_steel,普通碳素结构钢,Carbon structural steel,金属与合金,subfamily,structural_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+q235,Q235,Q235 structural steel,金属与合金,grade,carbon_structural_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+q275,Q275,Q275 structural steel,金属与合金,grade,carbon_structural_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+unalloyed_steel,非合金钢,Non-alloy steel,金属与合金,subfamily,steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+medium_carbon_steel,中碳钢,Medium-carbon steel,金属与合金,subfamily,unalloyed_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_35,35钢,Grade 35 carbon steel,金属与合金,grade,medium_carbon_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_45,45钢,Grade 45 carbon steel,金属与合金,grade,medium_carbon_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_50,50钢,Grade 50 carbon steel,金属与合金,grade,medium_carbon_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+low_carbon_steel,低碳钢,Low-carbon steel,金属与合金,subfamily,unalloyed_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_20,20钢,Grade 20 carbon steel,金属与合金,grade,low_carbon_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+high_carbon_steel,高碳钢,High-carbon steel,金属与合金,subfamily,unalloyed_steel,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+steel_65,65钢,Grade 65 carbon steel,金属与合金,grade,high_carbon_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+steel_70,70钢,Grade 70 carbon steel,金属与合金,grade,high_carbon_steel,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+chilled_cast_iron,冷硬铸铁,Chilled cast iron,金属与合金,subfamily,cast_iron,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+malleable_cast_iron,可锻铸铁,Malleable cast iron,金属与合金,subfamily,cast_iron,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cast_kth350_10,KTH350-10,KTH350-10 malleable cast iron,金属与合金,grade,malleable_cast_iron,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+austenitic_cast_iron,奥氏体铸铁,Austenitic cast iron,金属与合金,subfamily,cast_iron,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+gray_cast_iron,灰铸铁,Grey cast iron,金属与合金,subfamily,cast_iron,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cast_ht200,HT200,HT200 grey cast iron,金属与合金,grade,gray_cast_iron,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+cast_ht250,HT250,HT250 grey cast iron,金属与合金,grade,gray_cast_iron,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+ductile_cast_iron,球墨铸铁,Ductile iron,金属与合金,subfamily,cast_iron,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cast_qt400_18,QT400-18,QT400-18 ductile iron,金属与合金,grade,ductile_cast_iron,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+cast_qt500_7,QT500-7,QT500-7 ductile iron,金属与合金,grade,ductile_cast_iron,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+cast_qt600_3,QT600-3,QT600-3 ductile iron,金属与合金,grade,ductile_cast_iron,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+white_cast_iron,白口铸铁,White cast iron,金属与合金,subfamily,cast_iron,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+heat_resistant_cast_iron,耐热铸铁,Heat-resistant cast iron,金属与合金,subfamily,cast_iron,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+compacted_graphite_iron,蠕墨铸铁,Compacted graphite iron,金属与合金,subfamily,cast_iron,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+cast_rut420,RuT420,RuT420 compacted graphite iron,金属与合金,grade,compacted_graphite_iron,macro,,micro; structure,,,macro,,,已满足配图策略,金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。
+high_chromium_cast_iron,高铬耐磨铸铁,High-chromium wear-resistant cast iron,金属与合金,subfamily,cast_iron,macro,micro,structure,,,macro,,micro,必需已满足，建议补充,金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。
+tpe_s,TPE-S,Styrenic thermoplastic elastomer,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+tpo,TPO,Thermoplastic polyolefin,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+tpu,TPU,Thermoplastic polyurethane elastomer,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+tpv,TPV,Thermoplastic vulcanizate,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+iir,丁基橡胶,Butyl rubber,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+nbr,丁腈橡胶,Nitrile rubber,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+sbr,丁苯橡胶,Styrene-butadiene rubber,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+epdm,三元乙丙橡胶,EPDM rubber,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+hnbr,氢化丁腈橡胶,Hydrogenated nitrile rubber,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+cr_rubber,氯丁橡胶,Chloroprene rubber,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+br,顺丁橡胶,Polybutadiene rubber,高分子材料,material,elastomers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+unsaturated_polyester_resin,不饱和聚酯树脂,Unsaturated polyester resin,高分子材料,material,thermosetting_resins,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+vinyl_ester_resin,乙烯基酯树脂,Vinyl ester resin,高分子材料,material,thermosetting_resins,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+bisphenol_a_epoxy,双酚A型环氧树脂,Bisphenol-A epoxy resin,高分子材料,variant,epoxy_resin,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+bismaleimide_resin,双马来酰亚胺树脂,Bismaleimide resin,高分子材料,material,thermosetting_resins,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+silicone_resin,有机硅树脂,Silicone resin,高分子材料,material,thermosetting_resins,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+cyanate_ester_resin,氰酸酯树脂,Cyanate ester resin,高分子材料,material,thermosetting_resins,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+phenolic_resin,酚醛树脂,Phenolic resin,高分子材料,material,thermosetting_resins,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+novolac_epoxy,酚醛环氧树脂,Novolac epoxy resin,高分子材料,variant,epoxy_resin,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+ectfe,ECTFE,Ethylene chlorotrifluoroethylene,高分子材料,material,fluoropolymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+etfe,ETFE,Ethylene tetrafluoroethylene,高分子材料,material,fluoropolymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+fep,FEP,Fluorinated ethylene propylene,高分子材料,material,fluoropolymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pfa,PFA,Perfluoroalkoxy alkane,高分子材料,material,fluoropolymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pvdf,PVDF,Polyvinylidene fluoride,高分子材料,material,fluoropolymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+mxd6,MXD6,Polyamide MXD6,高分子材料,material,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pa11,PA11,Polyamide 11,高分子材料,material,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pa12,PA12,Polyamide 12,高分子材料,material,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pa46,PA46,Polyamide 46,高分子材料,material,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pa6,PA6,Polyamide 6,高分子材料,material,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pa610,PA610,Polyamide 610,高分子材料,material,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pa612,PA612,Polyamide 612,高分子材料,material,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pa66,PA66,Polyamide 66,高分子材料,material,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pa6t,PA6T,Polyamide 6T,高分子材料,material,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pa9t,PA9T,Polyamide 9T,高分子材料,material,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+gf_pa6,玻纤增强PA6,Glass-fibre-reinforced PA6,高分子材料,variant,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+gf_pa66,玻纤增强PA66,Glass-fibre-reinforced PA66,高分子材料,variant,polyamide,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pct,PCT,Polycyclohexylenedimethylene terephthalate,高分子材料,material,thermoplastic_polyesters,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pen,PEN,Polyethylene naphthalate,高分子材料,material,thermoplastic_polyesters,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+petg,PETG,Glycol-modified PET,高分子材料,variant,pet,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pp_homopolymer,均聚PP,Polypropylene homopolymer,高分子材料,variant,polypropylene,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pp_block_copolymer,嵌段共聚PP,Impact copolymer polypropylene,高分子材料,variant,polypropylene,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pp_random_copolymer,无规共聚PP,Random copolymer polypropylene,高分子材料,variant,polypropylene,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+gf_pp,玻纤增强PP,Glass-fibre-reinforced polypropylene,高分子材料,variant,polypropylene,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+lgf_pp,长玻纤增强PP,Long-glass-fibre-reinforced polypropylene,高分子材料,variant,polypropylene,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+hdpe,HDPE,High-density polyethylene,高分子材料,variant,polyethylene,macro,structure,micro,,,macro; structure,,,已满足配图策略,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+ldpe,LDPE,Low-density polyethylene,高分子材料,variant,polyethylene,macro,structure,micro,,,macro; structure,,,已满足配图策略,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+lldpe,LLDPE,Linear low-density polyethylene,高分子材料,variant,polyethylene,macro,structure,micro,,,macro; structure,,,已满足配图策略,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+mdpe,MDPE,Medium-density polyethylene,高分子材料,variant,polyethylene,macro,structure,micro,,,macro; structure,,,已满足配图策略,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+uhmwpe,UHMWPE,Ultra-high-molecular-weight polyethylene,高分子材料,variant,polyethylene,macro,structure,micro,,,macro; structure,,,已满足配图策略,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+xlpe,XLPE,Cross-linked polyethylene,高分子材料,variant,polyethylene,macro,structure,micro,,,macro; structure,,,已满足配图策略,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+asa,ASA,Acrylonitrile styrene acrylate,高分子材料,material,styrenic_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+san,SAN,Styrene-acrylonitrile copolymer,高分子材料,material,styrenic_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+eps,EPS,Expanded polystyrene,高分子材料,form,polystyrene,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+gpps,GPPS,General-purpose polystyrene,高分子材料,variant,polystyrene,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+hips,HIPS,High-impact polystyrene,高分子材料,variant,polystyrene,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+xps,XPS,Extruded polystyrene foam,高分子材料,form,polystyrene,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pbat,PBAT,Polybutylene adipate terephthalate,高分子材料,material,biodegradable_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pbs,PBS,Polybutylene succinate,高分子材料,material,biodegradable_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pcl,PCL,Polycaprolactone,高分子材料,material,biodegradable_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pga,PGA,Polyglycolic acid,高分子材料,material,biodegradable_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pha,PHA,Polyhydroxyalkanoate,高分子材料,material,biodegradable_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+phb,PHB,Polyhydroxybutyrate,高分子材料,material,biodegradable_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+plga,PLGA,Poly(lactic-co-glycolic acid),高分子材料,material,biodegradable_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+starch_plastic,淀粉基塑料,Starch-based plastic,高分子材料,material,biodegradable_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+cellulose_material,纤维素材料,Cellulose material,高分子材料,material,biodegradable_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pei,PEI,Polyetherimide,高分子材料,material,high_performance_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pekk,PEKK,Polyetherketoneketone,高分子材料,material,high_performance_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+pes,PES,Polyethersulfone,高分子材料,material,high_performance_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+ppsu,PPSU,Polyphenylsulfone,高分子材料,material,high_performance_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+psu,PSU,Polysulfone,高分子材料,material,high_performance_polymers,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+cf_peek,碳纤增强PEEK,Carbon-fibre-reinforced PEEK,高分子材料,variant,peek,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+elastomers,弹性体,Elastomers,高分子材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+thermosetting_resins,热固性树脂,Thermosetting resins,高分子材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+fluoropolymers,含氟聚合物,Fluoropolymers,高分子材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+engineering_thermoplastics,工程热塑性塑料,Engineering thermoplastics,高分子材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+thermoplastic_polyesters,热塑性聚酯,Thermoplastic polyesters,高分子材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+polyolefins,聚烯烃,Polyolefins,高分子材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+styrenic_polymers,苯乙烯类聚合物,Styrenic polymers,高分子材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+biodegradable_polymers,生物可降解聚合物,Biodegradable polymers,高分子材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+high_performance_polymers,高性能聚合物,High-performance polymers,高分子材料,family,,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。
+hydroxyapatite_peek,羟基磷灰石/PEEK复合材料,Hydroxyapatite/PEEK composite,高分子材料,variant,peek,macro,structure,micro,,,,macro,structure,缺少必需图片,高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。

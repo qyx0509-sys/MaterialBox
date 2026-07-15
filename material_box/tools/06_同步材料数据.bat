@@ -1,24 +1,33 @@
 @echo off
-chcp 65001 >nul
 setlocal
-cd /d "%~dp0.."
 
+set "TOOLS_DIR=%~dp0"
+set "PROJECT_DIR=%~dp0..\"
 set "PYTHON_EXE="
-where python >nul 2>nul && set "PYTHON_EXE=python"
-if not defined PYTHON_EXE if exist "%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" set "PYTHON_EXE=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+
+if exist "%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" set "PYTHON_EXE=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+if not defined PYTHON_EXE for /f "usebackq delims=" %%P in (`py.exe -3 -c "import sys; print(sys.executable)" 2^>nul`) do if not defined PYTHON_EXE set "PYTHON_EXE=%%P"
+if not defined PYTHON_EXE for /f "usebackq delims=" %%P in (`python.exe -c "import sys; print(sys.executable)" 2^>nul`) do if not defined PYTHON_EXE set "PYTHON_EXE=%%P"
 
 if not defined PYTHON_EXE (
-  echo 未找到 Python。请先安装 Python 3.10 或更高版本。
+  echo ERROR: Python 3 was not found.
   pause
   exit /b 1
 )
 
-"%PYTHON_EXE%" tools\sync_materials.py
+if not exist "%TOOLS_DIR%sync_materials.py" (
+  echo ERROR: sync_materials.py was not found.
+  pause
+  exit /b 1
+)
+
+"%PYTHON_EXE%" "%TOOLS_DIR%sync_materials.py"
 if errorlevel 1 (
   echo.
-  echo 同步失败，请根据上方错误检查 materials.json。
+  echo Sync failed. Review the error above and check materials.json.
 ) else (
   echo.
-  echo 同步完成，可以刷新 index.html 查看结果。
+  echo Sync completed. Refresh the MaterialBox website.
 )
 pause
+

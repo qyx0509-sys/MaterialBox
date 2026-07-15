@@ -1,0 +1,310 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-15T11:42:34+08:00",
+  "summary": {
+    "total": 23,
+    "valid": 23,
+    "invalid": 0,
+    "warnings": 20,
+    "pending_review": 3,
+    "accepted": 15,
+    "rejected": 5,
+    "applied": 0,
+    "duplicate_sources": 1
+  },
+  "items": [
+    {
+      "candidate_id": "property:b424428e618761",
+      "candidate_type": "property",
+      "material_id": "polyethylene",
+      "field": "data_source",
+      "image_type": "",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "property:3d9379845bf2a6",
+      "candidate_type": "property",
+      "material_id": "ti_tc4",
+      "field": "melting_point",
+      "image_type": "",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "property:e0532fc2189602",
+      "candidate_type": "property",
+      "material_id": "carbon_fiber_epoxy",
+      "field": "data_source",
+      "image_type": "",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "property:2bb7154731ee0a",
+      "candidate_type": "property",
+      "material_id": "stainless_steel",
+      "field": "data_source",
+      "image_type": "",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "image:c10f5bea2517b8",
+      "candidate_type": "image",
+      "material_id": "polyethylene",
+      "field": "",
+      "image_type": "macro",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "structure:374fa8b84dfe6e",
+      "candidate_type": "image",
+      "material_id": "polyethylene",
+      "field": "",
+      "image_type": "structure",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "micro-link:b216ac442a781f",
+      "candidate_type": "image",
+      "material_id": "ti_tc4",
+      "field": "",
+      "image_type": "micro",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "image:e1564baa0740aa",
+      "candidate_type": "image",
+      "material_id": "carbon_fiber_epoxy",
+      "field": "",
+      "image_type": "macro",
+      "status": "rejected",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：rejected"
+      ]
+    },
+    {
+      "candidate_id": "structure:02d45160075575",
+      "candidate_type": "image",
+      "material_id": "carbon_fiber_epoxy",
+      "field": "",
+      "image_type": "structure",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "image:b72c94a2eb3b64",
+      "candidate_type": "image",
+      "material_id": "stainless_steel",
+      "field": "",
+      "image_type": "macro",
+      "status": "rejected",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：rejected"
+      ]
+    },
+    {
+      "candidate_id": "image:b414ad6115824f",
+      "candidate_type": "image",
+      "material_id": "stainless_steel",
+      "field": "",
+      "image_type": "macro",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "image:d1bfca64d81a9c",
+      "candidate_type": "image",
+      "material_id": "stainless_steel",
+      "field": "",
+      "image_type": "macro",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "image:dd272ef863952f",
+      "candidate_type": "image",
+      "material_id": "carbon_fiber_epoxy",
+      "field": "",
+      "image_type": "macro",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "image:6d154f69d216bc",
+      "candidate_type": "image",
+      "material_id": "titanium_alloy",
+      "field": "",
+      "image_type": "macro",
+      "status": "rejected",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：rejected"
+      ]
+    },
+    {
+      "candidate_id": "image:381e283992395f",
+      "candidate_type": "image",
+      "material_id": "titanium_alloy",
+      "field": "",
+      "image_type": "macro",
+      "status": "rejected",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：rejected"
+      ]
+    },
+    {
+      "candidate_id": "image:0530c642d0080a",
+      "candidate_type": "image",
+      "material_id": "titanium_alloy",
+      "field": "",
+      "image_type": "macro",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "image:a461be60d50c20",
+      "candidate_type": "image",
+      "material_id": "graphene",
+      "field": "",
+      "image_type": "macro",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "image:216585533bfb26",
+      "candidate_type": "image",
+      "material_id": "graphene",
+      "field": "",
+      "image_type": "macro",
+      "status": "pending_review",
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "candidate_id": "image:cc962de235a965",
+      "candidate_type": "image",
+      "material_id": "lifepo4",
+      "field": "",
+      "image_type": "macro",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "image:de0e800fb1f485",
+      "candidate_type": "image",
+      "material_id": "lifepo4",
+      "field": "",
+      "image_type": "macro",
+      "status": "pending_review",
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "candidate_id": "image:6b09aae5b0e498",
+      "candidate_type": "image",
+      "material_id": "lifepo4",
+      "field": "",
+      "image_type": "macro",
+      "status": "pending_review",
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "candidate_id": "image:8054c3035c0b66",
+      "candidate_type": "image",
+      "material_id": "alumina_ceramic",
+      "field": "",
+      "image_type": "macro",
+      "status": "accepted",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：accepted"
+      ]
+    },
+    {
+      "candidate_id": "image:a7e3e648f502b9",
+      "candidate_type": "image",
+      "material_id": "polyimide",
+      "field": "",
+      "image_type": "macro",
+      "status": "rejected",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "候选已进入工作流状态：rejected"
+      ]
+    }
+  ]
+}

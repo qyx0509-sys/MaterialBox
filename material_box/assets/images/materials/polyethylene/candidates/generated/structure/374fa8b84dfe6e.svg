@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
+<rect width="1200" height="760" fill="#f7fbfb"/><rect x="28" y="28" width="1144" height="704" rx="24" fill="#fff" stroke="#cfe2e0" stroke-width="3"/>
+<text x="70" y="92" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#173f3b">聚乙烯重复单元与线性链段教学示意</text>
+<text x="70" y="135" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#4c7f79">PROGRAMMATIC TEACHING DIAGRAM</text>
+
+  <g fill="#e6f3f1" stroke="#168d81" stroke-width="5">
+    <circle cx="290" cy="330" r="54"/><circle cx="510" cy="330" r="54"/>
+    <circle cx="730" cy="330" r="54"/><circle cx="950" cy="330" r="54"/>
+  </g>
+  <g stroke="#3d78be" stroke-width="8"><path d="M344 330H456M564 330H676M784 330H896"/></g>
+  <g font-size="31" font-weight="700" text-anchor="middle" fill="#124d47">
+    <text x="290" y="341">CH2</text><text x="510" y="341">CH2</text>
+    <text x="730" y="341">CH2</text><text x="950" y="341">CH2</text>
+  </g>
+  <text x="330" y="510" font-size="40" font-weight="700" fill="#293f47">[-CH2-CH2-]n</text>
+<text x="70" y="700" font-family="Arial,sans-serif" font-size="16" fill="#7a4f00">Conceptual diagram; not an experimental image and not to scale.</text>
+</svg>

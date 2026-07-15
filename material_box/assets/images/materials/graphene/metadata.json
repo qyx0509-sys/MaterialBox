@@ -1,0 +1,31 @@
+{
+  "materialId": "graphene",
+  "images": {
+    "macro": [
+      {
+        "src": "assets/images/materials/graphene/macro_01.webp",
+        "alt": "石墨烯宏观图片候选：U.S. Department of Energy 400 004 022 Samples of coal-derived graphene quantum dots.jpg",
+        "caption": "Samples of coal-derived graphene quantum dots that glow when exposed to light. The materials are manufactured by NETL and the color differences are caused by using different types of coal feedstocks and processing methods. NETL is working with industrial partners to directly attach these glowing materials to viruses, cells, and biological tissue for detecting disease in patients. For more information or additional images, please contact 202-586-5251.",
+        "source": "Wikimedia Commons",
+        "author": "U.S. Department of Energy",
+        "license": "Public Domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Department_of_Energy_400_004_022_Samples_of_coal-derived_graphene_quantum_dots.jpg",
+        "accessed_at": "2026-07-15",
+        "origin": "reviewed",
+        "research_candidate_id": "image:a461be60d50c20",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/U.S._Department_of_Energy_400_004_022_Samples_of_coal-derived_graphene_quantum_dots.jpg",
+        "sha256": "249abb766b5299477b2d175607f9c93b831b5e0628dcbfec266107bdee06da6c",
+        "generated_origin": "web_source",
+        "model": "",
+        "prompt": "",
+        "generated_at": "",
+        "generator_version": "",
+        "basis_sources": [],
+        "disclaimer": ""
+      }
+    ],
+    "micro": [],
+    "structure": []
+  }
+}

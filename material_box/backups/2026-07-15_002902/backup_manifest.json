@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-07-15T00:29:02",
+  "material_id": "steel",
+  "files": [
+    "materials.json",
+    "materials.js",
+    "material-images.js",
+    "material-images.generated.js",
+    "image-attribution.json",
+    "image-attribution.js",
+    "image-attribution.csv"
+  ],
+  "image_directory_existed": true
+}

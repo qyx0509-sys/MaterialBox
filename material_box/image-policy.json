@@ -1,0 +1,595 @@
+{
+  "schema_version": "1.0",
+  "image_types": [
+    "macro",
+    "micro",
+    "structure"
+  ],
+  "default": {
+    "required": [
+      "macro"
+    ],
+    "recommended": [],
+    "optional": [
+      "micro",
+      "structure"
+    ],
+    "not_applicable": [],
+    "allow_inherited": true,
+    "reason": "宏观图用于建立材料外观认知；其他图片按教学价值选配。"
+  },
+  "category_rules": {
+    "金属与合金": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro"
+      ],
+      "optional": [
+        "structure"
+      ],
+      "not_applicable": [],
+      "reason": "金属宏观形态用于识别材料与产品，显微组织具有较高教学价值。"
+    },
+    "高分子材料": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "structure"
+      ],
+      "optional": [
+        "micro"
+      ],
+      "not_applicable": [],
+      "reason": "高分子优先展示样品形态与分子、重复单元、交联网络或功能机理。"
+    },
+    "无机非金属材料": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro"
+      ],
+      "optional": [
+        "structure"
+      ],
+      "not_applicable": [],
+      "reason": "陶瓷、玻璃和耐火体系通常适合结合宏观形态与微观组织学习。"
+    },
+    "建筑胶凝与土木材料": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [],
+      "optional": [],
+      "not_applicable": [
+        "micro",
+        "structure"
+      ],
+      "reason": "建筑与土木材料以外观、构件和施工形态为主要识别信息。"
+    },
+    "复合材料": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "structure"
+      ],
+      "optional": [
+        "micro"
+      ],
+      "not_applicable": [],
+      "reason": "复合材料的增强体、基体、铺层和夹层结构通常具有重要教学价值。"
+    },
+    "半导体与电子材料": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "structure"
+      ],
+      "optional": [
+        "micro"
+      ],
+      "not_applicable": [],
+      "reason": "半导体与电子材料优先展示样品形态及晶体、器件或功能结构。"
+    },
+    "碳材料": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro"
+      ],
+      "optional": [
+        "structure"
+      ],
+      "not_applicable": [],
+      "reason": "多数碳材料的孔隙、颗粒、层片或纤维形貌具有较高观察价值。"
+    },
+    "天然与生物基材料": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [],
+      "optional": [],
+      "not_applicable": [
+        "micro",
+        "structure"
+      ],
+      "reason": "天然材料以纹理、颜色、纤维或产品外观为主要学习信息。"
+    },
+    "纤维与纺织材料": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [],
+      "optional": [
+        "micro",
+        "structure"
+      ],
+      "not_applicable": [],
+      "reason": "纤维与纺织材料以纤维束、织物和制品外观为基础，微观与结构图按需补充。"
+    }
+  },
+  "entity_rules": {
+    "family": {
+      "allow_inherited": true,
+      "reason": "家族实体优先配置专属必需图；继承图只作为临时家族参考。"
+    },
+    "subfamily": {
+      "allow_inherited": true,
+      "reason": "子体系可用父级图片满足必需项，但需要明确标记继承来源。"
+    },
+    "material": {
+      "allow_inherited": true,
+      "reason": "具体材料优先使用专属宏观图，其他类型可按策略继承。"
+    },
+    "grade": {
+      "allow_inherited": true,
+      "reason": "工程牌号默认继承父级图片，只有外观、组织或结构明显不同时才建议专属图。"
+    },
+    "variant": {
+      "allow_inherited": true,
+      "reason": "改性材料可继承父级图片；改性导致明显形貌或结构变化时再补专属图。"
+    },
+    "form": {
+      "allow_inherited": true,
+      "reason": "产品形态重点关注宏观外观，微观图和结构图通常继承材料本体。"
+    }
+  },
+  "category_entity_rules": {
+    "金属与合金": {
+      "grade": {
+        "required": [
+          "macro"
+        ],
+        "recommended": [],
+        "optional": [
+          "micro",
+          "structure"
+        ],
+        "not_applicable": [],
+        "reason": "金属牌号不默认要求独立显微组织或结构图，父级图片可作为参考。"
+      },
+      "variant": {
+        "required": [
+          "macro"
+        ],
+        "recommended": [],
+        "optional": [
+          "micro",
+          "structure"
+        ],
+        "not_applicable": [],
+        "reason": "金属改性或状态条目只在形貌、组织明显变化时补专属图片。"
+      },
+      "form": {
+        "required": [
+          "macro"
+        ],
+        "recommended": [],
+        "optional": [
+          "micro",
+          "structure"
+        ],
+        "not_applicable": [],
+        "reason": "金属板、棒、管等形态以宏观产品图为重点，其他图片通常继承。"
+      }
+    }
+  },
+  "material_overrides": {
+    "shape_memory_alloy": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "形状记忆效应与相变组织、结构机理密切相关。"
+    },
+    "nano_silver": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "纳米银需要结合颗粒形貌与纳米结构理解尺度效应。"
+    },
+    "steel": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro"
+      ],
+      "optional": [
+        "structure"
+      ],
+      "not_applicable": [],
+      "reason": "钢保留宏观必需、显微组织建议、结构图可选的基础策略。"
+    },
+    "stainless_steel": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro"
+      ],
+      "optional": [
+        "structure"
+      ],
+      "not_applicable": [],
+      "reason": "不锈钢家族建议补充代表性显微组织，具体牌号可继承。"
+    },
+    "titanium_alloy": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro"
+      ],
+      "optional": [
+        "structure"
+      ],
+      "not_applicable": [],
+      "reason": "钛合金家族建议展示代表性相组织，具体牌号不强制独立配置。"
+    },
+    "nickel_superalloy": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro"
+      ],
+      "optional": [
+        "structure"
+      ],
+      "not_applicable": [],
+      "reason": "镍基高温合金建议展示代表性析出相或晶粒组织。"
+    },
+    "lifepo4": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "磷酸铁锂的颗粒形貌与橄榄石型结构均具有教学价值。"
+    },
+    "ncm": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "三元正极材料适合结合二次颗粒形貌与层状晶体结构学习。"
+    },
+    "hydroxyapatite": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "羟基磷灰石的孔隙形貌与晶体结构均关系到生物学表现。"
+    },
+    "bioglass": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "生物玻璃适合展示表面反应形貌与玻璃网络结构。"
+    },
+    "nano_titanium_dioxide": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "纳米二氧化钛需要结合粒子形貌与晶型结构理解性能。"
+    },
+    "carbon_fiber_epoxy": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "碳纤维、环氧基体、界面和铺层结构均具有重要教学价值。"
+    },
+    "glass_fiber_composite": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "玻璃纤维复合材料适合展示纤维界面与增强结构。"
+    },
+    "aramid_fiber_composite": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "芳纶纤维复合材料适合展示纤维界面与层级结构。"
+    },
+    "aluminum_mmc": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "铝基复合材料的增强相分布与基体结构值得重点展示。"
+    },
+    "sic_cmc": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "SiC纤维、陶瓷基体和界面层共同决定复合材料行为。"
+    },
+    "carbon_carbon": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "碳/碳复合材料需要结合孔隙、界面和纤维架构理解性能。"
+    },
+    "silicon_carbon_anode": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "硅碳负极的复合形貌和缓冲结构对循环性能至关重要。"
+    },
+    "polymer_nanocomposite": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "聚合物纳米复合材料需要展示纳米填料分散与界面结构。"
+    },
+    "honeycomb_sandwich": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "structure"
+      ],
+      "optional": [
+        "micro"
+      ],
+      "not_applicable": [],
+      "reason": "蜂窝夹层板重点展示面板、芯层和连接关系。"
+    },
+    "ferrite": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "铁氧体的晶粒组织与晶体结构均影响磁性能。"
+    },
+    "ndfeb": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "钕铁硼的晶粒、晶界相和晶体结构均具有教学价值。"
+    },
+    "piezo_ceramic": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "压电陶瓷需要结合畴、晶粒与极化结构理解机电耦合。"
+    },
+    "graphite_anode": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "石墨负极的颗粒形貌与层状嵌锂结构均具有教学价值。"
+    },
+    "graphene": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "石墨烯需要结合片层形貌与二维蜂窝结构理解性能。"
+    },
+    "carbon_nanotube": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "碳纳米管的管束形貌和卷曲结构均具有教学价值。"
+    },
+    "fullerene": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "富勒烯宏观样品与笼状分子结构应结合展示。"
+    },
+    "graphite": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "石墨的片层形貌与层状晶体结构均具有教学价值。"
+    },
+    "carbon_aerogel": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "碳气凝胶的多孔网络需要结合宏观形态和微结构展示。"
+    },
+    "carbon_fiber": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "碳纤维适合展示纤维形态、截面组织和石墨微晶取向。"
+    },
+    "diamond": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [
+        "micro",
+        "structure"
+      ],
+      "optional": [],
+      "not_applicable": [],
+      "reason": "金刚石的晶体形貌与三维共价网络结构均具有教学价值。"
+    },
+    "wood": {
+      "required": [
+        "macro"
+      ],
+      "recommended": [],
+      "optional": [
+        "micro"
+      ],
+      "not_applicable": [
+        "structure"
+      ],
+      "reason": "木材家族以纹理和年轮宏观图为基础，细胞结构图可选，树种可继承家族参考图。"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "materialId": "carbon_fiber_epoxy",
+  "images": {
+    "macro": [
+      {
+        "src": "assets/images/materials/carbon_fiber_epoxy/macro_01.webp",
+        "alt": "碳纤维/环氧复合材料宏观图片候选：Carbonsheetwiki1.png",
+        "caption": "Carbon fiber laminated sheet. Raw carbon fiber fabric material is processed together with epoxy resin or other resin systems. The raw carbon fabric and resin system are procesed together using heat and pressure to produce a very high quality sheet laminate material. The completed carbon fiber sheet posesses very high strength properties that can be greater than metals. The finished sheet is however extremely light weight, weighing a fraction of its metal counterpart.",
+        "source": "Wikimedia Commons",
+        "author": "Racingjeff",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carbonsheetwiki1.png",
+        "accessed_at": "2026-07-15",
+        "origin": "reviewed",
+        "research_candidate_id": "image:dd272ef863952f",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Carbonsheetwiki1.png",
+        "sha256": "487715b33b12fa000208b658a407e1e0f29ebb0ab0fee7ac19e7a64e8c5d56b6",
+        "generated_origin": "web_source",
+        "model": "",
+        "prompt": "",
+        "generated_at": "",
+        "generator_version": "",
+        "basis_sources": [],
+        "disclaimer": ""
+      }
+    ],
+    "micro": [],
+    "structure": [
+      {
+        "src": "assets/images/materials/carbon_fiber_epoxy/structure_01.webp",
+        "alt": "碳纤维环氧复合材料程序化层级结构示意图",
+        "caption": "碳纤维增强环氧基体与层合结构教学示意",
+        "source": "MaterialBox programmatic diagram",
+        "author": "MaterialBox",
+        "license": "Project-generated candidate",
+        "licenseUrl": "",
+        "sourceUrl": "",
+        "accessed_at": "2026-07-15",
+        "origin": "generated",
+        "research_candidate_id": "structure:02d45160075575",
+        "originalUrl": "",
+        "sha256": "e4fa705e5be8e15679ef780b60866f213596dfa7897022da601804b7cef7adf7",
+        "generated_origin": "program_generated",
+        "model": "",
+        "prompt": "",
+        "generated_at": "2026-07-15T11:31:22+08:00",
+        "generator_version": "1.0",
+        "basis_sources": [
+          {
+            "title": "Composite Overwrapped Pressure Vessel Life Prediction",
+            "publisher": "NASA Technical Reports Server",
+            "doi": "",
+            "url": "https://ntrs.nasa.gov/api/citations/20150012180/downloads/20150012180.pdf?attachment=true",
+            "accessed_at": "2026-07-15"
+          }
+        ],
+        "disclaimer": "程序生成教学示意图，不是实验照片；概念性示意，不代表实际尺寸、比例和显微组织。"
+      }
+    ]
+  }
+}

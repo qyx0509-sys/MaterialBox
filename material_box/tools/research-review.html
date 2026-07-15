@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>MaterialBox AI 候选审核</title>
+    <style>
+      :root { --bg:#f4f8f8; --panel:#fff; --soft:#eef8f6; --blue-soft:#eef4fb; --text:#1f2937; --muted:#667085; --line:#dbe7e6; --primary:#168d81; --primary-dark:#0f655e; --blue:#3d78be; --danger:#ad4141; --warning:#8b6508; --shadow:0 8px 22px rgba(31,41,55,.05); }
+      * { box-sizing:border-box; }
+      body { background:var(--bg); color:var(--text); font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif; margin:0; }
+      body.busy { cursor:wait; }
+      body.busy button { pointer-events:none; }
+      button,input,select,textarea { font:inherit; }
+      button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible { outline:3px solid rgba(22,141,129,.2); outline-offset:2px; }
+      .topbar { align-items:center; background:rgba(255,255,255,.97); border-bottom:1px solid var(--line); display:flex; gap:18px; justify-content:space-between; padding:12px 20px; position:sticky; top:0; z-index:40; }
+      .brand { display:grid; gap:2px; min-width:0; }
+      .brand strong { color:var(--primary-dark); font-size:1.05rem; }
+      .brand span { color:var(--muted); font-size:.76rem; }
+      .top-actions,.actions,.bulk-actions,.link-row { align-items:center; display:flex; flex-wrap:wrap; gap:8px; }
+      .button { align-items:center; background:#fff; border:1px solid var(--line); border-radius:7px; color:var(--text); cursor:pointer; display:inline-flex; font-weight:750; justify-content:center; min-height:38px; padding:8px 12px; text-decoration:none; }
+      .button:hover { background:#f7fbfb; border-color:#b9d6d3; color:var(--primary-dark); }
+      .button.primary { background:var(--primary); border-color:var(--primary); color:#fff; }
+      .button.primary:hover { background:var(--primary-dark); }
+      .button.danger { color:var(--danger); }
+      .button.small { min-height:32px; padding:5px 9px; font-size:.75rem; }
+      .button:disabled { cursor:not-allowed; opacity:.48; }
+      .shell { display:grid; gap:14px; margin:0 auto; max-width:1500px; padding:16px; }
+      .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); }
+      .summary { display:grid; gap:9px; grid-template-columns:repeat(6,minmax(0,1fr)); padding:12px; }
+      .stat { background:var(--soft); border-radius:7px; display:grid; gap:3px; padding:10px 12px; }
+      .stat:nth-child(even) { background:var(--blue-soft); }
+      .stat strong { font-size:1.15rem; }
+      .stat span { color:var(--muted); font-size:.7rem; }
+      .controls { display:grid; gap:12px; padding:13px; }
+      .filters { display:grid; gap:9px; grid-template-columns:2fr repeat(5,minmax(130px,1fr)); }
+      input,select,textarea { background:#fff; border:1px solid #cfdcdb; border-radius:7px; color:var(--text); min-width:0; padding:9px 10px; width:100%; }
+      textarea { line-height:1.55; min-height:92px; resize:vertical; }
+      .control-footer { align-items:center; border-top:1px solid var(--line); display:flex; gap:12px; justify-content:space-between; padding-top:11px; }
+      .hint { color:var(--muted); font-size:.75rem; line-height:1.55; }
+      .plan { background:#f8fbfb; border-top:1px solid var(--line); color:var(--muted); display:grid; font-size:.73rem; gap:7px; grid-template-columns:repeat(4,minmax(0,1fr)); padding:10px 13px; }
+      .plan strong { color:var(--text); }
+      .results-head { align-items:center; display:flex; gap:12px; justify-content:space-between; padding:3px 2px; }
+      .results-head strong { color:var(--primary-dark); }
+      .candidate-list { display:grid; gap:11px; }
+      .candidate { background:#fff; border:1px solid var(--line); border-radius:9px; display:grid; gap:12px; grid-template-columns:26px minmax(0,1fr); padding:13px; }
+      .candidate.invalid { border-color:#e4bcbc; }
+      .candidate.accepted { box-shadow:inset 3px 0 #2c8b68; }
+      .candidate.rejected { opacity:.7; }
+      .candidate input[type="checkbox"] { height:17px; margin:4px 0 0; width:17px; }
+      .candidate-main { display:grid; gap:10px; min-width:0; }
+      .candidate-head { align-items:start; display:flex; gap:12px; justify-content:space-between; }
+      .candidate-title { display:grid; gap:4px; min-width:0; }
+      .candidate-title strong { font-size:.94rem; overflow-wrap:anywhere; }
+      .candidate-title small { color:var(--muted); font-size:.7rem; overflow-wrap:anywhere; }
+      .badges { display:flex; flex-wrap:wrap; gap:5px; justify-content:flex-end; }
+      .badge { background:#f0f4f4; border-radius:4px; color:var(--muted); font-size:.65rem; font-weight:800; padding:3px 6px; white-space:nowrap; }
+      .badge.ok { background:#e6f5ee; color:#176b51; }
+      .badge.warn { background:#fff3d7; color:var(--warning); }
+      .badge.error { background:#fbe9e9; color:var(--danger); }
+      .candidate-body { display:grid; gap:12px; grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr); }
+      .compare { display:grid; gap:8px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .value-box,.meta-box { background:#f8fbfb; border:1px solid #e3eceb; border-radius:7px; display:grid; gap:5px; min-width:0; padding:10px; }
+      .value-box span,.meta-box dt { color:var(--muted); font-size:.66rem; font-weight:750; }
+      .value-box strong { font-size:.84rem; line-height:1.55; overflow-wrap:anywhere; }
+      .meta-box { grid-template-columns:100px minmax(0,1fr); margin:0; }
+      .meta-box dd { font-size:.74rem; line-height:1.55; margin:0; max-height:8.5em; overflow:auto; overflow-wrap:anywhere; }
+      .preview-layout { display:grid; gap:10px; grid-template-columns:minmax(220px,.85fr) minmax(0,1.15fr); }
+      .preview { aspect-ratio:4/3; background:#edf5f4; border:1px solid var(--line); border-radius:7px; display:grid; overflow:hidden; place-items:center; }
+      .preview img { height:100%; object-fit:contain; width:100%; }
+      .preview span { color:var(--muted); font-size:.74rem; padding:18px; text-align:center; }
+      .validation { border-left:3px solid #8aa4a0; color:var(--muted); display:grid; font-size:.71rem; gap:3px; padding-left:9px; }
+      .validation.error { border-color:var(--danger); color:#7d3838; }
+      .candidate-footer { align-items:center; border-top:1px solid #edf1f1; display:flex; gap:10px; justify-content:space-between; padding-top:10px; }
+      .candidate-footer .actions { justify-content:flex-end; }
+      details { color:var(--muted); font-size:.7rem; }
+      details pre { background:#f4f7f7; border-radius:6px; overflow:auto; padding:9px; white-space:pre-wrap; word-break:break-word; }
+      .empty { color:var(--muted); padding:55px 20px; text-align:center; }
+      .toast { background:#1f2937; border-radius:7px; bottom:20px; color:#fff; max-width:min(460px,calc(100vw - 32px)); padding:11px 14px; position:fixed; right:20px; z-index:100; }
+      .toast.error { background:#8f3636; }
+      .hidden { display:none!important; }
+      .modal { align-items:center; background:rgba(31,41,55,.42); display:flex; inset:0; justify-content:center; padding:20px; position:fixed; z-index:90; }
+      .dialog { background:#fff; border-radius:10px; box-shadow:0 24px 80px rgba(20,35,40,.25); max-height:calc(100vh - 40px); max-width:760px; overflow:auto; width:100%; }
+      .dialog-head,.dialog-foot { align-items:center; display:flex; gap:12px; justify-content:space-between; padding:13px 16px; }
+      .dialog-head { border-bottom:1px solid var(--line); }
+      .dialog-head h2 { font-size:1rem; margin:0; }
+      .dialog-foot { border-top:1px solid var(--line); justify-content:flex-end; }
+      .dialog-body { display:grid; gap:11px; grid-template-columns:repeat(2,minmax(0,1fr)); padding:15px; }
+      .field { display:grid; gap:5px; min-width:0; }
+      .field.wide { grid-column:1/-1; }
+      .field label { color:#41545a; font-size:.72rem; font-weight:800; }
+      .check-field { align-items:center; display:flex; gap:8px; }
+      .check-field input { height:17px; width:17px; }
+      @media (max-width:1100px) { .summary { grid-template-columns:repeat(3,1fr); } .filters { grid-template-columns:repeat(3,1fr); } .filters input { grid-column:1/-1; } .candidate-body { grid-template-columns:1fr; } }
+      @media (max-width:720px) { .topbar { align-items:stretch; flex-direction:column; position:static; } .top-actions { justify-content:flex-start; } .shell { padding:10px; } .summary { grid-template-columns:repeat(2,1fr); } .filters,.plan { grid-template-columns:1fr; } .control-footer,.results-head,.candidate-head,.candidate-footer { align-items:stretch; flex-direction:column; } .candidate { grid-template-columns:20px minmax(0,1fr); padding:10px; } .compare,.preview-layout,.dialog-body { grid-template-columns:1fr; } .meta-box { grid-template-columns:86px minmax(0,1fr); } .actions .button { flex:1; } }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><strong>MaterialBox AI 候选审核</strong><span>候选先验证、再人工审核，正式库不会自动发布</span></div>
+      <nav class="top-actions">
+        <a class="button" href="/material-manager.html">材料管理器</a>
+        <a class="button" href="/project/index.html" target="_blank" rel="noreferrer">打开主网站</a>
+        <button class="button danger" id="restore-research" type="button">恢复研究备份</button>
+      </nav>
+    </header>
+    <main class="shell">
+      <section class="panel summary" id="summary"></section>
+      <section class="panel controls">
+        <div class="filters">
+          <input id="search" type="search" placeholder="搜索材料、候选 id、字段或来源" />
+          <select id="type-filter"><option value="">全部候选</option><option value="property">数据候选</option><option value="macro">宏观图候选</option><option value="micro">微观图候选</option><option value="structure">结构图候选</option></select>
+          <select id="confidence-filter"><option value="">全部置信度</option><option value="high">高置信度</option><option value="medium">中置信度</option><option value="low">低置信度</option></select>
+          <select id="source-filter"><option value="">全部来源状态</option><option value="complete">有来源</option><option value="incomplete">来源不完整</option><option value="license">许可证问题</option></select>
+          <select id="entity-filter"><option value="">全部实体类型</option><option>family</option><option>subfamily</option><option>material</option><option>grade</option><option>variant</option><option>form</option></select>
+          <select id="status-filter"><option value="">全部工作流状态</option><option value="pending_review">待审核</option><option value="accepted">已接受</option><option value="rejected">已拒绝</option><option value="applied">已应用</option></select>
+        </div>
+        <div class="control-footer">
+          <span class="hint" id="result-summary">正在读取候选...</span>
+          <div class="bulk-actions">
+            <button class="button small" id="bulk-accept" type="button">批量接受高置信度候选</button>
+            <button class="button small danger" id="bulk-reject" type="button">批量拒绝无来源候选</button>
+            <button class="button small" id="dry-run" type="button">应用前预检</button>
+            <button class="button small primary" id="apply-accepted" type="button">正式应用已接受候选</button>
+          </div>
+        </div>
+      </section>
+      <section class="panel plan" id="plan"></section>
+      <div class="results-head"><strong>研究候选</strong><span class="hint">未通过自动验证的候选仅供诊断，不能接受。</span></div>
+      <section class="candidate-list" id="candidate-list"></section>
+    </main>
+    <div class="modal hidden" id="edit-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <form class="dialog" id="edit-form">
+        <header class="dialog-head"><h2 id="modal-title">编辑后接受</h2><button class="button small" id="close-modal" type="button">关闭</button></header>
+        <div class="dialog-body" id="edit-fields"></div>
+        <footer class="dialog-foot"><button class="button" id="cancel-edit" type="button">取消</button><button class="button primary" type="submit">保存并接受</button></footer>
+      </form>
+    </div>
+    <div class="toast hidden" id="toast" role="status"></div>
+    <script>
+      const ADMIN_HEADERS = { "X-MaterialBox-Admin": "1" };
+      const state = { items: [], stats: {}, jobs: [], estimate: {}, editing: null, selected: new Set() };
+      const $ = (selector, scope = document) => scope.querySelector(selector);
+      const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+      const escapeText = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[char]);
+      const safeUrl = (value) => { try { const url = new URL(String(value || "")); return ["http:","https:"].includes(url.protocol) ? url.href : ""; } catch { return ""; } };
+      const confidenceLabel = (value) => Number(value) >= .85 ? "高" : Number(value) >= .6 ? "中" : "低";
+      const statusLabel = (value) => ({pending_review:"待审核",accepted:"已接受",rejected:"已拒绝",applied:"已应用"})[value] || value;
+      const typeLabel = (item) => item.candidate_type === "property" ? "数据" : ({macro:"宏观图",micro:"微观图",structure:"结构图"})[item.image_type] || "图片";
+      function showToast(message, error = false) { const toast = $("#toast"); toast.textContent = message; toast.className = `toast${error ? " error" : ""}`; clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.add("hidden"), 4800); }
+      function setBusy(value) { document.body.classList.toggle("busy", value); }
+      async function api(path, options = {}) { const request = { cache:"no-store", ...options, headers:{ ...(options.method === "POST" ? ADMIN_HEADERS : {}), ...(options.headers || {}) } }; const response = await fetch(path, request); const payload = await response.json().catch(() => ({error:`HTTP ${response.status}`})); if (!response.ok || payload.ok === false) throw new Error(payload.error || `请求失败：HTTP ${response.status}`); return payload; }
+      async function post(path, body) { return api(path, { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body) }); }
+      function renderSummary() { const values = [["候选总数",state.stats.total||0],["验证通过",state.stats.valid||0],["未通过",state.stats.invalid||0],["待审核",state.stats.pending_review||0],["已接受",state.stats.accepted||0],["已应用",state.stats.applied||0]]; $("#summary").innerHTML = values.map(([label,value]) => `<div class="stat"><strong>${value}</strong><span>${label}</span></div>`).join(""); }
+      function renderPlan() { const p = state.estimate || {}; $("#plan").innerHTML = [["独立配图核心",p.independent_core_images],["可继承父级图",p.inheritable_parent_images],["建议暂缓",p.suggested_deferred],["AI 图片",p.ai_images_enabled ? "已开启" : "关闭"]].map(([label,value]) => `<span><strong>${escapeText(value ?? 0)}</strong> ${label}</span>`).join(""); }
+      function filteredItems() { const search = $("#search").value.trim().toLowerCase(); const type = $("#type-filter").value; const confidence = $("#confidence-filter").value; const source = $("#source-filter").value; const entity = $("#entity-filter").value; const status = $("#status-filter").value; return state.items.filter((item) => { const haystack = [item.material_id,item.material?.name_cn,item.material?.name_en,item.candidate_id,item.field,item.source?.title,item.source,item.caption,item.title].join(" ").toLowerCase(); const itemType = item.candidate_type === "property" ? "property" : item.image_type; const score = Number(item.confidence||0); return (!search || haystack.includes(search)) && (!type || itemType === type) && (!confidence || (confidence === "high" ? score >= .85 : confidence === "medium" ? score >= .6 && score < .85 : score < .6)) && (!source || (source === "complete" ? item.has_source : source === "incomplete" ? item.source_incomplete : item.license_issue)) && (!entity || item.material?.entity_type === entity) && (!status || item.status === status); }); }
+      function sourceLinks(item) { const source = item.candidate_type === "property" ? item.source || {} : item; const links = []; const url = safeUrl(source.url || source.sourceUrl); const doi = String(source.doi || item.doi || "").trim(); const license = safeUrl(source.licenseUrl || item.licenseUrl); const original = safeUrl(item.originalUrl); if (url) links.push(`<a class="button small" href="${escapeText(url)}" target="_blank" rel="noreferrer">查看来源</a>`); if (doi) links.push(`<a class="button small" href="https://doi.org/${escapeText(doi)}" target="_blank" rel="noreferrer">打开 DOI</a>`); if (license) links.push(`<a class="button small" href="${escapeText(license)}" target="_blank" rel="noreferrer">查看许可证</a>`); if (original) links.push(`<a class="button small" href="${escapeText(original)}" target="_blank" rel="noreferrer">查看原图</a>`); return links.join(""); }
+      function propertyBody(item) { const source = item.source || {}; return `<div class="compare"><div class="value-box"><span>当前正式值</span><strong>${escapeText(item.current_value)}</strong></div><div class="value-box"><span>候选值</span><strong>${escapeText(`${item.value||""} ${item.unit||""}`.trim() || "来源记录")}</strong></div></div><dl class="meta-box"><dt>字段</dt><dd>${escapeText(item.field)}</dd><dt>条件 / 状态</dt><dd>${escapeText([item.condition,item.material_state].filter(Boolean).join("；") || "暂无数据")}</dd><dt>数据类型</dt><dd>${escapeText(item.engineering_data_type || "暂无数据")}</dd><dt>来源</dt><dd>${escapeText(source.title || "来源待补充")}<br>${escapeText(source.publisher || "")}</dd></dl>`; }
+      function imageBody(item) { const preview = item.preview_url ? `<img src="${escapeText(item.preview_url)}" alt="${escapeText(item.alt||item.caption||"候选图")}" onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<span>候选文件无法显示</span>')" />` : `<span>${item.link_only ? "仅保存论文链接和图号，未下载插图" : "暂无本地预览"}</span>`; return `<div class="preview-layout"><div class="preview">${preview}</div><dl class="meta-box"><dt>图片说明</dt><dd>${escapeText(item.caption||item.title||"暂无数据")}</dd><dt>来源 / 作者</dt><dd>${escapeText([item.source,item.author].filter(Boolean).join(" / ")||"来源待补充")}</dd><dt>许可证</dt><dd>${escapeText(item.license||"暂无数据")}</dd><dt>图像条件</dt><dd>${escapeText([item.microscope_type,item.material_state,item.figure_number].filter(Boolean).join("；")||"不适用或待补充")}</dd><dt>本地路径</dt><dd>${escapeText(item.src||"未下载")}</dd></dl></div>`; }
+      function validationMarkup(item) { const errors = item.validation?.errors || []; const warnings = item.validation?.warnings || []; const lines = [...errors.map((value)=>`错误：${value}`),...warnings.map((value)=>`提示：${value}`)]; return `<div class="validation${errors.length ? " error" : ""}">${lines.length ? lines.map((value)=>`<span>${escapeText(value)}</span>`).join("") : "<span>自动验证通过，可进入人工审核。</span>"}</div>`; }
+      function candidateCard(item) { const id = escapeText(item.candidate_id); const statusClass = item.status === "accepted" ? "accepted" : item.status === "rejected" ? "rejected" : ""; const invalid = item.validation?.valid ? "" : " invalid"; const canReview = item.validation?.valid && item.status !== "applied"; const prompt = item.prompt ? `<details><summary>查看生成提示词与免责声明</summary><pre>${escapeText(item.prompt)}\n\n${escapeText(item.disclaimer||"")}</pre></details>` : ""; return `<article class="candidate ${statusClass}${invalid}" data-id="${id}"><input class="candidate-select" type="checkbox" aria-label="选择候选" ${state.selected.has(item.candidate_id)?"checked":""} ${item.status!=="accepted"?"disabled":""}/><div class="candidate-main"><header class="candidate-head"><div class="candidate-title"><strong>${escapeText(item.material?.name_cn||item.material_id)} · ${escapeText(typeLabel(item))}</strong><small>${id} · ${escapeText((item.material?.taxonomy_path||[]).join(" / "))}</small></div><div class="badges"><span class="badge">${escapeText(item.material?.entity_type||item.entity_type)}</span><span class="badge ${Number(item.confidence)>=.85?"ok":Number(item.confidence)<.6?"warn":""}">${confidenceLabel(item.confidence)} ${Math.round(Number(item.confidence||0)*100)}%</span><span class="badge ${item.status==="accepted"||item.status==="applied"?"ok":item.status==="rejected"?"error":"warn"}">${escapeText(statusLabel(item.status))}</span></div></header><div class="candidate-body"><div>${item.candidate_type==="property"?propertyBody(item):imageBody(item)}</div><div>${validationMarkup(item)}${prompt}</div></div><footer class="candidate-footer"><div class="link-row">${sourceLinks(item)}</div><div class="actions"><button class="button small edit" type="button" ${!canReview?"disabled":""}>编辑后接受</button><button class="button small accept" type="button" ${!canReview?"disabled":""}>接受</button><button class="button small danger reject" type="button" ${item.status==="applied"?"disabled":""}>拒绝</button></div></footer></div></article>`; }
+      function renderItems() { const items = filteredItems(); $("#result-summary").textContent = `显示 ${items.length} / ${state.items.length} 条候选；只有验证通过且人工接受的候选才能正式应用。`; $("#candidate-list").innerHTML = items.length ? items.map(candidateCard).join("") : '<div class="panel empty">没有符合当前筛选条件的候选。</div>'; bindCardEvents(); }
+      function itemByCard(card) { return state.items.find((item) => item.candidate_id === card.dataset.id); }
+      function bindCardEvents() { $$('.candidate').forEach((card) => { const item = itemByCard(card); $('.candidate-select',card)?.addEventListener('change',(event)=>event.target.checked?state.selected.add(item.candidate_id):state.selected.delete(item.candidate_id)); $('.accept',card)?.addEventListener('click',()=>reviewOne(item,'accept')); $('.reject',card)?.addEventListener('click',()=>reviewOne(item,'reject')); $('.edit',card)?.addEventListener('click',()=>openEditor(item)); }); }
+      async function reviewOne(item, action, edits = {}) { setBusy(true); try { const result = await post('/api/research/review',{kind:item.candidate_type,candidate_ids:[item.candidate_id],action,edits:{[item.candidate_id]:edits}}); showToast(result.message); await load(); } catch(error){ showToast(error.message,true); } finally { setBusy(false); } }
+      function field(name,label,value,type='text',wide=false) { if(type==='checkbox') return `<label class="check-field field wide"><input name="${name}" type="checkbox" ${value?'checked':''}/><span>${escapeText(label)}</span></label>`; const tag=type==='textarea'?`<textarea name="${name}">${escapeText(value||"")}</textarea>`:`<input name="${name}" type="${type}" value="${escapeText(value??"")}"/>`; return `<div class="field${wide?' wide':''}"><label>${escapeText(label)}</label>${tag}</div>`; }
+      function openEditor(item) { state.editing=item; const source=item.candidate_type==='property'?(item.source||{}):item; const fields=item.candidate_type==='property'?[field('value','候选值',item.value),field('unit','单位',item.unit),field('confidence','置信度 0-1',item.confidence,'number'),field('material_state','材料状态',item.material_state),field('condition','条件说明',item.condition,'textarea',true),field('source_title','来源标题',source.title),field('source_publisher','发布机构',source.publisher),field('source_url','来源 URL',source.url),field('source_doi','DOI',source.doi),field('agent_notes','审核备注',item.agent_notes,'textarea',true),field('overwrite_formal','明确允许替换当前非空正式值',item.overwrite_formal,'checkbox')]:[field('caption','图片说明',item.caption,'textarea',true),field('alt','替代文本',item.alt),field('confidence','置信度 0-1',item.confidence,'number'),field('source','来源',item.source),field('author','作者',item.author),field('license','许可证',item.license),field('licenseUrl','许可证链接',item.licenseUrl),field('sourceUrl','来源页面',item.sourceUrl),field('material_state','材料状态（微观图）',item.material_state),field('microscope_type','显微镜类型',item.microscope_type),field('figure_number','图号',item.figure_number),field('agent_notes','审核备注',item.agent_notes,'textarea',true)]; $('#edit-fields').innerHTML=fields.join(''); $('#modal-title').textContent=`编辑后接受：${item.material?.name_cn||item.material_id}`; $('#edit-modal').classList.remove('hidden'); document.body.style.overflow='hidden'; }
+      function closeEditor(){ state.editing=null; $('#edit-modal').classList.add('hidden'); document.body.style.overflow=''; }
+      function collectEdits(){ const form=new FormData($('#edit-form')); const item=state.editing; if(item.candidate_type==='property'){ return {value:form.get('value'),unit:form.get('unit'),confidence:Number(form.get('confidence')),material_state:form.get('material_state'),condition:form.get('condition'),agent_notes:form.get('agent_notes'),overwrite_formal:form.get('overwrite_formal')==='on',source:{...(item.source||{}),title:form.get('source_title'),publisher:form.get('source_publisher'),url:form.get('source_url'),doi:form.get('source_doi')}}; } return {caption:form.get('caption'),alt:form.get('alt'),confidence:Number(form.get('confidence')),source:form.get('source'),author:form.get('author'),license:form.get('license'),licenseUrl:form.get('licenseUrl'),sourceUrl:form.get('sourceUrl'),material_state:form.get('material_state'),microscope_type:form.get('microscope_type'),figure_number:form.get('figure_number'),agent_notes:form.get('agent_notes')}; }
+      async function bulk(mode, phrase, message){ if(!confirm(message))return; const typed=prompt(`二次确认：请输入 ${phrase}`); if(typed!==phrase){ showToast('确认短语不匹配，操作已取消。',true); return; } setBusy(true); try{ const result=await post('/api/research/bulk-review',{mode,confirmation:typed}); showToast(result.message); await load(); }catch(error){showToast(error.message,true)}finally{setBusy(false)} }
+      async function applyAccepted(dryRun=false){ const ids=[...state.selected]; if(!dryRun&&!confirm(`仅正式应用已人工接受的候选。${ids.length?`当前选中 ${ids.length} 条。`:'未勾选时将应用全部已接受候选。'}继续吗？`))return; const confirmation=dryRun?'':prompt('二次确认：请输入 APPLY ACCEPTED'); if(!dryRun&&confirmation!=='APPLY ACCEPTED'){showToast('确认短语不匹配，未修改正式库。',true);return;} setBusy(true); try{const result=await post('/api/research/apply',{confirmation,candidate_ids:ids.length?ids:null,dry_run:dryRun});showToast(result.message);if(!dryRun){state.selected.clear();await load();}}catch(error){showToast(error.message,true)}finally{setBusy(false)} }
+      async function restoreResearch(){ if(!confirm('将用最近一次自动研究正式应用前的备份覆盖相关正式文件。确定继续吗？'))return; const phrase=prompt('二次确认：请输入 RESTORE RESEARCH'); if(phrase!=='RESTORE RESEARCH'){showToast('确认短语不匹配，未执行恢复。',true);return;} setBusy(true);try{const result=await post('/api/research/restore-latest',{confirmation:phrase});showToast(result.message);state.selected.clear();await load();}catch(error){showToast(error.message,true)}finally{setBusy(false)} }
+      async function load(){ const payload=await api('/api/research/candidates'); state.items=payload.items||[];state.stats=payload.stats||{};state.jobs=payload.jobs||[];state.estimate=payload.estimate||{};renderSummary();renderPlan();renderItems(); }
+      function bind(){ ['search','type-filter','confidence-filter','source-filter','entity-filter','status-filter'].forEach((id)=>$('#'+id).addEventListener(id==='search'?'input':'change',renderItems)); $('#bulk-accept').addEventListener('click',()=>bulk('accept_high_confidence','ACCEPT HIGH CONFIDENCE','将批量接受所有自动验证通过且达到阈值的候选，之后仍需另行正式应用。继续吗？')); $('#bulk-reject').addEventListener('click',()=>bulk('reject_unsourced','REJECT UNSOURCED','将批量拒绝无来源候选。继续吗？')); $('#dry-run').addEventListener('click',()=>applyAccepted(true)); $('#apply-accepted').addEventListener('click',()=>applyAccepted(false)); $('#restore-research').addEventListener('click',restoreResearch); $('#close-modal').addEventListener('click',closeEditor);$('#cancel-edit').addEventListener('click',closeEditor);$('#edit-modal').addEventListener('click',(event)=>{if(event.target.id==='edit-modal')closeEditor()});$('#edit-form').addEventListener('submit',async(event)=>{event.preventDefault();const item=state.editing;const edits=collectEdits();closeEditor();await reviewOne(item,'accept',edits)});document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeEditor()}); }
+      bind(); setBusy(true); load().catch((error)=>showToast(`无法读取候选：${error.message}`,true)).finally(()=>setBusy(false));
+    </script>
+  </body>
+</html>

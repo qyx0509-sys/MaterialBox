@@ -10,6 +10,12 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from catalog_v2_seed import BASE_CATEGORIES, ENTITY_TYPES
+from image_policy import (
+    IMAGE_TYPES,
+    build_image_inventory,
+    evaluate_material_images,
+    validate_policy as validate_image_policy,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -120,23 +126,81 @@ def validate(materials, collections):
     if len(collections) >= 20:
         passed.append(f"专题集合数量达标: {len(collections)}")
 
-    missing_images = []
-    image_stats = Counter()
-    image_extensions = (".webp", ".jpg", ".jpeg", ".png")
-    for item in materials:
-        folder = ROOT / "assets" / "images" / "materials" / item["id"]
-        present = {
-            image_type: any(
-                (folder / f"{image_type}_{slot:02d}{extension}").is_file()
-                for slot in range(1, 4)
-                for extension in image_extensions
-            )
-            for image_type in ("macro", "micro", "structure")
+    policy_path = ROOT / "image-policy.json"
+    try:
+        image_policy = read_json(policy_path)
+    except (OSError, json.JSONDecodeError) as exc:
+        image_policy = {
+            "image_types": list(IMAGE_TYPES),
+            "default": {"required": ["macro"], "recommended": [], "optional": ["micro", "structure"], "not_applicable": [], "allow_inherited": True, "reason": "安全默认策略"},
+            "category_rules": {}, "entity_rules": {}, "category_entity_rules": {}, "material_overrides": {},
         }
+        errors.append(f"配图策略读取失败: {exc}")
+    policy_errors = validate_image_policy(image_policy, materials)
+    errors.extend(f"配图策略: {error}" for error in policy_errors)
+    inventory = build_image_inventory(ROOT, materials)
+    missing_images = []
+    missing_all_images = []
+    image_stats = Counter()
+    image_policy_results = []
+    image_policy_reminders = []
+    image_metadata_reminders = []
+    image_policy_stats = Counter(materials_total=len(materials))
+    for item in materials:
+        material_id = item["id"]
+        folder = ROOT / "assets" / "images" / "materials" / material_id
+        present = inventory.get(material_id, {image_type: False for image_type in IMAGE_TYPES})
         for key, exists in present.items():
             image_stats[f"{key}_present" if exists else f"{key}_missing"] += 1
-        if not any(present.values()):
-            missing_images.append(item["id"])
+        result = evaluate_material_images(ROOT, item, materials, image_policy, inventory)
+        if result["policy_complete"]:
+            image_policy_stats["policy_complete"] += 1
+        if result["missing_required"]:
+            image_policy_stats["missing_required"] += 1
+            missing_images.append(material_id)
+            warnings.append(f"{material_id}: 缺少策略必需图片 ({', '.join(result['missing_required'])})")
+        if result["missing_recommended"]:
+            image_policy_stats["missing_recommended"] += 1
+            image_policy_reminders.append(f"{material_id}: 建议补充图片 ({', '.join(result['missing_recommended'])})")
+        if result["using_inherited_images"]:
+            image_policy_stats["using_inherited_images"] += 1
+        if result["own_images_complete"]:
+            image_policy_stats["own_images_complete"] += 1
+        if result["family_reference_only"]:
+            image_policy_reminders.append(f"{material_id}: family 当前仅以继承图满足必需项，建议补专属参考图")
+        if not result["own_images"] and not result["inherited_images"]:
+            missing_all_images.append(material_id)
+        image_policy_results.append({
+            "material_id": material_id,
+            "required": result["required"],
+            "recommended": result["recommended"],
+            "optional": result["optional"],
+            "not_applicable": result["not_applicable"],
+            "own_images": result["own_images"],
+            "inherited_images": result["inherited_images"],
+            "inherited_from": result["inherited_from"],
+            "missing_required": result["missing_required"],
+            "missing_recommended": result["missing_recommended"],
+            "policy_complete": result["policy_complete"],
+            "own_images_complete": result["own_images_complete"],
+            "policy_status": result["policy_status"],
+        })
+        metadata_path = folder / "metadata.json"
+        try:
+            metadata = read_json(metadata_path) if metadata_path.is_file() else {}
+        except json.JSONDecodeError:
+            metadata = {}
+            image_metadata_reminders.append(f"{material_id}: metadata.json 格式无效")
+        metadata_groups = metadata.get("images", metadata) if isinstance(metadata, dict) else {}
+        for image_type in result["own_images"]:
+            entries = metadata_groups.get(image_type, []) if isinstance(metadata_groups, dict) else []
+            if not isinstance(entries, list) or not entries:
+                image_metadata_reminders.append(f"{material_id}.{image_type}: 正式图片缺少元数据记录")
+                continue
+            if not any((entry.get("source") or entry.get("sourceUrl")) for entry in entries if isinstance(entry, dict)):
+                image_metadata_reminders.append(f"{material_id}.{image_type}: 图片来源待补充")
+            if not any(entry.get("license") for entry in entries if isinstance(entry, dict)):
+                image_metadata_reminders.append(f"{material_id}.{image_type}: 图片许可证待补充")
     missing_data = [
         item["id"] for item in materials
         if not item.get("property_records") and all(value in {None, "", "暂无数据", "暂无可靠数据"} for value in (item.get("engineering_properties") or {}).values())
@@ -152,17 +216,25 @@ def validate(materials, collections):
             "passed": len(passed),
             "warnings": len(warnings),
             "errors": len(errors),
-            "missing_all_images": len(missing_images),
+            "missing_all_images": len(missing_all_images),
+            "missing_required_images": image_policy_stats["missing_required"],
+            "missing_recommended_images": image_policy_stats["missing_recommended"],
+            "image_policy_complete": image_policy_stats["policy_complete"],
             "missing_engineering_data": len(missing_data),
             "pending_review": len(pending_review),
         },
         "entity_counts": dict(sorted(entity_counts.items())),
         "category_counts": dict(sorted(category_counts.items())),
         "image_stats": dict(sorted(image_stats.items())),
+        "image_policy_stats": dict(image_policy_stats),
+        "image_policy_results": image_policy_results,
+        "image_policy_reminders": image_policy_reminders,
+        "image_metadata_reminders": image_metadata_reminders,
         "passed_items": passed,
         "warnings": warnings,
         "errors": errors,
         "missing_image_ids": missing_images,
+        "missing_all_image_ids": missing_all_images,
         "missing_data_ids": missing_data,
         "pending_review_ids": pending_review,
     }
@@ -180,7 +252,8 @@ def main():
     summary = report["summary"]
     print("材料数据校验")
     print(f"通过项: {summary['passed']} | 警告项: {summary['warnings']} | 错误项: {summary['errors']}")
-    print(f"材料: {summary['materials']} | 专题: {summary['collections']} | 全部缺图: {summary['missing_all_images']}")
+    print(f"材料: {summary['materials']} | 专题: {summary['collections']} | 配图策略已满足: {summary['image_policy_complete']}")
+    print(f"缺必需图: {summary['missing_required_images']} | 缺建议图: {summary['missing_recommended_images']}")
     print(f"缺工程数据: {summary['missing_engineering_data']} | 待审核: {summary['pending_review']}")
     if not args.quiet:
         for error in report["errors"]:

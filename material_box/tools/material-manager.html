@@ -91,10 +91,26 @@
       .source-actions { display: flex; grid-column: 1 / -1; justify-content: flex-end; }
       .section-actions { border-top: 1px solid var(--line); padding: 10px 13px; }
       .image-groups { display: grid; gap: 14px; padding: 13px; }
+      .image-policy-advice { background: #f7fbfb; border-bottom: 1px solid var(--line); display: grid; gap: 9px; padding: 12px 13px; }
+      .image-policy-advice-head { align-items: center; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; }
+      .image-policy-advice-head strong { color: var(--primary-dark); font-size: .82rem; }
+      .image-policy-advice-head span { color: var(--muted); font-size: .72rem; }
+      .image-policy-grid { display: grid; gap: 7px 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .image-policy-item { color: var(--muted); font-size: .72rem; line-height: 1.55; min-width: 0; overflow-wrap: anywhere; }
+      .image-policy-item b { color: var(--text); margin-right: 5px; }
+      .image-policy-item.missing b { color: var(--warning); }
+      .image-policy-reason { color: var(--muted); font-size: .68rem; line-height: 1.55; margin: 0; }
       .image-group { display: grid; gap: 9px; }
       .image-group-head { align-items: end; display: flex; gap: 10px; justify-content: space-between; }
       .image-group-head strong { color: var(--primary-dark); font-size: .82rem; }
       .image-group-head span { color: var(--muted); font-size: .68rem; }
+      .image-group-title { align-items: center; display: flex; flex-wrap: wrap; gap: 7px; }
+      .image-policy-badge { background: #eef5f4; border-radius: 4px; color: var(--muted); font-size: .62rem; font-weight: 800; padding: 2px 6px; }
+      .image-policy-badge.required { background: #fff1d6; color: #8b5c00; }
+      .image-policy-badge.recommended { background: #e5f5ee; color: #176b51; }
+      .image-policy-badge.inherited { background: #eaf1fb; color: #315f93; }
+      .image-advanced { border-top: 1px dashed var(--line); display: grid; gap: 14px; padding-top: 12px; }
+      .image-advanced-toggle { justify-self: start; }
       .image-slots { display: grid; gap: 10px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .image-slot { border: 1px solid var(--line); border-radius: 8px; display: grid; gap: 9px; min-width: 0; padding: 9px; }
       .image-drop { aspect-ratio: 4 / 3; background: #f3f8f7; border: 1px dashed #b9d0ce; border-radius: 7px; cursor: pointer; display: grid; overflow: hidden; place-items: center; position: relative; }
@@ -131,6 +147,7 @@
         .editor-panel { margin-top: 10px; min-height: 400px; }
         .editor-head { position: static; }
         .form-grid, .form-grid.three, .source-row { grid-template-columns: 1fr; }
+        .image-policy-grid { grid-template-columns: 1fr; }
         .field.wide, .source-row .wide, .source-actions { grid-column: auto; }
         .image-slot { grid-template-columns: 1fr; }
         .slot-head, .slot-actions { grid-column: auto; }
@@ -144,6 +161,7 @@
       <div class="brand"><strong>MaterialBox 本地材料管理器</strong><span>仅运行在 127.0.0.1，保存时自动同步主网站</span></div>
       <nav class="top-actions">
         <a class="button" href="/project/index.html" target="_blank" rel="noreferrer">打开主网站</a>
+        <a class="button" href="/research-review.html">AI 候选审核</a>
         <a class="button" href="/project/attribution.html" target="_blank" rel="noreferrer">图片来源</a>
         <button class="button danger" id="restore-latest" type="button">恢复最近备份</button>
         <button class="button primary" id="top-save" type="button" disabled>保存材料</button>
@@ -160,9 +178,12 @@
             <select id="category-2"><option value="">全部二级分类</option></select>
             <select id="problem-filter">
               <option value="">全部维护状态</option>
-              <option value="missing_macro">缺宏观图</option>
-              <option value="missing_micro">缺微观图</option>
-              <option value="missing_structure">缺结构图</option>
+              <option value="missing_required">缺少必需图片</option>
+              <option value="missing_recommended">缺少建议图片</option>
+              <option value="policy_complete">已满足配图策略</option>
+              <option value="using_inherited">使用继承图片</option>
+              <option value="own_only">仅有专属图片</option>
+              <option value="policy_error">配图策略异常</option>
               <option value="missing_engineering">缺工程参数</option>
             </select>
             <select id="status-filter">
@@ -223,6 +244,7 @@
 
             <section class="form-section">
               <h2>材料图片</h2>
+              <div class="image-policy-advice" id="image-policy-advice"></div>
               <div class="image-groups" id="image-groups"></div>
             </section>
           </div>
@@ -249,7 +271,7 @@
       const SCORE_FIELDS = { strength: "强度", heat: "耐温", corrosion: "耐腐蚀", processability: "加工性", cost: "成本友好度", lightweight: "轻量化" };
       const IMAGE_TYPES = { macro: "宏观图", micro: "微观图", structure: "结构示意图" };
       const IMAGE_META_FIELDS = { caption: "图片说明", alt: "替代文本", source: "来源", author: "作者", license: "许可证", licenseUrl: "许可证链接", sourceUrl: "来源页面", accessed_at: "访问日期" };
-      const state = { catalog: [], stats: {}, currentId: "", current: null, imageSlots: {}, dirty: false };
+      const state = { catalog: [], stats: {}, currentId: "", current: null, imageSlots: {}, dirty: false, showAdvancedImages: false };
       const $ = (selector, scope = document) => scope.querySelector(selector);
       const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
@@ -269,7 +291,7 @@
       }
 
       function renderStats() {
-        const values = [["材料总数", state.stats.total || 0], ["已配图", state.stats.configured_images || 0], ["存在缺图", state.stats.missing_images || 0], ["参数完整度", `${state.stats.parameter_completeness || 0}%`]];
+        const values = [["材料总数", state.stats.total || 0], ["策略已满足", state.stats.policy_complete || 0], ["缺必需图", state.stats.missing_required || 0], ["缺建议图", state.stats.missing_recommended || 0], ["使用继承图", state.stats.using_inherited_images || 0], ["策略满足率", `${state.stats.image_policy_completeness || 0}%`], ["参数完整度", `${state.stats.parameter_completeness || 0}%`]];
         $("#stats").innerHTML = values.map(([label, value]) => `<div class="stat"><strong>${value}</strong><span>${label}</span></div>`).join("");
       }
 
@@ -301,9 +323,13 @@
           if (category1 && item.category_1 !== category1) return false;
           if (category2 && item.category_2 !== category2) return false;
           if (status && item.data_status !== status) return false;
-          if (issue === "missing_macro" && item.images.macro) return false;
-          if (issue === "missing_micro" && item.images.micro) return false;
-          if (issue === "missing_structure" && item.images.structure) return false;
+          const policy = item.image_policy || {};
+          if (issue === "missing_required" && !(policy.missing_required || []).length) return false;
+          if (issue === "missing_recommended" && !(policy.missing_recommended || []).length) return false;
+          if (issue === "policy_complete" && !policy.policy_complete) return false;
+          if (issue === "using_inherited" && !policy.using_inherited_images) return false;
+          if (issue === "own_only" && !policy.only_own_images) return false;
+          if (issue === "policy_error" && !policy.policy_error) return false;
           if (issue === "missing_engineering" && item.engineering_filled === item.engineering_total) return false;
           return true;
         });
@@ -315,7 +341,9 @@
         if (!items.length) { target.innerHTML = '<div class="material-list-empty">没有符合条件的材料。</div>'; return; }
         target.innerHTML = items.map((item) => {
           const imageCount = Object.values(item.images).filter(Boolean).length;
-          return `<button class="material-row${item.id === state.currentId ? " active" : ""}" type="button" data-material-id="${escapeText(item.id)}"><strong>${escapeText(item.name_cn)}${item.abbreviation ? ` / ${escapeText(item.abbreviation)}` : ""}</strong><small>${escapeText(item.name_en || item.id)}</small><div class="row-meta"><span class="badge ${imageCount === 3 ? "ok" : "warn"}">图片 ${imageCount}/3</span><span class="badge ${item.engineering_filled === item.engineering_total ? "ok" : "warn"}">参数 ${item.engineering_filled}/${item.engineering_total}</span><span class="badge">${escapeText(item.data_status)}</span></div></button>`;
+          const policy = item.image_policy || {};
+          const policyTone = policy.policy_error || !policy.policy_complete ? "warn" : "ok";
+          return `<button class="material-row${item.id === state.currentId ? " active" : ""}" type="button" data-material-id="${escapeText(item.id)}"><strong>${escapeText(item.name_cn)}${item.abbreviation ? ` / ${escapeText(item.abbreviation)}` : ""}</strong><small>${escapeText(item.name_en || item.id)}</small><div class="row-meta"><span class="badge ${policyTone}">${escapeText(policy.policy_status || "策略待计算")}</span><span class="badge">专属图 ${imageCount}</span>${policy.using_inherited_images ? '<span class="badge ok">使用继承图</span>' : ""}<span class="badge ${item.engineering_filled === item.engineering_total ? "ok" : "warn"}">参数 ${item.engineering_filled}/${item.engineering_total}</span><span class="badge">${escapeText(item.data_status)}</span></div></button>`;
         }).join("");
         $$('[data-material-id]', target).forEach((button) => button.addEventListener("click", () => selectMaterial(button.dataset.materialId)));
       }
@@ -367,9 +395,45 @@
         return `<article class="image-slot" data-image-type="${slot.type}" data-image-slot="${slot.slot}"><div class="slot-head"><strong>第 ${slot.slot} 张</strong><span class="slot-status${slot.action !== "keep" ? " changed" : ""}">${status}</span></div><label class="image-drop" tabindex="0">${preview && !deleted ? `<img src="${escapeText(preview)}" alt="图片预览" />` : `<span class="placeholder"><strong>选择或拖入图片</strong><span>JPG / PNG / WebP，最大 10 MB</span></span>`}<input class="image-file" type="file" accept="image/jpeg,image/png,image/webp" /></label><div class="image-meta-fields"><select data-image-preset><option value="">来源快捷设置</option><option value="owned">用户自有图片</option></select>${Object.entries(IMAGE_META_FIELDS).map(([key, label]) => `<input data-image-meta="${key}" ${key.endsWith("Url") ? 'type="url"' : key === "accessed_at" ? 'type="date"' : ""} placeholder="${label}" value="${escapeText(metadata[key] || "")}" />`).join("")}</div><div class="slot-actions"><button class="button small" type="button" data-replace-image>选择图片</button><button class="button small danger" type="button" data-delete-image>${slot.src || slot.dataUrl ? "删除图片" : "清空"}</button></div></article>`;
       }
 
+      function imageTypeNames(types) { return (types || []).map((type) => IMAGE_TYPES[type] || type).join("、") || "无"; }
+
+      function imagePolicyLevel(policy, type) {
+        return ["required", "recommended", "optional", "not_applicable"].find((level) => (policy[level] || []).includes(type)) || "optional";
+      }
+
+      function imagePolicyLevelLabel(level) {
+        return { required: "必需", recommended: "建议", optional: "可选", not_applicable: "不适用" }[level] || "可选";
+      }
+
+      function inheritedImageText(policy) {
+        return Object.entries(policy.inherited_from || {}).map(([type, materialId]) => {
+          const parent = state.catalog.find((item) => item.id === materialId);
+          return `${IMAGE_TYPES[type] || type}继承自“${parent?.name_cn || materialId}”`;
+        }).join("、") || "无";
+      }
+
+      function renderImagePolicyAdvice() {
+        const policy = state.current?.image_policy || {};
+        const statusClass = policy.policy_complete ? "ok" : "warn";
+        $("#image-policy-advice").innerHTML = `<div class="image-policy-advice-head"><strong>配图建议</strong><span class="badge ${statusClass}">${escapeText(policy.policy_status || "策略待计算")}</span></div><div class="image-policy-grid"><div class="image-policy-item"><b>必需</b>${imageTypeNames(policy.required)}</div><div class="image-policy-item"><b>建议</b>${imageTypeNames(policy.recommended)}</div><div class="image-policy-item"><b>可选</b>${imageTypeNames(policy.optional)}</div><div class="image-policy-item"><b>不适用</b>${imageTypeNames(policy.not_applicable)}</div><div class="image-policy-item"><b>专属图片</b>${imageTypeNames(policy.own_images)}</div><div class="image-policy-item"><b>继承图片</b>${escapeText(inheritedImageText(policy))}</div><div class="image-policy-item missing"><b>缺少必需</b>${imageTypeNames(policy.missing_required)}</div><div class="image-policy-item"><b>缺少建议</b>${imageTypeNames(policy.missing_recommended)}</div></div>${policy.policy_error ? `<p class="image-policy-reason">策略异常：${escapeText((policy.policy_errors || []).join("；"))}</p>` : `<p class="image-policy-reason">${escapeText(policy.policy_reason || "")}</p>`}`;
+      }
+
+      function imageGroupMarkup(type, label, policy) {
+        const level = imagePolicyLevel(policy, type);
+        const inherited = (policy.inherited_images || []).includes(type);
+        return `<section class="image-group" data-policy-level="${level}"><div class="image-group-head"><div class="image-group-title"><strong>${label}</strong><span class="image-policy-badge ${level}">${imagePolicyLevelLabel(level)}</span>${inherited ? '<span class="image-policy-badge inherited">已继承</span>' : ""}</div><span>最多 3 张，保存时统一转为 WebP</span></div><div class="image-slots">${state.imageSlots[type].map(imageSlotMarkup).join("")}</div></section>`;
+      }
+
       function renderImages() {
-        $("#image-groups").innerHTML = Object.entries(IMAGE_TYPES).map(([type, label]) => `<section class="image-group"><div class="image-group-head"><strong>${label}</strong><span>最多 3 张，保存时统一转为 WebP</span></div><div class="image-slots">${state.imageSlots[type].map(imageSlotMarkup).join("")}</div></section>`).join("");
+        const policy = state.current?.image_policy || {};
+        const entries = Object.entries(IMAGE_TYPES);
+        const normal = entries.filter(([type]) => !(policy.not_applicable || []).includes(type));
+        const advanced = entries.filter(([type]) => (policy.not_applicable || []).includes(type));
+        const advancedMarkup = advanced.length ? `<button class="button small image-advanced-toggle" id="toggle-advanced-images" type="button">${state.showAdvancedImages ? "收起高级可选图片" : "展开高级可选图片"}</button><div class="image-advanced${state.showAdvancedImages ? "" : " hidden"}">${advanced.map(([type, label]) => imageGroupMarkup(type, label, policy)).join("")}</div>` : "";
+        $("#image-groups").innerHTML = `${normal.map(([type, label]) => imageGroupMarkup(type, label, policy)).join("")}${advancedMarkup}`;
+        renderImagePolicyAdvice();
         $$('.image-slot').forEach(bindImageSlot);
+        $("#toggle-advanced-images")?.addEventListener("click", () => { state.showAdvancedImages = !state.showAdvancedImages; renderImages(); });
       }
 
       function imageSlotState(element) { return state.imageSlots[element.dataset.imageType][Number(element.dataset.imageSlot) - 1]; }
@@ -396,7 +460,7 @@
       }
 
       function fillEditor(payload) {
-        state.current = payload; state.currentId = payload.material.id; state.dirty = false;
+        state.current = payload; state.currentId = payload.material.id; state.dirty = false; state.showAdvancedImages = false;
         $("#empty-editor").classList.add("hidden"); $("#editor").classList.add("active"); $("#top-save").disabled = false;
         $("#editor-name").textContent = payload.material.name_cn; $("#editor-path").textContent = (payload.material.taxonomy_path || []).join(" / ");
         $("#editor-status").textContent = payload.material.data_status || "待补充"; $("#dirty-indicator").classList.remove("visible");

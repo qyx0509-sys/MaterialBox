@@ -1,0 +1,53 @@
+{
+  "materialId": "stainless_steel",
+  "images": {
+    "macro": [
+      {
+        "src": "assets/images/materials/stainless_steel/macro_01.webp",
+        "alt": "不锈钢宏观图片候选：Custom Stainless Steel Sink by Havens.jpg",
+        "caption": "Custom made stainless steel sink handcrafted in the USA by Havens Metal Works, an advanced manufacturer of four generations is custom sheet metal. This is a farmhouse double bowl sink and installed as an undermount.",
+        "source": "Wikimedia Commons",
+        "author": "Havensmetal",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Custom_Stainless_Steel_Sink_by_Havens.jpg",
+        "accessed_at": "2026-07-15",
+        "origin": "reviewed",
+        "research_candidate_id": "image:b414ad6115824f",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Custom_Stainless_Steel_Sink_by_Havens.jpg",
+        "sha256": "1baccc5343df1c94de8f69425848a389f6de671c0f4004297c900b498e27f8ee",
+        "generated_origin": "web_source",
+        "model": "",
+        "prompt": "",
+        "generated_at": "",
+        "generator_version": "",
+        "basis_sources": [],
+        "disclaimer": ""
+      },
+      {
+        "src": "assets/images/materials/stainless_steel/macro_02.webp",
+        "alt": "不锈钢宏观图片候选：Process of stainless steel.png",
+        "caption": "The process of creating stainless steel is a complex and multi-stage process that involves several steps to ensure the material's strength, durability, and corrosion resistance. The first step in the process is melting the raw materials, typically iron, chromium, nickel, and other elements, in a furnace. The molten metal is then refined to remove impurities and achieve the desired chemical composition. Next, the molten metal is cast into various shapes, such as bars, sheets, or tubes, depending on the intended use of the stainless steel. These shapes are then subjected to different processes such as rolling, forging, or extrusion to improve their mechanical properties and form them into the desired final product. Heat treatment is a crucial step in the process of creating stainless steel. It involves heating the metal to high temperatures and then cooling it rapidly to improve its strength and toughness. The heat treatment also helps to remove any residual stresses and refine the microstructure of the metal. Once the desired shape and mechanical properties have been achieved, the stainless steel is polished or brushed to enhance its aesthetic appeal and protect it from corrosion. The surface finish can vary from a bright mirror-like finish to a dull matte finish, depending on the desired application. In summary, the process of creating stainless steel requires precision, expertise, and several stages to achieve a material that is strong, durable, and resistant to corrosion. Its unique properties and versatility make it ideal for a wide range of applications in various industries, from kitchen appliances to industrial machinery.",
+        "source": "Wikimedia Commons",
+        "author": "Authentic Metal Exports",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Process_of_stainless_steel.png",
+        "accessed_at": "2026-07-15",
+        "origin": "reviewed",
+        "research_candidate_id": "image:d1bfca64d81a9c",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Process_of_stainless_steel.png",
+        "sha256": "35f2cce44635a7bf41ee4edd960a4d2e8dbffa05dc8b376512c8a160662e3208",
+        "generated_origin": "web_source",
+        "model": "",
+        "prompt": "",
+        "generated_at": "",
+        "generator_version": "",
+        "basis_sources": [],
+        "disclaimer": ""
+      }
+    ],
+    "micro": [],
+    "structure": []
+  }
+}

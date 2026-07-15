@@ -1,0 +1,31 @@
+{
+  "materialId": "alumina_ceramic",
+  "images": {
+    "macro": [
+      {
+        "src": "assets/images/materials/alumina_ceramic/macro_01.webp",
+        "alt": "氧化铝陶瓷宏观图片候选：Alumina Robocast Parts.jpg",
+        "caption": "A selection of alumina parts produced using robocasting",
+        "source": "Wikimedia Commons",
+        "author": "Ezrado",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alumina_Robocast_Parts.jpg",
+        "accessed_at": "2026-07-15",
+        "origin": "reviewed",
+        "research_candidate_id": "image:8054c3035c0b66",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Alumina_Robocast_Parts.jpg",
+        "sha256": "59770bd2a7b7da83794d3c4d03cb6d69913a7266c8ed12415e0cabae8e25cf8b",
+        "generated_origin": "web_source",
+        "model": "",
+        "prompt": "",
+        "generated_at": "",
+        "generator_version": "",
+        "basis_sources": [],
+        "disclaimer": ""
+      }
+    ],
+    "micro": [],
+    "structure": []
+  }
+}

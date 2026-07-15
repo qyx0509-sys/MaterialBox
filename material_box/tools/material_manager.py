@@ -35,7 +35,21 @@ from image_catalog import (
     normalized_entry,
     read_json,
 )
+from image_policy import (
+    build_image_inventory,
+    evaluate_material_images,
+    read_json as read_policy_json,
+    validate_policy,
+)
 from sync_materials import MaterialSyncError, sync_materials
+from research_common import ResearchError
+from research_import import (
+    apply_accepted_candidates,
+    bulk_review,
+    research_payload,
+    restore_latest_research_backup,
+    review_candidates,
+)
 
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[1]
@@ -212,19 +226,56 @@ def parameter_completeness(material: dict) -> tuple[int, int]:
     return filled, len(ENGINEERING_FIELDS)
 
 
+def image_policy_context(root: Path, materials: list[dict]) -> tuple[dict, dict, list[str]]:
+    fallback = {
+        "image_types": ["macro", "micro", "structure"],
+        "default": {
+            "required": ["macro"],
+            "recommended": [],
+            "optional": ["micro", "structure"],
+            "not_applicable": [],
+            "allow_inherited": True,
+            "reason": "配图策略文件待修复，当前使用安全默认规则。",
+        },
+        "category_rules": {},
+        "entity_rules": {},
+        "category_entity_rules": {},
+        "material_overrides": {},
+    }
+    errors: list[str] = []
+    try:
+        policy = read_policy_json(root / "image-policy.json")
+        errors = validate_policy(policy, materials)
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        policy = fallback
+        errors = [f"配图策略读取失败：{exc}"]
+    if errors:
+        policy = fallback
+    return policy, build_image_inventory(root, materials), errors
+
+
 def list_payload(root: Path) -> dict:
+    materials = materials_from(root)
+    policy, inventory, policy_errors = image_policy_context(root, materials)
     items = []
-    configured = 0
-    missing_any = 0
+    policy_complete = 0
+    missing_required = 0
+    missing_recommended = 0
+    using_inherited = 0
+    own_images_complete = 0
     completed_fields = 0
     total_fields = 0
-    for material in materials_from(root):
-        images = load_material_images(root, material)
-        presence = {image_type: bool(images[image_type]) for image_type in IMAGE_TYPES}
-        if any(presence.values()):
-            configured += 1
-        if not all(presence.values()):
-            missing_any += 1
+    for material in materials:
+        material_id = str(material.get("id") or "")
+        presence = {image_type: bool(inventory.get(material_id, {}).get(image_type)) for image_type in IMAGE_TYPES}
+        image_policy = evaluate_material_images(root, material, materials, policy, inventory)
+        image_policy["policy_error"] = bool(policy_errors)
+        image_policy["policy_errors"] = policy_errors
+        policy_complete += int(image_policy["policy_complete"])
+        missing_required += int(bool(image_policy["missing_required"]))
+        missing_recommended += int(bool(image_policy["missing_recommended"]))
+        using_inherited += int(image_policy["using_inherited_images"])
+        own_images_complete += int(image_policy["own_images_complete"])
         filled, count = parameter_completeness(material)
         completed_fields += filled
         total_fields += count
@@ -236,8 +287,11 @@ def list_payload(root: Path) -> dict:
                 "abbreviation": material.get("abbreviation", ""),
                 "category_1": material.get("category_1", ""),
                 "category_2": material.get("category_2", ""),
+                "entity_type": material.get("entity_type", ""),
+                "parent_id": material.get("parent_id", ""),
                 "data_status": material.get("data_status", "待补充"),
                 "images": presence,
+                "image_policy": image_policy,
                 "engineering_filled": filled,
                 "engineering_total": count,
             }
@@ -247,8 +301,13 @@ def list_payload(root: Path) -> dict:
         "items": items,
         "stats": {
             "total": total,
-            "configured_images": configured,
-            "missing_images": missing_any,
+            "policy_complete": policy_complete,
+            "missing_required": missing_required,
+            "missing_recommended": missing_recommended,
+            "using_inherited_images": using_inherited,
+            "own_images_complete": own_images_complete,
+            "image_policy_completeness": round((policy_complete / total * 100) if total else 0),
+            "image_policy_errors": len(policy_errors),
             "parameter_completeness": round((completed_fields / total_fields * 100) if total_fields else 0),
         },
     }
@@ -507,7 +566,7 @@ class MaterialManagerServer(ThreadingHTTPServer):
 
 
 class MaterialManagerHandler(BaseHTTPRequestHandler):
-    server_version = "MaterialBoxManager/1.0"
+    server_version = "MaterialBoxManager/1.1"
 
     @property
     def root(self) -> Path:
@@ -556,15 +615,26 @@ class MaterialManagerHandler(BaseHTTPRequestHandler):
         try:
             if path in {"/", "/material-manager.html"}:
                 self.send_file(self.root / "tools" / "material-manager.html")
+            elif path == "/research-review.html":
+                self.send_file(self.root / "tools" / "research-review.html")
             elif path == "/api/health":
                 self.send_json({"ok": True, "root": str(self.root), "host": HOST})
             elif path == "/api/materials":
                 self.send_json(list_payload(self.root))
+            elif path == "/api/research/candidates":
+                self.send_json(research_payload(self.root))
+            elif path == "/api/research/progress":
+                payload = research_payload(self.root)
+                self.send_json({"stats": payload["stats"], "jobs": payload["jobs"], "estimate": payload["estimate"], "latest_backup": payload["latest_backup"]})
             elif path.startswith("/api/material/"):
                 material_id = safe_material_id(path.removeprefix("/api/material/"))
                 materials = materials_from(self.root)
                 material = materials[material_index(materials, material_id)]
-                self.send_json({"material": material, "images": load_material_images(self.root, material)})
+                policy, inventory, policy_errors = image_policy_context(self.root, materials)
+                image_policy = evaluate_material_images(self.root, material, materials, policy, inventory)
+                image_policy["policy_error"] = bool(policy_errors)
+                image_policy["policy_errors"] = policy_errors
+                self.send_json({"material": material, "images": load_material_images(self.root, material), "image_policy": image_policy})
             elif path.startswith("/project/"):
                 target = self.safe_project_file(path.removeprefix("/project/"))
                 if not target:
@@ -573,7 +643,7 @@ class MaterialManagerHandler(BaseHTTPRequestHandler):
                     self.send_file(target)
             else:
                 self.send_error(404)
-        except ManagerError as exc:
+        except (ManagerError, ResearchError) as exc:
             self.send_json({"ok": False, "error": str(exc)}, 400)
         except Exception as exc:  # keep the local UI usable and report a clear error
             self.send_json({"ok": False, "error": f"服务器错误：{exc}"}, 500)
@@ -602,11 +672,37 @@ class MaterialManagerHandler(BaseHTTPRequestHandler):
                     result = save_material(self.root, material_id, payload)
                 elif path == "/api/restore-latest":
                     result = restore_latest(self.root, clean_text(payload.get("confirmation")))
+                elif path == "/api/research/review":
+                    result = review_candidates(
+                        self.root,
+                        kind=clean_text(payload.get("kind")),
+                        candidate_ids=payload.get("candidate_ids") if isinstance(payload.get("candidate_ids"), list) else [],
+                        action=clean_text(payload.get("action")),
+                        edits=payload.get("edits") if isinstance(payload.get("edits"), dict) else {},
+                    )
+                elif path == "/api/research/bulk-review":
+                    result = bulk_review(
+                        self.root,
+                        clean_text(payload.get("mode")),
+                        clean_text(payload.get("confirmation")),
+                    )
+                elif path == "/api/research/apply":
+                    result = apply_accepted_candidates(
+                        self.root,
+                        confirmation=clean_text(payload.get("confirmation")),
+                        candidate_ids=payload.get("candidate_ids") if isinstance(payload.get("candidate_ids"), list) else None,
+                        dry_run=bool(payload.get("dry_run")),
+                    )
+                elif path == "/api/research/restore-latest":
+                    result = restore_latest_research_backup(
+                        self.root,
+                        clean_text(payload.get("confirmation")),
+                    )
                 else:
                     self.send_error(404)
                     return
             self.send_json({"ok": True, **result})
-        except ManagerError as exc:
+        except (ManagerError, ResearchError) as exc:
             self.send_json({"ok": False, "error": str(exc)}, 400)
         except Exception as exc:
             self.send_json({"ok": False, "error": f"保存失败：{exc}"}, 500)

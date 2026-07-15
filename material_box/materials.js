@@ -695,7 +695,7 @@ window.MATERIALS_DATA = [
     },
     "engineering_condition_note": "类别参考值，仅用于建立量级认知；具体牌号、状态和测试条件可能存在显著差异。",
     "data_status": "待核验",
-    "updated_at": ""
+    "updated_at": "2026-07-15"
   },
   {
     "id": "cast_iron",
@@ -946,21 +946,67 @@ window.MATERIALS_DATA = [
       "corrosion_resistant",
       "additive_manufacturing"
     ],
-    "data_sources": [],
+    "data_sources": [
+      {
+        "title": "Mechanical and physical properties of stainless steel",
+        "publisher": "worldstainless",
+        "url": "https://worldstainless.org/about-stainless/properties/mechanical-and-physical-properties/",
+        "accessed_at": "2026-07-15",
+        "note": "家族级参考；具体数值必须按钢种、牌号和产品状态另行核对；具体牌号和状态可能存在明显差异。；研究候选：property:2bb7154731ee0a"
+      }
+    ],
     "standard_designations": [],
     "heat_treatments": [],
-    "property_records": [],
+    "property_records": [
+      {
+        "candidate_id": "property:2bb7154731ee0a",
+        "material_id": "stainless_steel",
+        "material_name": "不锈钢",
+        "entity_type": "subfamily",
+        "taxonomy_path": [
+          "金属与合金",
+          "黑色金属",
+          "钢",
+          "不锈钢"
+        ],
+        "field": "data_source",
+        "value": "不锈钢家族的分类、物理与力学性能参考资料",
+        "unit": "",
+        "range_min": null,
+        "range_max": null,
+        "condition": "家族级参考；具体数值必须按钢种、牌号和产品状态另行核对；具体牌号和状态可能存在明显差异。",
+        "temperature": "",
+        "material_state": "",
+        "test_standard": "",
+        "engineering_data_type": "category_reference",
+        "source": {
+          "title": "Mechanical and physical properties of stainless steel",
+          "publisher": "worldstainless",
+          "authors": [],
+          "year": "2019",
+          "doi": "",
+          "url": "https://worldstainless.org/about-stainless/properties/mechanical-and-physical-properties/",
+          "page": "",
+          "table": "",
+          "accessed_at": "2026-07-15"
+        },
+        "confidence": 0.96,
+        "agent_notes": "仅补充正式行业组织来源，不把家族资料转换成单一牌号精确参数。",
+        "research_candidate_id": "property:2bb7154731ee0a",
+        "review_status": "accepted_pending_verification"
+      }
+    ],
     "engineering_data_type": "category_reference",
     "performance_scores": {},
     "performance_score_source": "",
     "data_quality": {
-      "status": "partial",
+      "status": "pending",
       "reviewed": false,
-      "source_count": 0
+      "source_count": 1
     },
     "engineering_condition_note": "类别参考值，仅用于建立量级认知；具体牌号、状态和测试条件可能存在显著差异。",
     "data_status": "待核验",
-    "updated_at": ""
+    "updated_at": "2026-07-15"
   },
   {
     "id": "tool_steel",
@@ -1625,13 +1671,13 @@ window.MATERIALS_DATA = [
     "performance_scores": {},
     "performance_score_source": "",
     "data_quality": {
-      "status": "partial",
+      "status": "pending",
       "reviewed": false,
       "source_count": 0
     },
     "engineering_condition_note": "类别参考值，仅用于建立量级认知；具体牌号、状态和测试条件可能存在显著差异。",
     "data_status": "待核验",
-    "updated_at": ""
+    "updated_at": "2026-07-15"
   },
   {
     "id": "copper_alloy",
@@ -2286,21 +2332,67 @@ window.MATERIALS_DATA = [
       "construction_materials",
       "packaging_materials"
     ],
-    "data_sources": [],
+    "data_sources": [
+      {
+        "title": "Polymer Materials for Photovoltaic Systems",
+        "publisher": "National Bureau of Standards (NIST legacy publication)",
+        "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir85-3197.pdf",
+        "accessed_at": "2026-07-15",
+        "note": "家族级结构参考，不代表特定密度等级或分子量分布；具体牌号和状态可能存在明显差异。；页码：5；研究候选：property:b424428e618761"
+      }
+    ],
     "standard_designations": [],
     "heat_treatments": [],
-    "property_records": [],
+    "property_records": [
+      {
+        "candidate_id": "property:b424428e618761",
+        "material_id": "polyethylene",
+        "material_name": "聚乙烯",
+        "entity_type": "family",
+        "taxonomy_path": [
+          "高分子材料",
+          "热塑性塑料",
+          "聚烯烃",
+          "聚乙烯"
+        ],
+        "field": "data_source",
+        "value": "聚乙烯重复单元与聚合物链结构依据",
+        "unit": "",
+        "range_min": null,
+        "range_max": null,
+        "condition": "家族级结构参考，不代表特定密度等级或分子量分布；具体牌号和状态可能存在明显差异。",
+        "temperature": "",
+        "material_state": "",
+        "test_standard": "",
+        "engineering_data_type": "category_reference",
+        "source": {
+          "title": "Polymer Materials for Photovoltaic Systems",
+          "publisher": "National Bureau of Standards (NIST legacy publication)",
+          "authors": [],
+          "year": "1985",
+          "doi": "",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir85-3197.pdf",
+          "page": "5",
+          "table": "",
+          "accessed_at": "2026-07-15"
+        },
+        "confidence": 0.94,
+        "agent_notes": "作为程序化重复单元示意图的结构依据。",
+        "research_candidate_id": "property:b424428e618761",
+        "review_status": "accepted_pending_verification"
+      }
+    ],
     "engineering_data_type": "category_reference",
     "performance_scores": {},
     "performance_score_source": "",
     "data_quality": {
-      "status": "partial",
+      "status": "pending",
       "reviewed": false,
-      "source_count": 0
+      "source_count": 1
     },
     "engineering_condition_note": "类别参考值，仅用于建立量级认知；具体牌号、状态和测试条件可能存在显著差异。",
     "data_status": "待核验",
-    "updated_at": ""
+    "updated_at": "2026-07-15"
   },
   {
     "id": "polypropylene",
@@ -4983,13 +5075,13 @@ window.MATERIALS_DATA = [
     "performance_scores": {},
     "performance_score_source": "",
     "data_quality": {
-      "status": "partial",
+      "status": "pending",
       "reviewed": false,
       "source_count": 0
     },
     "engineering_condition_note": "具体数值应结合牌号、材料状态、产品形态、测试温度与数据来源使用。",
     "data_status": "待核验",
-    "updated_at": ""
+    "updated_at": "2026-07-15"
   },
   {
     "id": "zirconia_ceramic",
@@ -6269,21 +6361,67 @@ window.MATERIALS_DATA = [
       "aerospace_materials",
       "automotive_lightweight"
     ],
-    "data_sources": [],
+    "data_sources": [
+      {
+        "title": "Composite Overwrapped Pressure Vessel Life Prediction",
+        "publisher": "NASA Technical Reports Server",
+        "url": "https://ntrs.nasa.gov/api/citations/20150012180/downloads/20150012180.pdf?attachment=true",
+        "accessed_at": "2026-07-15",
+        "note": "材料体系级教学参考；纤维体积分数、铺层与树脂体系需按具体产品核对；页码：1；研究候选：property:e0532fc2189602"
+      }
+    ],
     "standard_designations": [],
     "heat_treatments": [],
-    "property_records": [],
+    "property_records": [
+      {
+        "candidate_id": "property:e0532fc2189602",
+        "material_id": "carbon_fiber_epoxy",
+        "material_name": "碳纤维/环氧复合材料",
+        "entity_type": "material",
+        "taxonomy_path": [
+          "复合材料",
+          "聚合物基复合材料",
+          "连续纤维增强复合材料",
+          "碳纤维/环氧复合材料"
+        ],
+        "field": "data_source",
+        "value": "碳纤维增强环氧层合结构与纤维/基体组成参考",
+        "unit": "",
+        "range_min": null,
+        "range_max": null,
+        "condition": "材料体系级教学参考；纤维体积分数、铺层与树脂体系需按具体产品核对",
+        "temperature": "",
+        "material_state": "",
+        "test_standard": "",
+        "engineering_data_type": "literature",
+        "source": {
+          "title": "Composite Overwrapped Pressure Vessel Life Prediction",
+          "publisher": "NASA Technical Reports Server",
+          "authors": [],
+          "year": "2015",
+          "doi": "",
+          "url": "https://ntrs.nasa.gov/api/citations/20150012180/downloads/20150012180.pdf?attachment=true",
+          "page": "1",
+          "table": "",
+          "accessed_at": "2026-07-15"
+        },
+        "confidence": 0.91,
+        "agent_notes": "作为纤维嵌入环氧基体及层合结构示意图依据，不生成实验图。",
+        "research_candidate_id": "property:e0532fc2189602",
+        "review_status": "accepted_pending_verification"
+      }
+    ],
     "engineering_data_type": "typical",
     "performance_scores": {},
     "performance_score_source": "",
     "data_quality": {
-      "status": "partial",
+      "status": "pending",
       "reviewed": false,
-      "source_count": 0
+      "source_count": 1
     },
     "engineering_condition_note": "具体数值应结合牌号、材料状态、产品形态、测试温度与数据来源使用。",
     "data_status": "待核验",
-    "updated_at": ""
+    "updated_at": "2026-07-15"
   },
   {
     "id": "glass_fiber_composite",
@@ -8481,13 +8619,13 @@ window.MATERIALS_DATA = [
     "performance_scores": {},
     "performance_score_source": "",
     "data_quality": {
-      "status": "partial",
+      "status": "pending",
       "reviewed": false,
       "source_count": 0
     },
     "engineering_condition_note": "具体数值应结合牌号、材料状态、产品形态、测试温度与数据来源使用。",
     "data_status": "待核验",
-    "updated_at": ""
+    "updated_at": "2026-07-15"
   },
   {
     "id": "ncm",
@@ -10567,13 +10705,13 @@ window.MATERIALS_DATA = [
     "performance_scores": {},
     "performance_score_source": "",
     "data_quality": {
-      "status": "partial",
+      "status": "pending",
       "reviewed": false,
       "source_count": 0
     },
     "engineering_condition_note": "具体数值应结合牌号、材料状态、产品形态、测试温度与数据来源使用。",
     "data_status": "待核验",
-    "updated_at": ""
+    "updated_at": "2026-07-15"
   },
   {
     "id": "carbon_nanotube",
@@ -26287,15 +26425,62 @@ window.MATERIALS_DATA = [
       "aerospace_materials",
       "additive_manufacturing"
     ],
-    "data_sources": [],
-    "property_records": [],
+    "data_sources": [
+      {
+        "title": "TIMETAL 6-4 Properties",
+        "publisher": "Titanium Metals Corporation (TIMET)",
+        "url": "https://www.timet.com/assets/local/documents/technicalmanuals/TIMETAL_6-4_Properties.pdf",
+        "accessed_at": "2026-07-15",
+        "note": "TIMETAL 6-4 标准牌号；熔化区间；页码：6；研究候选：property:3d9379845bf2a6"
+      }
+    ],
+    "property_records": [
+      {
+        "candidate_id": "property:3d9379845bf2a6",
+        "material_id": "ti_tc4",
+        "material_name": "TC4 / Ti-6Al-4V",
+        "entity_type": "grade",
+        "taxonomy_path": [
+          "金属与合金",
+          "有色金属",
+          "钛及钛合金",
+          "α+β型钛合金",
+          "TC4 / Ti-6Al-4V"
+        ],
+        "field": "melting_point",
+        "value": "1630-1650",
+        "unit": "℃",
+        "range_min": 1630,
+        "range_max": 1650,
+        "condition": "TIMETAL 6-4 标准牌号；熔化区间",
+        "temperature": "不适用",
+        "material_state": "标准 Ti-6Al-4V；产品状态未指定，仅用于熔化区间",
+        "test_standard": "",
+        "engineering_data_type": "literature",
+        "source": {
+          "title": "TIMETAL 6-4 Properties",
+          "publisher": "Titanium Metals Corporation (TIMET)",
+          "authors": [],
+          "year": "",
+          "doi": "",
+          "url": "https://www.timet.com/assets/local/documents/technicalmanuals/TIMETAL_6-4_Properties.pdf",
+          "page": "6",
+          "table": "",
+          "accessed_at": "2026-07-15"
+        },
+        "confidence": 0.93,
+        "agent_notes": "牌号级官方技术手册候选；仅写入熔点字段，不将家族范围冒充其他状态参数。",
+        "research_candidate_id": "property:3d9379845bf2a6",
+        "review_status": "accepted_pending_verification"
+      }
+    ],
     "images": {
       "macro": [],
       "micro": [],
       "structure": []
     },
     "density": "暂无数据",
-    "melting_point": "暂无数据",
+    "melting_point": "1630-1650 ℃",
     "service_temperature": "暂无数据",
     "tensile_strength": "暂无数据",
     "elastic_modulus": "暂无数据",
@@ -26307,7 +26492,7 @@ window.MATERIALS_DATA = [
     "cost_level": "暂无数据",
     "engineering_properties": {
       "density": "暂无数据",
-      "melting_point": "暂无数据",
+      "melting_point": "1630-1650 ℃",
       "service_temperature": "暂无数据",
       "tensile_strength": "暂无数据",
       "elastic_modulus": "暂无数据",
@@ -26324,13 +26509,25 @@ window.MATERIALS_DATA = [
     "notes": "材料参数会因牌号、加工状态、测试标准和温度发生变化，本网站数据用于学习和初步选材，不替代正式材料标准或供应商数据表。",
     "difficulty_level": "进阶",
     "data_quality": {
-      "status": "partial",
+      "status": "pending",
       "reviewed": false,
-      "source_count": 0
+      "source_count": 1
     },
     "engineering_condition_note": "具体数值应结合牌号、材料状态、产品形态、测试温度与数据来源使用。",
-    "data_status": "待补充",
-    "updated_at": ""
+    "data_status": "待核验",
+    "updated_at": "2026-07-15",
+    "research_links": [
+      {
+        "research_candidate_id": "micro-link:b216ac442a781f",
+        "type": "micro_source_link",
+        "title": "Quantification of Microstructural Features and Prediction of Mechanical Properties of a Dual-Phase Ti-6Al-4V Alloy",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5509046/",
+        "doi": "10.3390/ma10070747",
+        "figure_number": "Figure 1",
+        "license": "CC BY",
+        "note": "保守地仅保存论文链接和图号；未下载或裁剪论文插图。"
+      }
+    ]
   },
   {
     "id": "ti_6al_4v_eli",

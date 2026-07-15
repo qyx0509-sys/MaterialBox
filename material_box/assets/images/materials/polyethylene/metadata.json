@@ -1,0 +1,69 @@
+{
+  "materialId": "polyethylene",
+  "images": {
+    "macro": [
+      {
+        "src": "assets/images/materials/polyethylene/macro_01.webp",
+        "alt": "聚乙烯宏观图片候选：Polymers; reference materials (5941060448).jpg",
+        "caption": "NIST polymer reference materials (a variety of polyethelene materials are shown) are used in the calibration and performance evaluation of instruments used in polymer research and manufacturing. Credit: NIST Disclaimer: Any mention of commercial products within NIST web pages is for information only; it does not imply recommendation or endorsement by NIST. Use of NIST Information: These World Wide Web pages are provided as a public service by the National Institute of Standards and Technology (NIST). With the exception of material marked as copyrighted, information presented on these pages is considered public information and may be distributed or copied. Use of appropriate byline/photo/image credits is requested.",
+        "source": "Wikimedia Commons",
+        "author": "National Institute of Standards and Technology",
+        "license": "Public Domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polymers%3B_reference_materials_(5941060448).jpg",
+        "accessed_at": "2026-07-15",
+        "origin": "reviewed",
+        "research_candidate_id": "image:c10f5bea2517b8",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Polymers%3B_reference_materials_%285941060448%29.jpg",
+        "sha256": "126b8cb5da8233a8309d7a15bb7963515a83be1fe1da338f75907811c7e73075",
+        "generated_origin": "web_source",
+        "model": "",
+        "prompt": "",
+        "generated_at": "",
+        "generator_version": "",
+        "basis_sources": [],
+        "disclaimer": ""
+      }
+    ],
+    "micro": [],
+    "structure": [
+      {
+        "src": "assets/images/materials/polyethylene/structure_01.webp",
+        "alt": "聚乙烯重复单元程序化结构示意图",
+        "caption": "聚乙烯重复单元与线性链段教学示意",
+        "source": "MaterialBox programmatic diagram",
+        "author": "MaterialBox",
+        "license": "Project-generated candidate",
+        "licenseUrl": "",
+        "sourceUrl": "",
+        "accessed_at": "2026-07-15",
+        "origin": "generated",
+        "research_candidate_id": "structure:374fa8b84dfe6e",
+        "originalUrl": "",
+        "sha256": "825c083468711f6288393d4bdc68cc3380373a8019bf935c2a6dfafd78b284bf",
+        "generated_origin": "program_generated",
+        "model": "",
+        "prompt": "",
+        "generated_at": "2026-07-15T01:13:26+08:00",
+        "generator_version": "1.0",
+        "basis_sources": [
+          {
+            "title": "Polymer Materials for Photovoltaic Systems",
+            "publisher": "National Bureau of Standards (NIST legacy publication)",
+            "doi": "",
+            "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir85-3197.pdf",
+            "accessed_at": "2026-07-15"
+          },
+          {
+            "title": "Polyethylene (SID 134991390)",
+            "publisher": "PubChem, U.S. National Library of Medicine",
+            "doi": "",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/substance/134991390",
+            "accessed_at": "2026-07-15"
+          }
+        ],
+        "disclaimer": "程序生成教学示意图，不是实验照片；概念性示意，不代表实际尺寸、比例和显微组织。"
+      }
+    ]
+  }
+}
